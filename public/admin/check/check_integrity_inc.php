@@ -157,24 +157,25 @@ $t_ignore_files = array(
 );
 check_file_integrity_recursive( $t_absolute_base_dir, $t_absolute_base_dir, '', $t_ignore_files );
 
-$t_base_dir = realpath( config_get_global( 'core_path' ) ) . DIRECTORY_SEPARATOR;
+$t_base_dir = APPLICATION_PATH . DIRECTORY_SEPARATOR;
 $t_ignore_files = array(
 	'core/classes/'
 );
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'core/', $t_ignore_files );
 
-$t_base_dir = realpath( config_get_global( 'class_path' ) ) . DIRECTORY_SEPARATOR;
+# this check is for the legacy classes
+$t_base_dir = APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR;
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'core/classes/' );
 
-$t_base_dir = realpath( config_get_global( 'library_path' ) ) . DIRECTORY_SEPARATOR;
+$t_base_dir = LIBRARY_PATH . DIRECTORY_SEPARATOR;
 $t_ignore_files = array(
 	'library/jpgraph/',
 	'library/FirePHPCore/'
 );
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'library/', $t_ignore_files );
 
-$t_base_dir = realpath( config_get_global( 'language_path' ) ) . DIRECTORY_SEPARATOR;
-check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'lang/' );
+$t_base_dir = realpath( LANGUAGE_PATH . DIRECTORY_SEPARATOR );
+check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'languages/' );
 
 $t_builtin_plugins = array(
 	'MantisCoreFormatting',

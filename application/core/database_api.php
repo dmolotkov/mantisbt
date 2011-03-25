@@ -37,7 +37,7 @@ require_api( 'error_api.php' );
 require_api( 'logging_api.php' );
 require_api( 'utility_api.php' );
 
-define( 'ADODB_DIR', config_get( 'library_path' ) . 'adodb' );
+define( 'ADODB_DIR', 'adodb' );
 require_lib( 'adodb' . DIRECTORY_SEPARATOR . 'adodb.inc.php' );
 
 /**

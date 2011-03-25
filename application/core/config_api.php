@@ -597,10 +597,6 @@ function config_is_private( $p_config_var ) {
 		case 'smtp_port':
 		case 'email_send_using_cronjob':
 		case 'absolute_path':
-		case 'core_path':
-		case 'class_path':
-		case 'library_path':
-		case 'language_path':
 		case 'session_save_path':
 		case 'session_handler':
 		case 'session_validation':

@@ -49,6 +49,30 @@
  * @uses utf8/str_pad.php
  */
 
+// Set the initial include_path. for performance
+// reasons, it's best to move this to your web server configuration or php.ini
+// for production.
+set_include_path(implode(PATH_SEPARATOR, array(
+    realpath(dirname(__FILE__) . '/../library'),
+    get_include_path(),
+)));
+
+// Define path to application directory
+defined('LIBRARY_PATH')
+    || define('LIBRARY_PATH', realpath(dirname(__FILE__) . '/../library') );
+
+// Define path to application directory
+defined('APPLICATION_PATH')
+    || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application') );
+
+// Define path to languages directory
+defined('LANGUAGES_PATH')
+    || define('LANGUAGES_PATH', realpath(dirname(__FILE__) . '/../languages') );
+
+// Define application environment
+defined('APPLICATION_ENV')
+    || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
+
 /**
  * Before doing anything... check if MantisBT is down for maintenance
  *
@@ -68,7 +92,7 @@ $g_request_time = microtime( true );
 ob_start();
 
 # Load supplied constants
-require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'constant_inc.php' );
+require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'constant_inc.php' );
 
 # Load user-defined constants (if required)
 if ( file_exists( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' ) ) {
@@ -78,11 +102,11 @@ if ( file_exists( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'custom_constants_
 $t_config_inc_found = false;
 
 # Include default configuration settings
-require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config_defaults_inc.php' );
+require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' . DIRECTORY_SEPARATOR . 'config_defaults_inc.php' );
 
 # config_inc may not be present if this is a new install
-if ( file_exists( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config_inc.php' ) ) {
-	require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'config_inc.php' );
+if ( file_exists( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' . DIRECTORY_SEPARATOR . 'config_inc.php' ) ) {
+    require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' . DIRECTORY_SEPARATOR . 'config_inc.php' );
 	$t_config_inc_found = true;
 }
 
@@ -100,10 +124,10 @@ $g_api_included = array();
 # Define an API inclusion function to replace require_once
 function require_api( $p_api_name ) {
 	global $g_api_included;
-	global $g_core_path;
+
 	if ( !isset( $g_api_included[$p_api_name] ) ) {
 		$t_existing_globals = get_defined_vars();
-		require_once( $g_core_path . $p_api_name );
+		require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . $p_api_name );
 		$t_new_globals = array_diff_key( get_defined_vars(), $GLOBALS, array( 't_existing_globals' => 0, 't_new_globals' => 0 ) );
 		foreach ( $t_new_globals as $t_global_name => $t_global_value ) {
 			global $$t_global_name;
@@ -119,10 +143,10 @@ $g_libraries_included = array();
 # Define an API inclusion function to replace require_once
 function require_lib( $p_library_name ) {
 	global $g_libraries_included;
-	global $g_library_path;
+
 	if ( !isset( $g_libraries_included[$p_library_name] ) ) {
 		$t_existing_globals = get_defined_vars();
-		require_once( $g_library_path . $p_library_name );
+		require_once( $p_library_name );
 		$t_new_globals = array_diff_key( get_defined_vars(), $GLOBALS, array( 't_existing_globals' => 0, 't_new_globals' => 0 ) );
 		foreach ( $t_new_globals as $t_global_name => $t_global_value ) {
 			global $$t_global_name;
@@ -133,21 +157,29 @@ function require_lib( $p_library_name ) {
 }
 
 # Define an autoload function to automatically load classes when referenced
-function __autoload( $className ) {
-	global $g_class_path;
-	global $g_library_path;
+function __autoload( $p_class_name ) {
 
-	$t_require_path = $g_class_path . $className . '.class.php';
+    # check the old classes directory @todo this should be removed once pages are migrated to the new application structure
+    $t_require_path = APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $p_class_name . '.class.php';
+	if ( file_exists( $t_require_path ) ) {
+		require( $t_require_path );
+		return;
+    }
+
+    # handle any namespaces
+    $t_class_name = str_replace( '\\', '/', $p_class_name );
+
+	$t_require_path = APPLICATION_PATH . DIRECTORY_SEPARATOR . $t_class_name . '.class.php';
 
 	if ( file_exists( $t_require_path ) ) {
-		require_once( $t_require_path );
+		require( $t_require_path );
 		return;
 	}
 
-	$t_require_path = $g_library_path . 'rssbuilder' . DIRECTORY_SEPARATOR . 'class.' . $className . '.inc.php';
+	$t_require_path = 'rssbuilder' . DIRECTORY_SEPARATOR . 'class.' . $t_class_name . '.inc.php';
 
 	if ( file_exists( $t_require_path ) ) {
-		require_once( $t_require_path );
+		include( $t_require_path );
 		return;
 	}
 }
@@ -156,7 +188,6 @@ function __autoload( $className ) {
 spl_autoload_register( '__autoload' );
 
 # Load UTF8-capable string functions
-define( 'UTF8', $g_library_path . 'utf8' );
 require_lib( 'utf8/utf8.php' );
 require_lib( 'utf8/str_pad.php' );
 

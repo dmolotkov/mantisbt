@@ -69,7 +69,7 @@ function lang_load( $p_lang, $p_dir = null ) {
 	// Step 1 - Load Requested Language file
 	// @@ and if file doesn't exist???
 	if( $p_dir === null ) {
-		include_once( config_get( 'language_path' ) . 'strings_' . $p_lang . '.txt' );
+		include_once( LANGUAGES_PATH . DIRECTORY_SEPARATOR . 'strings_' . $p_lang . '.txt' );
 	} else {
 		if( is_file( $p_dir . 'strings_' . $p_lang . '.txt' ) ) {
 			include_once( $p_dir . 'strings_' . $p_lang . '.txt' );

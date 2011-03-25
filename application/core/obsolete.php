@@ -158,3 +158,7 @@ config_obsolete( 'administrator_email', 'webmaster_email' );
 config_obsolete( 'session_key' );
 config_obsolete( 'dhtml_filters', 'use_dynamic_filters' );
 config_obsolete( 'use_iis' );
+config_obsolete( 'core_path' );
+config_obsolete( 'class_path' );
+config_obsolete( 'library_path' );
+config_obsolete( 'language_path' );

@@ -78,7 +78,7 @@ print_manage_menu();
 		</tr>
 		<tr <?php echo helper_alternate_class() ?>>
 			<th class="category"><?php echo lang_get( 'core_path' ) ?></th>
-			<td><?php echo config_get( 'core_path' ) ?></td>
+			<td><?php echo APPLICATION_PATH . DIRECTORY_SEPARATOR ; ?></td>
 		</tr>
 		<tr <?php echo helper_alternate_class() ?>>
 			<th class="category"><?php echo lang_get( 'plugin_path' ) ?></th>

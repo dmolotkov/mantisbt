@@ -290,7 +290,7 @@
 		    issue.</para></listitem>
 		    <listitem><para>Add the localized string for "my_start_date"
 		    - This can be done by creating custom_strings_inc.php in the
-		    MantisBT root folder and adding the following code to it:
+		    MantisBT configs folder and adding the following code to it:
 <programlisting>
 &lt;?php
 if ( lang_get_current() == 'german' ) {
@@ -684,14 +684,14 @@ functions section.</para>
             <orderedlist>
                 <listitem>
                     <para>Define a constant to map the new status to.In a new file
-                        custom_constants_inc.php in the main mantisbt directory:
+                        custom_constants_inc.php in the mantisbt configs directory:
                         <programlisting>&lt;?php define ( 'TEST', 60 ); ?&gt;</programlisting>
                     </para>
                 </listitem>
                 <listitem>
                     <para>Define the language strings required. This may need to be
                         defined in several languages.In a new file custom_strings_inc.php
-                        in the main mantisbt directory:
+                        in the mantisbt configs directory:
                         <programlisting language="PHP (HTML)">&lt;?php if ( lang_get_current() == 'german' ) {
     $s_status_enum_string = '10:neu,20:Rückmeldung,30:anerkannt,40:bestätigt,50:zugewiesen,60:zu testen,80:behoben,90:geschlossen';
 } else {
@@ -706,7 +706,7 @@ functions section.</para>
                 </listitem>
                 <listitem>
                     <para>Define any configurations required.In the existing file
-                        config_inc.php in the main mantisbt directory:
+                        config_inc.php in the mantisbt configs directory:
                         <programlisting>$g_status_enum_string =
                             '10:new,20:feedback,30:acknowledged,40:confirmed,50:assigned, 60:to
                             be tested,80:resolved,90:closed'; # Status color additions
@@ -748,7 +748,7 @@ functions section.</para>
             </para>
             <para>User versions of these functions are
                 placed in a file called custom_functions_inc.php in the
-                root directory of MantisBT. This is the same place that the
+                configs directory of MantisBT. This is the same place that the
                 "config_inc.php" file modifying MantisBT defaults is placed. In normal
                 processing, MantisBT will look for override functions and execute
                 them instead of the provided default functions.</para>

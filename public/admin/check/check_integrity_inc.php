@@ -148,11 +148,11 @@ $t_ignore_files = array(
 	'lang/',
 	'library/',
 	'plugins/',
-	'config_inc.php',
-	'custom_constants_inc.php',
-	'custom_functions_inc.php',
-	'custom_relationships_inc.php',
-	'custom_strings_inc.php',
+	CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php',
+	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_constants_inc.php',
+	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_functions_inc.php',
+	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_relationships_inc.php',
+	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_strings_inc.php',
 	'mantis_offline.php'
 );
 check_file_integrity_recursive( $t_absolute_base_dir, $t_absolute_base_dir, '', $t_ignore_files );

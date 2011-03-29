@@ -18,10 +18,10 @@ INSTALLATION
 
  * Extract the tarball into a location readable by your web server
 
- * Point your browser to http://path/to/mantisbt/admin/check.php to ensure that
+ * Point your browser to http://path/to/mantisbt/public/admin/check.php to ensure that
    your webserver is compatible with MantisBT and configured correctly
 
- * Point your browser to http://path/to/mantisbt/admin/install.php to begin the
+ * Point your browser to http://path/to/mantisbt/public/admin/install.php to begin the
    database installation process
 
  * Select the database type and enter the credentials to access the database
@@ -29,7 +29,7 @@ INSTALLATION
  * Click install/upgrade
 
  * Installation is complete -- you may need to copy the default configuration
-   to mantisbt/config_inc.php if your web server does not have write access
+   to mantisbt/application/configs/config_inc.php if your web server does not have write access
 
  * Remove the admin/ directory from within the MantisBT installation path. The
    scripts within this directory should not be accessible on a live MantisBT
@@ -49,7 +49,7 @@ UPGRADING
  * Point your browser to http://path/to/mantisbt/admin/check.php to ensure that
    your webserver is compatible with MantisBT and configured correctly
 
- * Point your browser to http://path/to/mantisbt/admin/install.php to upgrade
+ * Point your browser to http://path/to/mantisbt/public/admin/install.php to upgrade
    the database schema
 
  * Click install/upgrade

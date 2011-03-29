@@ -65,6 +65,10 @@ defined('LIBRARY_PATH')
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application') );
 
+// Define path to configs directory
+defined('CONFIG_PATH')
+    || define('CONFIG_PATH', APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' );
+
 // Define path to languages directory
 defined('LANGUAGES_PATH')
     || define('LANGUAGES_PATH', realpath(dirname(__FILE__) . '/../languages') );
@@ -95,18 +99,18 @@ ob_start();
 require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'constant_inc.php' );
 
 # Load user-defined constants (if required)
-if ( file_exists( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' ) ) {
-	require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' );
+if ( file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' ) ) {
+	require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' );
 }
 
 $t_config_inc_found = false;
 
 # Include default configuration settings
-require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' . DIRECTORY_SEPARATOR . 'config_defaults_inc.php' );
+require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_defaults_inc.php' );
 
 # config_inc may not be present if this is a new install
-if ( file_exists( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' . DIRECTORY_SEPARATOR . 'config_inc.php' ) ) {
-    require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' . DIRECTORY_SEPARATOR . 'config_inc.php' );
+if ( file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php' ) ) {
+    require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php' );
 	$t_config_inc_found = true;
 }
 
@@ -203,6 +207,7 @@ if( !php_version_at_least( PHP_MIN_VERSION ) ) {
 
 # Ensure that output is blank so far (output at this stage generally denotes
 # that an error has occurred)
+# that an error has occurred)
 if ( ( $t_output = ob_get_contents() ) != '' ) {
 	echo 'Possible Whitespace/Error in Configuration File - Aborting. Output so far follows:<br />';
 	echo var_dump( $t_output );
@@ -279,8 +284,8 @@ if ( !defined( 'MANTIS_MAINTENANCE_MODE' ) ) {
 
 # Load custom functions
 require_api( 'custom_function_api.php' );
-if ( file_exists( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'custom_functions_inc.php' ) ) {
-	require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'custom_functions_inc.php' );
+if ( file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_functions_inc.php' ) ) {
+	require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_functions_inc.php' );
 }
 
 # Set HTTP response headers

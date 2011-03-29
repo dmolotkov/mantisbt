@@ -18,7 +18,7 @@ http://docs.mantisbt.org/
     will not be overwritten when you upgrade, but config_defaults_inc.php will.
     Look at config_inc.php.sample for an example.
 
-* core/*_api.php - these files contains all the API library functions.
+* application/core/*_api.php - these files contains all the API library functions.
 
 * global variables are prefixed by g_
 * parameters in functions are prefixed with p_ -- parameters shouldn't be modified within the function.

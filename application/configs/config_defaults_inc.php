@@ -175,7 +175,7 @@ $g_absolute_path = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . 
  * NOTE: you can not mix/merge old/new formats within this file.
  * @global string $g_custom_strings_file
  */
-$g_custom_strings_file = $g_absolute_path . 'custom_strings_inc.php';
+$g_custom_strings_file = CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_strings_inc.php';
 
 /**
  * Used to link to manual for User Documentation.

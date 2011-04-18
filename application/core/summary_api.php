@@ -73,7 +73,13 @@ function summary_print_by_enum( $p_enum ) {
 	if( ' 1<>1' == $t_project_filter ) {
 		return;
 	}
-
+	
+	$t_vars = getClassProperties( 'BugData', 'protected');
+	if( !array_key_exists( $p_enum, $t_vars ) ) {
+		error_parameters($p_enum);
+		trigger_error( ERROR_DB_FIELD_NOT_FOUND, WARNING );
+	}
+	
 	$t_filter_prefix = config_get( 'bug_count_hyperlink_prefix' );
 
 	$t_mantis_bug_table = db_get_table( 'bug' );
@@ -83,7 +89,7 @@ function summary_print_by_enum( $p_enum ) {
 				WHERE $t_project_filter
 				GROUP BY $p_enum $t_status_query
 				ORDER BY $p_enum $t_status_query";
-	$result = db_query( $query );
+	$result = db_query_bound( $query );
 
 	$t_last_value = -1;
 	$t_bugs_open = 0;
@@ -383,7 +389,7 @@ function summary_print_by_age() {
 				WHERE status < $t_resolved
 				AND $specific_where
 				ORDER BY date_submitted ASC, priority DESC";
-	$result = db_query( $query );
+	$result = db_query_bound( $query );
 
 	$t_count = 0;
 	$t_private_bug_threshold = config_get( 'private_bug_threshold' );
@@ -429,7 +435,7 @@ function summary_print_by_developer() {
 				WHERE handler_id>0 AND $specific_where
 				GROUP BY handler_id, status
 				ORDER BY handler_id, status";
-	$result = db_query( $query );
+	$result = db_query_bound( $query );
 
 	$t_last_handler = -1;
 	$t_bugs_open = 0;
@@ -530,7 +536,7 @@ function summary_print_by_reporter() {
 				WHERE $specific_where
 				GROUP BY reporter_id
 				ORDER BY num DESC";
-	$result = db_query( $query, $t_reporter_summary_limit );
+	$result = db_query_bound( $query, null, $t_reporter_summary_limit );
 
 	$t_reporters = array();
 	while( $row = db_fetch_array( $result ) ) {
@@ -546,7 +552,7 @@ function summary_print_by_reporter() {
 					AND $specific_where
 					GROUP BY status
 					ORDER BY status";
-		$result2 = db_query( $query );
+		$result2 = db_query_bound( $query );
 
 		$last_reporter = -1;
 		$t_bugs_open = 0;
@@ -614,7 +620,7 @@ function summary_print_by_category() {
 				GROUP BY $t_project_query category_id, c.name, b.status
 				ORDER BY $t_project_query category_id, c.name, b.status";
 
-	$result = db_query( $query );
+	$result = db_query_bound( $query );
 
 	$last_category_name = -1;
 	$last_category_id = -1;

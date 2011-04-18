@@ -825,6 +825,7 @@ function custom_field_get_linked_ids( $p_project_id = ALL_PROJECTS ) {
 
 	if( !isset( $g_cache_cf_linked[$p_project_id] ) ) {
 
+		$p_project_id = (int) $p_project_id;
 		$t_custom_field_table = db_get_table( 'custom_field' );
 		$t_custom_field_project_table = db_get_table( 'custom_field_project' );
 
@@ -874,7 +875,7 @@ function custom_field_get_linked_ids( $p_project_id = ALL_PROJECTS ) {
 							cft.id = cfpt.field_id
 					  ORDER BY sequence ASC, name ASC";
 		}
-		$result = db_query( $query );
+		$result = db_query_bound( $query );
 		$t_row_count = db_num_rows( $result );
 		$t_ids = array();
 

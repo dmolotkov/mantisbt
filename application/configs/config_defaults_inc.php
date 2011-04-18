@@ -90,6 +90,12 @@ $g_db_type				= 'mysql';
  */
 $g_dsn = '';
 
+/**
+ * Database Connection Options
+ * e.g. array( 'dbpersist' ) to use persistent PDO connections
+ */
+$g_db_options = array();
+
 /**************************
  * MantisBT Path Settings *
  **************************/
@@ -3228,12 +3234,6 @@ $g_use_javascript = ON;
  * @global int $g_compress_html
  */
 $g_compress_html = ON;
-
-/**
- * Use persistent database connections
- * @global int $g_use_persistent_connections
- */
-$g_use_persistent_connections = OFF;
 
 /*****************
  * Include files *

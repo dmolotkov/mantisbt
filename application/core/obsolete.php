@@ -162,3 +162,4 @@ config_obsolete( 'core_path' );
 config_obsolete( 'class_path' );
 config_obsolete( 'library_path' );
 config_obsolete( 'language_path' );
+config_obsolete( 'use_persistent_connections', 'db_options' );

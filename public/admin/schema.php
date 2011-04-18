@@ -25,19 +25,6 @@
 # An update identifier is inferred from the ordering of this table. ONLY ADD NEW CHANGES TO THE
 #  END OF THE TABLE!!!
 
-if ( !function_exists( 'db_null_date' ) ) {
-	function db_null_date() {
-		return 0;
-	}
-}
-
-
-function installer_db_now() {
-        global $g_db;
-
-       return $g_db->BindTimeStamp( time() );
-}
-
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table( 'config' ),"
 			  config_id C(64) NOTNULL PRIMARY,
 			  project_id I DEFAULT '0' PRIMARY,
@@ -50,13 +37,13 @@ $upgrade[] = Array('CreateIndexSQL',Array('idx_config',db_get_table( 'config' ),
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('bug_file'),"
   id			 I  UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
   bug_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
-  title 		C(250) NOTNULL DEFAULT \" '' \",
-  description 		C(250) NOTNULL DEFAULT \" '' \",
-  diskfile 		C(250) NOTNULL DEFAULT \" '' \",
-  filename 		C(250) NOTNULL DEFAULT \" '' \",
-  folder 		C(250) NOTNULL DEFAULT \" '' \",
+  title 		C(250) NOTNULL DEFAULT '',
+  description 		C(250) NOTNULL DEFAULT '',
+  diskfile 		C(250) NOTNULL DEFAULT '',
+  filename 		C(250) NOTNULL DEFAULT '',
+  folder 		C(250) NOTNULL DEFAULT '',
   filesize 		 I NOTNULL DEFAULT '0',
-  file_type 		C(250) NOTNULL DEFAULT \" '' \",
+  file_type 		C(250) NOTNULL DEFAULT '',
   date_added 		T NOTNULL DEFAULT '" . db_null_date() . "',
   content 		B NOTNULL
   ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
@@ -66,9 +53,9 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('bug_history'),"
   user_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
   bug_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
   date_modified 	T NOTNULL DEFAULT '" . db_null_date() . "',
-  field_name 		C(32) NOTNULL DEFAULT \" '' \",
-  old_value 		C(128) NOTNULL DEFAULT \" '' \",
-  new_value 		C(128) NOTNULL DEFAULT \" '' \",
+  field_name 		C(32) NOTNULL DEFAULT '',
+  old_value 		C(128) NOTNULL DEFAULT '',
+  new_value 		C(128) NOTNULL DEFAULT '',
   type 			I2 NOTNULL DEFAULT '0'
   ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_bug_history_bug_id',db_get_table('bug_history'),'bug_id'));
@@ -98,22 +85,22 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('bug'),"
   status 		I2 NOTNULL DEFAULT '10',
   resolution 		I2 NOTNULL DEFAULT '10',
   projection 		I2 NOTNULL DEFAULT '10',
-  category 		C(64) NOTNULL DEFAULT \" '' \",
+  category 		C(64) NOTNULL DEFAULT '',
   date_submitted 	T NOTNULL DEFAULT '" . db_null_date() . "',
   last_updated 		T NOTNULL DEFAULT '" . db_null_date() . "',
   eta 			I2 NOTNULL DEFAULT '10',
   bug_text_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
-  os 			C(32) NOTNULL DEFAULT \" '' \",
-  os_build 		C(32) NOTNULL DEFAULT \" '' \",
-  platform 		C(32) NOTNULL DEFAULT \" '' \",
-  version 		C(64) NOTNULL DEFAULT \" '' \",
-  fixed_in_version 	C(64) NOTNULL DEFAULT \" '' \",
-  build 		C(32) NOTNULL DEFAULT \" '' \",
+  os 			C(32) NOTNULL DEFAULT '',
+  os_build 		C(32) NOTNULL DEFAULT '',
+  platform 		C(32) NOTNULL DEFAULT '',
+  version 		C(64) NOTNULL DEFAULT '',
+  fixed_in_version 	C(64) NOTNULL DEFAULT '',
+  build 		C(32) NOTNULL DEFAULT '',
   profile_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
   view_state 		I2 NOTNULL DEFAULT '10',
-  summary 		C(128) NOTNULL DEFAULT \" '' \",
+  summary 		C(128) NOTNULL DEFAULT '',
   sponsorship_total 	 I  NOTNULL DEFAULT '0',
-  sticky		L  NOTNULL DEFAULT  \"'0'\"
+  sticky		L  NOTNULL DEFAULT  '0'
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_bug_sponsorship_total',db_get_table('bug'),'sponsorship_total'));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_bug_fixed_in_version',db_get_table('bug'),'fixed_in_version'));
@@ -134,7 +121,7 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('bugnote'),"
   date_submitted 	T NOTNULL DEFAULT '" . db_null_date() . "',
   last_modified 	T NOTNULL DEFAULT '" . db_null_date() . "',
   note_type 		 I  DEFAULT '0',
-  note_attr 		C(250) DEFAULT \" '' \"
+  note_attr 		C(250) DEFAULT ''
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_bug',db_get_table('bugnote'),'bug_id'));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_last_mod',db_get_table('bugnote'),'last_modified'));
@@ -151,29 +138,29 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('custom_field_project'),"
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('custom_field_string'),"
   field_id 		 I  NOTNULL PRIMARY DEFAULT '0',
   bug_id 		 I  NOTNULL PRIMARY DEFAULT '0',
-  value 		C(255) NOTNULL DEFAULT \" '' \"
+  value 		C(255) NOTNULL DEFAULT ''
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_custom_field_bug',db_get_table('custom_field_string'),'bug_id'));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('custom_field'),"
   id 			 I  NOTNULL PRIMARY AUTOINCREMENT,
-  name 			C(64) NOTNULL DEFAULT \" '' \",
+  name 			C(64) NOTNULL DEFAULT '',
   type 			I2 NOTNULL DEFAULT '0',
-  possible_values 	C(255) NOTNULL DEFAULT \" '' \",
-  default_value 	C(255) NOTNULL DEFAULT \" '' \",
-  valid_regexp 		C(255) NOTNULL DEFAULT \" '' \",
+  possible_values 	C(255) NOTNULL DEFAULT '',
+  default_value 	C(255) NOTNULL DEFAULT '',
+  valid_regexp 		C(255) NOTNULL DEFAULT '',
   access_level_r 	I2 NOTNULL DEFAULT '0',
   access_level_rw 	I2 NOTNULL DEFAULT '0',
   length_min 		 I  NOTNULL DEFAULT '0',
   length_max 		 I  NOTNULL DEFAULT '0',
-  advanced 		L NOTNULL DEFAULT \" '0' \",
-  require_report 	L NOTNULL DEFAULT \" '0' \",
-  require_update 	L NOTNULL DEFAULT \" '0' \",
-  display_report 	L NOTNULL DEFAULT \" '0' \",
-  display_update 	L NOTNULL DEFAULT \" '1' \",
-  require_resolved 	L NOTNULL DEFAULT \" '0' \",
-  display_resolved 	L NOTNULL DEFAULT \" '0' \",
-  display_closed 	L NOTNULL DEFAULT \" '0' \",
-  require_closed 	L NOTNULL DEFAULT \" '0' \"
+  advanced 		L NOTNULL DEFAULT '0',
+  require_report 	L NOTNULL DEFAULT '0',
+  require_update 	L NOTNULL DEFAULT '0',
+  display_report 	L NOTNULL DEFAULT '0',
+  display_update 	L NOTNULL DEFAULT '1',
+  require_resolved 	L NOTNULL DEFAULT '0',
+  display_resolved 	L NOTNULL DEFAULT '0',
+  display_closed 	L NOTNULL DEFAULT '0',
+  require_closed 	L NOTNULL DEFAULT '0'
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_custom_field_name',db_get_table('custom_field'),'name'));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('filters'),"
@@ -181,7 +168,7 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('filters'),"
   user_id 		 I  NOTNULL DEFAULT '0',
   project_id 		 I  NOTNULL DEFAULT '0',
   is_public 		L DEFAULT NULL,
-  name 			C(64) NOTNULL DEFAULT \" '' \",
+  name 			C(64) NOTNULL DEFAULT '',
   filter_string 	XL NOTNULL
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('news'),"
@@ -191,25 +178,25 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('news'),"
   date_posted 		T NOTNULL DEFAULT '" . db_null_date() . "',
   last_modified 	T NOTNULL DEFAULT '" . db_null_date() . "',
   view_state 		I2 NOTNULL DEFAULT '10',
-  announcement 		L NOTNULL DEFAULT \" '0' \",
-  headline 		C(64) NOTNULL DEFAULT \" '' \",
+  announcement 		L NOTNULL DEFAULT '0',
+  headline 		C(64) NOTNULL DEFAULT '',
   body 			XL NOTNULL
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('project_category'),"
   project_id 		 I  UNSIGNED NOTNULL PRIMARY DEFAULT '0',
-  category 		C(64) NOTNULL PRIMARY DEFAULT \" '' \",
+  category 		C(64) NOTNULL PRIMARY DEFAULT '',
   user_id 		 I  UNSIGNED NOTNULL DEFAULT '0'
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('project_file'),"
   id 			 I  UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
   project_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
-  title 		C(250) NOTNULL DEFAULT \" '' \",
-  description 		C(250) NOTNULL DEFAULT \" '' \",
-  diskfile 		C(250) NOTNULL DEFAULT \" '' \",
-  filename 		C(250) NOTNULL DEFAULT \" '' \",
-  folder 		C(250) NOTNULL DEFAULT \" '' \",
+  title 		C(250) NOTNULL DEFAULT '',
+  description 		C(250) NOTNULL DEFAULT '',
+  diskfile 		C(250) NOTNULL DEFAULT '',
+  filename 		C(250) NOTNULL DEFAULT '',
+  folder 		C(250) NOTNULL DEFAULT '',
   filesize 		 I NOTNULL DEFAULT '0',
-  file_type 		C(250) NOTNULL DEFAULT \" '' \",
+  file_type 		C(250) NOTNULL DEFAULT '',
   date_added 		T NOTNULL DEFAULT '" . db_null_date() . "',
   content 		B NOTNULL
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
@@ -220,12 +207,12 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('project_hierarchy'),"
 Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('project'),"
   id 			 I  UNSIGNED PRIMARY NOTNULL AUTOINCREMENT,
-  name 			C(128) NOTNULL DEFAULT \" '' \",
+  name 			C(128) NOTNULL DEFAULT '',
   status 		I2 NOTNULL DEFAULT '10',
-  enabled 		L NOTNULL DEFAULT \" '1' \",
+  enabled 		L NOTNULL DEFAULT '1',
   view_state 		I2 NOTNULL DEFAULT '10',
   access_min 		I2 NOTNULL DEFAULT '10',
-  file_path 		C(250) NOTNULL DEFAULT \" '' \",
+  file_path 		C(250) NOTNULL DEFAULT '',
   description 		XL NOTNULL
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_project_id',db_get_table('project'),'id'));
@@ -240,10 +227,10 @@ $upgrade[] = Array( 'CreateIndexSQL',Array('idx_project_user',db_get_table('proj
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('project_version'),"
   id 			 I  NOTNULL PRIMARY AUTOINCREMENT,
   project_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
-  version 		C(64) NOTNULL DEFAULT \" '' \",
+  version 		C(64) NOTNULL DEFAULT '',
   date_order 		T NOTNULL DEFAULT '" . db_null_date() . "',
   description 		XL NOTNULL,
-  released 		L NOTNULL DEFAULT \" '1' \"
+  released 		L NOTNULL DEFAULT '1'
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_project_version',db_get_table('project_version'),'project_id,version',Array('UNIQUE')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('sponsorship'),"
@@ -251,9 +238,9 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('sponsorship'),"
   bug_id 		 I  NOTNULL DEFAULT '0',
   user_id 		 I  NOTNULL DEFAULT '0',
   amount 		 I  NOTNULL DEFAULT '0',
-  logo 			C(128) NOTNULL DEFAULT \" '' \",
-  url 			C(128) NOTNULL DEFAULT \" '' \",
-  paid 			L NOTNULL DEFAULT \" '0' \",
+  logo 			C(128) NOTNULL DEFAULT '',
+  url 			C(128) NOTNULL DEFAULT '',
+  paid 			L NOTNULL DEFAULT '0',
   date_submitted 	T NOTNULL DEFAULT '" . db_null_date() . "',
   last_updated 		T NOTNULL DEFAULT '" . db_null_date() . "'
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
@@ -274,21 +261,21 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('user_pref'),"
   project_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
   default_profile 	 I  UNSIGNED NOTNULL DEFAULT '0',
   default_project 	 I  UNSIGNED NOTNULL DEFAULT '0',
-  advanced_report 	L NOTNULL DEFAULT \" '0' \",
-  advanced_view 	L NOTNULL DEFAULT \" '0' \",
-  advanced_update 	L NOTNULL DEFAULT \" '0' \",
+  advanced_report 	L NOTNULL DEFAULT '0',
+  advanced_view 	L NOTNULL DEFAULT '0',
+  advanced_update 	L NOTNULL DEFAULT '0',
   refresh_delay 	 I  NOTNULL DEFAULT '0',
-  redirect_delay 	L NOTNULL DEFAULT \" '0' \",
+  redirect_delay 	L NOTNULL DEFAULT '0',
   bugnote_order 	C(4) NOTNULL DEFAULT 'ASC',
-  email_on_new 		L NOTNULL DEFAULT \" '0' \",
-  email_on_assigned 	L NOTNULL DEFAULT \" '0' \",
-  email_on_feedback 	L NOTNULL DEFAULT \" '0' \",
-  email_on_resolved	L NOTNULL DEFAULT \" '0' \",
-  email_on_closed 	L NOTNULL DEFAULT \" '0' \",
-  email_on_reopened 	L NOTNULL DEFAULT \" '0' \",
-  email_on_bugnote 	L NOTNULL DEFAULT \" '0' \",
-  email_on_status 	L NOTNULL DEFAULT \" '0' \",
-  email_on_priority 	L NOTNULL DEFAULT \" '0' \",
+  email_on_new 		L NOTNULL DEFAULT '0',
+  email_on_assigned 	L NOTNULL DEFAULT '0',
+  email_on_feedback 	L NOTNULL DEFAULT '0',
+  email_on_resolved	L NOTNULL DEFAULT '0',
+  email_on_closed 	L NOTNULL DEFAULT '0',
+  email_on_reopened 	L NOTNULL DEFAULT '0',
+  email_on_bugnote 	L NOTNULL DEFAULT '0',
+  email_on_status 	L NOTNULL DEFAULT '0',
+  email_on_priority 	L NOTNULL DEFAULT '0',
   email_on_priority_min_severity 	I2 NOTNULL DEFAULT '10',
   email_on_status_min_severity 	I2 NOTNULL DEFAULT '10',
   email_on_bugnote_min_severity 	I2 NOTNULL DEFAULT '10',
@@ -303,55 +290,52 @@ $upgrade[] = Array('CreateTableSQL',Array(db_get_table('user_pref'),"
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('user_print_pref'),"
   user_id 		 I  UNSIGNED NOTNULL PRIMARY DEFAULT '0',
-  print_pref 		C(27) NOTNULL DEFAULT \" '' \"
+  print_pref 		C(27) NOTNULL DEFAULT ''
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('user_profile'),"
   id 			 I  UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
   user_id 		 I  UNSIGNED NOTNULL DEFAULT '0',
-  platform 		C(32) NOTNULL DEFAULT \" '' \",
-  os 			C(32) NOTNULL DEFAULT \" '' \",
-  os_build 		C(32) NOTNULL DEFAULT \" '' \",
+  platform 		C(32) NOTNULL DEFAULT '',
+  os 			C(32) NOTNULL DEFAULT '',
+  os_build 		C(32) NOTNULL DEFAULT '',
   description 		XL NOTNULL
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('user'),"
   id 			 I  UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
-  username 		C(32) NOTNULL DEFAULT \" '' \",
-  realname 		C(64) NOTNULL DEFAULT \" '' \",
-  email 		C(64) NOTNULL DEFAULT \" '' \",
-  password 		C(32) NOTNULL DEFAULT \" '' \",
+  username 		C(32) NOTNULL DEFAULT '',
+  realname 		C(64) NOTNULL DEFAULT '',
+  email 		C(64) NOTNULL DEFAULT '',
+  password 		C(32) NOTNULL DEFAULT '',
   date_created 		T NOTNULL DEFAULT '" . db_null_date() . "',
   last_visit 		T NOTNULL DEFAULT '" . db_null_date() . "',
-  enabled		L NOTNULL DEFAULT \" '1' \",
-  protected 		L NOTNULL DEFAULT \" '0' \",
+  enabled		L NOTNULL DEFAULT '1',
+  protected 		L NOTNULL DEFAULT '0',
   access_level 		I2 NOTNULL DEFAULT '10',
   login_count 		 I  NOTNULL DEFAULT '0',
   lost_password_request_count 	I2 NOTNULL DEFAULT '0',
   failed_login_count 	I2 NOTNULL DEFAULT '0',
-  cookie_string 	C(64) NOTNULL DEFAULT \" '' \"
+  cookie_string 	C(64) NOTNULL DEFAULT ''
 ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_user_cookie_string',db_get_table('user'),'cookie_string',Array('UNIQUE')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_user_username',db_get_table('user'),'username',Array('UNIQUE')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_enable',db_get_table('user'),'enabled'));
 /* 50 */
 $upgrade[] = Array('CreateIndexSQL',Array('idx_access',db_get_table('user'),'access_level'));
-$upgrade[] = Array('InsertData', Array( db_get_table('user'),
-    "(username, realname, email, password, date_created, last_visit, enabled, protected, access_level, login_count, lost_password_request_count, failed_login_count, cookie_string) VALUES
-        ('administrator', '', 'root@localhost', '63a9f0ea7bb98050796b649e85481845', '" . installer_db_now() . "', '" . installer_db_now() . "', '1', '0', 90, 3, 0, 0, '" .
-             md5( mt_rand( 0, mt_getrandmax() ) + mt_rand( 0, mt_getrandmax() ) ) . md5( time() ) . "')" ) );
+$upgrade[] = Array( 'UpdateFunction', "do_nothing" );
 $upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'bug_history' ), "old_value C(255) NOTNULL" ) );
 $upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'bug_history' ), "new_value C(255) NOTNULL" ) );
 
 $upgrade[] = Array('CreateTableSQL',Array(db_get_table('email'),"
   email_id 		I  UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
-  email		 	C(64) NOTNULL DEFAULT \" '' \",
-  subject		C(250) NOTNULL DEFAULT \" '' \",
+  email		 	C(64) NOTNULL DEFAULT '',
+  subject		C(250) NOTNULL DEFAULT '',
   submitted 	T NOTNULL DEFAULT '" . db_null_date() . "',
   metadata 		XL NOTNULL,
   body 			XL NOTNULL
   ",Array('mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS')));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_email_id',db_get_table('email'),'email_id'));
-$upgrade[] = Array('AddColumnSQL',Array(db_get_table('bug'), "target_version C(64) NOTNULL DEFAULT \" '' \""));
-$upgrade[] = Array('AddColumnSQL',Array(db_get_table('bugnote'), "time_tracking I UNSIGNED NOTNULL DEFAULT \" 0 \""));
+$upgrade[] = Array('AddColumnSQL',Array(db_get_table('bug'), "target_version C(64) NOTNULL DEFAULT ''"));
+$upgrade[] = Array('AddColumnSQL',Array(db_get_table('bugnote'), "time_tracking I UNSIGNED NOTNULL DEFAULT 0"));
 $upgrade[] = Array('CreateIndexSQL',Array('idx_diskfile',db_get_table('bug_file'),'diskfile'));
 $upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'user_print_pref' ), "print_pref C(64) NOTNULL" ) );
 /* 60 */
@@ -362,7 +346,7 @@ $upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'bug_history' ), "fiel
 $upgrade[] = Array('CreateTableSQL', Array( db_get_table( 'tag' ), "
 	id				I		UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
 	user_id			I		UNSIGNED NOTNULL DEFAULT '0',
-	name			C(100)	NOTNULL PRIMARY DEFAULT \" '' \",
+	name			C(100)	NOTNULL PRIMARY DEFAULT '',
 	description		XL		NOTNULL,
 	date_created	T		NOTNULL DEFAULT '" . db_null_date() . "',
 	date_updated	T		NOTNULL DEFAULT '" . db_null_date() . "'
@@ -380,23 +364,18 @@ $upgrade[] = Array('CreateIndexSQL', Array( 'idx_typeowner', db_get_table( 'toke
 
 $upgrade[] = Array('CreateTableSQL', Array( db_get_table( 'plugin' ), "
 	basename		C(40)	NOTNULL PRIMARY,
-	enabled			L		NOTNULL DEFAULT \" '0' \"
+	enabled			L		NOTNULL DEFAULT '0'
 	", Array( 'mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS' ) ) );
 
 $upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'user_pref' ), "redirect_delay 	I NOTNULL DEFAULT 0" ) );
 
-/* apparently mysql now has a STRICT mode, where setting a DEFAULT value on a blob/text is now an error, instead of being silently ignored */
-if ( isset( $f_db_type ) && ( $f_db_type == 'mysql' || $f_db_type == 'mysqli' ) ) {
 	$upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'custom_field' ), "possible_values X NOTNULL" ) );
-} else {
-	$upgrade[] = Array('AlterColumnSQL', Array( db_get_table( 'custom_field' ), "possible_values X NOTNULL DEFAULT \" '' \"" ) );
-}
 
 $upgrade[] = Array( 'CreateTableSQL', Array( db_get_table( 'category' ), "
 	id				I		UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
 	project_id		I		UNSIGNED NOTNULL DEFAULT '0',
 	user_id			I		UNSIGNED NOTNULL DEFAULT '0',
-	name			C(128)	NOTNULL DEFAULT \" '' \",
+	name			C(128)	NOTNULL DEFAULT '',
 	status			I		UNSIGNED NOTNULL DEFAULT '0'
 	", Array( 'mysql' => 'ENGINE=MyISAM DEFAULT CHARSET=utf8', 'pgsql' => 'WITHOUT OIDS' ) ) );
 $upgrade[] = Array( 'CreateIndexSQL', Array( 'idx_category_project_name', db_get_table( 'category' ), 'project_id, name', array( 'UNIQUE' ) ) );
@@ -421,16 +400,16 @@ $upgrade[] = Array( 'AddColumnSQL', Array( db_get_table( 'project' ), "inherit_g
 $upgrade[] = Array( 'AddColumnSQL', Array( db_get_table( 'project_hierarchy' ), "inherit_parent I UNSIGNED NOTNULL DEFAULT '0'" ) );
 /* 80 */
 $upgrade[] = Array( 'AddColumnSQL', Array( db_get_table( 'plugin' ), "
-	protected		L		NOTNULL DEFAULT \" '0' \",
+	protected		L		NOTNULL DEFAULT '0',
 	priority		I		UNSIGNED NOTNULL DEFAULT '3'
 	" ) );
 $upgrade[] = Array( 'AddColumnSQL', Array( db_get_table( 'project_version' ), "
-	obsolete		L		NOTNULL DEFAULT \" '0' \"" ) );
+	obsolete		L		NOTNULL DEFAULT '0'" ) );
 $upgrade[] = Array( 'AddColumnSQL', Array( db_get_table( 'bug' ), "
     due_date        T       NOTNULL DEFAULT '" . db_null_date() . "' " ) );
 
 $upgrade[] = Array( 'AddColumnSQL', Array( db_get_table( 'custom_field' ), "
-  filter_by 		L 		NOTNULL DEFAULT \" '1' \"" ) );
+  filter_by 		L 		NOTNULL DEFAULT '1'" ) );
 $upgrade[] = Array( 'CreateTableSQL', Array( db_get_table( 'bug_revision' ), "
 	id			I		UNSIGNED NOTNULL PRIMARY AUTOINCREMENT,
 	bug_id		I		UNSIGNED NOTNULL,

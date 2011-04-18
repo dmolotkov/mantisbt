@@ -40,29 +40,6 @@ require_api( 'utility_api.php' );
 
 check_print_section_header_row( 'Database' );
 
-$t_adodb_version_check_ok = false;
-$t_adodb_version_info = 'No version of ADOdb could be found. This is a compulsory dependency of MantisBT.';
-if( isset( $ADODB_vers ) ) {
-	# ADOConnection::Version() is broken as it treats v5.1 the same as v5.10
-	# Therefore we must extract the correct version ourselves
-	# Upstream bug report: http://phplens.com/lens/lensforum/msgs.php?id=18320
-	# This bug has been fixed in ADOdb 5.11 (May 5, 2010) but we still
-	# need to use the backwards compatible approach to detect ADOdb <5.11.
-	if( preg_match( '/^[Vv]([0-9\.]+)/', $ADODB_vers, $t_matches ) == 1 ) {
-		$t_adodb_version_check_ok = version_compare( $t_matches[1], '5.10', '>=' );
-		$t_adodb_version_info = 'ADOdb version ' . htmlentities( $t_matches[1] ) . ' was found.';
-	}
-}
-check_print_test_row(
-	'Version of <a href="http://en.wikipedia.org/wiki/ADOdb">ADOdb</a> available is at least 5.11',
-	$t_adodb_version_check_ok,
-	$t_adodb_version_info
-);
-
-if( !$t_adodb_version_check_ok ) {
-	return;
-}
-
 $t_database_dsn = config_get_global( 'dsn' );
 check_print_info_row(
 	'Using a custom <a href="http://en.wikipedia.org/wiki/Database_Source_Name">Database Source Name</a> (DSN) for connecting to the database',
@@ -77,37 +54,11 @@ check_print_info_row(
 
 check_print_test_row(
 	'Database type is supported by the version of PHP installed on this server',
-	db_check_database_support( $t_database_type ),
+	extension_loaded( $t_database_type ),
 	array( false => 'The current database type is set to ' . htmlentities( $t_database_type ) . '. The version of PHP installed on this server does not have support for this database type.' )
 );
 
-if ( db_is_mssql() ) {
 
-	$t_mssql_textsize = ini_get_number( 'mssql.textsize' );
-	check_print_info_row(
-		'php.ini directive: mssql.textsize',
-		htmlentities( $t_mssql_textsize )
-	);
-
-	check_print_test_warn_row(
-		'mssql.textsize php.ini directive is set to -1',
-		$t_mssql_textsize == -1,
-		array( false => 'The value of the mssql.textsize directive is currently ' . htmlentities( $t_mssql_textsize ) . '. You should set this value to -1 to prevent large text fields being truncated upon being read from the database.' )
-	);
-
-	$t_mssql_textlimit = ini_get_number( 'mssql.textlimit' );
-	check_print_info_row(
-		'php.ini directive: mssql.textlimit',
-		htmlentities( $t_mssql_textlimit )
-	);
-
-	check_print_test_warn_row(
-		'mssql.textlimit php.ini directive is set to -1',
-		$t_mssql_textlimit == -1,
-		array( false => 'The value of the mssql.textlimit directive is currently ' . htmlentities( $t_mssql_textlimit ) . '. You should set this value to -1 to prevent large text fields being truncated upon being read from the database.' )
-	);
-
-}
 
 $t_database_hostname = config_get_global( 'hostname' );
 check_print_info_row(
@@ -139,11 +90,39 @@ if( !db_is_connected() ) {
 	return;
 }
 
-$t_database_server_info = $g_db->ServerInfo();
+$t_database_server_info = $g_db->get_server_info();
 check_print_info_row(
 	'Database server version',
 	htmlentities( $t_database_server_info['version'] )
 );
+
+if ( db_is_mssql() ) {
+
+	$t_mssql_textsize = ini_get_number( 'mssql.textsize' );
+	check_print_info_row(
+		'php.ini directive: mssql.textsize',
+		htmlentities( $t_mssql_textsize )
+	);
+
+	check_print_test_warn_row(
+		'mssql.textsize php.ini directive is set to -1',
+		$t_mssql_textsize == -1,
+		array( false => 'The value of the mssql.textsize directive is currently ' . htmlentities( $t_mssql_textsize ) . '. You should set this value to -1 to prevent large text fields being truncated upon being read from the database.' )
+	);
+
+	$t_mssql_textlimit = ini_get_number( 'mssql.textlimit' );
+	check_print_info_row(
+		'php.ini directive: mssql.textlimit',
+		htmlentities( $t_mssql_textlimit )
+	);
+
+	check_print_test_warn_row(
+		'mssql.textlimit php.ini directive is set to -1',
+		$t_mssql_textlimit == -1,
+		array( false => 'The value of the mssql.textlimit directive is currently ' . htmlentities( $t_mssql_textlimit ) . '. You should set this value to -1 to prevent large text fields being truncated upon being read from the database.' )
+	);
+
+}
 
 if( db_is_mysql() ) {
 

@@ -272,7 +272,7 @@ function user_is_realname_unique( $p_username, $p_realname ) {
 			# set flags for non-unique realnames
 			if( config_get( 'differentiate_duplicates' ) ) {
 				for( $i = 0;$i < $t_count;$i++ ) {
-					$t_user_id = db_result( $result, $i );
+					$t_user_id = db_result( $result );
 					user_set_field( $t_user_id, 'duplicate_realname', ON );
 				}
 			}
@@ -618,7 +618,7 @@ function user_delete( $p_user_id ) {
 
 			# unset flags if there are now only 2 unique names
 			for( $i = 0;$i < $t_count;$i++ ) {
-				$t_user_id = db_result( $result, $i );
+				$t_user_id = db_result( $result );
 				user_set_field( $t_user_id, 'duplicate_realname', OFF );
 			}
 		}

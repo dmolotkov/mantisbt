@@ -229,7 +229,7 @@ function summary_new_bug_count_by_date( $p_time_length = 1 ) {
 				FROM $t_mantis_bug_table
 				WHERE " . db_helper_compare_days( "" . db_now() . "", "date_submitted", "<= $c_time_length" ) . " AND $specific_where";
 	$result = db_query_bound( $query );
-	return db_result( $result, 0 );
+	return db_result( $result );
 }
 
 # returns the number of bugs resolved in the last X days (default is 1 day) for the
@@ -261,7 +261,7 @@ function summary_resolved_bug_count_by_date( $p_time_length = 1 ) {
 				AND " . db_helper_compare_days( "" . db_now() . "", "date_modified", "<= $c_time_length" ) . "
 				AND $specific_where";
 	$result = db_query_bound( $query, Array( $t_resolved, $t_resolved, $t_resolved ) );
-	return db_result( $result, 0 );
+	return db_result( $result );
 }
 
 # This function shows the number of bugs submitted in the last X days

@@ -586,7 +586,7 @@ function create_bug_enum_summary( $p_enum_string, $p_enum ) {
 					FROM $t_bug_table
 					WHERE $p_enum='$t_value' $specific_where";
 		$result = db_query( $query );
-		$t_metrics[$t_label] = db_result( $result, 0 );
+		$t_metrics[$t_label] = db_result( $result );
 	}
 
 	return $t_metrics;
@@ -612,7 +612,7 @@ function enum_bug_group( $p_enum_string, $p_enum ) {
 					WHERE $p_enum='$t_value' AND
 						status<'$t_res_val' $specific_where";
 		$result2 = db_query( $query );
-		$t_metrics['open'][$t_label] = db_result( $result2, 0, 0 );
+		$t_metrics['open'][$t_label] = db_result( $result2 );
 
 		# Calculates the number of bugs closed and puts the results in a table
 		$query = "SELECT COUNT(*)
@@ -620,7 +620,7 @@ function enum_bug_group( $p_enum_string, $p_enum ) {
 					WHERE $p_enum='$t_value' AND
 						status='$t_clo_val' $specific_where";
 		$result2 = db_query( $query );
-		$t_metrics['closed'][$t_label] = db_result( $result2, 0, 0 );
+		$t_metrics['closed'][$t_label] = db_result( $result2 );
 
 		# Calculates the number of bugs resolved and puts the results in a table
 		$query = "SELECT COUNT(*)
@@ -629,7 +629,7 @@ function enum_bug_group( $p_enum_string, $p_enum ) {
 						status>='$t_res_val'  AND
 						status<'$t_clo_val' $specific_where";
 		$result2 = db_query( $query );
-		$t_metrics['resolved'][$t_label] = db_result( $result2, 0, 0 );
+		$t_metrics['resolved'][$t_label] = db_result( $result2 );
 	}
 
 	# ## end for
@@ -765,9 +765,9 @@ function create_category_summary() {
 					WHERE category_id=" . db_param() . " AND $specific_where";
 		$result2 = db_query_bound( $query, Array( $t_cat_id ) );
 		if ( isset($t_metrics[$t_cat_name]) ) {
-			$t_metrics[$t_cat_name] = $t_metrics[$t_cat_name] + db_result( $result2, 0, 0 );
+			$t_metrics[$t_cat_name] = $t_metrics[$t_cat_name] + db_result( $result2 );
 		} else {
-			$t_metrics[$t_cat_name] = db_result( $result2, 0, 0 );
+			$t_metrics[$t_cat_name] = db_result( $result2 );
 		}
 	}
 

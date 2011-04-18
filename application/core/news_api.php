@@ -198,7 +198,7 @@ function news_get_count( $p_project_id, $p_sitewide = true ) {
 
 	$result = db_query_bound( $query );
 
-	return db_result( $result, 0, 0 );
+	return db_result( $result, 0 );
 }
 
 # --------------------

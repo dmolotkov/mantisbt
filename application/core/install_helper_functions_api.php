@@ -49,6 +49,31 @@ function check_php_version( $p_version ) {
 	}
 }
 
+function check_get_database_extensions( $p_list = false ) {
+	$t_ext_array = get_loaded_extensions();
+	$t_db = '';
+	foreach( $t_ext_array as $t_ext) {
+		// pdo drivers
+		if( substr( $t_ext, 0, 3 ) == 'pdo' ) {
+			$t_db .= $t_ext . ',';
+		}
+		// non-pdo drivers
+		switch ($t_ext) {
+			default:
+				continue;
+		}
+	}
+	
+	if( $p_list == true ) {
+		return rtrim( $t_db, ',' );
+	} else {
+		if( $t_db != '' ) {
+			return true;
+		}
+	}
+	return false;
+}
+
 /**
  * Legacy pre-1.2 date function used for upgrading from datetime to integer
  * representation of dates in the database.
@@ -57,7 +82,7 @@ function check_php_version( $p_version ) {
 function db_null_date() {
 	global $g_db;
 
-	return $g_db->BindTimestamp( $g_db->UserTimeStamp( 1, 'Y-m-d H:i:s', true ) );
+	return $g_db->legacy_null_date();
 }
 
 /**
@@ -74,7 +99,7 @@ function db_unixtimestamp( $p_date = null, $p_gmt = false ) {
 	global $g_db;
 
 	if( null !== $p_date ) {
-		$p_timestamp = $g_db->UnixTimeStamp( $p_date, $p_gmt );
+		$p_timestamp = $g_db->legacy_timestamp( $p_date );
 	} else {
 		$p_timestamp = time();
 	}
@@ -179,22 +204,6 @@ function install_date_migrate( $p_data) {
 		}
 		$t_new_column = implode( ',', $t_pairs );
 		$query = "SELECT $t_id_column, $t_old_column FROM $t_table";
-
-		$t_first_column = true;
-
-		# In order to handle large databases where we may timeout during the upgrade, we don't
-		# start form the beginning everytime.  Here we will only pickup rows where at least one
-		# of the datetime fields wasn't upgraded yet and upgrade them all.
-		foreach ( $p_data[3] as $t_new_column_name ) {
-			if ( $t_first_column ) {
-				$t_first_column = false;
-				$query .= ' WHERE ';
-			} else {
-				$query .= ' OR ';
-			}
-
-			$query .= "$t_new_column_name = 1";
-		}
 	} else {
 		$t_old_column = $p_data[2];
 		$t_new_column = $p_data[3] . "=" . db_param();
@@ -388,4 +397,37 @@ function install_stored_filter_migrate() {
 function install_do_nothing() {
 	# return 2 because that's what ADOdb/DataDict does when things happen properly
 	return 2;
+}
+
+function install_create_admin_if_not_exist( $p_data ) {
+	$t_user_table = db_get_table( 'user' );
+
+	$t_query = "SELECT count(*) FROM $t_user_table";
+	$t_result = db_query_bound( $t_query );
+	
+	if ( db_result($t_result) != 0 ) {
+		return 2;
+	}
+	
+	$p_username = $p_data[0]; 
+	$p_password = $p_data[1];
+	$p_email = 'root@localhost';
+	$t_seed = $p_email . $p_username;
+	$t_cookie_string = auth_generate_unique_cookie_string( $t_seed );
+	$t_password = auth_process_plain_password( $p_password );
+
+	$query = "INSERT INTO $t_user_table
+				    ( username, email, password, date_created, last_visit,
+				     enabled, protected, access_level, login_count, cookie_string, realname )
+				  VALUES
+				    ( " . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param()  . ",
+				     " . db_param() . ',' . db_param() . ',' . db_param() . ',' . db_param() . ', ' . db_param() . ')';
+	db_query_bound( $query, Array( $p_username, $p_email, $t_password, db_now(), db_now(), 1, 1, 90, 0, $t_cookie_string, '' ) );
+
+	# Create preferences for the user
+	$t_user_id = db_insert_id( $t_user_table );
+	
+	if( $t_user_id === 1 ) {
+		return 2;
+	}  
 }

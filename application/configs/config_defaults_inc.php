@@ -3942,50 +3942,15 @@ $g_debug_email = OFF;
 $g_show_queries_count = OFF;
 
 /**
- * --- detailed error messages -----
- * Shows a list of variables and their values when an error is triggered
- * Only applies to error types configured to 'halt' in $g_display_errors, below
- * WARNING: Potential security hazard.  Only turn this on when you really
- * need it for debugging
- * @global int $g_show_detailed_errors
+ * --- show friendly error messages -----
+ * Toggles between:
+ * i) showing friendly error messages - designed for end users.
+ * OR
+ * ii) Showing users designed for administrators/developers - showing a list of variables and their values 
+ * Only turn this off when you really need it for debugging
+ * @global int $g_show_show_friendly_errors
  */
-$g_show_detailed_errors = OFF;
-
-/**
- * --- error display ---
- * what errors are displayed and how?
- * The options for display are:
- *  'halt' - stop and display traceback
- *  'inline' - display 1 line error and continue
- *  'none' - no error displayed
- * A developer might set this in config_inc.php as:
- *	$g_display_errors = array(
- *		E_WARNING => 'halt',
- *		E_NOTICE => 'halt',
- *		E_USER_ERROR => 'halt',
- *		E_USER_WARNING => 'none',
- *		E_USER_NOTICE => 'none'
- *	);
- * @global array $g_display_errors
- */
-$g_display_errors = array(
-	E_WARNING => 'inline',
-	E_NOTICE => 'none',
-	E_USER_ERROR => 'halt',
-	E_USER_WARNING => 'inline',
-	E_USER_NOTICE => 'none'
-);
-
-/**
- * --- debug messages ---
- * If this option is turned OFF (default) page redirects will continue to
- *  function even if a non-fatal error occurs.  For debugging purposes, you
- *  can set this to ON so that any non-fatal error will prevent page redirection,
- *  allowing you to see the errors.
- * Only turn this option on for debugging
- * @global int $g_stop_on_errors
- */
-$g_stop_on_errors = OFF;
+$g_show_friendly_errors = OFF;
 
 /**
  * --- system logging ---
@@ -4045,7 +4010,6 @@ $g_global_settings = array(
 	'custom_headers',
 	'database_name',
 	'^db_',
-	'display_errors',
 	'form_security_',
 	'hostname',
 	'html_valid_tags',
@@ -4054,9 +4018,7 @@ $g_global_settings = array(
 	'plugins_enabled',
 	'plugins_installed',
 	'session_',
-	'show_detailed_errors',
 	'show_queries_',
-	'stop_on_errors',
 	'use_javascript',
 	'version_suffix',
 	'[^_]file[(_(?!threshold))$]',
@@ -4064,4 +4026,5 @@ $g_global_settings = array(
 	'_page$',
 	'_table$',
 	'_url$',
+	'show_friendly_errors',
 );

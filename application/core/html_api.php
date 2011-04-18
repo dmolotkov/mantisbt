@@ -378,8 +378,7 @@ function html_css_link( $p_filename ) {
  * (6) Print an HTML meta tag to redirect to another page
  * This function is optional and may be called by pages that need a redirect.
  * $p_time is the number of seconds to wait before redirecting.
- * If we have handled any errors on this page and the 'stop_on_errors' config
- *  option is turned on, return false and don't redirect.
+ * If we have handled any errors on this page return false and don't redirect.
  *
  * @param string $p_url The page to redirect: has to be a relative path
  * @param integer $p_time seconds to wait for before redirecting
@@ -387,7 +386,7 @@ function html_css_link( $p_filename ) {
  * @return boolean
  */
 function html_meta_redirect( $p_url, $p_time = null, $p_sanitize = true ) {
-	if( ON == config_get_global( 'stop_on_errors' ) && error_handled() ) {
+	if( error_handled() ) {
 		return false;
 	}
 

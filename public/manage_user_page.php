@@ -123,7 +123,6 @@ $query = "SELECT *
 	WHERE ".db_helper_compare_days("" . db_now() . "","date_created","<= $days_old")."
 	ORDER BY date_created DESC";
 $result = db_query_bound( $query );
-$g_db->debug=false;
 $new_user_count = db_num_rows( $result);
 
 # Never Logged In Form BEGIN

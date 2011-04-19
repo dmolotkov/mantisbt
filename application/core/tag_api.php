@@ -245,10 +245,11 @@ function tag_get( $p_tag_id ) {
 					WHERE id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_tag_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		return false;
 	}
-	$row = db_fetch_array( $result );
 
 	return $row;
 }
@@ -265,10 +266,11 @@ function tag_get_by_name( $p_name ) {
 					WHERE " . db_helper_like( 'name' );
 	$result = db_query_bound( $query, Array( $p_name ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+
+	if( !$row ) {
 		return false;
 	}
-	$row = db_fetch_array( $result );
 
 	return $row;
 }

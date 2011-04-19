@@ -314,12 +314,11 @@ function category_exists( $p_category_id ) {
 	$query = "SELECT * FROM $t_category_table
 				WHERE id=" . db_param();
 	$result = db_query_bound( $query, array( $c_category_id ) );
-	$count = db_num_rows( $result );
-	if( 0 == $count ) {
+	$row = db_fetch_array( $result );
+	if( !$row ) {
 		trigger_error( ERROR_CATEGORY_NOT_FOUND, ERROR );
 	}
 
-	$row = db_fetch_array( $result );
 	$g_category_cache[$p_category_id] = $row;
 	return $row;
 }
@@ -499,11 +498,9 @@ function category_get_filter_list( $p_project_id = null ) {
 				WHERE $t_project_where
 				ORDER BY c.name ";
 	$result = db_query_bound( $query );
-	$count = db_num_rows( $result );
-	$rows = array();
-	for( $i = 0;$i < $count;$i++ ) {
-		$row = db_fetch_array( $result );
 
+	$rows = array();
+	while( $row = db_fetch_array( $result ) ) {	
 		$rows[] = $row;
 		$g_category_cache[(int) $row['id']] = $row;
 	}

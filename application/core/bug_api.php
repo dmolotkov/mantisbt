@@ -610,7 +610,9 @@ function bug_cache_row( $p_bug_id, $p_trigger_errors = true ) {
 				  WHERE id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_bug_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		$g_cache_bug[$c_bug_id] = false;
 
 		if( $p_trigger_errors ) {
@@ -620,8 +622,6 @@ function bug_cache_row( $p_bug_id, $p_trigger_errors = true ) {
 			return false;
 		}
 	}
-
-	$row = db_fetch_array( $result );
 
 	return bug_add_to_cache( $row );
 }
@@ -722,7 +722,9 @@ function bug_text_cache_row( $p_bug_id, $p_trigger_errors = true ) {
 				  		b.bug_text_id = bt.id";
 	$result = db_query_bound( $query, Array( $c_bug_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		$g_cache_bug_text[$c_bug_id] = false;
 
 		if( $p_trigger_errors ) {
@@ -732,8 +734,6 @@ function bug_text_cache_row( $p_bug_id, $p_trigger_errors = true ) {
 			return false;
 		}
 	}
-
-	$row = db_fetch_array( $result );
 
 	$g_cache_bug_text[$c_bug_id] = $row;
 

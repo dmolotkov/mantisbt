@@ -675,10 +675,11 @@ function user_get_id_by_email( $p_email ) {
 				  WHERE email=" . db_param();
 	$result = db_query_bound( $query, Array( $p_email ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		return false;
 	} else {
-		$row = db_fetch_array( $result );
 		user_cache_database_result( $row );
 		return $row['id'];
 	}
@@ -698,10 +699,11 @@ function user_get_id_by_realname( $p_realname ) {
 				  WHERE realname=" . db_param();
 	$result = db_query_bound( $query, Array( $p_realname ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		return false;
 	} else {
-		$row = db_fetch_array( $result );
 		user_cache_database_result( $row );
 		return $row['id'];
 	}
@@ -1167,11 +1169,10 @@ function user_get_profile_row( $p_user_id, $p_profile_id ) {
 				  		user_id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_profile_id, $c_user_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	if( !$row ) {
 		trigger_error( ERROR_USER_PROFILE_NOT_FOUND, ERROR );
 	}
-
-	$row = db_fetch_array( $result );
 
 	return $row;
 }

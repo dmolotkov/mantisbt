@@ -4321,7 +4321,9 @@ function filter_cache_row( $p_filter_id, $p_trigger_errors = true ) {
 				  WHERE id=' . db_param();
 	$result = db_query_bound( $query, Array( $c_filter_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		if( $p_trigger_errors ) {
 			error_parameters( $p_filter_id );
 			trigger_error( ERROR_FILTER_NOT_FOUND, ERROR );
@@ -4329,8 +4331,6 @@ function filter_cache_row( $p_filter_id, $p_trigger_errors = true ) {
 			return false;
 		}
 	}
-
-	$row = db_fetch_array( $result );
 
 	$g_cache_filter[$c_filter_id] = $row;
 

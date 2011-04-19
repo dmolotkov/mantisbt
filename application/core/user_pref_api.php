@@ -189,7 +189,9 @@ function user_pref_cache_row( $p_user_id, $p_project_id = ALL_PROJECTS, $p_trigg
 				  WHERE user_id=" . db_param() . " AND project_id=" . db_param();
 	$result = db_query_bound( $query, Array( (int)$p_user_id, (int)$p_project_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		if( $p_trigger_errors ) {
 			trigger_error( ERROR_USER_PREFS_NOT_FOUND, ERROR );
 		} else {
@@ -197,8 +199,6 @@ function user_pref_cache_row( $p_user_id, $p_project_id = ALL_PROJECTS, $p_trigg
 			return false;
 		}
 	}
-
-	$row = db_fetch_array( $result );
 
 	if( !isset( $g_cache_user_pref[(int)$p_user_id] ) ) {
 		$g_cache_user_pref[(int)$p_user_id] = array();

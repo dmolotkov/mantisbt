@@ -172,10 +172,11 @@ function news_get_row( $p_news_id ) {
 				  WHERE id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_news_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		trigger_error( ERROR_NEWS_NOT_FOUND, ERROR );
 	} else {
-		$row = db_fetch_array( $result );
 		return $row;
 	}
 }

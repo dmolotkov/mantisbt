@@ -114,7 +114,9 @@ function version_cache_row( $p_version_id, $p_trigger_errors = true ) {
 				  WHERE id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_version_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		$g_cache_versions[$c_version_id] = false;
 
 		if( $p_trigger_errors ) {
@@ -125,7 +127,6 @@ function version_cache_row( $p_version_id, $p_trigger_errors = true ) {
 		}
 	}
 
-	$row = db_fetch_array( $result );
 	$g_cache_versions[$c_version_id] = $row;
 
 	return $row;

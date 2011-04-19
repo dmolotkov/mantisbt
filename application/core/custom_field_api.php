@@ -120,7 +120,9 @@ function custom_field_cache_row( $p_field_id, $p_trigger_errors = true ) {
 				  WHERE id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_field_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		if( $p_trigger_errors ) {
 			error_parameters( 'Custom ' . $p_field_id );
 			trigger_error( ERROR_CUSTOM_FIELD_NOT_FOUND, ERROR );
@@ -128,8 +130,6 @@ function custom_field_cache_row( $p_field_id, $p_trigger_errors = true ) {
 			return false;
 		}
 	}
-
-	$row = db_fetch_array( $result );
 
 	$g_cache_custom_field[$c_field_id] = $row;
 	$g_cache_name_to_id_map[$row['name']] = $c_field_id;
@@ -1120,11 +1120,11 @@ function custom_field_get_sequence( $p_field_id, $p_project_id ) {
 						project_id=" . db_param();
 	$result = db_query_bound( $query, Array( $c_field_id, $c_project_id ), 1 );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$t_row = db_fetch_array( $result );
+	
+	if( !$row ) {
 		return false;
 	}
-
-	$t_row = db_fetch_array( $result );
 
 	return $t_row['sequence'];
 }

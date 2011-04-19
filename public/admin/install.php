@@ -77,7 +77,7 @@ function print_test( $p_test_description, $p_result, $p_hard_fail = true, $p_mes
 # create an SQLArray to insert data
 function InsertData( $p_table, $p_data ) {
 	$query = "INSERT INTO " . $p_table . $p_data;
-	return Array( $query );
+	return array( $query );
 }
 
 # install_state
@@ -537,7 +537,7 @@ if( 3 == $t_install_state ) {
 			$dict = new MantisDatabaseDict( $g_db );
 
 			$sqlarray = $dict->CreateDatabase( $f_database_name );
-				$ret = $dict->ExecuteSQLArray( $sqlarray );
+				$ret = $dict->ExecuteSQLarray( $sqlarray );
 				if( $ret == 2 ) {
 					print_test_result( GOOD );
 					$t_db_open = true;
@@ -668,12 +668,12 @@ if( 3 == $t_install_state ) {
 				/* 0: function to call, 1: function params, 2: function to evaluate before calling upgrade, if false, skip upgrade. */
 				if( isset( $upgrade[$i][2] ) ) {
 					if( call_user_func_array( $upgrade[$i][2][0], $upgrade[$i][2][1] ) ) {
-						$sqlarray = call_user_func_array( Array( $dict, $upgrade[$i][0] ), $upgrade[$i][1] );
+						$sqlarray = call_user_func_array( array( $dict, $upgrade[$i][0] ), $upgrade[$i][1] );
 					} else {
 						$sqlarray = array();
 					}
 				} else {
-					$sqlarray = call_user_func_array( Array( $dict, $upgrade[$i][0] ), $upgrade[$i][1] );
+					$sqlarray = call_user_func_array( array( $dict, $upgrade[$i][0] ), $upgrade[$i][1] );
 				}
 			}
 			if( $f_log_queries ) {
@@ -685,7 +685,7 @@ if( 3 == $t_install_state ) {
 			} else {
 				echo 'Schema ' . $upgrade[$i][0] . ' ( ' . $t_target . ' )</td>';
 				if( $t_sql ) {
-					$ret = $dict->ExecuteSQLArray( $sqlarray );
+					$ret = $dict->ExecuteSQLarray( $sqlarray );
 				} else {
 					if( isset( $sqlarray[1] ) ) {
 						$ret = call_user_func( 'install_' . $sqlarray[0], $sqlarray[1] );

@@ -175,7 +175,7 @@ class MantisDatabaseDict {
 	}
 	
 	// Executes the sql array returned by GetTableSQL and GetIndexSQL
-	function ExecuteSQLArray($sql)
+	function ExecuteSQLarray($sql)
 	{
 		global $g_db;
 		foreach($sql as $line) {
@@ -868,7 +868,7 @@ class ADODB_DataDict {
 	}
 	
 	// Executes the sql array returned by GetTableSQL and GetIndexSQL
-	function ExecuteSQLArray($sql, $continueOnError = true)
+	function ExecuteSQLarray($sql, $continueOnError = true)
 	{
 		$rez = 2;
 		$conn = $this->connection;

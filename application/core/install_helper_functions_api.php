@@ -130,7 +130,7 @@ function install_category_migrate() {
 	$query = "SELECT project_id, category FROM $t_bug_table ORDER BY project_id, category";
 	$t_bug_result = db_query_bound( $query );
 
-	$t_data = Array();
+	$t_data = array();
 
 	# Find categories specified by project
 	while( $row = db_fetch_array( $t_category_result ) ) {
@@ -422,7 +422,7 @@ function install_create_admin_if_not_exist( $p_data ) {
 				  VALUES
 				    ( " . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param()  . ",
 				     " . db_param() . ',' . db_param() . ',' . db_param() . ',' . db_param() . ', ' . db_param() . ')';
-	db_query_bound( $query, Array( $p_username, $p_email, $t_password, db_now(), db_now(), 1, 1, 90, 0, $t_cookie_string, '' ) );
+	db_query_bound( $query, array( $p_username, $p_email, $t_password, db_now(), db_now(), 1, 1, 90, 0, $t_cookie_string, '' ) );
 
 	# Create preferences for the user
 	$t_user_id = db_insert_id( $t_user_table );

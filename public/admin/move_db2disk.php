@@ -138,7 +138,7 @@ function upgrade_move_att2disk( $p_source ) {
 				$c_new_file_name = $t_file_path . $c_filename;
 				$query2 = "UPDATE $t_file_table SET diskfile = " . db_param() . ",
 						folder = " . db_param() . ", content = '' WHERE id = " . db_param();
-				$update = @db_query_bound( $query2, Array( $c_new_file_name, $t_file_path, $t_row['id'] ) );
+				$update = @db_query_bound( $query2, array( $c_new_file_name, $t_file_path, $t_row['id'] ) );
 				if( !$update ) {
 					echo 'database update failed';
 					$t_failures++;

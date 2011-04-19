@@ -55,7 +55,7 @@ html_page_top();
 
 // check core language files
 if( function_exists( 'opendir' ) && function_exists( 'readdir' ) ) {
-	$t_lang_files = Array();
+	$t_lang_files = array();
 	if( $t_handle = opendir( dirname( dirname( __FILE__ ) ) . '/lang' ) ) {
 		while( false !== ( $t_file = readdir( $t_handle ) ) ) {
 			if ($t_file == 'strings_english.txt' ) {
@@ -71,7 +71,7 @@ if( function_exists( 'opendir' ) && function_exists( 'readdir' ) ) {
 	}
 }
 else {
-	$t_lang_files = Array();
+	$t_lang_files = array();
 	foreach( $g_language_choices_arr as $t_lang ) {
 		if( $t_lang == 'auto' ) {
 			continue;
@@ -176,11 +176,11 @@ function checkfile( $p_path, $p_file, $p_quiet = false ) {
 		return true;
 }
 
-$basevariables = Array();
+$basevariables = array();
 
 function checktoken( $file, $base = false ) {
 	$in_php_code = false;
-	$variables = Array();
+	$variables = array();
 	global $basevariables;
 	$current_var = null;
 	$last_token = 0;

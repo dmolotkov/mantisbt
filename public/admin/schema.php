@@ -25,6 +25,12 @@
 # An update identifier is inferred from the ordering of this table. ONLY ADD NEW CHANGES TO THE
 #  END OF THE TABLE!!!
 
+if ( !function_exists( 'db_null_date' ) ) {
+	function db_null_date() {
+		return 0;
+	}
+}
+
 $upgrade[] = array('CreateTableSQL',array(db_get_table( 'config' ),"
 			  config_id C(64) NOTNULL PRIMARY,
 			  project_id I DEFAULT '0' PRIMARY,

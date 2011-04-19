@@ -1141,7 +1141,7 @@ function custom_field_get_sequence( $p_field_id, $p_project_id ) {
 
 	$t_row = db_fetch_array( $result );
 	
-	if( !$row ) {
+	if( !$t_row ) {
 		return false;
 	}
 

@@ -286,7 +286,7 @@ function news_get_limited_rows( $p_offset, $p_project_id = null ) {
 			}
 
 			$query .= ' ORDER BY announcement DESC, id DESC';
-			$result = db_query( $query, $t_news_view_limit, $c_offset );
+			$result = db_query_bound( $query, null, $t_news_view_limit, $c_offset );
 			break;
 		case 1:
 

@@ -107,7 +107,7 @@ $query = "SELECT pft.id, pft.project_id, pft.filename, pft.filesize, pft.title, 
 					( ( pult.user_id = $t_user_id ) AND ( pult.access_level $t_access_clause ) ) OR
 					( ut.access_level >= $t_admin ) )
 			ORDER BY pt.name ASC, pft.title ASC";
-$result = db_query( $query );
+$result = db_query_bound( $query );
 $num_files = db_num_rows( $result );
 
 html_page_top( lang_get( 'docs_link' ) );

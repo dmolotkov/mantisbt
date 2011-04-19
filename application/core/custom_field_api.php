@@ -471,157 +471,176 @@ function custom_field_update( $p_field_id, $p_def_array ) {
 
 	$t_update_something = false;
 	$t_mantis_custom_field_table = db_get_table( 'custom_field' );
-	$query = "UPDATE $t_mantis_custom_field_table
-				  SET ";
+	$t_query_params = array();
+	$t_query = "UPDATE $t_mantis_custom_field_table SET ";
 	if( array_key_exists( 'name', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "name='$c_name'";
+		$t_query .= 'name=' . db_param();
+		$t_query_params[] = $c_name;
 	}
 	if( array_key_exists( 'type', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "type='$c_type'";
+		$t_query .= 'type=' . db_param();
+		$t_query_params[] = $c_type;
 	}
 	if( array_key_exists( 'possible_values', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "possible_values='$c_possible_values'";
+		$t_query .= 'possible_values=' . db_param();
+		$t_query_params[] = $c_possible_values;
 	}
 	if( array_key_exists( 'default_value', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "default_value='$c_default_value'";
+		$t_query .= 'default_value=' . db_param();
+		$t_query_params[] = $c_default_value;
 	}
 	if( array_key_exists( 'valid_regexp', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "valid_regexp='$c_valid_regexp'";
+		$t_query .= 'valid_regexp=' . db_param();
+		$t_query_params[] = $c_valid_regexp;
 	}
 	if( array_key_exists( 'access_level_r', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "access_level_r='$c_access_level_r'";
+		$t_query .= 'access_level_r=' . db_param();
+		$t_query_params[] = $c_access_level_r;
 	}
 	if( array_key_exists( 'access_level_rw', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "access_level_rw='$c_access_level_rw'";
+		$t_query .= 'access_level_rw=' . db_param();
+		$t_query_params[] = $c_access_level_rw;
 	}
 	if( array_key_exists( 'length_min', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "length_min='$c_length_min'";
+		$t_query .= 'length_min=' . db_param();
+		$t_query_params[] = $c_length_min;
 	}
 	if( array_key_exists( 'length_max', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "length_max='$c_length_max'";
+		$t_query .= 'length_max=' . db_param();
+		$t_query_params[] = $c_length_max;
 	}
 	if( array_key_exists( 'filter_by', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "filter_by='$c_filter_by'";
+		$t_query .= 'filter_by=' . db_param();
+		$t_query_params[] = $c_filter_by;
 	}
 	if( array_key_exists( 'display_report', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "display_report='$c_display_report'";
+		$t_query .= 'display_report=' . db_param();
+		$t_query_params[] = $c_display_report;
 	}
 	if( array_key_exists( 'display_update', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "display_update='$c_display_update'";
+		$t_query .= 'display_update=' . db_param();
+		$t_query_params[] = $c_display_update;
 	}
 	if( array_key_exists( 'display_resolved', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "display_resolved='$c_display_resolved'";
+		$t_query .= 'display_resolved=' . db_param();
+		$t_query_params[] = $c_display_resolved;
 	}
 	if( array_key_exists( 'display_closed', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "display_closed='$c_display_closed'";
+		$t_query .= 'display_closed=' . db_param();
+		$t_query_params[] = $c_display_closed;
 	}
 	if( array_key_exists( 'require_report', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "require_report='$c_require_report'";
+		$t_query .= 'require_report=' . db_param();
+		$t_query_params[] = $c_require_report;
 	}
 	if( array_key_exists( 'require_update', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "require_update='$c_require_update'";
+		$t_query .= 'require_update=' . db_param();
+		$t_query_params[] = $c_require_update;
 	}
 	if( array_key_exists( 'require_resolved', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "require_resolved='$c_require_resolved'";
+		$t_query .= 'require_resolved=' . db_param();
+		$t_query_params[] = $c_require_resolved;
 	}
 	if( array_key_exists( 'require_closed', $p_def_array ) ) {
 		if( !$t_update_something ) {
 			$t_update_something = true;
 		} else {
-			$query .= ', ';
+			$t_query .= ', ';
 		}
-		$query .= "require_closed='$c_require_closed'";
+		$t_query .= 'require_closed=' . db_param();
+		$t_query_params[] = $c_require_closed;
 	}
 
-	$query .= " WHERE id='$c_field_id'";
+	$t_query .= ' WHERE id=' . db_param();
+	$t_query_params[] = $c_field_id;
 
 	if( $t_update_something ) {
-		db_query( $query );
+		db_query_bound( $t_query, $t_query_params );
 		custom_field_clear_cache( $p_field_id );
 	} else {
 		return false;
@@ -791,25 +810,25 @@ function custom_field_get_id_from_name( $p_field_name, $p_truncated_length = nul
 	$c_field_name = db_prepare_string( $p_field_name );
 
 	if(( null === $p_truncated_length ) || ( utf8_strlen( $c_field_name ) != $p_truncated_length ) ) {
-		$query = "SELECT id FROM $t_custom_field_table WHERE name = '$c_field_name'";
+		$t_query = "SELECT id FROM $t_custom_field_table WHERE name = '$c_field_name'";
 	} else {
 		/** @todo This is to handle the case where we only have a truncated part of the name.  This happens in the case where
 		 * we are getting the custom field name from the history logs, since history is 32 and custom field name is 64.
 		 * This fix will handle entries already in the database, future entries should be handled by making the field name max lengths match.
 		 */
-		$query = "SELECT id FROM $t_custom_field_table WHERE name LIKE '$c_field_name%'";
+		$t_query = "SELECT id FROM $t_custom_field_table WHERE name LIKE '$c_field_name%'";
 	}
 
-	$t_result = db_query( $query, 1 );
+	$t_result = db_query_bound( $t_query, array() );
 
 	if( db_num_rows( $t_result ) == 0 ) {
 		return false;
 	}
 
-	$row = db_fetch_array( $t_result );
-	$g_cache_name_to_id_map[$p_field_name] = $row['id'];
+	$t_row = db_fetch_array( $t_result );
+	$g_cache_name_to_id_map[$p_field_name] = $t_row['id'];
 
-	return $row['id'];
+	return $t_row['id'];
 }
 
 /**
@@ -1065,7 +1084,7 @@ function custom_field_get_all_linked_fields( $p_bug_id ) {
 		$t_custom_field_table = db_get_table( 'custom_field' );
 		$t_custom_field_string_table = db_get_table( 'custom_field_string' );
 
-		$query = "SELECT f.name, f.type, f.access_level_r, f.default_value, f.type, s.value
+		$t_query = "SELECT f.name, f.type, f.access_level_r, f.default_value, f.type, s.value
 					FROM $t_custom_field_project_table p INNER JOIN $t_custom_field_table f
 						ON p.field_id = f.id
 					LEFT JOIN $t_custom_field_string_table s
@@ -1073,25 +1092,25 @@ function custom_field_get_all_linked_fields( $p_bug_id ) {
 					WHERE   p.project_id = '$c_project_id'
 					ORDER BY p.sequence ASC, f.name ASC";
 
-		$result = db_query( $query );
+		$t_result = db_query_bound( $t_query, array() );
 
-		$t_row_count = db_num_rows( $result );
+		$t_row_count = db_num_rows( $t_result );
 
 		$t_custom_fields = array();
 
-		for( $i = 0;$i < $t_row_count;++$i ) {
-			$row = db_fetch_array( $result );
+		for( $i = 0; $i < $t_row_count; ++$i ) {
+			$t_row = db_fetch_array( $t_result );
 
-			if( is_null( $row['value'] ) ) {
-				$t_value = $row['default_value'];
+			if( is_null( $t_row['value'] ) ) {
+				$t_value = $t_row['default_value'];
 			} else {
-				$t_value = custom_field_database_to_value( $row['value'], $row['type'] );
+				$t_value = custom_field_database_to_value( $t_row['value'], $t_row['type'] );
 			}
 
-			$t_custom_fields[$row['name']] = array(
-				'type' => $row['type'],
+			$t_custom_fields[$t_row['name']] = array(
+				'type' => $t_row['type'],
 				'value' => $t_value,
-				'access_level_r' => $row['access_level_r'],
+				'access_level_r' => $t_row['access_level_r'],
 			);
 		}
 
@@ -1256,19 +1275,19 @@ function custom_field_distinct_values( $p_field_def, $p_project_id = ALL_PROJECT
 							$t_mantis_bug_table.project_id = '$p_project_id'";
 			$t_from = $t_from . ", $t_mantis_bug_table";
 		}
-		$query2 = "SELECT $t_custom_field_string_table.value FROM $t_from
+		$t_query2 = "SELECT $t_custom_field_string_table.value FROM $t_from
 						WHERE $t_custom_field_string_table.field_id='$c_field_id' $t_where
 						GROUP BY $t_custom_field_string_table.value";
-		$result2 = db_query( $query2 );
-		$t_row_count = db_num_rows( $result2 );
+		$t_result2 = db_query_bound( $t_query2, array() );
+		$t_row_count = db_num_rows( $t_result2 );
 		if( 0 == $t_row_count ) {
 			return false;
 		}
 
-		for( $i = 0;$i < $t_row_count;$i++ ) {
-			$row = db_fetch_array( $result2 );
-			if( !is_blank( trim( $row['value'] ) ) ) {
-				array_push( $t_return_arr, $row['value'] );
+		for( $i = 0; $i < $t_row_count; $i++ ) {
+			$t_row = db_fetch_array( $t_result2 );
+			if( !is_blank( trim( $t_row['value'] ) ) ) {
+				array_push( $t_return_arr, $t_row['value'] );
 			}
 		}
 	}

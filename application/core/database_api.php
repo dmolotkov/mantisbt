@@ -218,11 +218,11 @@ function db_param() {
 }
 
 /**
- * Retrieve number of rows returned for a specific database query
+ * Retrieve number of rows affected for a specific database query
  * @param ADORecordSet $p_result Database Query Record Set to retrieve record count for.
  * @return int Record Count
  */
-function db_num_rows( $p_result ) {
+function db_affected_rows( $p_result ) {
 	global $g_db;
 
 	return $p_result->rowCount();

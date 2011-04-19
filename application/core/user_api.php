@@ -222,7 +222,7 @@ function user_is_name_unique( $p_username ) {
 				WHERE username=" . db_param();
 	$result = db_query_bound( $query, array( $p_username ), 1 );
 
-	if( db_num_rows( $result ) > 0 ) {
+	if( db_result( $result ) ) {
 		return false;
 	} else {
 		return true;
@@ -972,13 +972,9 @@ function user_get_accessible_subprojects( $p_user_id, $p_project_id, $p_show_dis
 		$result = db_query_bound( $query, ( $p_show_disabled ? array( $p_user_id, $t_public, $t_private, $p_user_id ) : array( $p_user_id, 1, $t_public, $t_private, $p_user_id ) ) );
 	}
 
-	$row_count = db_num_rows( $result );
-
 	$t_projects = array();
 
-	for( $i = 0;$i < $row_count;$i++ ) {
-		$row = db_fetch_array( $result );
-
+	while( $row = db_fetch_array( $result ) ) {
 		if( !isset( $t_projects[(int)$row['parent_id']] ) ) {
 			$t_projects[(int)$row['parent_id']] = array();
 		}
@@ -1051,10 +1047,9 @@ function user_get_assigned_projects( $p_user_id ) {
                     u.user_id=" . db_param() . "
                 ORDER BY p.name";
 	$t_result = db_query_bound( $t_query, array( $p_user_id ) );
-	$category_count = db_num_rows( $t_result );
+
 	$t_projects = array();
-	for( $i = 0;$i < $category_count;$i++ ) {
-		$t_row = db_fetch_array( $t_result );
+	while( $t_row = db_fetch_array( $t_result ) ) {
 		$t_project_id = $t_row['id'];
 		$t_projects[$t_project_id] = $t_row;
 	}
@@ -1091,7 +1086,7 @@ function user_get_unassigned_by_project_id( $p_project_id = null ) {
     $t_users = array();
     $t_show_realname = ( ON == config_get( 'show_realname' ) );
     $t_sort_by_last_name = ( ON == config_get( 'sort_by_last_name' ) );
-    $t_user_count = db_num_rows( $t_result );
+
 	while( $t_row = db_fetch_array( $t_result ) ) {
         $t_users[] = $t_row['id'];
         $t_user_name = string_attribute( $t_row['username'] );

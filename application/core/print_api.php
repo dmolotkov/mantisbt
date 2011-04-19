@@ -366,10 +366,8 @@ function print_news_item_option_list() {
 				ORDER BY date_posted DESC";
 	}
 	$result = db_query_bound( $query, ($t_global == true ? array() : array( $t_project_id ) ) );
-	$news_count = db_num_rows( $result );
 
-	for( $i = 0;$i < $news_count;$i++ ) {
-		$row = db_fetch_array( $result );
+	while( $row = db_fetch_array( $result ) ) {
 
 		$t_headline = string_display( $row['headline'] );
 		$t_announcement = $row['announcement'];
@@ -716,12 +714,10 @@ function print_build_option_list( $p_build = '' ) {
 				FROM $t_bug_table
 				WHERE $t_project_where
 				ORDER BY build DESC";
-	$result = db_query_bound( $query );
-	$option_count = db_num_rows( $result );
-
-	for( $i = 0;$i < $option_count;$i++ ) {
-		$row = db_fetch_array( $result );
-		$t_overall_build_arr[] = $row['build'];
+	$t_result = db_query_bound( $query );
+	
+	while( $t_row = db_fetch_array( $t_result ) ) {
+		$t_overall_build_arr[] = $t_row['build'];
 	}
 
 	$t_max_length = config_get( 'max_dropdown_length' );
@@ -893,9 +889,8 @@ function print_project_user_list_option_list2( $p_user_id ) {
 					u.user_id IS NULL
 				ORDER BY p.name";
 	$result = db_query_bound( $query, array( $c_user_id, true ) );
-	$category_count = db_num_rows( $result );
-	for( $i = 0;$i < $category_count;$i++ ) {
-		$row = db_fetch_array( $result );
+
+	while( $row = db_fetch_array( $result ) ) {
 		$t_project_name = string_attribute( $row['name'] );
 		$t_user_id = $row['id'];
 		echo "<option value=\"$t_user_id\">$t_project_name</option>";

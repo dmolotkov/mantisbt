@@ -324,11 +324,9 @@ function relationship_get( $p_relationship_id ) {
 				WHERE id=" . db_param();
 	$result = db_query_bound( $query, array( (int) $p_relationship_id ) );
 
-	$t_relationship_count = db_num_rows( $result );
+	$t_relationship = db_fetch_array( $result );
 
-	if( $t_relationship_count == 1 ) {
-		$t_relationship = db_fetch_array( $result );
-
+	if( $t_relationship ) {
 		$t_bug_relationship_data = new BugRelationshipData;
 		$t_bug_relationship_data->id = $t_relationship['id'];
 		$t_bug_relationship_data->src_bug_id = $t_relationship['source_bug_id'];
@@ -364,10 +362,10 @@ function relationship_get_all_src( $p_src_bug_id ) {
 	$t_src_project_id = bug_get_field( $p_src_bug_id, 'project_id' );
 
 	$t_bug_relationship_data = array();
-	$t_relationship_count = db_num_rows( $result );
 	$t_bug_array = array();
-	for( $i = 0;$i < $t_relationship_count;$i++ ) {
-		$row = db_fetch_array( $result );
+	$i = 0;
+
+	while( $row = db_fetch_array( $result ) ) {
 		$t_bug_relationship_data[$i] = new BugRelationshipData;
 		$t_bug_relationship_data[$i]->id = $row['id'];
 		$t_bug_relationship_data[$i]->src_bug_id = $row['source_bug_id'];
@@ -376,6 +374,7 @@ function relationship_get_all_src( $p_src_bug_id ) {
 		$t_bug_relationship_data[$i]->dest_project_id = $row['project_id'];
 		$t_bug_relationship_data[$i]->type = $row['relationship_type'];
 		$t_bug_array[] = $row['destination_bug_id'];
+		$i++;
 	}
 	unset( $t_bug_relationship_data[$t_relationship_count] );
 	if( !empty( $t_bug_array ) ) {
@@ -408,10 +407,10 @@ function relationship_get_all_dest( $p_dest_bug_id ) {
 	$t_dest_project_id = bug_get_field( $p_dest_bug_id, 'project_id' );
 
 	$t_bug_relationship_data = array();
-	$t_relationship_count = db_num_rows( $result );
 	$t_bug_array = array();
-	for( $i = 0;$i < $t_relationship_count;$i++ ) {
-		$row = db_fetch_array( $result );
+	$i = 0;
+
+	while( $row = db_fetch_array( $result ) ) {
 		$t_bug_relationship_data[$i] = new BugRelationshipData;
 		$t_bug_relationship_data[$i]->id = $row['id'];
 		$t_bug_relationship_data[$i]->src_bug_id = $row['source_bug_id'];
@@ -420,6 +419,7 @@ function relationship_get_all_dest( $p_dest_bug_id ) {
 		$t_bug_relationship_data[$i]->dest_project_id = $t_dest_project_id;
 		$t_bug_relationship_data[$i]->type = $row['relationship_type'];
 		$t_bug_array[] = $row['source_bug_id'];
+		$i++;
 	}
 	unset( $t_bug_relationship_data[$t_relationship_count] );
 
@@ -471,15 +471,10 @@ function relationship_exists( $p_src_bug_id, $p_dest_bug_id ) {
 				AND destination_bug_id=" . db_param() . ')';
 	$result = db_query_bound( $t_query, array( $c_src_bug_id, $c_dest_bug_id, $c_dest_bug_id, $c_src_bug_id ), 1 );
 
-	$t_relationship_count = db_num_rows( $result );
-
-	if( $t_relationship_count == 1 ) {
-
-		# return the first id
-		$row = db_fetch_array( $result );
+	if( $row = db_fetch_array( $result ) ) {
+		# return the first id	
 		return $row['id'];
 	} else {
-
 		# no relationship found
 		return 0;
 	}

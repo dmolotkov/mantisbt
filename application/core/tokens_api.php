@@ -47,12 +47,15 @@ function token_exists( $p_token_id ) {
 	$c_token_id = db_prepare_int( $p_token_id );
 	$t_tokens_table = db_get_table( 'tokens' );
 
-	$t_query = "SELECT id
-		          	FROM $t_tokens_table
+	$t_query = "SELECT id FROM $t_tokens_table
 		          	WHERE id=" . db_param();
 	$t_result = db_query_bound( $t_query, array( $c_token_id ), 1 );
 
-	return( 1 == db_num_rows( $t_result ) );
+	$t_row = db_fetch_array( $t_result );
+	if ( $t_row ) {
+		return true;
+	}
+	return false;
 }
 
 /**
@@ -87,10 +90,10 @@ function token_get( $p_type, $p_user_id = null ) {
 					WHERE type=" . db_param() . " AND owner=" . db_param();
 	$t_result = db_query_bound( $t_query, array( $c_type, $c_user_id ) );
 
-	if( db_num_rows( $t_result ) > 0 ) {
-		return db_fetch_array( $t_result );
+	$t_row = db_fetch_array( $t_result );
+	if ( $t_row ) {
+		return $t_row;
 	}
-
 	return null;
 }
 

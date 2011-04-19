@@ -164,10 +164,8 @@ function create_cumulative_bydate2() {
 				WHERE $specific_where
 				ORDER BY date_submitted";
 	$result = db_query_bound( $query, array() );
-	$bug_count = db_num_rows( $result );
 
-	for( $i = 0;$i < $bug_count;$i++ ) {
-		$row = db_fetch_array( $result );
+	while( $row = db_fetch_array( $result ) ) {
 
 		# rationalise the timestamp to a day to reduce the amount of data
 		$t_date = $row['date_submitted'];
@@ -192,13 +190,11 @@ function create_cumulative_bydate2() {
 						OR $t_history_table.id is NULL )
 			ORDER BY $t_bug_table.id, date_modified ASC";
 	$result = db_query_bound( $query, array() );
-	$bug_count = db_num_rows( $result );
 
 	$t_last_id = 0;
 	$t_last_date = 0;
 
-	for( $i = 0;$i < $bug_count;$i++ ) {
-		$row = db_fetch_array( $result );
+	while( $row = db_fetch_array( $result ) ) {
 		$t_id = $row['id'];
 
 		# if h_last_updated is NULL, there were no appropriate history records

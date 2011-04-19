@@ -345,13 +345,13 @@ function cfdef_prepare_list_distinct_values($p_field_def) {
 			  WHERE id=" . db_param();
 	$result = db_query_bound( $query, array( $p_field_def['id'] ) );
 
-	$t_row_count = db_num_rows( $result );
-	if ( 0 == $t_row_count ) {
+	$t_row = db_fetch_array( $result );
+	if ( !$t_row ) {
 		return false;
 	}
-	$row = db_fetch_array( $result );
+	
 
-	$t_possible_values = custom_field_prepare_possible_values( $row['possible_values'] );
+	$t_possible_values = custom_field_prepare_possible_values( $t_row['possible_values'] );
 	$t_values_arr = explode( '|', $t_possible_values );
 	$t_return_arr = array();
 

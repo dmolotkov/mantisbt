@@ -350,8 +350,8 @@ class BugData {
 						  WHERE id=" . db_param();
 			$result = db_query_bound( $query, array( $this->category_id ) );
 
-			if( db_num_rows( $result ) > 0 ) {
-				$this->handler_id = db_result( $result );
+			if( $t_result = db_result( $result ) ) {
+				$this->handler_id = $t_result;
 			}
 		}
 
@@ -958,11 +958,8 @@ function bug_copy( $p_bug_id, $p_target_project_id = null, $p_copy_custom_fields
 					   FROM $t_mantis_custom_field_string_table
 					   WHERE bug_id=" . db_param();
 		$result = db_query_bound( $query, array( $t_bug_id ) );
-		$t_count = db_num_rows( $result );
 
-		for( $i = 0;$i < $t_count;$i++ ) {
-			$t_bug_custom = db_fetch_array( $result );
-
+		while( $t_bug_custom = db_fetch_array( $result ) ) {
 			$c_field_id = db_prepare_int( $t_bug_custom['field_id'] );
 			$c_new_bug_id = db_prepare_int( $t_new_bug_id );
 			$c_value = $t_bug_custom['value'];
@@ -985,22 +982,17 @@ function bug_copy( $p_bug_id, $p_target_project_id = null, $p_copy_custom_fields
 					  FROM $t_mantis_bugnote_table
 					  WHERE bug_id=" . db_param();
 		$result = db_query_bound( $query, array( $t_bug_id ) );
-		$t_count = db_num_rows( $result );
 
-		for( $i = 0;$i < $t_count;$i++ ) {
-			$t_bug_note = db_fetch_array( $result );
+		while( $t_bug_note = db_fetch_array( $result ) ) {
 			$t_bugnote_text_id = $t_bug_note['bugnote_text_id'];
 
 			$query2 = "SELECT *
 						   FROM $t_mantis_bugnote_text_table
 						   WHERE id=" . db_param();
 			$result2 = db_query_bound( $query2, array( $t_bugnote_text_id ) );
-			$t_count2 = db_num_rows( $result2 );
 
 			$t_bugnote_text_insert_id = -1;
-			if( $t_count2 > 0 ) {
-				$t_bugnote_text = db_fetch_array( $result2 );
-
+			if( $t_bugnote_text = db_fetch_array( $result2 ) ) {
 				$query2 = "INSERT INTO $t_mantis_bugnote_text_table
 							   ( note )
 							   VALUES ( " . db_param() . ' )';
@@ -1024,11 +1016,9 @@ function bug_copy( $p_bug_id, $p_target_project_id = null, $p_copy_custom_fields
 	if( $p_copy_attachments ) {
 		$query = 'SELECT * FROM ' . $t_mantis_bug_file_table . ' WHERE bug_id = ' . db_param();
 		$result = db_query_bound( $query, array( $t_bug_id ) );
-		$t_count = db_num_rows( $result );
 
 		$t_bug_file = array();
-		for( $i = 0;$i < $t_count;$i++ ) {
-			$t_bug_file = db_fetch_array( $result );
+		while( $t_bug_file = db_fetch_array( $result ) ) {
 
 			# prepare the new diskfile name and then copy the file
 			$t_file_path = dirname( $t_bug_file['folder'] );
@@ -1067,10 +1057,8 @@ function bug_copy( $p_bug_id, $p_target_project_id = null, $p_copy_custom_fields
 					  FROM $t_mantis_bug_history_table
 					  WHERE bug_id = " . db_param();
 		$result = db_query_bound( $query, array( $t_bug_id ) );
-		$t_count = db_num_rows( $result );
 
-		for( $i = 0;$i < $t_count;$i++ ) {
-			$t_bug_history = db_fetch_array( $result );
+		while( $t_bug_history = db_fetch_array( $result ) ) {
 			$query = "INSERT INTO $t_mantis_bug_history_table
 						  ( user_id, bug_id, date_modified, field_name, old_value, new_value, type )
 						  VALUES ( " . db_param() . ",
@@ -1210,11 +1198,7 @@ function bug_delete_all( $p_project_id ) {
 				  WHERE project_id=" . db_param();
 	$result = db_query_bound( $query, array( $c_project_id ) );
 
-	$bug_count = db_num_rows( $result );
-
-	for( $i = 0;$i < $bug_count;$i++ ) {
-		$row = db_fetch_array( $result );
-
+	while( $row = db_fetch_array( $result ) ) {
 		bug_delete( $row['id'] );
 	}
 
@@ -1418,12 +1402,11 @@ function bug_get_attachments( $p_bug_id ) {
 		                WHERE bug_id=" . db_param() . "
 		                ORDER BY date_added";
 	$db_result = db_query_bound( $query, array( $c_bug_id ) );
-	$num_files = db_num_rows( $db_result );
 
 	$t_result = array();
 
-	for( $i = 0;$i < $num_files;$i++ ) {
-		$t_result[] = db_fetch_array( $db_result );
+	while( $t_row = db_fetch_array( $db_result ) ) {
+		$t_result[] = $t_row;
 	}
 
 	return $t_result;
@@ -1843,10 +1826,8 @@ function bug_monitor_copy( $p_source_bug_id, $p_dest_bug_id ) {
 		FROM ' . $t_bug_monitor_table . '
 		WHERE bug_id = ' . db_param();
 	$result = db_query_bound( $query, array( $c_source_bug_id ) );
-	$t_count = db_num_rows( $result );
 
-	for( $i = 0; $i < $t_count; $i++ ) {
-		$t_bug_monitor = db_fetch_array( $result );
+	while( $t_bug_monitor = db_fetch_array( $result ) ) {
 		if ( user_exists( $t_bug_monitor['user_id'] ) &&
 			!user_is_monitoring_bug( $t_bug_monitor['user_id'], $c_dest_bug_id ) ) {
 			$query = 'INSERT INTO ' . $t_bug_monitor_table . ' ( user_id, bug_id )

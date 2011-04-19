@@ -821,11 +821,12 @@ function custom_field_get_id_from_name( $p_field_name, $p_truncated_length = nul
 
 	$t_result = db_query_bound( $t_query, array() );
 
-	if( db_num_rows( $t_result ) == 0 ) {
+	$t_row = db_fetch_array( $t_result );
+	
+	if( !$t_row ) {
 		return false;
 	}
 
-	$t_row = db_fetch_array( $t_result );
 	$g_cache_name_to_id_map[$p_field_name] = $t_row['id'];
 
 	return $t_row['id'];
@@ -895,11 +896,9 @@ function custom_field_get_linked_ids( $p_project_id = ALL_PROJECTS ) {
 					  ORDER BY sequence ASC, name ASC";
 		}
 		$result = db_query_bound( $query );
-		$t_row_count = db_num_rows( $result );
 		$t_ids = array();
 
-		for( $i = 0;$i < $t_row_count;$i++ ) {
-			$row = db_fetch_array( $result );
+		while( $row = db_fetch_array( $result ) ) {
 			array_push( $t_ids, $row['id'] );
 		}
 		custom_field_cache_array_rows( $t_ids );
@@ -925,15 +924,12 @@ function custom_field_get_ids() {
 				  FROM $t_custom_field_table
 				  ORDER BY name ASC";
 		$result = db_query_bound( $query );
-		$t_row_count = db_num_rows( $result );
 		$t_ids = array();
 
-		for( $i = 0;$i < $t_row_count;$i++ ) {
-			$row = db_fetch_array( $result );
+		while( $t_row = db_fetch_array( $result ) ) {
+			$g_cache_custom_field[(int) $t_row['id']] = $t_row;
 
-			$g_cache_custom_field[(int) $row['id']] = $row;
-
-			array_push( $t_ids, $row['id'] );
+			array_push( $t_ids, $t_row['id'] );
 		}
 		$g_cache_cf_list = $t_ids;
 	} else {
@@ -958,13 +954,10 @@ function custom_field_get_project_ids( $p_field_id ) {
 				  WHERE field_id = " . db_param();
 	$result = db_query_bound( $query, array( $c_field_id ) );
 
-	$t_row_count = db_num_rows( $result );
 	$t_ids = array();
 
-	for( $i = 0;$i < $t_row_count;$i++ ) {
-		$row = db_fetch_array( $result );
-
-		array_push( $t_ids, $row['project_id'] );
+	while( $t_row = db_fetch_array( $result ) ) {
+		array_push( $t_ids, $t_row['project_id'] );
 	}
 
 	return $t_ids;
@@ -1031,8 +1024,8 @@ function custom_field_get_value( $p_field_id, $p_bug_id ) {
 				  		field_id=" . db_param();
 	$result = db_query_bound( $query, array( $c_bug_id, $c_field_id ) );
 
-	if( db_num_rows( $result ) > 0 ) {
-		return custom_field_database_to_value( db_result( $result ), $row['type'] );
+	if( $t_value = db_result( $result ) ) {
+		return custom_field_database_to_value( $t_value, $row['type'] );
 	} else {
 		return null;
 	}
@@ -1094,12 +1087,9 @@ function custom_field_get_all_linked_fields( $p_bug_id ) {
 
 		$t_result = db_query_bound( $t_query, array() );
 
-		$t_row_count = db_num_rows( $t_result );
-
 		$t_custom_fields = array();
 
-		for( $i = 0; $i < $t_row_count; ++$i ) {
-			$t_row = db_fetch_array( $t_result );
+		while( $t_row = db_fetch_array( $t_result ) ) {
 
 			if( is_null( $t_row['value'] ) ) {
 				$t_value = $t_row['default_value'];
@@ -1279,16 +1269,18 @@ function custom_field_distinct_values( $p_field_def, $p_project_id = ALL_PROJECT
 						WHERE $t_custom_field_string_table.field_id='$c_field_id' $t_where
 						GROUP BY $t_custom_field_string_table.value";
 		$t_result2 = db_query_bound( $t_query2, array() );
-		$t_row_count = db_num_rows( $t_result2 );
-		if( 0 == $t_row_count ) {
-			return false;
-		}
 
-		for( $i = 0; $i < $t_row_count; $i++ ) {
-			$t_row = db_fetch_array( $t_result2 );
+		$t_row_count = 0;
+
+		while( $t_row = db_fetch_array( $t_result2 ) ) {
+			$t_row_count++;
 			if( !is_blank( trim( $t_row['value'] ) ) ) {
 				array_push( $t_return_arr, $t_row['value'] );
 			}
+		}
+
+		if( 0 == $t_row_count ) {
+			return false;
 		}
 	}
 	return $t_return_arr;
@@ -1376,14 +1368,13 @@ function custom_field_set_value( $p_field_id, $p_bug_id, $p_value, $p_log_insert
 				  		bug_id=" . db_param();
 	$result = db_query_bound( $query, array( $c_field_id, $c_bug_id ) );
 
-	if( db_num_rows( $result ) > 0 ) {
+	if( $row = db_fetch_array( $result ) ) {
 		$query = "UPDATE $t_custom_field_string_table
 					  SET $t_value_field=" . db_param() . "
 					  WHERE field_id=" . db_param() . " AND
 					  		bug_id=" . db_param();
 		db_query_bound( $query, array( custom_field_value_to_database( $p_value, $t_type ), $c_field_id, $c_bug_id ) );
 
-		$row = db_fetch_array( $result );
 		history_log_event_direct( $c_bug_id, $t_name, custom_field_database_to_value( $row[$t_value_field], $t_type ), $p_value );
 	} else {
 		$query = "INSERT INTO $t_custom_field_string_table

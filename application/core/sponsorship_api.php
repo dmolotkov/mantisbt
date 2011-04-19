@@ -155,13 +155,13 @@ function sponsorship_get_id( $p_bug_id, $p_user_id = null ) {
 	$query = "SELECT id FROM $t_sponsorship_table WHERE bug_id = " . db_param() . " AND user_id = " . db_param();
 	$t_result = db_query_bound( $query, array( $c_bug_id, $c_user_id ), 1 );
 
-	if( db_num_rows( $t_result ) == 0 ) {
+	$t_row = db_fetch_array( $t_result );
+	
+	if( !$t_row ) {
 		return false;
 	}
 
-	$row = db_fetch_array( $t_result );
-
-	return (integer) $row['id'];
+	return (integer) $t_row['id'];
 }
 
 /**

@@ -62,10 +62,10 @@ function tag_exists( $p_tag_id ) {
 	$c_tag_id = db_prepare_int( $p_tag_id );
 	$t_tag_table = db_get_table( 'tag' );
 
-	$query = "SELECT * FROM $t_tag_table WHERE id=" . db_param();
+	$query = "SELECT id FROM $t_tag_table WHERE id=" . db_param();
 	$result = db_query_bound( $query, array( $c_tag_id ) );
 
-	return db_num_rows( $result ) > 0;
+	return db_result( $result ) > 0;
 }
 
 /**
@@ -92,7 +92,10 @@ function tag_is_unique( $p_name ) {
 	$query = 'SELECT id FROM ' . $t_tag_table . ' WHERE ' . db_helper_like( 'name' );
 	$result = db_query_bound( $query, array( $c_name ) );
 
-	return db_num_rows( $result ) == 0;
+	if ( db_result( $result ) ) {
+		return false;
+	}
+	return true;
 }
 
 /**
@@ -479,10 +482,10 @@ function tag_bug_is_attached( $p_tag_id, $p_bug_id ) {
 
 	$t_bug_tag_table = db_get_table( 'bug_tag' );
 
-	$query = "SELECT * FROM $t_bug_tag_table
+	$query = "SELECT id FROM $t_bug_tag_table
 					WHERE tag_id=" . db_param() . " AND bug_id=" . db_param();
 	$result = db_query_bound( $query, array( $c_tag_id, $c_bug_id ) );
-	return( db_num_rows( $result ) > 0 );
+	return( db_result( $result ) > 0 );
 }
 
 /**
@@ -501,10 +504,11 @@ function tag_bug_get_row( $p_tag_id, $p_bug_id ) {
 					WHERE tag_id=" . db_param() . " AND bug_id=" . db_param();
 	$result = db_query_bound( $query, array( $c_tag_id, $c_bug_id ) );
 
-	if( db_num_rows( $result ) == 0 ) {
+	$t_row = db_fetch_array( $result );
+	if( !$t_row ) {
 		trigger_error( TAG_NOT_ATTACHED, ERROR );
 	}
-	return db_fetch_array( $result );
+	return $t_row;
 }
 
 /**

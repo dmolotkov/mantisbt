@@ -224,9 +224,7 @@ if ( config_get_global( 'admin_checks' ) == ON ) {
 			if ( db_table_exists( db_get_table( 'upgrade' ) ) ) {
 				$query = "SELECT COUNT(*) from " . db_get_table( 'upgrade' ) . ";";
 				$result = db_query_bound( $query );
-				if ( db_num_rows( $result ) > 0 ) {
-					$t_upgrade_count = (int)db_result( $result );
-				}
+				$t_upgrade_count = (int)db_result( $result );
 			}
 
 			if ( $t_upgrade_count > 0 ) { # table exists, check for number of updates

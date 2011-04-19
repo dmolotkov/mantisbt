@@ -189,7 +189,6 @@ function history_get_raw_events_array( $p_bug_id, $p_user_id = null ) {
 				WHERE bug_id=" . db_param() . "
 				ORDER BY date_modified $t_history_order,id";
 	$result = db_query_bound( $query, array( $c_bug_id ) );
-	$raw_history_count = db_num_rows( $result );
 	$raw_history = array();
 
 	$t_private_bugnote_threshold = config_get( 'private_bugnote_threshold' );
@@ -198,10 +197,8 @@ function history_get_raw_events_array( $p_bug_id, $p_user_id = null ) {
 	$t_show_monitor_list_threshold = config_get( 'show_monitor_list_threshold' );
 
 	$t_standard_fields = columns_get_standard();
-
-	for( $i = 0, $j = 0;$i < $raw_history_count;++$i ) {
-		$t_row = db_fetch_array( $result );
-
+	$j = 0;
+	while( $t_row = db_fetch_array( $result ) ) {
 		$v_type = $t_row['type'];
 		$v_field_name = $t_row['field_name'];
 		$v_user_id = $t_row['user_id'];

@@ -108,9 +108,10 @@ function edit_printing_prefs( $p_user_id = null, $p_error_if_protected = true, $
 			WHERE user_id=" . db_param();
 	$result = db_query_bound( $query, array( $c_user_id ) );
 
+	$row = db_fetch_array( $result );
+	
 	## OOPS, No entry in the database yet.  Lets make one
-	if ( 0 == db_num_rows( $result ) ) {
-
+	if ( !$row ) {
 		# create a default array, same size than $t_field_name
 		for ($i=0 ; $i<$field_name_count ; $i++) {
 			$t_default_arr[$i] = 1 ;
@@ -131,10 +132,11 @@ function edit_printing_prefs( $p_user_id = null, $p_error_if_protected = true, $
 				FROM $t_user_print_pref_table
 				WHERE user_id=" . db_param();
 		$result = db_query_bound( $query, array( $c_user_id ) );
+		
+		$row = db_fetch_array( $result );
 	}
 
-	# putting the query result into an array with the same size as $t_fields_arr
-	$row = db_fetch_array( $result );
+	# putting the query result into an array with the same size as $t_fields_arr	
 	$t_prefs = $row['print_pref'];
 
 	# Account Preferences Form BEGIN

@@ -462,16 +462,14 @@ function version_get_all_rows( $p_project_id, $p_released = null, $p_obsolete = 
 
 	$query .= " ORDER BY date_order DESC";
 
-	$result = db_query_bound( $query, $query_params );
-	$count = db_num_rows( $result );
-	$rows = array();
-	for( $i = 0;$i < $count;$i++ ) {
-		$row = db_fetch_array( $result );
-		$g_cache_versions[(int) $row['id']] = $row;
+	$t_result = db_query_bound( $query, $query_params );
+	$t_rows = array();
+	while( $t_row = db_fetch_array( $t_result ) ) {
+		$g_cache_versions[(int) $t_row['id']] = $t_row;
 
-		$rows[] = $row;
+		$t_rows[] = $t_row;
 	}
-	return $rows;
+	return $t_rows;
 }
 
 /**
@@ -510,10 +508,8 @@ function version_get_all_rows_with_subs( $p_project_id, $p_released = null, $p_o
 				  WHERE $t_project_where $t_released_where $t_obsolete_where
 				  ORDER BY date_order DESC";
 	$result = db_query_bound( $query, $t_query_params );
-	$count = db_num_rows( $result );
 	$rows = array();
-	for( $i = 0;$i < $count;$i++ ) {
-		$row = db_fetch_array( $result );
+	while( $row = db_fetch_array( $result ) ) {
 		$rows[] = $row;
 	}
 	return $rows;
@@ -552,10 +548,10 @@ function version_get_id( $p_version, $p_project_id = null, $p_inherit = null ) {
 
 	$result = db_query_bound( $query, array( $p_version ) );
 
-	if( 0 == db_num_rows( $result ) ) {
-		return false;
+	if( $t_row = db_result( $result ) ) {
+		return $t_row;
 	} else {
-		return db_result( $result );
+		return false;
 	}
 }
 

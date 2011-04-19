@@ -229,11 +229,9 @@ function news_get_rows( $p_project_id, $p_sitewide = true ) {
 	$result = db_query_bound( $query, array() );
 
 	$t_rows = array();
-	$t_row_count = db_num_rows( $result );
 
-	for( $i = 0;$i < $t_row_count;$i++ ) {
-		$row = db_fetch_array( $result );
-		array_push( $t_rows, $row );
+	while( $t_row = db_fetch_array( $result ) ) {
+		array_push( $t_rows, $t_row );
 	}
 
 	return $t_rows;
@@ -242,8 +240,8 @@ function news_get_rows( $p_project_id, $p_sitewide = true ) {
 # --------------------
 # Check if the specified news item is private
 function news_get_field( $p_news_id, $p_field_name ) {
-	$row = news_get_row( $p_news_id );
-	return( $row[$p_field_name] );
+	$t_row = news_get_row( $p_news_id );
+	return( $t_row[$p_field_name] );
 }
 
 # --------------------
@@ -314,12 +312,10 @@ function news_get_limited_rows( $p_offset, $p_project_id = null ) {
 
 	# end switch
 
-	$t_row_count = db_num_rows( $result );
 
 	$t_rows = array();
-	for( $i = 0;$i < $t_row_count;$i++ ) {
-		$row = db_fetch_array( $result );
-		array_push( $t_rows, $row );
+	while( $t_row = db_fetch_array( $result ) ) {
+		array_push( $t_rows, $t_row );
 	}
 
 	return $t_rows;

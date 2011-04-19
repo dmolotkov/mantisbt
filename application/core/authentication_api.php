@@ -599,8 +599,7 @@ function auth_get_current_user_cookie( $p_login_anonymous=true ) {
 					$query = 'SELECT id, cookie_string FROM ' . db_get_table( 'user' ) . ' WHERE username = ' . db_param();
 					$result = db_query_bound( $query, array( config_get( 'anonymous_account' ) ) );
 
-					if( 1 == db_num_rows( $result ) ) {
-						$row = db_fetch_array( $result );
+					if( $row = db_fetch_array( $result ) ) {						
 						$t_cookie = $row['cookie_string'];
 
 						$g_cache_anonymous_user_cookie_string = $t_cookie;
@@ -802,15 +801,16 @@ function auth_get_current_user_id() {
 				  WHERE cookie_string=" . db_param();
 	$result = db_query_bound( $query, array( $t_cookie_string ) );
 
+	$t_user_id = (int) db_result( $result );
+	
 	# The cookie was invalid. Clear the cookie (to allow people to log in again)
 	# and give them an Access Denied message.
-	if( db_num_rows( $result ) < 1 ) {
+	if( !$t_user_id ) {
 		auth_clear_cookies();
 		access_denied();
 		exit();
 	}
 
-	$t_user_id = (int) db_result( $result );
 	$g_cache_current_user_id = $t_user_id;
 
 	return $t_user_id;

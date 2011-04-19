@@ -253,10 +253,8 @@ function email_collect_recipients( $p_bug_id, $p_notify_type, $p_extra_user_ids_
 					  FROM $t_bug_monitor_table
 					  WHERE bug_id=" . db_param();
 		$result = db_query_bound( $query, array( $c_bug_id ) );
-
-		$count = db_num_rows( $result );
-		for( $i = 0;$i < $count;$i++ ) {
-			$t_user_id = db_result( $result );
+		
+		while( $t_user_id = db_result( $result ) ) {
 			$t_recipients[$t_user_id] = true;
 			log_event( LOG_EMAIL_RECIPIENT, sprintf( 'Issue = #%d, add Monitor = @U%d', $p_bug_id, $t_user_id ) );
 		}
@@ -276,9 +274,7 @@ function email_collect_recipients( $p_bug_id, $p_notify_type, $p_extra_user_ids_
 					  WHERE bug_id = " . db_param();
 		$result = db_query_bound( $query, array( $c_bug_id ) );
 
-		$count = db_num_rows( $result );
-		for( $i = 0;$i < $count;$i++ ) {
-			$t_user_id = db_result( $result );
+		while( $t_user_id = db_result( $result ) ) {
 			$t_recipients[$t_user_id] = true;
 			log_event( LOG_EMAIL_RECIPIENT, sprintf( 'Issue = #%d, add Note Author = @U%d', $p_bug_id, $t_user_id ) );
 		}

@@ -163,10 +163,8 @@ function project_cache_all() {
 		$query = "SELECT *
 					  FROM $t_project_table";
 		$result = db_query_bound( $query );
-		$count = db_num_rows( $result );
-		for( $i = 0;$i < $count;$i++ ) {
-			$row = db_fetch_array( $result );
 
+		while( $row = db_fetch_array( $result ) ) {
 			$g_cache_project[(int) $row['id']] = $row;
 		}
 
@@ -423,11 +421,11 @@ function project_get_id_by_name( $p_project_name ) {
 	$query = "SELECT id FROM $t_project_table WHERE name = " . db_param();
 	$t_result = db_query_bound( $query, array( $p_project_name ), 1 );
 
-	if( db_num_rows( $t_result ) == 0 ) {
-		return 0;
-	} else {
-		return db_result( $t_result );
-	}
+	$ret = db_result( $t_result );
+	if( $ret ) {
+		return $ret;
+	} 
+	return 0;
 }
 
 # Return the row describing the given project
@@ -480,8 +478,9 @@ function project_get_local_user_access_level( $p_project_id, $p_user_id ) {
 				  WHERE user_id=" . db_param() . " AND project_id=" . db_param();
 	$result = db_query_bound( $query, array( (int) $p_user_id, $p_project_id ) );
 
-	if( db_num_rows( $result ) > 0 ) {
-		return db_result( $result );
+	$ret = db_result( $result );
+	if( $ret ) {
+		return $ret;
 	} else {
 		return false;
 	}
@@ -499,10 +498,9 @@ function project_get_local_user_rows( $p_project_id ) {
 	$result = db_query_bound( $query, array( (int) $p_project_id ) );
 
 	$t_user_rows = array();
-	$t_row_count = db_num_rows( $result );
 
-	for( $i = 0;$i < $t_row_count;$i++ ) {
-		array_push( $t_user_rows, db_fetch_array( $result ) );
+	while( $t_row = db_fetch_array( $result ) ) {
+		array_push( $t_user_rows, $t_row );
 	}
 
 	return $t_user_rows;
@@ -589,10 +587,8 @@ function project_get_all_user_rows( $p_project_id = ALL_PROJECTS, $p_access_leve
 					AND access_level $t_global_access_clause";
 
 		$result = db_query_bound( $query, array( $t_on ) );
-		$t_row_count = db_num_rows( $result );
-		for( $i = 0;$i < $t_row_count;$i++ ) {
-			$row = db_fetch_array( $result );
-			$t_users[$row['id']] = $row;
+		while( $t_row = db_fetch_array( $result ) ) {
+			$t_users[$t_row['id']] = $t_row;
 		}
 	}
 
@@ -606,9 +602,7 @@ function project_get_all_user_rows( $p_project_id = ALL_PROJECTS, $p_access_leve
 				AND l.project_id = " . db_param();
 
 		$result = db_query_bound( $query, array( $t_on, $c_project_id ) );
-		$t_row_count = db_num_rows( $result );
-		for( $i = 0;$i < $t_row_count;$i++ ) {
-			$row = db_fetch_array( $result );
+		while( $row = db_fetch_array( $result ) ) {
 			if( is_array( $p_access_level ) ) {
 				$t_keep = in_array( $row['access_level'], $p_access_level );
 			} else {

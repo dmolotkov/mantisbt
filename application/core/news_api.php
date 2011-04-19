@@ -226,7 +226,7 @@ function news_get_rows( $p_project_id, $p_sitewide = true ) {
 
 	$query .= " ORDER BY date_posted DESC";
 
-	$result = db_query( $query );
+	$result = db_query_bound( $query, array() );
 
 	$t_rows = array();
 	$t_row_count = db_num_rows( $result );

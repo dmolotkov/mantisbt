@@ -729,7 +729,7 @@ function file_add( $p_bug_id, $p_file, $p_table = 'bug', $p_title = '', $p_desc 
 						(" . $p_table . "_id, title, description, diskfile, filename, folder, filesize, file_type, date_added, content, user_id)
 					  VALUES
 						($c_id, '$c_title', '$c_desc', '$c_unique_name', '$c_new_file_name', '$c_file_path', $c_file_size, '$c_file_type', '" . $c_date_added . "', $c_content, $c_user_id)";
-	db_query( $query );
+	db_query_bound( $query, array() );
 
 	if( 'bug' == $p_table ) {
 

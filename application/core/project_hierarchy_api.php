@@ -186,13 +186,11 @@ function project_hierarchy_cache( $p_show_disabled = false ) {
 				  ORDER BY p.name";
 
 	$result = db_query_bound( $query, ( $p_show_disabled ? null : Array( true ) ) );
-	$row_count = db_num_rows( $result );
 
 	$g_cache_project_hierarchy = array();
 	$g_cache_project_inheritance = array();
 
-	for( $i = 0;$i < $row_count;$i++ ) {
-		$row = db_fetch_array( $result );
+	while ( $row = db_fetch_array( $result ) ) {
 
 		if( null === $row['parent_id'] ) {
 			$row['parent_id'] = ALL_PROJECTS;

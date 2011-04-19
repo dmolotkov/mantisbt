@@ -86,7 +86,13 @@ function user_cache_row( $p_user_id, $p_trigger_errors = true ) {
 				  WHERE id=" . db_param();
 	$result = db_query_bound( $query, Array( $p_user_id ) );
 
-	if( 0 == db_num_rows( $result ) ) {
+	$row = db_fetch_array( $result );
+	
+	if ( $row ) {
+		$g_cache_user[$p_user_id] = $row;
+
+		return $row;	
+	} else {
 		$g_cache_user[$p_user_id] = false;
 
 		if( $p_trigger_errors ) {
@@ -96,12 +102,6 @@ function user_cache_row( $p_user_id, $p_trigger_errors = true ) {
 
 		return false;
 	}
-
-	$row = db_fetch_array( $result );
-
-	$g_cache_user[$p_user_id] = $row;
-
-	return $row;
 }
 
 function user_cache_array_rows( $p_user_id_array ) {
@@ -653,13 +653,12 @@ function user_get_id_by_name( $p_username ) {
 				  WHERE username=" . db_param();
 	$result = db_query_bound( $query, Array( $p_username ) );
 
-	if( 0 == db_num_rows( $result ) ) {
-		return false;
-	} else {
-		$row = db_fetch_array( $result );
+	$row = db_fetch_array( $result );
+	if( $row ) {		
 		user_cache_database_result( $row );
 		return $row['id'];
 	}
+	return false;
 }
 
 # Get a user id from an email address
@@ -894,13 +893,9 @@ function user_get_accessible_projects( $p_user_id, $p_show_disabled = false ) {
 			  ORDER BY p.name";
 		$result = db_query_bound( $query, ( $p_show_disabled ? Array( $p_user_id, $t_public, $t_private, $p_user_id ) : Array( $p_user_id, true, $t_public, $t_private, $p_user_id ) ) );
 
-		$row_count = db_num_rows( $result );
-
 		$t_projects = array();
 
-		for( $i = 0;$i < $row_count;$i++ ) {
-			$row = db_fetch_array( $result );
-
+		while ( $row = db_fetch_array( $result ) ) {
 			$t_projects[(int)$row['id']] = ( $row['parent_id'] === NULL ) ? 0 : (int)$row['parent_id'];
 		}
 

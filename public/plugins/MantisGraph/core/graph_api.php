@@ -585,7 +585,7 @@ function create_bug_enum_summary( $p_enum_string, $p_enum ) {
 		$query = "SELECT COUNT(*)
 					FROM $t_bug_table
 					WHERE $p_enum='$t_value' $specific_where";
-		$result = db_query( $query );
+		$result = db_query_bound( $query, array() );
 		$t_metrics[$t_label] = db_result( $result );
 	}
 
@@ -611,7 +611,7 @@ function enum_bug_group( $p_enum_string, $p_enum ) {
 					FROM $t_bug_table
 					WHERE $p_enum='$t_value' AND
 						status<'$t_res_val' $specific_where";
-		$result2 = db_query( $query );
+		$result2 = db_query_bound( $query, array() );
 		$t_metrics['open'][$t_label] = db_result( $result2 );
 
 		# Calculates the number of bugs closed and puts the results in a table
@@ -619,7 +619,7 @@ function enum_bug_group( $p_enum_string, $p_enum ) {
 					FROM $t_bug_table
 					WHERE $p_enum='$t_value' AND
 						status='$t_clo_val' $specific_where";
-		$result2 = db_query( $query );
+		$result2 = db_query_bound( $query, array() );
 		$t_metrics['closed'][$t_label] = db_result( $result2 );
 
 		# Calculates the number of bugs resolved and puts the results in a table
@@ -628,7 +628,7 @@ function enum_bug_group( $p_enum_string, $p_enum ) {
 					WHERE $p_enum='$t_value' AND
 						status>='$t_res_val'  AND
 						status<'$t_clo_val' $specific_where";
-		$result2 = db_query( $query );
+		$result2 = db_query_bound( $query, array() );
 		$t_metrics['resolved'][$t_label] = db_result( $result2 );
 	}
 
@@ -820,7 +820,7 @@ function create_cumulative_bydate() {
 								AND $t_history_table.field_name = 'status' )
 						OR $t_history_table.id is NULL )
 			ORDER BY $t_bug_table.id, date_modified ASC";
-	$result = db_query( $query );
+	$result = db_query_bound( $query, array() );
 	$bug_count = db_num_rows( $result );
 
 	$t_last_id = 0;

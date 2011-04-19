@@ -44,7 +44,7 @@ html_page_top( 'MantisBT Administration - System Utilities' );
 <br /><br />
 
 <table width="80%" bgcolor="#222222" cellpadding="10" cellspacing="1">
-	<tr><td bgcolor=\"#e8e8e8\" colspan=\"2\"><span class=\"title\">Upgrade Utilities</span></td></tr>
+	<tr><td bgcolor="#e8e8e8" colspan="2"><span class="title">Upgrade Utilities</span></td></tr>
 
 	<!-- # Headings -->
 	<tr bgcolor="#ffffff"><th width="70%">Description</th><th width="30%">Execute</th></tr>
@@ -64,15 +64,15 @@ html_page_top( 'MantisBT Administration - System Utilities' );
 	<tr bgcolor="#ffffff"><td>Copy Custom Field to Standard Field.</td><td class="center">
 	<form method="post" action="copy_field.php">
 		From
-		<SELECT name="source_id">
+		<select name="source_id">
 			<?php
 				$t_custom_ids = custom_field_get_ids();
 foreach( $t_custom_ids as $t_id ) {
-	printf( "<OPTION VALUE=\"%d\">%s", $t_id, custom_field_get_field( $t_id, 'name' ) );
+	printf( "<option value=\"%d\">%s</option>", $t_id, custom_field_get_field( $t_id, 'name' ) );
 }
 ?>
-		</SELECT> to
-		<SELECT name="dest_id">
+		</select> to
+		<select name="dest_id">
 			<?php
 /** @todo should be expanded and configurable */
 // list matches exact field name from database
@@ -80,10 +80,10 @@ $t_dest_ids = array(
 	'fixed_in_version',
 );
 foreach( $t_dest_ids as $t_id ) {
-	printf( "<OPTION VALUE=\"%s\">%s", $t_id, $t_id );
+	printf( "<option value=\"%s\">%s</option>", $t_id, $t_id );
 }
 ?>
-		</SELECT>
+		</select>
 	<input type="submit" class="button" value="Copy" />
 	</form>
 	</td></tr>
@@ -92,7 +92,6 @@ foreach( $t_dest_ids as $t_id ) {
 	<tr bgcolor="#ffffff"><td>Show database statistics.</td><td class="center">
 	<?php html_button( 'db_stats.php', 'Display', array() );?>
 	</td></tr>
-
 </table>
 <?php
 	html_page_bottom();

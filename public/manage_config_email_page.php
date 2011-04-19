@@ -60,18 +60,23 @@ auth_reauthenticate();
  *
  * @static yes
  * @public yes
- * @param $paArray1 array
- * @param $paArray2 array
+ * @param $p_array1 array
+ * @param $p_array2 array
  * @return array
  */
-function array_merge_recursive2($p_Array1, $p_Array2) {
-	if (!is_array($p_Array1) or !is_array($p_Array2)) {
-		return $p_Array2;
+function array_merge_recursive2( $p_array1, $p_array2 ) {
+	if ( !is_array( $p_array1 ) || !is_array( $p_array2 ) ) {
+		return $p_array2;
 	}
-	foreach ( $p_Array2 AS $t_Key2 => $t_Value2) {
-		$p_Array1[$t_Key2] = array_merge_recursive2( @$p_Array1[$t_Key2], $t_Value2);
+	$t_merged_array = $p_array1;
+	foreach ( $p_array2 as $t_key2 => $t_value2 ) {
+		if ( array_key_exists( $t_key2, $t_merged_array ) && is_array( $t_value2 ) ) {
+			$t_merged_array[$t_key2] = array_merge_recursive2( $t_merged_array[$t_key2], $t_value2 );
+		} else {
+			$t_merged_array[$t_key2] = $t_value2;
+		}
 	}
-	return $p_Array1;
+	return $t_merged_array;
 }
 
 # --------------------

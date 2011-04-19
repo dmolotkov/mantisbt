@@ -124,7 +124,7 @@ function mci_file_add( $p_id, $p_name, $p_content, $p_file_type, $p_table, $p_ti
 			(" . $p_table . "_id, title, description, diskfile, filename, folder, filesize, file_type, date_added, content, user_id)
 		VALUES
 			($c_id, '$c_title', '$c_desc', '$c_disk_file_name', '$c_new_file_name', '$c_file_path', $c_file_size, '$c_file_type', '" . db_now() . "', $c_content, $c_user_id)";
-	db_query( $query );
+	db_query_bound( $query, array() );
 
 	# get attachment id
 	$t_attachment_id = db_insert_id( $t_file_table );
@@ -170,7 +170,7 @@ function mci_file_get( $p_file_id, $p_type, $p_user_id ) {
 			return new soap_fault( 'Server', '', 'Invalid file type '.$p_type. ' .' );
 	}
 
-	$result = db_query( $query );
+	$result = db_query_bound( $query, array() );
 
 	if ( $result->EOF ) {
 		return new soap_fault( 'Client', '', 'Unable to find an attachment with type ' . $p_type. ' and id ' . $p_file_id . ' .' );

@@ -257,7 +257,7 @@ function mci_filter_db_get_available_queries( $p_project_id = null, $p_user_id =
 				OR project_id='0')
 				AND name!=''
 				ORDER BY is_public DESC, name ASC";
-	$result = db_query( $query );
+	$result = db_query_bound( $query, array() );
 	$query_count = db_num_rows( $result );
 
 	for( $i = 0;$i < $query_count;$i++ ) {

@@ -143,6 +143,19 @@ function log_event( $p_level, $p_msg, $p_backtrace = null ) {
 function log_print_to_page() {
 	if ( config_get_global( 'log_destination' ) === 'page' && auth_is_user_authenticated() && access_has_global_level( config_get( 'show_log_threshold' ) ) ) {
 		global $g_log_events, $g_log_levels;
+
+		$t_unique_queries_count = 0;
+		$t_total_query_execution_time = 0;
+		$t_unique_queries = array();
+		$t_total_queries_count = 0;
+		$t_total_event_count = count( $g_log_events );
+
+		if( $t_total_event_count == 0 ) {
+			echo "\n\n<!--Mantis Debug Log Output-->";
+			echo "<!--END Mantis Debug Log Output-->\n\n";
+			return;
+		}
+
 		echo "\n\n<!--Mantis Debug Log Output-->";
 		echo "<hr />\n";
 		echo "<table id=\"log-event-list\">\n";
@@ -153,21 +166,9 @@ function log_print_to_page() {
 		echo "\t\t\t<th>" . lang_get( 'log_page_caller' ) . "</th>\n";
 		echo "\t\t\t<th>" . lang_get( 'log_page_event' ) . "</th>\n";
 		echo "\t\t</tr>\n";
-		echo "\t</thead>\n";
+		echo "\t</thead>\n";		
 		echo "\t<tbody>\n";
-
-		$t_unique_queries_count = 0;
-		$t_total_query_execution_time = 0;
-		$t_unique_queries = array();
-		$t_total_queries_count = 0;
-		$t_total_event_count = count( $g_log_events );
-
-		if( $t_total_event_count == 0 ) {
-			echo "\t</tbody>\n\t</table>\n";
-			echo "<!--END Mantis Debug Log Output-->\n\n";
-			return;
-		}
-
+		
 		for ( $i = 0; $i < $t_total_event_count; $i++ ) {
 			if( $g_log_events[$i][1] == LOG_DATABASE ) {
 				if( !in_array( $g_log_events[$i][2][0], $t_unique_queries ) ) {

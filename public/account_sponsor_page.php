@@ -118,17 +118,22 @@ $t_payment = config_get( 'payment_enable', 0 );
 
 $t_project_clause = helper_project_specific_where( $t_project );
 
-$query = "SELECT b.id as bug, s.id as sponsor, s.paid, b.project_id, b.fixed_in_version, b.status
+$t_query = "SELECT b.id as bug, s.id as sponsor, s.paid, b.project_id, b.fixed_in_version, b.status
 	FROM $t_bug_table b, $t_sponsor_table s
 	WHERE s.user_id=" . db_param() . " AND s.bug_id = b.id " .
 	( $t_show_all ? '' : 'AND ( b.status < ' . db_param() . ' OR s.paid < ' . SPONSORSHIP_PAID . ')' ) . "
 	AND $t_project_clause
 	ORDER BY s.paid ASC, b.project_id ASC, b.fixed_in_version ASC, b.status ASC, b.id DESC";
 
-$result = db_query_bound( $query, $t_show_all ? array( $t_user ) : array( $t_user , $t_resolved ) );
+$t_result = db_query_bound( $t_query, $t_show_all ? array( $t_user ) : array( $t_user , $t_resolved ) );
 
-$t_sponsors = db_num_rows( $result );
-if ( 0 == $t_sponsors ) {
+$t_sponsors = array();
+while ( $t_row = db_fetch_array( $t_result ) ) {
+	$t_sponsors[] = $t_row;
+}
+
+$t_sponsor_count = count( $t_sponsors );
+if ( $t_sponsor_count === 0 ) {
 	echo '<p>' . lang_get( 'no_own_sponsored' ) . '</p>';
 } else {
 ?>
@@ -158,10 +163,10 @@ if ( 0 == $t_sponsors ) {
 <?php
 	$t_total_owing = 0;
 	$t_total_paid = 0;
-	for ( $i=0; $i < $t_sponsors; ++$i ) {
-		$row = db_fetch_array( $result );
-		$t_bug = bug_get( $row['bug'] );
-		$t_sponsor = sponsorship_get( $row['sponsor'] );
+	for ( $i = 0; $i < $t_sponsor_count; ++$i ) {
+		$t_sponsor_row = $t_sponsors[$i];
+		$t_bug = bug_get( $t_sponsor_row['bug'] );
+		$t_sponsor = sponsorship_get( $t_sponsor_row['sponsor'] );
 
 		# describe bug
 		$t_status = string_attribute( get_enum_element( 'status', $t_bug->status ) );
@@ -177,7 +182,7 @@ if ( 0 == $t_sponsors ) {
 		$status_label = html_get_status_css_class( $t_bug->status );
 
 		echo '<tr class="' . $status_label .  '">';
-		echo '<td><a href="' . string_get_bug_view_url( $row['bug'] ) . '">' . bug_format_id( $row['bug'] ) . '</a></td>';
+		echo '<td><a href="' . string_get_bug_view_url( $t_sponsor_row['bug'] ) . '">' . bug_format_id( $t_sponsor_row['bug'] ) . '</a></td>';
 		echo '<td>' . project_get_field( $t_bug->project_id, 'name' ) . '&#160;</td>';
 		echo '<td class="right">' . $t_released_label . '&#160;</td>';
 		echo '<td><span class="issue-status" title="' . $t_resolution . '">' . $t_status . '</span></td>';
@@ -229,16 +234,22 @@ if ( 0 == $t_sponsors ) {
 </div>
 <?php } # end sponsored issues
 
-$query = "SELECT b.id as bug, s.id as sponsor, s.paid, b.project_id, b.fixed_in_version, b.status
+$t_query = "SELECT b.id as bug, s.id as sponsor, s.paid, b.project_id, b.fixed_in_version, b.status
 	FROM $t_bug_table b, $t_sponsor_table s
 	WHERE b.handler_id=" . db_param() . " AND s.bug_id = b.id " .
 	( $t_show_all ? '' : 'AND ( b.status < ' . db_param() . ' OR s.paid < ' . SPONSORSHIP_PAID . ')' ) . "
 	AND $t_project_clause
 	ORDER BY s.paid ASC, b.project_id ASC, b.fixed_in_version ASC, b.status ASC, b.id DESC";
 
-$result = db_query_bound( $query, $t_show_all ? array( $t_user ) : array( $t_user , $t_resolved ) );
-$t_sponsors = db_num_rows( $result );
-if ( 0 == $t_sponsors ) {
+$t_result = db_query_bound( $t_query, $t_show_all ? array( $t_user ) : array( $t_user , $t_resolved ) );
+
+$t_sponsors = array();
+while ( $t_row = db_fetch_array( $t_result ) ) {
+	$t_sponsors[] = $t_row;
+}
+
+$t_sponsor_count = count( $t_sponsors );
+if ( $t_sponsor_count === 0 ) {
 	echo '<p>' . lang_get( 'no_sponsored' ) . '</p>';
 } else {
 ?>
@@ -270,11 +281,11 @@ if ( 0 == $t_sponsors ) {
 	$t_bug_list = array();
 	$t_total_owing = 0;
 	$t_total_paid = 0;
-	for ( $i=0; $i < $t_sponsors; ++$i ) {
-		$row = db_fetch_array( $result );
-		$t_bug = bug_get( $row['bug'] );
-		$t_sponsor = sponsorship_get( $row['sponsor'] );
-		$t_buglist[] = $row['bug'] . ':' . $row['sponsor'];
+	for ( $i = 0; $i < $t_sponsor_count; ++$i ) {
+		$t_sponsor_row = $t_sponsors[$i];
+		$t_bug = bug_get( $t_sponsor_row['bug'] );
+		$t_sponsor = sponsorship_get( $t_sponsor_row['sponsor'] );
+		$t_buglist[] = $t_sponsor_row['bug'] . ':' . $t_sponsor_row['sponsor'];
 
 		# describe bug
 		$t_status = string_attribute( get_enum_element( 'status', $t_bug->status ) );
@@ -290,7 +301,7 @@ if ( 0 == $t_sponsors ) {
 		$status_label = html_get_status_css_class( $t_bug->status );
 
 		echo '<tr class="' . $status_label .  '">';
-		echo '<td><a href="' . string_get_bug_view_url( $row['bug'] ) . '">' . bug_format_id( $row['bug'] ) . '</a></td>';
+		echo '<td><a href="' . string_get_bug_view_url( $t_sponsor_row['bug'] ) . '">' . bug_format_id( $t_sponsor_row['bug'] ) . '</a></td>';
 		echo '<td>' . project_get_field( $t_bug->project_id, 'name' ) . '&#160;</td>';
 		echo '<td class="right">' . $t_released_label . '&#160;</td>';
 		echo '<td><a title="' . $t_resolution . '"><span class="underline">' . $t_status . '</span>&#160;</a></td>';

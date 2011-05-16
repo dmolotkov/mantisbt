@@ -589,7 +589,7 @@ function mc_project_get_attachments( $p_username, $p_password, $p_project_id ) {
 		$t_access_clause = ">= $t_reqd_access ";
 	}
 
-	$query = "SELECT pft.id, pft.project_id, pft.filename, pft.file_type, pft.filesize, pft.title, pft.description, pft.date_added, pft.user_id
+	$t_query = "SELECT pft.id, pft.project_id, pft.filename, pft.file_type, pft.filesize, pft.title, pft.description, pft.date_added, pft.user_id
 		FROM $t_project_file_table pft
 		LEFT JOIN $t_project_table pt ON pft.project_id = pt.id
 		LEFT JOIN $t_project_user_list_table pult
@@ -600,27 +600,31 @@ function mc_project_get_attachments( $p_username, $p_password, $p_project_id ) {
 		( ( pult.user_id = $t_user_id ) AND ( pult.access_level $t_access_clause ) ) OR
 		( ut.access_level = $t_admin ) )
 		ORDER BY pt.name ASC, pft.title ASC";
-	$result = db_query_bound( $query, array() );
-	$num_files = db_num_rows( $result );
+	$t_result = db_query_bound( $t_query, array() );
 
-	$t_result = array();
-	for( $i = 0;$i < $num_files;$i++ ) {
-		$row = db_fetch_array( $result );
-
-		$t_attachment = array();
-		$t_attachment['id'] = $row['id'];
-		$t_attachment['filename'] = $row['filename'];
-		$t_attachment['title'] = $row['title'];
-		$t_attachment['description'] = $row['description'];
-		$t_attachment['size'] = $row['filesize'];
-		$t_attachment['content_type'] = $row['file_type'];
-		$t_attachment['date_submitted'] = timestamp_to_iso8601( $row['date_added'] );
-		$t_attachment['download_url'] = mci_get_mantis_path() . 'file_download.php?file_id=' . $row['id'] . '&amp;type=doc';
-		$t_attachment['user_id'] = $row['user_id'];
-		$t_result[] = $t_attachment;
+	$t_attachments = array();
+	while ( $t_row = db_fetch_array( $t_result ) ) {
+		$t_attachments[] = $t_row;
 	}
 
-	return $t_result;
+	$t_attachment_count = count( $t_attachments );
+
+	$t_attachments_result = array();
+	for( $i = 0; $i < $t_attachment_count; $i++ ) {
+		$t_attachment = $t_attachments[$i];
+		$t_attachment_result = array();
+		$t_attachment_result['id'] = $t_attachment['id'];
+		$t_attachment_result['filename'] = $t_attachment['filename'];
+		$t_attachment_result['title'] = $t_attachment['title'];
+		$t_attachment_result['description'] = $t_attachment['description'];
+		$t_attachment_result['size'] = $t_attachment['filesize'];
+		$t_attachment_result['content_type'] = $t_attachment['file_type'];
+		$t_attachment_result['date_submitted'] = timestamp_to_iso8601( $t_attachment['date_added'] );
+		$t_attachment_result['download_url'] = mci_get_mantis_path() . 'file_download.php?file_id=' . $t_attachment['id'] . '&amp;type=doc';
+		$t_attachment_result['user_id'] = $t_attachment['user_id'];
+		$t_attachments_result[] = $t_attachment_result;
+	}
+	return $t_attachments_result;
 }
 
 function mc_project_get_all_subprojects( $p_username, $p_password, $p_project_id ) {

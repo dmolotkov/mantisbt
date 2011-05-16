@@ -341,44 +341,45 @@ function file_delete_attachments( $p_bug_id ) {
 	$t_method = config_get( 'file_upload_method' );
 
 	# Delete files from disk
-	$query = "SELECT diskfile, filename
+	$t_query = "SELECT diskfile, filename
 				FROM $t_bug_file_table
 				WHERE bug_id=" . db_param();
-	$result = db_query_bound( $query, array( $c_bug_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_bug_id ) );
 
-	$file_count = db_num_rows( $result );
-	if( 0 == $file_count ) {
-		return true;
+	$t_files = array();
+	while ( $t_row = db_fetch_array( $t_result ) ) {
+		$t_files[] = $t_row;
 	}
 
-	if(( DISK == $t_method ) || ( FTP == $t_method ) ) {
+	$t_file_count = count( $t_files );
+	if ( $t_file_count === 0 )
+		return true;
+
+	if ( ( $t_method == DISK ) || ( $t_method == FTP ) ) {
 
 		# there may be more than one file
-		$ftp = 0;
-		if( FTP == $t_method ) {
-			$ftp = file_ftp_connect();
-		}
+		$t_ftp = 0;
+		if ( FTP == $t_method )
+			$t_ftp = file_ftp_connect();
 
-		for( $i = 0;$i < $file_count;$i++ ) {
-			$row = db_fetch_array( $result );
+		for ( $i = 0; $i < $t_file_count; $i++ ) {
+			$t_file = $t_files[$i];
 
-			$t_local_diskfile = file_normalize_attachment_path( $row['diskfile'], bug_get_field( $p_bug_id, 'project_id' ) );
+			$t_local_diskfile = file_normalize_attachment_path( $t_file['diskfile'], bug_get_field( $p_bug_id, 'project_id' ) );
 			file_delete_local( $t_local_diskfile );
 
-			if( FTP == $t_method ) {
-				file_ftp_delete( $ftp, $row['diskfile'] );
-			}
+			if ( $t_method == FTP )
+				file_ftp_delete( $t_ftp, $t_file['diskfile'] );
 		}
 
-		if( FTP == $t_method ) {
-			file_ftp_disconnect( $ftp );
-		}
+		if ( $t_method == FTP )
+			file_ftp_disconnect( $t_ftp );
 	}
 
 	# Delete the corresponding db records
-	$query = "DELETE FROM $t_bug_file_table
+	$t_query = "DELETE FROM $t_bug_file_table
 				  WHERE bug_id=" . db_param();
-	$result = db_query_bound( $query, array( $c_bug_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_bug_id ) );
 
 	# db_query errors on failure so:
 	return true;
@@ -389,41 +390,42 @@ function file_delete_project_files( $p_project_id ) {
 	$t_method = config_get( 'file_upload_method' );
 
 	# Delete the file physically (if stored via DISK or FTP)
-	if(( DISK == $t_method ) || ( FTP == $t_method ) ) {
+	if ( ( $t_method == DISK ) || ( $t_method == FTP ) ) {
 
 		# Delete files from disk
-		$query = "SELECT diskfile, filename
+		$t_query = "SELECT diskfile, filename
 					FROM $t_project_file_table
 					WHERE project_id=" . db_param();
-		$result = db_query_bound( $query, array( (int) $p_project_id ) );
+		$t_result = db_query_bound( $t_query, array( (int) $p_project_id ) );
 
-		$file_count = db_num_rows( $result );
-
-		$ftp = 0;
-		if( FTP == $t_method ) {
-			$ftp = file_ftp_connect();
+		$t_files = array();
+		while ( $t_row = db_fetch_array( $t_result ) ) {
+			$t_files[] = $t_row;
 		}
 
-		for( $i = 0;$i < $file_count;$i++ ) {
-			$row = db_fetch_array( $result );
+		$t_ftp = 0;
+		if ( $t_method == FTP )
+			$t_ftp = file_ftp_connect();
 
-			$t_local_diskfile = file_normalize_attachment_path( $row['diskfile'], $p_project_id );
+		$t_file_count = count( $t_files );
+		for ( $i = 0; $i < $t_file_count; $i++ ) {
+			$t_file = $t_files[$i];
+
+			$t_local_diskfile = file_normalize_attachment_path( $t_file['diskfile'], $p_project_id );
 			file_delete_local( $t_local_diskfile );
 
-			if( FTP == $t_method ) {
-				file_ftp_delete( $ftp, $row['diskfile'] );
-			}
+			if ( $t_method == FTP )
+				file_ftp_delete( $t_ftp, $t_file['diskfile'] );
 		}
 
-		if( FTP == $t_method ) {
-			file_ftp_disconnect( $ftp );
-		}
+		if ( $t_method == FTP )
+			file_ftp_disconnect( $t_ftp );
 	}
 
 	# Delete the corresponding db records
-	$query = "DELETE FROM $t_project_file_table
+	$t_query = "DELETE FROM $t_project_file_table
 				WHERE project_id=" . db_param();
-	$result = db_query_bound( $query, array( (int) $p_project_id ) );
+	$t_result = db_query_bound( $t_query, array( (int) $p_project_id ) );
 }
 
 # Delete all cached files that are older than configured number of days.

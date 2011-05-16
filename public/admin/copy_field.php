@@ -57,7 +57,7 @@ $f_dest_field = gpc_get( 'dest_id' );
 $t_valid_fields = array(
 	'fixed_in_version',
 );
-if( !in_array( $f_dest_field, $t_valid_fields ) ) {
+if ( !in_array( $f_dest_field, $t_valid_fields ) ) {
 	echo '<p>Invalid destination field (' . $f_dest_field . ') specified.</p>';
 	echo '</body></html>';
 	exit;
@@ -67,47 +67,50 @@ if( !in_array( $f_dest_field, $t_valid_fields ) ) {
 
 $t_string_table = db_get_table( 'custom_field_string' );
 $t_bug_table = db_get_table( 'bug' );
-$query = 'SELECT * FROM ' . $t_string_table . ' WHERE field_id = ' . db_param() . ' and value <> ' . db_param();
+$t_query = 'SELECT * FROM ' . $t_string_table . ' WHERE field_id = ' . db_param() . ' and value <> ' . db_param();
 
-$result = @db_query_bound( $query, array( $f_source_field_id, '' ) );
-if( FALSE == $result ) {
+$t_result = @db_query_bound( $t_query, array( $f_source_field_id, '' ) );
+if ( $t_result === false ) {
 	echo '<p>No fields need to be updated.</p>';
 }
 else {
+	$t_fields = array();
+	while ( $t_row = db_fetch_array( $t_result ) ) {
+		$t_fields[] = $t_row;
+	}
 
-	$count = db_num_rows( $result );
-	echo '<p>Found ' . $count . ' fields to be updated.</p>';
+	$t_field_count = count( $t_fields );
+
+	echo '<p>Found ' . $t_field_count . ' fields to be updated.</p>';
 	$t_failures = 0;
 
-	if( $count > 0 ) {
+	if ( $t_field_count > 0 ) {
 		echo '<table width="80%" bgcolor="#222222" cellpadding="10" cellspacing="1">';
 
 		# Headings
 		echo '<tr bgcolor="#ffffff"><th width="10%">Bug Id</th><th width="20%">Field Value</th><th width="70%">Status</th></tr>';
 	}
 
-	for( $i = 0;$i < $count;$i++ ) {
-		$row = db_fetch_array( $result );
-		extract( $row, EXTR_PREFIX_ALL, 'v' );
+	for ( $i = 0; $i < $t_field_count; $i++ ) {
+		extract( $t_fields[$i], EXTR_PREFIX_ALL, 'v' );
 
 		# trace bug id back to project
 		$t_project_id = bug_get_field( $v_bug_id, 'project_id' );
 		$t_cust_value = $v_value;
-		printf("\n<tr %s><td><a href=\"../view.php?id=%d\">%07d</a></td><td>%s</td><td>",
-			helper_alternate_class(), $v_bug_id, $v_bug_id, $v_value);
+		printf( "\n<tr %s><td><a href=\"../view.php?id=%d\">%07d</a></td><td>%s</td><td>", helper_alternate_class(), $v_bug_id, $v_bug_id, $v_value );
 
 		# validate field contents
-		switch( $f_dest_field ) {
+		switch ( $f_dest_field ) {
 			case 'fixed_in_version':
 				$t_valid = ( version_get_id( $t_cust_value, $t_project_id ) == FALSE ) ? FALSE : TRUE;
 				break;
 			default:
 				$t_valid = FALSE;
 		}
-		if( $t_valid ) {
+		if ( $t_valid ) {
 
 			# value was valid, update value
-			if( !bug_set_field( $v_bug_id, $f_dest_field, $t_cust_value ) ) {
+			if ( !bug_set_field( $v_bug_id, $f_dest_field, $t_cust_value ) ) {
 				echo 'database update failed';
 				$t_failures++;
 			} else {
@@ -120,7 +123,7 @@ else {
 		echo '</td></tr>';
 	}
 
-	echo '</table><br />' . $count . ' fields processed, ' . $t_failures . ' failures';
+	echo '</table><br />' . $t_field_count . ' fields processed, ' . $t_failures . ' failures';
 }
 echo '<p> Completed...<p>';
 ?>

@@ -64,82 +64,88 @@ function get_prefix( $file_path ) {
 function upgrade_move_att2disk( $p_source ) {
 
 	# $p_source is the string "attachment" or "project"
-	if( $p_source == 'attachment' ) {
+	if ( $p_source == 'attachment' ) {
 		$t_file_table = db_get_table( 'bug_file' );
 		$t_bug_label = "Bug";
 	}
-	if( $p_source == 'project' ) {
+	if ( $p_source == 'project' ) {
 		$t_file_table = db_get_table( 'project_file' );
 		$t_bug_label = "Project";
 	}
 
 	# check that the source was valid
-	if( !isset( $t_file_table ) ) {
+	if ( !isset( $t_file_table ) ) {
 		echo 'Failure: Internal Error: File source not set';
 		return;
 	}
 
 	# check that the destination is set up properly
 	$t_upload_method = config_get_global( 'file_upload_method' );
-	if( $t_upload_method <> DISK ) {
+	if ( $t_upload_method <> DISK ) {
 		echo 'Failure: Upload Method is not DISK';
 		return;
 	}
 
-	$query = 'SELECT * FROM ' . $t_file_table . ' WHERE content <> \'\'';
+	$t_query = 'SELECT * FROM ' . $t_file_table . ' WHERE content <> \'\'';
 
-	$result = @db_query_bound( $query );
+	$t_result = @db_query_bound( $t_query );
 
-	if( false == $result ) {
+	if ( $t_result === false ) {
 		echo '<p>No attachments need to be moved.</p>';
 		return;
 	}
 
-	$count = db_num_rows( $result );
-	echo '<p>Found ' . $count . ' attachments to be moved.</p>';
+	$t_attachments = array();
+	while ( $t_row = db_fetch_array( $t_result ) ) {
+		$t_attachments[] = $t_row;
+	}
+
+	$t_attachment_count = count( $t_attachments );
+
+	echo '<p>Found ' . $t_attachment_count . ' attachments to be moved.</p>';
 	$t_failures = 0;
 
-	if( $count > 0 ) {
+	if ( $t_attachment_count > 0 ) {
 		echo '<table width="80%" bgcolor="#222222" cellpadding="10" cellspacing="1">';
 
 		# Headings
 		echo '<tr bgcolor="#ffffff"><th width="10%">' . $t_bug_label . '</th><th width="20%">Attachment</th><th width="70%">Status</th></tr>';
 	}
 
-	for( $i = 0;$i < $count;$i++ ) {
-		$t_row = db_fetch_array( $result );
+	for ( $i = 0; $i < $t_attachment_count; $i++ ) {
+		$t_attachment = $t_attachments[$i];
 
 		// trace bug id back to project to determine the proper file path
-		if( $p_source == 'attachment' ) {
-			$t_project_id = bug_get_field( $t_row['bug_id'], 'project_id' );
-			$t_bug_id = $t_row['bug_id'];
+		if ( $p_source == 'attachment' ) {
+			$t_project_id = bug_get_field( $t_attachment['bug_id'], 'project_id' );
+			$t_bug_id = $t_attachment['bug_id'];
 		} else {
-			$t_project_id = (int) $t_row['project_id'];
+			$t_project_id = (int) $t_attachment['project_id'];
 			$t_bug_id = $t_project_id;
 		}
 
 		$t_file_path = project_get_field( $t_project_id, 'file_path' );
-		$prefix = get_prefix( $t_file_path );
-		$t_real_file_path = $prefix . $t_file_path;
-		$c_filename = file_clean_name( $t_row['filename'] );
+		$t_prefix = get_prefix( $t_file_path );
+		$t_real_file_path = $t_prefix . $t_file_path;
+		$c_filename = file_clean_name( $t_attachment['filename'] );
 
-		printf( "\n<tr %s><td>%8d</td><td>%s</td><td>", helper_alternate_class(), $t_bug_id, $t_row['filename'] );
+		printf( "\n<tr %s><td>%8d</td><td>%s</td><td>", helper_alternate_class(), $t_bug_id, $t_attachment['filename'] );
 
-		if( is_blank( $t_real_file_path ) || !file_exists( $t_real_file_path ) || !is_dir( $t_real_file_path ) || !is_writable( $t_real_file_path ) ) {
+		if ( is_blank( $t_real_file_path ) || !file_exists( $t_real_file_path ) || !is_dir( $t_real_file_path ) || !is_writable( $t_real_file_path ) ) {
 			echo 'Destination ' . $t_real_file_path . ' not writable';
 			$t_failures++;
 		} else {
 			$t_file_name = $t_real_file_path . $c_filename;
 
 			// write file to disk store after adjusting the path
-			if( file_put_contents( $t_file_name, $t_row['content'] ) ) {
+			if ( file_put_contents( $t_file_name, $t_attachment['content'] ) ) {
 				// successful, update database
 				/** @todo do we want to check the size of data transfer matches here? */
 				$c_new_file_name = $t_file_path . $c_filename;
-				$query2 = "UPDATE $t_file_table SET diskfile = " . db_param() . ",
+				$t_query2 = "UPDATE $t_file_table SET diskfile = " . db_param() . ",
 						folder = " . db_param() . ", content = '' WHERE id = " . db_param();
-				$update = @db_query_bound( $query2, array( $c_new_file_name, $t_file_path, $t_row['id'] ) );
-				if( !$update ) {
+				$t_update = @db_query_bound( $t_query2, array( $c_new_file_name, $t_file_path, $t_attachment['id'] ) );
+				if ( !$t_update ) {
 					echo 'database update failed';
 					$t_failures++;
 				} else {
@@ -154,7 +160,7 @@ function upgrade_move_att2disk( $p_source ) {
 		echo '</td></tr>';
 	}
 
-	echo '</table><br />' . $count . ' attachments processed, ' . $t_failures . ' failures';
+	echo '</table><br />' . $t_attachment_count . ' attachments processed, ' . $t_failures . ' failures';
 }
 
 # ---------------------

@@ -1354,30 +1354,33 @@ function bug_get_bugnote_stats( $p_bug_id ) {
 	global $g_cache_bug;
 	$c_bug_id = db_prepare_int( $p_bug_id );
 
-	if( !is_null( $g_cache_bug[$c_bug_id]['_stats'] ) ) {
-		if( $g_cache_bug[$c_bug_id]['_stats'] === false ) {
+	if ( !is_null( $g_cache_bug[$c_bug_id]['_stats'] ) ) {
+		if ( $g_cache_bug[$c_bug_id]['_stats'] === false )
 			return false;
-		} else {
+		else
 			$t_stats = $g_cache_bug[$c_bug_id]['_stats'];
-		}
 		return $t_stats;
 	}
 
 	$t_bugnote_table = db_get_table( 'bugnote' );
 
-	$query = "SELECT last_modified
+	$t_query = "SELECT last_modified
 				  FROM $t_bugnote_table
 				  WHERE bug_id=" . db_param() . "
 				  ORDER BY last_modified DESC";
-	$result = db_query_bound( $query, array( $c_bug_id ) );
-	$row = db_fetch_array( $result );
+	$t_result = db_query_bound( $t_query, array( $c_bug_id ) );
 
-	if( false === $row ) {
+	$t_bugnote_count = 0;
+	while ( $t_row = db_fetch_array( $t_result ) ) {
+		$t_bugnote_count++;
+	}
+
+	if ( $t_bugnote_count === 0 ) {
 		return false;
 	}
 
-	$t_stats['last_modified'] = $row['last_modified'];
-	$t_stats['count'] = db_num_rows( $result );
+	$t_stats['last_modified'] = $t_row['last_modified'];
+	$t_stats['count'] = $t_bugnote_count;
 
 	return $t_stats;
 }
@@ -1788,17 +1791,15 @@ function bug_get_monitors( $p_bug_id ) {
 	$t_user_table = db_get_table( 'user' );
 
 	# get the bugnote data
-	$query = "SELECT user_id, enabled
+	$t_query = "SELECT user_id, enabled
 			FROM $t_bug_monitor_table m, $t_user_table u
 			WHERE m.bug_id=" . db_param() . " AND m.user_id = u.id
 			ORDER BY u.realname, u.username";
-	$result = db_query_bound($query, array( $c_bug_id ) );
-	$num_users = db_num_rows($result);
+	$t_result = db_query_bound( $t_query, array( $c_bug_id ) );
 
 	$t_users = array();
-	for ( $i = 0; $i < $num_users; $i++ ) {
-		$row = db_fetch_array( $result );
-		$t_users[$i] = $row['user_id'];
+	while( $t_row = db_fetch_array( $t_result ) ) {
+		$t_users[] = $t_row['user_id'];
 	}
 	
 	user_cache_array_rows( $t_users );

@@ -252,26 +252,31 @@ function mci_filter_db_get_available_queries( $p_project_id = null, $p_user_id =
 	# Get the list of available queries. By sorting such that public queries are
 	# first, we can override any query that has the same name as a private query
 	# with that private one
-	$query = "SELECT * FROM $t_filters_table
+	$t_query = "SELECT * FROM $t_filters_table
 				WHERE (project_id='$t_project_id'
 				OR project_id='0')
 				AND name!=''
 				ORDER BY is_public DESC, name ASC";
-	$result = db_query_bound( $query, array() );
-	$query_count = db_num_rows( $result );
+	$t_result = db_query_bound( $t_query, array() );
 
-	for( $i = 0;$i < $query_count;$i++ ) {
-		$row = db_fetch_array( $result );
-		if(( $row['user_id'] == $t_user_id ) || db_prepare_bool( $row['is_public'] ) ) {
+	$t_queries = array();
+	while ( $t_row = db_fetch_array( $t_result ) ) {
+		$t_queries[] = $t_row;
+	}
 
-		    $t_filter_detail = explode( '#', $row['filter_string'], 2 );
-		    if ( !isset($t_filter_detail[1]) ) {
-		    	continue;
-		    }
-        	$t_filter = unserialize( $t_filter_detail[1] );
-	        $t_filter = filter_ensure_valid_filter( $t_filter );
-		    $row['url'] = filter_get_url( $t_filter );
-			$t_overall_query_arr[$row['name']] = $row;
+	$t_query_count = count( $t_queries );
+
+	for ( $i = 0; $i < $t_query_count; $i++ ) {
+		$t_query = $t_queries[$i];
+		if ( ( $t_query['user_id'] == $t_user_id ) || db_prepare_bool( $t_query['is_public'] ) ) {
+			$t_filter_detail = explode( '#', $t_query['filter_string'], 2 );
+			if ( !isset( $t_filter_detail[1] ) ) {
+				continue;
+			}
+			$t_filter = unserialize( $t_filter_detail[1] );
+			$t_filter = filter_ensure_valid_filter( $t_filter );
+			$t_query['url'] = filter_get_url( $t_filter );
+			$t_overall_query_arr[$t_query['name']] = $t_query;
 		}
 	}
 

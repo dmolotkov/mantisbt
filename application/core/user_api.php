@@ -241,7 +241,7 @@ function user_ensure_name_unique( $p_username ) {
 # Check if the realname is a valid username (does not account for uniqueness)
 # Return 0 if it is invalid, The number of matches + 1
 function user_is_realname_unique( $p_username, $p_realname ) {
-	if( is_blank( $p_realname ) ) {
+	if ( is_blank( $p_realname ) ) {
 		# don't bother checking if realname is blank
 		return 1;
 	}
@@ -250,35 +250,40 @@ function user_is_realname_unique( $p_username, $p_realname ) {
 	$p_realname = trim( $p_realname );
 
 	# allow realname to match username
-	$t_count = 0;
-	if( $p_realname <> $p_username ) {
+	$t_duplicate_count = 0;
+	if ( $p_realname !== $p_username ) {
 		# check realname does not match an existing username
 		#  but allow it to match the current user
 		$t_target_user = user_get_id_by_name( $p_username );
 		$t_other_user = user_get_id_by_name( $p_realname );
-		if( ( 0 != $t_other_user ) && ( $t_target_user != $t_other_user ) ) {
+		if ( ( $t_other_user !== 0 ) && ( $t_target_user !== $t_other_user ) ) {
 			return 0;
 		}
 
 		# check to see if the realname is unique
 		$t_user_table = db_get_table( 'user' );
-		$query = "SELECT id
+		$t_query = "SELECT id
 				FROM $t_user_table
 				WHERE realname=" . db_param();
-		$result = db_query_bound( $query, array( $p_realname ) );
-		$t_count = db_num_rows( $result );
+		$t_result = db_query_bound( $t_query, array( $p_realname ) );
 
-		if( $t_count > 0 ) {
+		$t_users = array();
+		while ( $t_row = db_fetch_array( $t_result ) ) {
+			$t_users[] = $t_row;
+		}
+		$t_duplicate_count = count( $t_users );
+
+		if ( $t_duplicate_count > 0 ) {
 			# set flags for non-unique realnames
-			if( config_get( 'differentiate_duplicates' ) ) {
-				for( $i = 0;$i < $t_count;$i++ ) {
-					$t_user_id = db_result( $result );
+			if ( config_get( 'differentiate_duplicates' ) ) {
+				for ( $i = 0; $i < $t_duplicate_count; $i++ ) {
+					$t_user_id = $t_users[$i]['id'];
 					user_set_field( $t_user_id, 'duplicate_realname', ON );
 				}
 			}
 		}
 	}
-	return $t_count + 1;
+	return $t_duplicate_count + 1;
 }
 
 # --------------------
@@ -606,19 +611,24 @@ function user_delete( $p_user_id ) {
 	user_delete_project_specific_access_levels( $p_user_id );
 
 	# unset non-unique realname flags if necessary
-	if( config_get( 'differentiate_duplicates' ) ) {
+	if ( config_get( 'differentiate_duplicates' ) ) {
 		$c_realname = user_get_field( $p_user_id, 'realname' );
-		$query = "SELECT id
+		$t_query = "SELECT id
 					FROM $t_user_table
 					WHERE realname=" . db_param();
-		$result = db_query_bound( $query, array( $c_realname ) );
-		$t_count = db_num_rows( $result );
+		$t_result = db_query_bound( $t_query, array( $c_realname ) );
 
-		if( $t_count == 2 ) {
+		$t_users = array();
+		while ( $t_row = db_fetch_array( $t_result ) ) {
+			$t_users[] = $t_row;
+		}
 
+		$t_user_count = count( $t_users );
+
+		if ( $t_user_count == 2 ) {
 			# unset flags if there are now only 2 unique names
-			for( $i = 0;$i < $t_count;$i++ ) {
-				$t_user_id = db_result( $result );
+			for ( $i = 0; $i < $t_user_count; $i++ ) {
+				$t_user_id = $t_users[$i]['id'];
 				user_set_field( $t_user_id, 'duplicate_realname', OFF );
 			}
 		}
@@ -627,9 +637,9 @@ function user_delete( $p_user_id ) {
 	user_clear_cache( $p_user_id );
 
 	# Remove account
-	$query = "DELETE FROM $t_user_table
+	$t_query = "DELETE FROM $t_user_table
 				  WHERE id=" . db_param();
-	db_query_bound( $query, array( $c_user_id ) );
+	db_query_bound( $t_query, array( $c_user_id ) );
 
 	return true;
 }

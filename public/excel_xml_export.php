@@ -53,7 +53,7 @@ require_api( 'print_api.php' );
 require_api( 'utility_api.php' );
 
 define( 'PRINT_ALL_BUG_OPTIONS_INC_ALLOW', true );
-include( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'print_all_bug_options_inc.php' );
+include( dirname( __FILE__ ) . '/print_all_bug_options_inc.php' );
 
 auth_ensure_user_authenticated();
 

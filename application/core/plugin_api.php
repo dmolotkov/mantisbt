@@ -108,8 +108,8 @@ function plugin_page( $p_page, $p_redirect = false, $p_basename = null ) {
  */
 function plugin_file_path( $p_filename, $p_basename ) {
 	$t_file_path = config_get( 'plugin_path' );
-	$t_file_path .= $p_basename . DIRECTORY_SEPARATOR;
-	$t_file_path .= 'files' . DIRECTORY_SEPARATOR . $p_filename;
+	$t_file_path .= $p_basename . '/';
+	$t_file_path .= 'files/' . $p_filename;
 
 	return( is_file( $t_file_path ) ? $t_file_path : false );
 }
@@ -725,7 +725,7 @@ function plugin_find_all() {
  * @param string Plugin basename
  */
 function plugin_include( $p_basename, $p_child = null ) {
-	$t_path = config_get_global( 'plugin_path' ) . $p_basename . DIRECTORY_SEPARATOR;
+	$t_path = config_get_global( 'plugin_path' ) . $p_basename . '/';
 
 	if( is_null( $p_child ) ) {
 		$t_plugin_file = $t_path . $p_basename . '.php';

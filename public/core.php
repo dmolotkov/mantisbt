@@ -67,7 +67,7 @@ defined('APPLICATION_PATH')
 
 // Define path to configs directory
 defined('CONFIG_PATH')
-    || define('CONFIG_PATH', APPLICATION_PATH . DIRECTORY_SEPARATOR . 'configs' );
+    || define('CONFIG_PATH', APPLICATION_PATH . '/configs' );
 
 // Define path to languages directory
 defined('LANGUAGES_PATH')
@@ -96,21 +96,21 @@ $g_request_time = microtime( true );
 ob_start();
 
 # Load supplied constants
-require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'constant_inc.php' );
+require_once( APPLICATION_PATH . '/core/constant_inc.php' );
 
 # Load user-defined constants (if required)
-if ( file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' ) ) {
-	require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_constants_inc.php' );
+if ( file_exists( CONFIG_PATH . '/custom_constants_inc.php' ) ) {
+	require_once( CONFIG_PATH . '/custom_constants_inc.php' );
 }
 
 $t_config_inc_found = false;
 
 # Include default configuration settings
-require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_defaults_inc.php' );
+require_once( CONFIG_PATH . '/config_defaults_inc.php' );
 
 # config_inc may not be present if this is a new install
-if ( file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php' ) ) {
-    require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php' );
+if ( file_exists( CONFIG_PATH . '/config_inc.php' ) ) {
+    require_once( CONFIG_PATH . '/config_inc.php' );
 	$t_config_inc_found = true;
 }
 
@@ -131,7 +131,7 @@ function require_api( $p_api_name ) {
 
 	if ( !isset( $g_api_included[$p_api_name] ) ) {
 		$t_existing_globals = get_defined_vars();
-		require_once( APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . $p_api_name );
+		require_once( APPLICATION_PATH . '/core/' . $p_api_name );
 		$t_new_globals = array_diff_key( get_defined_vars(), $GLOBALS, array( 't_existing_globals' => 0, 't_new_globals' => 0 ) );
 		foreach ( $t_new_globals as $t_global_name => $t_global_value ) {
 			global $$t_global_name;
@@ -164,7 +164,7 @@ function require_lib( $p_library_name ) {
 function __autoload( $p_class_name ) {
 
     # check the old classes directory @todo this should be removed once pages are migrated to the new application structure
-    $t_require_path = APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $p_class_name . '.class.php';
+    $t_require_path = APPLICATION_PATH . "/core/classes/$p_class_name.class.php";
 	if ( file_exists( $t_require_path ) ) {
 		require( $t_require_path );
 		return;
@@ -173,14 +173,14 @@ function __autoload( $p_class_name ) {
     # handle any namespaces
     $t_class_name = str_replace( '\\', '/', $p_class_name );
 
-	$t_require_path = APPLICATION_PATH . DIRECTORY_SEPARATOR . $t_class_name . '.class.php';
+	$t_require_path = APPLICATION_PATH . "/$t_class_name.class.php";
 
 	if ( file_exists( $t_require_path ) ) {
 		require( $t_require_path );
 		return;
 	}
 
-	$t_require_path = 'rssbuilder' . DIRECTORY_SEPARATOR . 'class.' . $t_class_name . '.inc.php';
+	$t_require_path = "rssbuilder/class.$t_class_name.inc.php";
 
 	if ( file_exists( $t_require_path ) ) {
 		include( $t_require_path );
@@ -284,8 +284,8 @@ if ( !defined( 'MANTIS_MAINTENANCE_MODE' ) ) {
 
 # Load custom functions
 require_api( 'custom_function_api.php' );
-if ( file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_functions_inc.php' ) ) {
-	require_once( CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_functions_inc.php' );
+if ( file_exists( CONFIG_PATH . '/custom_functions_inc.php' ) ) {
+	require_once( CONFIG_PATH . '/custom_functions_inc.php' );
 }
 
 # Set HTTP response headers

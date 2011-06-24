@@ -27,7 +27,7 @@ define( 'LANG_LOAD_DISABLED', true );
 /**
  * MantisBT Core API's
  */
-require_once( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'core.php' );
+require_once( dirname( dirname( __FILE__ ) ) . '/core.php' );
 
 access_ensure_global_level( config_get_global( 'admin_site_threshold' ) );
 
@@ -42,7 +42,7 @@ else {
 	define( 'T_DOC_COMMENT', T_ML_COMMENT );
 }
 
-if (!checkfile( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR, 'strings_english.txt', true)) {
+if (!checkfile( dirname( dirname( __FILE__ ) ) . '/lang/', 'strings_english.txt', true)) {
 	print_error( "FAILED: Language file 'strings_english.txt' failed." );
 	die;
 }
@@ -56,12 +56,12 @@ html_page_top();
 // check core language files
 if( function_exists( 'opendir' ) && function_exists( 'readdir' ) ) {
 	$t_lang_files = Array();
-	if( $t_handle = opendir( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'lang' ) ) {
+	if( $t_handle = opendir( dirname( dirname( __FILE__ ) ) . '/lang' ) ) {
 		while( false !== ( $t_file = readdir( $t_handle ) ) ) {
 			if ($t_file == 'strings_english.txt' ) {
 				echo "Testing english language file '$t_file' (phase 1)...<br />";
 				flush();
-				checkfile( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR, $t_file );
+				checkfile( dirname( dirname( __FILE__ ) ) . '/lang/', $t_file );
 			}
 			if( $t_file[0] != '.' && $t_file != 'langreadme.txt' && !is_dir( $t_file ) ) {
 				$t_lang_files[] = $t_file;
@@ -87,7 +87,7 @@ if( count( $t_lang_files ) > 0 ) {
 		echo "Testing language file '$t_file' (phase 1)...<br />";
 		flush();
 
-		checkfile( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR, $t_file );
+		checkfile( dirname( dirname( __FILE__ ) ) . '/lang/', $t_file );
 	}
 }
 
@@ -100,7 +100,7 @@ if( function_exists( 'opendir' ) && function_exists( 'readdir' ) ) {
 }
 
 function checklangdir( $p_path, $p_subpath = '' ) {
-	$p_path = $p_path . DIRECTORY_SEPARATOR . $p_subpath . DIRECTORY_SEPARATOR;
+	$p_path = "$p_path/$p_subpath/";
 	if( $handle = opendir( $p_path ) ) {
 		while( false !== ( $file = readdir( $handle ) ) ) {
 			if ( $file[0] == '.' )
@@ -108,17 +108,17 @@ function checklangdir( $p_path, $p_subpath = '' ) {
 			if ( $p_subpath == '' ) {
 				echo "Checking language files for plugin $file:<br />";
 
-				if (file_exists( $p_path . DIRECTORY_SEPARATOR . $p_subpath . DIRECTORY_SEPARATOR . $file . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR . 'strings_english.txt' ) ) {
+				if (file_exists( "$p_path/$p_subpath/$file/lang/strings_english.txt" ) ) {
 					echo "Testing english language for plugin '$file' (phase 1)...<br />";
 					flush();
-					checkfile( $p_path . DIRECTORY_SEPARATOR . $p_subpath . DIRECTORY_SEPARATOR . $file . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR,  'strings_english.txt' );
+					checkfile( "$p_path/$p_subpath/$file/lang/", 'strings_english.txt' );
 				}
 			}
 
-			if( !is_dir( $p_path . DIRECTORY_SEPARATOR . $file ) && $p_subpath == 'lang' ) {
+			if( !is_dir( "$p_path/$file" ) && $p_subpath == 'lang' ) {
 				checkfile( $p_path, $file );
 			} else {
-				if ( is_dir( $p_path . DIRECTORY_SEPARATOR . $file ) )
+				if ( is_dir( "$p_path/$file" ) )
 					checklangdir( $p_path, $file);
 			}
 		}

@@ -210,7 +210,7 @@ if ( config_get_global( 'admin_checks' ) == ON ) {
 	}
 
 	# Check if the admin directory is available and is readable.
-	$t_admin_dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR;
+	$t_admin_dir = dirname( __FILE__ ) . '/admin/';
 	if ( is_dir( $t_admin_dir ) ) {
 		$t_warnings[] = lang_get( 'warning_admin_directory_present' );
 	}
@@ -242,7 +242,7 @@ if ( config_get_global( 'admin_checks' ) == ON ) {
 		}
 
 		# Check for db upgrade for versions > 1.0.0 using new installer and schema
-		require_once( 'admin' . DIRECTORY_SEPARATOR . 'schema.php' );
+		require_once( 'admin/schema.php' );
 		$t_upgrades_reqd = count( $upgrade ) - 1;
 
 		if ( ( 0 < $t_db_version ) &&

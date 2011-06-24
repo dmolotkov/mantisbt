@@ -11,14 +11,14 @@
 # This can not be a configuration option, then MantisConnect configuration
 # needs MantisBT to be included first to make use of the constants and possibly
 # configuration defined in MantisBT.
-$t_mantis_dir = dirname( dirname( dirname( __FILE__ ) ) ) . DIRECTORY_SEPARATOR;
+$t_mantis_dir = dirname( dirname( dirname( __FILE__ ) ) ) . '/';
 
 # include Mantis files
 $g_bypass_headers = true;
 require_once( $t_mantis_dir . 'core.php' );
 
 # constants and configurations
-$t_current_dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
+$t_current_dir = dirname( __FILE__ ) . '/';
 require_once( $t_current_dir . 'mc_config_defaults_inc.php' );
 
 $t_user_configs = $t_current_dir . 'mc_config_inc.php';

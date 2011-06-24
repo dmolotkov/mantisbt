@@ -68,7 +68,7 @@ $f_bug_id = gpc_get_int( 'id' );
 $t_bug = bug_get( $f_bug_id );
 
 $tpl_file = __FILE__;
-$tpl_mantis_dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
+$tpl_mantis_dir = dirname( __FILE__ ) . '/';
 $tpl_show_page_header = false;
 $tpl_force_readonly = true;
 $tpl_fields_config_option = 'bug_change_status_page_fields';
@@ -385,4 +385,4 @@ if ( ( $t_resolved <= $f_new_status ) ) {
 <br />
 <?php
 define( 'BUG_VIEW_INC_ALLOW', true );
-include( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'bug_view_inc.php' );
+include( dirname( __FILE__ ) . '/bug_view_inc.php' );

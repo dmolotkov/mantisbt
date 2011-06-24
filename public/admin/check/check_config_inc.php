@@ -35,7 +35,7 @@ require_once( 'check_api.php' );
 check_print_section_header_row( 'Configuration' );
 
 check_print_test_row( 'config_inc.php configuration file exists',
-	file_exists( CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php' ),
+	file_exists( CONFIG_PATH . '/config_inc.php' ),
 	array( false => 'Please use <a href="install.php">install.php</a> to perform the initial installation of MantisBT.' )
 );
 

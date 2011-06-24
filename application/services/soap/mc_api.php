@@ -30,7 +30,7 @@ function mc_version() {
 # Checks if MantisBT installation is marked as offline by the administrator.
 # true: offline, false: online
 function mci_is_mantis_offline() {
-	$t_offline_file = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'mantis_offline.php';
+	$t_offline_file = dirname( dirname( __FILE__ ) ) . '/mantis_offline.php';
 	return file_exists( $t_offline_file );
 }
 

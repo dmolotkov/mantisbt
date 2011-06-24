@@ -163,7 +163,7 @@ $g_short_path = $t_path;
  * absolute path to your installation.  Requires trailing / or \
  * @global string $g_absolute_path
  */
-$g_absolute_path = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' ) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR;
+$g_absolute_path = realpath( dirname( __FILE__ ) . '/../..' ) . '/public/';
 
 /**
  * absolute path to custom strings file.
@@ -175,7 +175,7 @@ $g_absolute_path = realpath( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . '..' . 
  * NOTE: you can not mix/merge old/new formats within this file.
  * @global string $g_custom_strings_file
  */
-$g_custom_strings_file = CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_strings_inc.php';
+$g_custom_strings_file = CONFIG_PATH . '/custom_strings_inc.php';
 
 /**
  * Used to link to manual for User Documentation.
@@ -3854,7 +3854,7 @@ $g_plugins_enabled = ON;
  * absolute path to plugin files.
  * @global string $g_plugin_path
  */
-$g_plugin_path = $g_absolute_path . 'plugins' . DIRECTORY_SEPARATOR;
+$g_plugin_path = $g_absolute_path . 'plugins/';
 
 /**
  * management threshold.

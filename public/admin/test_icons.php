@@ -23,14 +23,14 @@
 /**
  * MantisBT Core API's
  */
-require_once( dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'core.php' );
+require_once( dirname( dirname( __FILE__ ) ) . '/core.php' );
 
 access_ensure_global_level( config_get_global( 'admin_site_threshold' ) );
 
 html_page_top();
 
 foreach( $g_file_type_icons as $t_ext => $t_filename ) {
-	$t_file_path = dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'images' . DIRECTORY_SEPARATOR . 'fileicons' . DIRECTORY_SEPARATOR . $t_filename;
+	$t_file_path = dirname( dirname( __FILE__ ) ) . '/images/fileicons/' . $t_filename;
 
 	echo "Testing icon for extension '$t_ext'... $t_file_path ... ";
 	flush();

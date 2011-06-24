@@ -178,7 +178,7 @@ function file_get_icon_url( $p_display_filename ) {
 function file_path_combine( $p_path, $p_filename ) {
 	$t_path = $p_path;
 	if ( utf8_substr( $t_path, -1 ) != '/' && utf8_substr( $t_path, -1 ) != '\\' ) {
-		$t_path .= DIRECTORY_SEPARATOR;
+		$t_path .= '/';
 	}
 
 	$t_path .= $p_filename;

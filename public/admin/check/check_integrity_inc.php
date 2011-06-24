@@ -34,7 +34,7 @@ if ( !defined( 'CHECK_INTEGRITY_INC_ALLOW' ) ) {
 require_once( 'check_api.php' );
 require_api( 'config_api.php' );
 
-$t_this_directory = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
+$t_this_directory = dirname( __FILE__ ) . '/';
 if( file_exists( $t_this_directory . 'integrity_release_blobs.php' ) ) {
 	require_once( $t_this_directory . 'integrity_release_blobs.php' );
 }
@@ -95,7 +95,7 @@ function check_file_integrity_recursive( $p_directory, $p_base_directory, $p_rel
 				if( in_array( $t_file_relative . '/', $p_ignore_files ) ) {
 					continue;
 				}
-				check_file_integrity_recursive( $t_file_absolute . DIRECTORY_SEPARATOR, $p_base_directory, $p_relative_path_prefix, $p_ignore_files );
+				check_file_integrity_recursive( $t_file_absolute . '/', $p_base_directory, $p_relative_path_prefix, $p_ignore_files );
 			} else if( is_file( $t_file_absolute ) ) {
 				if( in_array( $t_file_relative, $p_ignore_files ) ) {
 					continue;
@@ -139,7 +139,7 @@ if( !$t_can_perform_integrity_check ) {
 	return;
 }
 
-$t_absolute_base_dir = realpath( config_get_global( 'absolute_path' ) ) . DIRECTORY_SEPARATOR;
+$t_absolute_base_dir = realpath( config_get_global( 'absolute_path' ) ) . '/';
 $t_ignore_files = array(
 	'.git/',
 	'admin/integrity_commit_blobs.php',
@@ -148,33 +148,33 @@ $t_ignore_files = array(
 	'lang/',
 	'library/',
 	'plugins/',
-	CONFIG_PATH . DIRECTORY_SEPARATOR . 'config_inc.php',
-	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_constants_inc.php',
-	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_functions_inc.php',
-	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_relationships_inc.php',
-	CONFIG_PATH . DIRECTORY_SEPARATOR . 'custom_strings_inc.php',
+	CONFIG_PATH . '/config_inc.php',
+	CONFIG_PATH . '/custom_constants_inc.php',
+	CONFIG_PATH . '/custom_functions_inc.php',
+	CONFIG_PATH . '/custom_relationships_inc.php',
+	CONFIG_PATH . '/custom_strings_inc.php',
 	'mantis_offline.php'
 );
 check_file_integrity_recursive( $t_absolute_base_dir, $t_absolute_base_dir, '', $t_ignore_files );
 
-$t_base_dir = APPLICATION_PATH . DIRECTORY_SEPARATOR;
+$t_base_dir = APPLICATION_PATH . '/';
 $t_ignore_files = array(
 	'core/classes/'
 );
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'core/', $t_ignore_files );
 
 # this check is for the legacy classes
-$t_base_dir = APPLICATION_PATH . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR;
+$t_base_dir = APPLICATION_PATH . '/core/classes/';
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'core/classes/' );
 
-$t_base_dir = LIBRARY_PATH . DIRECTORY_SEPARATOR;
+$t_base_dir = LIBRARY_PATH . '/';
 $t_ignore_files = array(
 	'library/jpgraph/',
 	'library/FirePHPCore/'
 );
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'library/', $t_ignore_files );
 
-$t_base_dir = realpath( LANGUAGE_PATH . DIRECTORY_SEPARATOR );
+$t_base_dir = realpath( LANGUAGE_PATH . '/' );
 check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'languages/' );
 
 $t_builtin_plugins = array(
@@ -182,8 +182,8 @@ $t_builtin_plugins = array(
 	'MantisGraph',
 	'XmlImportExport'
 );
-$t_plugins_dir = $t_absolute_base_dir . 'plugins' . DIRECTORY_SEPARATOR;
+$t_plugins_dir = $t_absolute_base_dir . 'plugins/';
 foreach( $t_builtin_plugins as $t_builtin_plugin) {
-	$t_base_dir = $t_plugins_dir . $t_builtin_plugin . DIRECTORY_SEPARATOR;
-	check_file_integrity_recursive( $t_base_dir, $t_base_dir, 'plugins/' . $t_builtin_plugin . DIRECTORY_SEPARATOR );
+	$t_base_dir = $t_plugins_dir . $t_builtin_plugin . '/';
+	check_file_integrity_recursive( $t_base_dir, $t_base_dir, "plugins/$t_builtin_plugin/");
 }

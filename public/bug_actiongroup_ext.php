@@ -62,7 +62,7 @@ $t_form_name = 'bug_actiongroup_' . $f_action;
 
 form_security_validate( $t_form_name );
 
-require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . $t_action_include_file );
+require_once( dirname( __FILE__ ) . '/' . $t_action_include_file );
 
 # group bugs by project
 $t_projects_bugs = array();

@@ -165,7 +165,7 @@ function email_ensure_valid( $p_email ) {
  */
 function email_is_disposable( $p_email ) {
 	if( !class_exists( 'DisposableEmailChecker' ) ) {
-		require_lib( 'disposable' . DIRECTORY_SEPARATOR . 'disposable.php' );
+		require_lib( 'disposable/disposable.php' );
 	}
 
 	return DisposableEmailChecker::is_disposable_email( $p_email );
@@ -901,7 +901,7 @@ function email_send( $p_email_data ) {
 		if ( $t_mailer_method == PHPMAILER_METHOD_SMTP )
 			register_shutdown_function( 'email_smtp_close' );
 		if( !class_exists( 'PHPMailer' ) ) {
-			require_lib( 'phpmailer' . DIRECTORY_SEPARATOR . 'class.phpmailer.php' );
+			require_lib( 'phpmailer/class.phpmailer.php' );
 		}
 		$mail = new PHPMailer(true);
 	} else {

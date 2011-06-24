@@ -142,14 +142,14 @@ while (list ($t_box_title, $t_box_display) = each ($t_boxes)) {
 			# for even box number start new row and column
 			if ( 1 == $t_counter%2 ) {
 				echo '<tr><td class="myview-left-col">';
-				include( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'my_view_inc.php' );
+				include( dirname( __FILE__ ) . '/my_view_inc.php' );
 				echo '</td>';
 			}
 
 			# for odd box number only start new column
 			else if ( 0 == $t_counter%2 ) {
 				echo '<td class="myview-right-col">';
-				include( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'my_view_inc.php' );
+				include( dirname( __FILE__ ) . '/my_view_inc.php' );
 				echo '</td></tr>';
 			}
 		}
@@ -165,7 +165,7 @@ while (list ($t_box_title, $t_box_display) = each ($t_boxes)) {
 			}
 
 			# display the required box
-			include( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'my_view_inc.php' );
+			include( dirname( __FILE__ ) . '/my_view_inc.php' );
 			echo '<br />';
 
 			# close the first column for first half of boxes

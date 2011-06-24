@@ -69,7 +69,7 @@ function lang_load( $p_lang, $p_dir = null ) {
 	// Step 1 - Load Requested Language file
 	// @@ and if file doesn't exist???
 	if( $p_dir === null ) {
-		include_once( LANGUAGES_PATH . DIRECTORY_SEPARATOR . 'strings_' . $p_lang . '.txt' );
+		include_once( LANGUAGES_PATH . '/strings_' . $p_lang . '.txt' );
 	} else {
 		if( is_file( $p_dir . 'strings_' . $p_lang . '.txt' ) ) {
 			include_once( $p_dir . 'strings_' . $p_lang . '.txt' );
@@ -334,13 +334,13 @@ function lang_get( $p_string, $p_lang = null, $p_error = true ) {
 		$t_plugin_current = plugin_get_current();
 		if( !is_null( $t_plugin_current ) ) {
 			// Step 3 - Plugin exists: load language file
-			lang_load( $t_lang, config_get( 'plugin_path' ) . $t_plugin_current . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR );
+			lang_load( $t_lang, config_get( 'plugin_path' ) . $t_plugin_current . '/lang/' );
 			if( lang_exists( $p_string, $t_lang ) ) {
 				return $g_lang_strings[$t_lang][$p_string];
 			}
 			
 			// Step 4 - Localised language entry didn't exist - fallback to english for plugin
-			lang_load( 'english', config_get( 'plugin_path' ) . $t_plugin_current . DIRECTORY_SEPARATOR . 'lang' . DIRECTORY_SEPARATOR );
+			lang_load( 'english', config_get( 'plugin_path' ) . $t_plugin_current . '/lang/' );
 			if( lang_exists( $p_string, $t_lang ) ) {
 				return $g_lang_strings[$t_lang][$p_string];
 			}			

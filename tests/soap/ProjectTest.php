@@ -34,7 +34,7 @@ class ProjectTest extends SoapBase {
         * A test case that tests the following:
         * 1. Create a project.
         * 2. Rename the project.
-        */        
+        */
        public function testAddRenameDeleteProject() {
                $projectName = $this->getOriginalNameProject();
                $projectNewName = $this->getNewNameProject();
@@ -76,18 +76,18 @@ class ProjectTest extends SoapBase {
                        }
                }
        }
-        
+
        /**
         * A test case which does the following
-        * 
+        *
         * 1. Create a project
         * 2. Retrieve the project id by name
-        * 
+        *
         */
        public function testGetIdFromName() {
 
                $projectName = 'TestProjectForIdFromName';
-        
+
                $projectDataStructure = $this->newProjectAsarray($projectName);
 
                $projectId = $this->client->mc_project_add(
@@ -96,7 +96,7 @@ class ProjectTest extends SoapBase {
                        $projectDataStructure);
 
                $this->projectIdToDelete[] = $projectId;
-               
+
                $projectIdFromName = $this->client->mc_project_get_id_from_name(
                        $this->userName,
                        $this->password,
@@ -132,7 +132,7 @@ class ProjectTest extends SoapBase {
        }
 
        private function newProjectAsarray($projectName) {
-       	
+
        	       $projectDataStructure = array();
                $projectDataStructure['name'] = $projectName;
                $projectDataStructure['status'] = "development";

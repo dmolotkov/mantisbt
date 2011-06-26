@@ -212,7 +212,7 @@ if ( $t_force_pw_reset ) {
 					$t_access_level = get_enum_element( 'access_levels', $t_access_level );
 					$t_view_state = get_enum_element( 'project_view_state', $t_view_state );
 
-					echo '<li><span class="project-name">' . $t_project_name . '</span> <span class="access-level">' . $t_access_level . '</span> <span class="view-state">' . $t_view_state . '</span></li>'; 
+					echo '<li><span class="project-name">' . $t_project_name . '</span> <span class="access-level">' . $t_access_level . '</span> <span class="view-state">' . $t_view_state . '</span></li>';
 				}
 				echo '</ul>';
 				echo '</div>';

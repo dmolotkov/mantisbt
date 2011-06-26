@@ -31,7 +31,7 @@ abstract class PDOAbstract extends DriverAbstract {
     protected $lastError = null;
 
 	/**
-	 */	
+	 */
     public function connect($dsn, $dbHost, $dbUser, $dbPass, $dbName, array $dbOptions=null) {
         $driverstatus = $this->driverInstalled();
 
@@ -78,7 +78,7 @@ abstract class PDOAbstract extends DriverAbstract {
     /**
      * Post-Connect processing (if any)
      */
-    protected function postConnect() {        
+    protected function postConnect() {
     }
 
     /**
@@ -124,7 +124,7 @@ abstract class PDOAbstract extends DriverAbstract {
 			return (int)$id;
 		}
 	}
-	
+
     /**
      * Returns last error reported by database engine.
      * @return string error message
@@ -134,7 +134,7 @@ abstract class PDOAbstract extends DriverAbstract {
     }
 
     /**
-     * Execute SQL query. 
+     * Execute SQL query.
      * @param string $sql query
      * @param array $params query parameters
      * @return bool success

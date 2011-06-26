@@ -27,35 +27,35 @@ use MantisBT\Exception\Db;
  */
 abstract class DriverAbstract {
     /**
-	 * array - cache of column info 
+	 * array - cache of column info
 	 */
-    protected $columns = array(); 
+    protected $columns = array();
     /**
-	 * array - cache of table info 
+	 * array - cache of table info
 	 */
     protected $tables  = null;
 
-    /** 
-	 * string - db host name 
+    /**
+	 * string - db host name
 	 */
     protected $dbHost;
-    /** 
-	 * string - db host user 
+    /**
+	 * string - db host user
 	 */
     protected $dbUser;
-    /** 
-	 * string - db host password 
+    /**
+	 * string - db host password
 	 */
     protected $dbPass;
-    /** 
-	 * string - db name 
+    /**
+	 * string - db name
 	 */
     protected $dbName;
-    /** 
+    /**
 	 * string - db dsn
 	 */
     protected $dbDsn;
-	
+
     /** @var array Database or driver specific options, such as sockets or TCPIP db connections */
     protected $dbOptions;
 
@@ -187,7 +187,7 @@ abstract class DriverAbstract {
     public function getDebug() {
         return $this->debug;
     }
-	
+
     /**
      * Returns number of queries done by this database
      * @return int
@@ -195,7 +195,7 @@ abstract class DriverAbstract {
     public function perfGetQueries() {
         return $this->queries;
     }
-	
+
 	/**
      * Verify sql parameters
      * @param string $sql query or part of it
@@ -227,12 +227,12 @@ abstract class DriverAbstract {
 		$a->params = $params;
 		throw new Db( ERROR_DB_QUERY_FAILED, $a );
     }
-	
+
 	/* legacy functions */
 	public function legacyNullDate() {
         return "1970-01-01 00:00:01";
     }
-	
+
 	public function legacyTimestamp( $date ) {
 		$timestamp = strtotime( $date );
 		if ( $timestamp == false ) {

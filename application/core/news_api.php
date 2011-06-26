@@ -173,7 +173,7 @@ function news_get_row( $p_news_id ) {
 	$result = db_query_bound( $query, array( $c_news_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		trigger_error( ERROR_NEWS_NOT_FOUND, ERROR );
 	} else {

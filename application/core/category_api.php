@@ -500,7 +500,7 @@ function category_get_filter_list( $p_project_id = null ) {
 	$result = db_query_bound( $query );
 
 	$rows = array();
-	while( $row = db_fetch_array( $result ) ) {	
+	while( $row = db_fetch_array( $result ) ) {
 		$rows[] = $row;
 		$g_category_cache[(int) $row['id']] = $row;
 	}

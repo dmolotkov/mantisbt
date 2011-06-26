@@ -63,7 +63,7 @@ function check_get_database_extensions( $p_list = false ) {
 				continue;
 		}
 	}
-	
+
 	if( $p_list == true ) {
 		return rtrim( $t_db, ',' );
 	} else {
@@ -404,12 +404,12 @@ function install_create_admin_if_not_exist( $p_data ) {
 
 	$t_query = "SELECT count(*) FROM $t_user_table";
 	$t_result = db_query_bound( $t_query );
-	
+
 	if ( db_result($t_result) != 0 ) {
 		return 2;
 	}
-	
-	$p_username = $p_data[0]; 
+
+	$p_username = $p_data[0];
 	$p_password = $p_data[1];
 	$p_email = 'root@localhost';
 	$t_seed = $p_email . $p_username;
@@ -426,8 +426,8 @@ function install_create_admin_if_not_exist( $p_data ) {
 
 	# Create preferences for the user
 	$t_user_id = db_insert_id( $t_user_table );
-	
+
 	if( $t_user_id === 1 ) {
 		return 2;
-	}  
+	}
 }

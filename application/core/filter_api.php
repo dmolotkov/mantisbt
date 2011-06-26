@@ -4318,7 +4318,7 @@ function filter_cache_row( $p_filter_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_filter_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		if( $p_trigger_errors ) {
 			error_parameters( $p_filter_id );

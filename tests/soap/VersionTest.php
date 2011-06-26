@@ -44,19 +44,19 @@ class VersionTest extends SoapBase {
      * Tests creating a new version
      */
     public function testAddVersion() {
-        
+
         $versionId = $this->client->mc_project_version_add($this->userName, $this->password, $this->getTestVersion() );
-        
+
         $this->assertNotNull( $versionId );
-        
+
         $this->deleteVersionAfterRun( $versionId );
-        
+
         $versions = $this->client->mc_project_get_versions( $this->userName, $this->password, $this->getProjectId() );
-        
+
         $this->assertEquals(1, count($versions));
-        
+
         $version = $versions[0];
-        
+
         $this->assertEquals('1.0', $version->name);
         $this->assertEquals(true, $version->released);
         $this->assertEquals('Test version', $version->description);
@@ -70,24 +70,24 @@ class VersionTest extends SoapBase {
      * Tests updating a version
      */
     public function testUpdateVersion() {
-        
+
         $versionId = $this->client->mc_project_version_add($this->userName, $this->password, $this->getTestVersion() );
-        
+
         $this->assertNotNull( $versionId );
-        
+
         $this->deleteVersionAfterRun( $versionId );
-        
+
         $updatedVersion = $this->getTestVersion();
         $updatedVersion['name'] = '1.1';
-        
+
         $this->client->mc_project_version_update ( $this->userName, $this->password, $versionId, $updatedVersion );
-        
+
         $versions = $this->client->mc_project_get_versions( $this->userName, $this->password, $this->getProjectId() );
-        
+
         $this->assertEquals(1, count($versions));
-        
+
         $version = $versions[0];
-        
+
         $this->assertEquals('1.1', $version->name);
     }
 }

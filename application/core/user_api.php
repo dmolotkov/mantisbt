@@ -87,11 +87,11 @@ function user_cache_row( $p_user_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $p_user_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if ( $row ) {
 		$g_cache_user[$p_user_id] = $row;
 
-		return $row;	
+		return $row;
 	} else {
 		$g_cache_user[$p_user_id] = false;
 
@@ -664,7 +664,7 @@ function user_get_id_by_name( $p_username ) {
 	$result = db_query_bound( $query, array( $p_username ) );
 
 	$row = db_fetch_array( $result );
-	if( $row ) {		
+	if( $row ) {
 		user_cache_database_result( $row );
 		return $row['id'];
 	}
@@ -686,7 +686,7 @@ function user_get_id_by_email( $p_email ) {
 	$result = db_query_bound( $query, array( $p_email ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		return false;
 	} else {
@@ -710,7 +710,7 @@ function user_get_id_by_realname( $p_realname ) {
 	$result = db_query_bound( $query, array( $p_realname ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		return false;
 	} else {

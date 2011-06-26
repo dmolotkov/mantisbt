@@ -249,7 +249,7 @@ function tag_get( $p_tag_id ) {
 	$result = db_query_bound( $query, array( $c_tag_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		return false;
 	}

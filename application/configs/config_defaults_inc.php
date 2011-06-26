@@ -3946,7 +3946,7 @@ $g_show_queries_count = OFF;
  * Toggles between:
  * i) showing friendly error messages - designed for end users.
  * OR
- * ii) Showing users designed for administrators/developers - showing a list of variables and their values 
+ * ii) Showing users designed for administrators/developers - showing a list of variables and their values
  * Only turn this off when you really need it for debugging
  * @global int $g_show_show_friendly_errors
  */
@@ -3972,7 +3972,7 @@ $g_log_level = LOG_NONE;
  * 4 Options currently exist for log destination:
  * a) '': The default value (empty string) means default PHP error log settings
  * b) 'file': Log to a specific file - specified as 'file:/var/log/mantis.log'
- * c) 'firebug': make use of firefox's firebug addon from http://getfirebug.com/ - Note: if user is 
+ * c) 'firebug': make use of firefox's firebug addon from http://getfirebug.com/ - Note: if user is
  *    not running firefox, this options falls through to the default php error log settings.
  * d) 'page': Display log output at bottom of the page.
  * @global string $g_log_destination
@@ -3981,7 +3981,7 @@ $g_log_destination = '';
 
 /**
  * Indicates the access level required for a user to see the log output (if log_destination is page)
- * Note that this threshold is compared against the user's default global access level rather than 
+ * Note that this threshold is compared against the user's default global access level rather than
  * the threshold based on the current active project.
  *
  * @global int $g_show_log_threshold

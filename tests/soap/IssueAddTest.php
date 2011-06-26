@@ -384,7 +384,7 @@ class IssueAddTest extends SoapBase {
 
 		$this->assertEquals( $this->userName,  $issue->handler->name );
 	}
-	
+
 	/**
 	 * Tests that a created issue with a non-existent version returns the correct error message.
 	 */
@@ -392,24 +392,24 @@ class IssueAddTest extends SoapBase {
 
 		$issueToAdd = $this->getIssueToAdd( 'IssueAddTest.testCreateIssueWithFaultyVersionGeneratesError' );
 		$issueToAdd['version'] = 'noSuchVersion';
-		
+
 		try {
 			$this->client->mc_issue_add(
 				$this->userName,
 				$this->password,
 				$issueToAdd);
-			
+
 			$this->fail( "Invalid version did not raise error." );
 		} catch ( SoapFault $e) {
-			$this->assertContains( "Version 'noSuchVersion' does not exist in project", $e->getMessage() );	
+			$this->assertContains( "Version 'noSuchVersion' does not exist in project", $e->getMessage() );
 		}
 	}
-	
+
 	/**
 	 * Tests that an issue with a proper version set is correctly created
 	 */
 	public function testCreateIssueWithVersion() {
-		
+
 		$version = array (
 			'project_id' => $this->getProjectId(),
 			'name' => '1.0',
@@ -417,49 +417,49 @@ class IssueAddTest extends SoapBase {
 			'description' => 'Test version',
 			'date_order' => ''
 		);
-		
+
 		$versionId = $this->client->mc_project_version_add( $this->userName, $this->password, $version );
-		
+
 		$this->deleteVersionAfterRun( $versionId );
-		
+
 		$issueToAdd = $this->getIssueToAdd( 'IssueAddTest.testCreateIssueWithVersion' );
 		$issueToAdd['version'] = $version['name'];
-		
+
 		$issueId = $this->client->mc_issue_add( $this->userName, $this->password, $issueToAdd );
-		
+
 		$this->deleteAfterRun($issueId);
-		
+
 		$createdIssue = $this->client->mc_issue_get( $this->userName, $this->password, $issueId );
-		
+
 		$this->assertEquals( $version['name'], $createdIssue->version );
 	}
-	
+
 	/**
 	 * Test that the biggest id is correctly retrieved
 	 */
 	public function testGetBiggestId() {
-	    
+
 	    $firstIssueId = $this->client->mc_issue_add( $this->userName, $this->password, $this->getIssueToAdd( 'IssueAddTest.testGetBiggestId1'));
         $this->deleteAfterRun( $firstIssueId );
-	    
+
 	    $secondIssueId = $this->client->mc_issue_add( $this->userName, $this->password, $this->getIssueToAdd( 'IssueAddTest.testGetBiggestId2'));
 	    $this->deleteAfterRun( $secondIssueId );
-	    
+
 	    $firstIssue = $this->client->mc_issue_get( $this->userName, $this->password, $firstIssueId );
-	    
+
 	    // this update should trigger this issue's id to be returned as the biggest
 	    // reported as bug #12887
 		$this->client->mc_issue_update( $this->userName, $this->password, $firstIssueId, $firstIssue);
-		
+
 		$this->assertEquals( $secondIssueId, $this->client->mc_issue_get_biggest_id( $this->userName, $this->password, $this->getProjectId() ));
 	}
-	
+
 	/**
-	 * A test cases that tests the creation of issues 
+	 * A test cases that tests the creation of issues
 	 * with a note passed in which contains time tracking data.
 	 */
 	public function testCreateIssueWithMiscNote() {
-		
+
 		$issueToAdd = $this->getIssueToAdd( 'testCreateIssueWithMiscNote' );
 		$issueToAdd['notes'] = array(
 			array(
@@ -473,7 +473,7 @@ class IssueAddTest extends SoapBase {
 			$this->userName,
 			$this->password,
 			$issueToAdd);
-			
+
 		$this->deleteAfterRun($issueId);
 
 		$issue = $this->client->mc_issue_get(
@@ -485,7 +485,7 @@ class IssueAddTest extends SoapBase {
 		$this->assertEquals( 1, count( $issue->notes ) );
 
 		$note = $issue->notes[0];
-		
+
 		$this->assertEquals( 2, $note->note_type );
 		$this->assertEquals( 'attr_value', $note->note_attr );
 	}

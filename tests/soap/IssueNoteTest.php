@@ -186,7 +186,7 @@ class IssueNoteTest extends SoapBase {
 			$issueId);
 
 		$this->assertEquals( 1, count( $issueWithNote->notes ) );
-		
+
         $noteDataNew = array(
             'id' => $issueNoteId,
             'text' => "some new note"
@@ -202,7 +202,7 @@ class IssueNoteTest extends SoapBase {
             $this->password,
             $issueId);
 
-        $this->assertEquals( 1, count( $issueWithNote->notes ) );		
+        $this->assertEquals( 1, count( $issueWithNote->notes ) );
 
 		$this->client->mc_issue_note_delete(
 			$this->userName,

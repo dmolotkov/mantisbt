@@ -36,14 +36,14 @@ class Mysql extends PDOAbstract implements DriverInterface {
     protected function getDsn() {
 		return  'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
 	}
-	
+
 	/**
 	 * Returns whether driver is installed
 	 * @return bool
 	 */
     public function driverInstalled() {
 		return extension_loaded( 'pdo_mysql' );
-	}	
+	}
 
 	/**
 	 * Returns db type string
@@ -52,7 +52,7 @@ class Mysql extends PDOAbstract implements DriverInterface {
 	public function getDbType() {
 		return 'mysql';
 	}
-	
+
 	/**
 	 * Returns PDO options
 	 * @return array
@@ -62,7 +62,7 @@ class Mysql extends PDOAbstract implements DriverInterface {
 		$options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES utf8';
         return $options;
     }
-	
+
 	/**
 	 * @param string $sql
 	 * @param int $limit
@@ -73,7 +73,7 @@ class Mysql extends PDOAbstract implements DriverInterface {
 	public function selectLimit( $sql, $limit, $offset, array $arrParms = null) {
 		$stroffset = ($offset>=0) ? " OFFSET $offset" : '';
 
-		if ($limit < 0) $limit = '18446744073709551615'; 
+		if ($limit < 0) $limit = '18446744073709551615';
 
 		return $this->execute( $sql . ' LIMIT ' . (int)$limit . $stroffset , $arrParms );
 	}
@@ -81,7 +81,7 @@ class Mysql extends PDOAbstract implements DriverInterface {
 	/**
 	 * @param string $p_name
 	 * @return bool
-	 */	
+	 */
 	public function databaseExists( $name ) {
 		$sql = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?";
 		try {
@@ -102,21 +102,21 @@ class Mysql extends PDOAbstract implements DriverInterface {
 	/**
 	 * @param bool $useCache
 	 * @return array
-	 */	
+	 */
 	public function getTables($useCache=true) {
         if ($useCache and $this->tables !== null) {
             return $this->tables;
         }
         $this->tables = array();
         $sql = "SHOW TABLES";
-		
+
 		$result = $this->execute( $sql );
         if ( $result ) {
             while( $arr = $result->fetch() ) {
                 $this->tables[] = $arr[0];
             }
         }
-        return $this->tables;	
+        return $this->tables;
 	}
 
 	/**
@@ -140,7 +140,7 @@ class Mysql extends PDOAbstract implements DriverInterface {
 	 * @param string $table
 	 * @param bool $usecache
 	 * @return array
-	 */	
+	 */
 	public function getColumns( $table, $useCache=true ) {
 		if ( $useCache and isset( $this->columns[$table] ) ) {
             return $this->columns[$table];

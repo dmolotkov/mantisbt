@@ -186,13 +186,13 @@ if( $t_config_exists ) {
 	} catch (Exception $ex) {
 		$t_result = false;
 	}
-		
+
 	if( $g_db->isConnected() ) {
 		$g_db_connected = true;
 	}
 
 	$t_cur_version = config_get( 'database_version', -1 );
-	
+
 	if( $t_cur_version > 1 ) {
 		$g_database_upgrade = true;
 		$f_db_exists = true;
@@ -231,7 +231,7 @@ print_test( 'Checking if safe mode is enabled for install script',
 	true,
 	'Disable safe_mode in php.ini before proceeding' );
 
-if( $g_database_upgrade == false ) {	
+if( $g_database_upgrade == false ) {
 	print_test( 'Checking Database Extensions Available', check_get_database_extensions(),true);
 	print_info_row( 'Available Database Extensions', check_get_database_extensions(true));
 }
@@ -627,14 +627,14 @@ if( 3 == $t_install_state ) {
 			$t_result = $g_db->connect( null, $f_hostname, $f_admin_username, $f_admin_password, $f_database_name, null );
 		} catch (Exception $ex) {
 			$t_result = false;
-		}	
+		}
 
 		if( !$f_log_queries ) {
 			$g_db_connected = true;
 
 			# fake out database access routines used by config_get
 		}
-		
+
 		$t_last_update = config_get( 'database_version', -1, ALL_USERS, ALL_PROJECTS );
 		$lastid = count( $upgrade ) - 1;
 		$i = $t_last_update + 1;
@@ -709,7 +709,7 @@ if( 3 == $t_install_state ) {
 			}
 			$i++;
 		}
-		
+
 		if ( $t_last_update === -1 ) {
 			$ret = call_user_func( 'install_create_admin_if_not_exist', array( 'administrator', 'root') );
 			if( $ret == 2 ) {
@@ -718,7 +718,7 @@ if( 3 == $t_install_state ) {
 				print_test_result( BAD, true, $g_db->getLastError() );
 			}
 		}
-		
+
 		if( $f_log_queries ) {
 			# add a query to set the database version
 			echo 'INSERT INTO ' . db_get_table( 'config' ) . ' ( value, type, access_reqd, config_id, project_id, user_id ) VALUES (\'' . $lastid . '\', 1, 90, \'database_version\', 0, 0 );' . "\r\n";
@@ -859,7 +859,7 @@ if( 6 == $t_install_state ) {
 		$t_result = $g_db->connect( null, $f_hostname, $f_db_username, $f_db_password, $f_database_name, null );
 	} catch (Exception $ex) {
 		$t_result = false;
-	}	
+	}
 
 	if( $t_result == true ) {
 		print_test_result( GOOD );

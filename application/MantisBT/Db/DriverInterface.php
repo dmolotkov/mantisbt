@@ -176,7 +176,7 @@ interface DriverInterface {
      * @throws MantisBT\Exception\Db if error
      */
     public function selectLimit( $sql, $limit, $offset, array $arrParms = null );
-	
+
     /**
      * Returns number of queries done by this database
      * @return int
@@ -186,9 +186,9 @@ interface DriverInterface {
     /**
      * Returns whether database is connected
      * @return bool
-     */	
+     */
     public function isConnected();
-	
+
 	/**
      * Verify sql parameters
      * @param string $sql query or part of it
@@ -196,7 +196,7 @@ interface DriverInterface {
      * @return array (sql, params, type of params)
      */
     public function checkSqlParameters( $sql, array $params=null );
-	
+
 	/* legacy functions */
 	public function legacyNullDate();
 	public function legacyTimestamp( $date );

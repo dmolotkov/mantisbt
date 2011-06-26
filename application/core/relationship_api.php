@@ -472,7 +472,7 @@ function relationship_exists( $p_src_bug_id, $p_dest_bug_id ) {
 	$result = db_query_bound( $t_query, array( $c_src_bug_id, $c_dest_bug_id, $c_dest_bug_id, $c_src_bug_id ), 1 );
 
 	if( $row = db_fetch_array( $result ) ) {
-		# return the first id	
+		# return the first id
 		return $row['id'];
 	} else {
 		# no relationship found

@@ -60,13 +60,13 @@ function mci_file_add( $p_id, $p_name, $p_content, $p_file_type, $p_table, $p_ti
 	$c_file_type = db_prepare_string( $p_file_type );
 	$c_title = db_prepare_string( $p_title );
 	$c_desc = db_prepare_string( $p_desc );
-	
+
 	if( $p_user_id === null ) {
 		$c_user_id = auth_get_current_user_id();
 	} else {
 		$c_user_id = (int)$p_user_id;
 	}
-	
+
 
 	if( $t_project_id == ALL_PROJECTS ) {
 		$t_file_path = config_get( 'absolute_path_default_upload_folder' );

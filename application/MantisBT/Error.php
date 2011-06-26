@@ -7,13 +7,13 @@ class Error {
 	 * Indicates previous errors
 	 */
 	private static $allErrors = array();
-		
+
 	/**
 	 * Indicates if an error/exception has been handled
 	 * Note: this also indicates additional shutdown functions have been setup.
 	 */
 	private static $handled = false;
-	
+
 	private static $errorConstants = array(
 										'1'=>'E_ERROR',
 										'2'=>'E_WARNING',
@@ -33,14 +33,14 @@ class Error {
 									);
 
 	private static $parameters = array();
-	
+
 	private static $proceedUrl = null;
-									
+
 	public static function init(){
 		if( self::$handled === false ) {
 			// first run
 			register_shutdown_function(array('MantisBT\Error', 'display_errors'));
-			
+
 			self::$handled = true;
 		}
 	}
@@ -61,7 +61,7 @@ class Error {
 
         self::$allErrors[] = $errorInfo;
 	}
-	
+
 	public static function error_handler( $type, $error, $file, $line, $context ) {
         $errorInfo = new stdClass();
         $errorInfo->time = time();
@@ -75,18 +75,18 @@ class Error {
 		$errorInfo->trace = debug_backtrace();
 
         self::$allErrors[] = $errorInfo;
-		
+
 		if( 0 == error_reporting() ) {
 			return false;
-		}		
+		}
 
 		// historically we inline warnings
 		if( $type != E_WARNING && $type != E_USER_WARNING ) {
 			self::init();
 		}
-		
+
 		if( $type == E_WARNING || $type == E_USER_WARNING || null !== self::$proceedUrl ) {
-		
+
 			switch( $type ) {
 				case E_WARNING:
 					$errorType = 'SYSTEM WARNING';
@@ -102,21 +102,21 @@ class Error {
 			if ( null !== self::$proceedUrl ) {
 				echo '<a href="', self::$proceedUrl, '">', lang_get( 'proceed' ), '</a>';
 			}
-			
+
 			return true; // @todo true|false??
 		}
-		
+
 		exit();
 	}
-	
-	public static function shutdown_error_handler() { 
+
+	public static function shutdown_error_handler() {
 		$error = error_get_last();
 		if( $error === null ) {
 			return;
 		}
 
 		self::init();
-		
+
 		$errorInfo = new stdClass();
         $errorInfo->time = time();
         $errorInfo->type = 'ERROR_LAST';
@@ -130,20 +130,20 @@ class Error {
 
         self::$allErrors[] = $errorInfo;
 	}
-	
+
 	public static function display_errors( $noHeader = false ) {
 		# disable any further event callbacks
 		if ( function_exists( 'event_clear_callbacks' ) ) {
 			event_clear_callbacks();
 		}
-			
+
 		$oblen = ob_get_length();
 		if( error_handled() && $oblen > 0 ) {
 			$oldContents = ob_get_contents();
 		}
 
 		# We need to ensure compression is off - otherwise the compression headers are output.
-		compress_disable();	
+		compress_disable();
 
 		# then clean the buffer, leaving output buffering on.
 		if( $oblen > 0 ) {
@@ -161,7 +161,7 @@ class Error {
 		echo '<div align="center">';
 		echo lang_get( 'error_no_proceed' );
 		echo '<br />';
-		
+
 		foreach ( self::$allErrors as $key => $errorInfo ) {
 			self::display_error( $errorInfo );
 
@@ -170,7 +170,7 @@ class Error {
 			}
 		}
 		echo '</div>';
-		
+
 		if ( !config_get( 'show_friendly_errors' ) ) {
 			if( isset( $oldContents ) ) {
 				echo '<p>Page contents follow.</p>';
@@ -183,7 +183,7 @@ class Error {
 		echo '</body></html>', "\n";
 		exit();
 	}
-	
+
 	public static function display_error( $error) {
 		echo '<br /><div><table class="width70" cellspacing="1">';
 		echo '<tr><td class="form-title">' . $error->name . '</td></tr>';
@@ -198,7 +198,7 @@ class Error {
 		}
 		echo '</table></div>';
 	}
-	
+
 	/**
 	 * Print out the error details including context
 	 * @param string $file
@@ -233,11 +233,11 @@ class Error {
 				<tr>
 					<td>ID: <?php echo htmlentities( $file, ENT_COMPAT, 'UTF-8' );?>:<?php echo $line?></td>
 				</tr>
-			</table>				
+			</table>
 		<?php
 		}
 	}
-	
+
 	/**
 	 * Print out the variable context given
 	 * @param string $context
@@ -284,7 +284,7 @@ class Error {
 
 		# remove the call to the error handler from the stack trace
 		array_shift( $stack );
-	
+
 
 		foreach( $stack as $frame ) {
 			echo '<tr ', self::error_alternate_class(), '>';
@@ -341,7 +341,7 @@ class Error {
 			}
 		}
 	}
-	
+
 	/**
 	 * Return an error string (in the current language) for the given error.
 	 * @param int $error
@@ -358,13 +358,13 @@ class Error {
 		if( $error == '' ) {
 			return lang_get( 'missing_error_string' ) . $error;
 		}
-		
+
 		# ripped from string_api
 		$string = call_user_func_array( 'sprintf', array_merge( array( $error ), self::$parameters, $padding ) );
 		return preg_replace( "/&amp;(#[0-9]+|[a-z]+);/i", "&$1;", @htmlspecialchars( $string, ENT_COMPAT, 'UTF-8' ) );
 	}
-	
-	
+
+
 	/**
 	 * Simple version of helper_alternate_class for use by error api only.
 	 * @access private
@@ -379,7 +379,7 @@ class Error {
 			return 'class="row-2"';
 		}
 	}
-	
+
 	public static function error_parameters( $args ) {
 		self::$parameters = $args;
 	}
@@ -387,7 +387,7 @@ class Error {
 	public static function error_proceed_url( $url ) {
 		self::$proceedUrl = $url();
 	}
-	
+
 	public static function error_handled() {
 		return self::$handled;
 	}

@@ -170,7 +170,7 @@ function mci_null_if_empty( $p_value ) {
  * @return MantisBT URL terminated by a /.
  */
 function mci_get_mantis_path() {
-    
+
 	return config_get( 'path' );
 }
 
@@ -298,11 +298,11 @@ function mci_category_as_array_by_id( $p_category_id ) {
 
 /**
  * Transforms a version array into an array suitable for marshalling into ProjectVersionData
- * 
+ *
  * @param array $p_version
  */
 function mci_project_version_as_array( $p_version ) {
-    
+
     return array(
 			'id' => $p_version['id'],
 			'name' => $p_version['version'],

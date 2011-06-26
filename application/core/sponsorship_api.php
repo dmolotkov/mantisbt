@@ -91,7 +91,7 @@ function sponsorship_cache_row( $p_sponsorship_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_sponsorship_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		$g_cache_sponsorships[$c_sponsorship_id] = false;
 
@@ -102,7 +102,7 @@ function sponsorship_cache_row( $p_sponsorship_id, $p_trigger_errors = true ) {
 			return false;
 		}
 	}
-	
+
 	$g_cache_sponsorships[$c_sponsorship_id] = $row;
 
 	return $row;
@@ -156,7 +156,7 @@ function sponsorship_get_id( $p_bug_id, $p_user_id = null ) {
 	$t_result = db_query_bound( $query, array( $c_bug_id, $c_user_id ), 1 );
 
 	$t_row = db_fetch_array( $t_result );
-	
+
 	if( !$t_row ) {
 		return false;
 	}

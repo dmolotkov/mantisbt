@@ -115,7 +115,7 @@ function version_cache_row( $p_version_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_version_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		$g_cache_versions[$c_version_id] = false;
 

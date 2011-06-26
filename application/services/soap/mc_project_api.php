@@ -27,12 +27,12 @@ function mc_project_get_issues( $p_username, $p_password, $p_project_id, $p_page
 	$t_bug_count = 0;
 
 	$t_rows = filter_get_bug_rows( $p_page_number, $p_per_page, $t_page_count, $t_bug_count, null, $p_project_id );
-	
+
 	$t_result = array();
-	
+
 	// the page number was moved back, so we have exceeded the actual page number, see bug #12991
 	if ( $t_orig_page_number > $p_page_number )
-	    return $t_result;	
+	    return $t_result;
 
 	foreach( $t_rows as $t_issue_data ) {
 		$t_result[] = mci_issue_data_as_array( $t_issue_data, $t_user_id, $t_lang );
@@ -227,7 +227,7 @@ function mc_project_get_versions( $p_username, $p_password, $p_project_id ) {
 	if( !mci_has_readonly_access( $t_user_id, $p_project_id ) ) {
 		return mci_soap_fault_access_denied( $t_user_id );
 	}
-	
+
 	$t_result = array();
 	foreach( version_get_all_rows( $p_project_id, VERSION_ALL ) as $t_version ) {
 		$t_result[] = mci_project_version_as_array ( $t_version );
@@ -319,13 +319,13 @@ function mc_project_version_add( $p_username, $p_password, $p_version ) {
 	$t_released = $p_version['released'];
 	$t_description = $p_version['description'];
 	$t_date_order =  $p_version['date_order'];
-	if ( is_blank( $t_date_order ) ) 
+	if ( is_blank( $t_date_order ) )
 	    $t_date_order = null;
-	else 
+	else
 	    $t_date_order = date( "Y-m-d H:i:s", strtotime( $t_date_order ) );
-	
+
 	$t_obsolete = isset ( $p_version['obsolete'] ) ? $p_version['obsolete'] : false;
-	
+
 	if ( is_blank( $t_project_id ) ) {
 		return new soap_fault( 'Client', '', 'Mandatory field "project_id" was missing' );
 	}
@@ -355,7 +355,7 @@ function mc_project_version_add( $p_username, $p_password, $p_version ) {
 	} else {
 		$t_released = VERSION_RELEASED;
 	}
-	
+
 	if ( version_add( $t_project_id, $t_name, $t_released, $t_description, $t_date_order, $t_obsolete ) )
 		return version_get_id( $t_name, $t_project_id );
 
@@ -671,7 +671,7 @@ function mc_project_get_id_from_name( $p_username, $p_password, $p_project_name 
         if( $t_user_id === false ) {
                 return mci_soap_fault_login_failed();
         }
-        
+
         return project_get_id_by_name ( $p_project_name );
 }
 
@@ -865,14 +865,14 @@ function mc_project_get_issue_headers( $p_username, $p_password, $p_project_id, 
 	if( !mci_has_readonly_access( $t_user_id, $p_project_id ) ) {
 		return mci_soap_fault_access_denied( $t_user_id );
 	}
-	
+
 	$t_orig_page_number = $p_page_number < 1 ? 1 : $p_page_number;
 	$t_page_count = 0;
 	$t_bug_count = 0;
 
 	$t_rows = filter_get_bug_rows( $p_page_number, $p_per_page, $t_page_count, $t_bug_count, null, $p_project_id );
 	$t_result = array();
-	
+
 	// the page number was moved back, so we have exceeded the actual page number, see bug #12991
 	if ( $t_orig_page_number > $p_page_number )
 	    return $t_result;

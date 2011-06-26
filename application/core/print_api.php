@@ -715,7 +715,7 @@ function print_build_option_list( $p_build = '' ) {
 				WHERE $t_project_where
 				ORDER BY build DESC";
 	$t_result = db_query_bound( $query );
-	
+
 	while( $t_row = db_fetch_array( $t_result ) ) {
 		$t_overall_build_arr[] = $t_row['build'];
 	}

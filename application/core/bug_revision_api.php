@@ -325,7 +325,7 @@ function bug_revision_like( $p_rev_id ) {
 	$t_result = db_query_bound( $t_query, array( $p_rev_id ) );
 
 	$t_row = db_fetch_array( $t_result );
-	
+
 	if ( !$t_row ) {
 		trigger_error( ERROR_BUG_REVISION_NOT_FOUND, ERROR );
 	}

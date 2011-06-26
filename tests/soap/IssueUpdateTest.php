@@ -222,13 +222,13 @@ class IssueUpdateTest extends SoapBase {
 			$issueId);
 
 		$this->assertEquals( 2, count( $issueWithTwoNotes->notes ) );
-		
+
 		$newNote = $issueWithTwoNotes->notes[1];
-		
+
 		$this->assertEquals( 'second note', $newNote->text );
 		$this->assertEquals( 2, $newNote->note_type );
 		$this->assertEquals( 'attr_value', $newNote->note_attr );
-		
+
 	}
 
 	/**

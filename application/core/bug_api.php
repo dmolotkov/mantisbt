@@ -611,7 +611,7 @@ function bug_cache_row( $p_bug_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_bug_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		$g_cache_bug[$c_bug_id] = false;
 
@@ -723,7 +723,7 @@ function bug_text_cache_row( $p_bug_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_bug_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		$g_cache_bug_text[$c_bug_id] = false;
 
@@ -1777,15 +1777,15 @@ function bug_monitor( $p_bug_id, $p_user_id ) {
 
 /**
  * Returns the list of users monitoring the specified bug
- * 
+ *
  * @param int $p_bug_id
  */
 function bug_get_monitors( $p_bug_id ) {
-    
+
     if ( ! access_has_bug_level( config_get( 'show_monitor_list_threshold' ), $p_bug_id ) ) {
         return array();
     }
-    
+
 	$c_bug_id = db_prepare_int( $p_bug_id );
 	$t_bug_monitor_table = db_get_table( 'bug_monitor' );
 	$t_user_table = db_get_table( 'user' );
@@ -1801,9 +1801,9 @@ function bug_get_monitors( $p_bug_id ) {
 	while( $t_row = db_fetch_array( $t_result ) ) {
 		$t_users[] = $t_row['user_id'];
 	}
-	
+
 	user_cache_array_rows( $t_users );
-	
+
 	return $t_users;
 }
 

@@ -96,7 +96,7 @@ function project_cache_row( $p_project_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_project_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( ! $row ) {
 		$g_cache_project_missing[(int) $p_project_id] = true;
 
@@ -424,7 +424,7 @@ function project_get_id_by_name( $p_project_name ) {
 	$ret = db_result( $t_result );
 	if( $ret ) {
 		return $ret;
-	} 
+	}
 	return 0;
 }
 

@@ -1043,8 +1043,8 @@ $l_oServer->register( 'mc_project_update',
 $l_oServer->register( 'mc_project_get_id_from_name',
 	array(
 		'username' => 'xsd:string',
-		'password' => 'xsd:string',	
-		'project_name' => 'xsd:string'		
+		'password' => 'xsd:string',
+		'project_name' => 'xsd:string'
 	),
 	array(
 		'return' => 'xsd:integer'

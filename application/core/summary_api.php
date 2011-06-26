@@ -73,13 +73,13 @@ function summary_print_by_enum( $p_enum ) {
 	if( ' 1<>1' == $t_project_filter ) {
 		return;
 	}
-	
+
 	$t_vars = getClassProperties( 'BugData', 'protected');
 	if( !array_key_exists( $p_enum, $t_vars ) ) {
 		error_parameters($p_enum);
 		trigger_error( ERROR_DB_FIELD_NOT_FOUND, WARNING );
 	}
-	
+
 	$t_filter_prefix = config_get( 'bug_count_hyperlink_prefix' );
 
 	$t_mantis_bug_table = db_get_table( 'bug' );

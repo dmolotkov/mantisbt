@@ -32,10 +32,10 @@ class UserTest extends SoapBase {
      * Tests getting a user preference
      */
     public function testGetPreference() {
-        
+
         $language = $this->client->mc_user_pref_get_pref( $this->userName, $this->password, 0 /*ALL_PROJECTS*/, 'language' );
-        
+
         $this->assertEquals( 'auto', $language );
-        
+
     }
 }

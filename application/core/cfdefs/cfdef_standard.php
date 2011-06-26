@@ -349,7 +349,7 @@ function cfdef_prepare_list_distinct_values($p_field_def) {
 	if ( !$t_row ) {
 		return false;
 	}
-	
+
 
 	$t_possible_values = custom_field_prepare_possible_values( $t_row['possible_values'] );
 	$t_values_arr = explode( '|', $t_possible_values );

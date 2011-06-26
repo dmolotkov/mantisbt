@@ -49,7 +49,7 @@ $g_log_levels = array(
  * Log an event
  * @param int $p_level Valid debug log level
  * @param string|array $p_msg Either a string, or an array structured as (string,execution time)
- * @param object $p_backtrace [Optional] debug_backtrace() stack to use 
+ * @param object $p_backtrace [Optional] debug_backtrace() stack to use
  * @return null
  */
 function log_event( $p_level, $p_msg, $p_backtrace = null ) {
@@ -166,9 +166,9 @@ function log_print_to_page() {
 		echo "\t\t\t<th>" . lang_get( 'log_page_caller' ) . "</th>\n";
 		echo "\t\t\t<th>" . lang_get( 'log_page_event' ) . "</th>\n";
 		echo "\t\t</tr>\n";
-		echo "\t</thead>\n";		
+		echo "\t</thead>\n";
 		echo "\t<tbody>\n";
-		
+
 		for ( $i = 0; $i < $t_total_event_count; $i++ ) {
 			if( $g_log_events[$i][1] == LOG_DATABASE ) {
 				if( !in_array( $g_log_events[$i][2][0], $t_unique_queries ) ) {

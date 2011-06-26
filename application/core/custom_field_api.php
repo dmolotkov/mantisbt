@@ -121,7 +121,7 @@ function custom_field_cache_row( $p_field_id, $p_trigger_errors = true ) {
 	$result = db_query_bound( $query, array( $c_field_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		if( $p_trigger_errors ) {
 			error_parameters( 'Custom ' . $p_field_id );
@@ -822,7 +822,7 @@ function custom_field_get_id_from_name( $p_field_name, $p_truncated_length = nul
 	$t_result = db_query_bound( $t_query, array() );
 
 	$t_row = db_fetch_array( $t_result );
-	
+
 	if( !$t_row ) {
 		return false;
 	}
@@ -1130,7 +1130,7 @@ function custom_field_get_sequence( $p_field_id, $p_project_id ) {
 	$result = db_query_bound( $query, array( $c_field_id, $c_project_id ), 1 );
 
 	$t_row = db_fetch_array( $result );
-	
+
 	if( !$t_row ) {
 		return false;
 	}

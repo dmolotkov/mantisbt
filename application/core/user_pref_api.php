@@ -190,7 +190,7 @@ function user_pref_cache_row( $p_user_id, $p_project_id = ALL_PROJECTS, $p_trigg
 	$result = db_query_bound( $query, array( (int)$p_user_id, (int)$p_project_id ) );
 
 	$row = db_fetch_array( $result );
-	
+
 	if( !$row ) {
 		if( $p_trigger_errors ) {
 			trigger_error( ERROR_USER_PREFS_NOT_FOUND, ERROR );

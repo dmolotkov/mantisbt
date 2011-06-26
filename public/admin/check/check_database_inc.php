@@ -90,7 +90,7 @@ if( !db_is_connected() ) {
 	return;
 }
 
-$t_database_server_info = $g_db->get_server_info();
+$t_database_server_info = $g_db->getServerInfo();
 check_print_info_row(
 	'Database server version',
 	htmlentities( $t_database_server_info['version'] )

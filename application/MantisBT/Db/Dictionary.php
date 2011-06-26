@@ -13,6 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
+namespace MantisBT\Db;
 
 /**
  * @package MantisBT
@@ -20,7 +21,7 @@
  * @link http://www.mantisbt.org
  */
  
-class MantisDatabaseDict {
+class Dictionary {
 	var $dropTable = 'DROP TABLE %s';
 	var $renameTable = 'RENAME TABLE %s TO %s'; 
 	var $dropIndex = 'DROP INDEX %s';

@@ -46,10 +46,10 @@
 $g_hostname				= 'localhost';
 /**
  * User name to use for connecting to the database. The user needs to have
- * read/write access to the MantisBT database. The default user name is "root".
+ * read/write access to the MantisBT database. The default user name is "mantis".
  * @global string $g_db_username
  */
-$g_db_username			= 'root';
+$g_db_username			= 'mantis';
 /**
  * Password for the specified user name. The default password is empty.
  * @global string $g_db_password

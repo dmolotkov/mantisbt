@@ -114,7 +114,7 @@ $g_db = ADONewConnection( $f_db_type );
 
 echo "\nPost 1.0 schema changes\n";
 echo "Connecting to database... ";
-$t_result = @$g_db->Connect( $f_hostname, $f_db_username, $f_db_password, $f_database_name );
+$t_result = @$g_db->connect( $f_hostname, $f_db_username, $f_db_password, $f_database_name );
 
 if( false == $t_result ) {
 	echo "failed\n";
@@ -143,7 +143,7 @@ while(( $i <= $lastid ) && !$g_failed ) {
 		print_test_result( GOOD );
 		config_set( 'database_version', $i );
 	} else {
-		print_test_result( BAD, true, $sqlarray[0] . '<br />' . $g_db->ErrorMsg() );
+		print_test_result( BAD, true, $sqlarray[0] . '<br />' . $g_db->errorMsg() );
 	}
 
 	$i++;

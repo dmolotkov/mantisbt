@@ -14,6 +14,8 @@
 # You should have received a copy of the GNU General Public License
 # along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
 
+use MantisBT\Db\DriverAbstract;
+
 /**
  * Database API
  *
@@ -65,14 +67,14 @@ $g_db_log_queries = ( 0 != ( config_get_global( 'log_level' ) & LOG_DATABASE ) )
  * @param array $p_dboptions Database options
  * @return bool indicating if the connection was successful
  */
-function db_connect( $p_dsn, $p_hostname = null, $p_username = null, $p_password = null, $p_database_name = null, $p_db_options = null ) {
+function db_connect( $dsn, $hostname = null, $username = null, $password = null, $databaseName = null, $dbOptions = null ) {
 	global $g_db_connected, $g_db;
-	$t_db_type = config_get_global( 'db_type' );
+	$dbType = config_get_global( 'db_type' );
 
-	$g_db = MantisDatabase::get_driver_instance($t_db_type);
-	$t_result = $g_db->connect( $p_dsn, $p_hostname, $p_username, $p_password, $p_database_name, $p_db_options );
+	$g_db = DriverAbstract::getDriverInstance($dbType);
+	$result = $g_db->connect( $dsn, $hostname, $username, $password, $databaseName, $dbOptions );
 
-	if( !$t_result ) {
+	if( !$result ) {
 		db_error();
 		trigger_error( ERROR_DB_CONNECT_FAILED, ERROR );
 		return false;
@@ -92,14 +94,13 @@ function db_is_connected() {
 	return $g_db_connected;
 }
 
-
 /**
  * Checks if the database driver is MySQL
  * @return bool true if mysql
  */
 function db_is_mysql() {
 	global $g_db;
-	return ($g_db->get_dbtype() == 'mysql');
+	return ($g_db->getDbType() == 'mysql');
 }
 
 /**
@@ -108,7 +109,7 @@ function db_is_mysql() {
  */
 function db_is_pgsql() {
 	global $g_db;
-	return ($g_db->get_dbtype() == 'postgres');
+	return ($g_db->getDbType() == 'postgres');
 }
 
 /**
@@ -117,7 +118,7 @@ function db_is_pgsql() {
  */
 function db_is_mssql() {
 	global $g_db;
-	return ($g_db->get_dbtype() == 'mssql');
+	return ($g_db->getDbType() == 'mssql');
 }
 
 /**
@@ -126,7 +127,7 @@ function db_is_mssql() {
  */
 function db_is_db2() {
 	global $g_db;
-	return ($g_db->get_dbtype() == 'db2');
+	return ($g_db->getDbType() == 'db2');
 }
 
 /**
@@ -135,13 +136,13 @@ function db_is_db2() {
  * @global array of previous executed queries for profiling
  * @global adodb database connection object
  * @global boolean indicating whether queries array is populated
- * @param string $p_query Parameterlised Query string to execute
- * @param array $arr_parms Array of parameters matching $p_query
- * @param int $p_limit Number of results to return
- * @param int $p_offset offset query results for paging
+ * @param string $query Parameterlised Query string to execute
+ * @param array $arrParms Array of parameters matching $p_query
+ * @param int $limit Number of results to return
+ * @param int $offset offset query results for paging
  * @return ADORecordSet|bool adodb result set or false if the query failed.
  */
-function db_query_bound( $p_query, $arr_parms = null, $p_limit = -1, $p_offset = -1 ) {
+function db_query_bound( $query, $arrParms = null, $limit = -1, $offset = -1 ) {
 	global $g_queries_array, $g_db, $g_db_log_queries;
 
 	static $s_check_params;
@@ -149,63 +150,63 @@ function db_query_bound( $p_query, $arr_parms = null, $p_limit = -1, $p_offset =
 		$s_check_params = ( db_is_pgsql() || config_get_global( 'db_type' ) == 'odbc_mssql' );
 	}
 
-	if(( $p_limit != -1 ) || ( $p_offset != -1 ) ) {
-		$t_result = $g_db->SelectLimit( $p_query, $p_limit, $p_offset, $arr_parms );
+	if(( $limit != -1 ) || ( $offset != -1 ) ) {
+		$result = $g_db->selectLimit( $query, $limit, $offset, $arrParms );
 	} else {
-		$t_result = $g_db->Execute( $p_query, $arr_parms );
+		$result = $g_db->execute( $query, $arrParms );
 	}
 
-	//$t_elapsed = number_format( microtime(true) - $t_start, 4 );
+	//$elapsed = number_format( microtime(true) - $start, 4 );
 
 	if( ON == $g_db_log_queries ) {
-		$t_db_type = config_get_global( 'db_type' );
-		$lastoffset = 0;
+		$dbType = config_get_global( 'db_type' );
+		$lastOffset = 0;
 		$i = 1;
-		if( !( is_null( $arr_parms ) || empty( $arr_parms ) ) ) {
-			while( preg_match( '/(\?)/', $p_query, $matches, PREG_OFFSET_CAPTURE, $lastoffset ) ) {
-				if( $i <= count( $arr_parms ) ) {
-					if( is_null( $arr_parms[$i - 1] ) ) {
+		if( !( is_null( $arrParms ) || empty( $arrParms ) ) ) {
+			while( preg_match( '/(\?)/', $query, $matches, PREG_OFFSET_CAPTURE, $lastOffset ) ) {
+				if( $i <= count( $arrParms ) ) {
+					if( is_null( $arrParms[$i - 1] ) ) {
 						$replace = 'NULL';
 					}
-					else if( is_string( $arr_parms[$i - 1] ) ) {
-						$replace = "'" . $arr_parms[$i - 1] . "'";
+					else if( is_string( $arrParms[$i - 1] ) ) {
+						$replace = "'" . $arrParms[$i - 1] . "'";
 					}
-					else if( is_integer( $arr_parms[$i - 1] ) || is_float( $arr_parms[$i - 1] ) ) {
-						$replace = (float) $arr_parms[$i - 1];
+					else if( is_integer( $arrParms[$i - 1] ) || is_float( $arrParms[$i - 1] ) ) {
+						$replace = (float) $arrParms[$i - 1];
 					}
-					else if( is_bool( $arr_parms[$i - 1] ) ) {
-						switch( $t_db_type ) {
+					else if( is_bool( $arrParms[$i - 1] ) ) {
+						switch( $dbType ) {
 							case 'pgsql':
-								$replace = "'" . $arr_parms[$i - 1] . "'";
+								$replace = "'" . $arrParms[$i - 1] . "'";
 							break;
 						default:
-							$replace = $arr_parms[$i - 1];
+							$replace = $arrParms[$i - 1];
 							break;
 						}
 					} else {
 						echo( "Invalid argument type passed to query_bound(): $i" );
 						exit( 1 );
 					}
-					$p_query = utf8_substr( $p_query, 0, $matches[1][1] ) . $replace . utf8_substr( $p_query, $matches[1][1] + utf8_strlen( $matches[1][0] ) );
+					$query = utf8_substr( $query, 0, $matches[1][1] ) . $replace . utf8_substr( $query, $matches[1][1] + utf8_strlen( $matches[1][0] ) );
 					$lastoffset = $matches[1][1] + utf8_strlen( $replace );
 				} else {
-					$lastoffset = $matches[1][1] + 1;
+					$lastOffset = $matches[1][1] + 1;
 				}
 				$i++;
 			}
 		}
-		//log_event( LOG_DATABASE, array( $p_query, $t_elapsed), debug_backtrace() );
-		//array_push( $g_queries_array, array( $p_query, $t_elapsed ) );
+		//log_event( LOG_DATABASE, array( $query, $elapsed), debug_backtrace() );
+		//array_push( $g_queries_array, array( $query, $elapsed ) );
 	} else {
-		//array_push( $g_queries_array, array( '', $t_elapsed ) );
+		//array_push( $g_queries_array, array( '', $elapsed ) );
 	}
 
-	if( !$t_result ) {
-		db_error( $p_query );
+	if( !$result ) {
+		db_error( $query );
 		trigger_error( ERROR_DB_QUERY_FAILED, ERROR );
 		return false;
 	} else {
-		return $t_result;
+		return $result;
 	}
 }
 
@@ -219,13 +220,13 @@ function db_param() {
 
 /**
  * Retrieve number of rows affected for a specific database query
- * @param ADORecordSet $p_result Database Query Record Set to retrieve record count for.
+ * @param ADORecordSet $result Database Query Record Set to retrieve record count for.
  * @return int Record Count
  */
-function db_affected_rows( $p_result ) {
+function db_affected_rows( $result ) {
 	global $g_db;
 
-	return $p_result->rowCount();
+	return $result->rowCount();
 }
 
 /**
@@ -233,49 +234,49 @@ function db_affected_rows( $p_result ) {
  * @param bool|ADORecordSet $p_result Database Query Record Set to retrieve next result for.
  * @return array Database result
  */
-function db_fetch_array( &$p_result ) {
+function db_fetch_array( &$result ) {
 	global $g_db, $g_db_type;
 
-	return $p_result->fetch();
+	return $result->fetch();
 }
 
 /**
  * Retrieve a result returned from a specific database query
- * @param bool|ADORecordSet $p_result Database Query Record Set to retrieve next result for.
- * @param int $p_index1 Column to retrieve (optional)
+ * @param bool|ADORecordSet $result Database Query Record Set to retrieve next result for.
+ * @param int $index1 Column to retrieve (optional)
  * @return mixed Database result
  */
-function db_result( $p_result, $p_index1 = 0 ) {
-	return $p_result->fetchColumn($p_index1);
+function db_result( $result, $index1 = 0 ) {
+	return $result->fetchColumn($index1);
 }
 
 /**
  * return the last inserted id for a specific database table
- * @param string $p_table a valid database table name
+ * @param string $table a valid database table name
  * @return int last successful insert id
  */
-function db_insert_id( $p_table = null, $p_field = "id" ) {
+function db_insert_id( $table = null, $field = "id" ) {
 	global $g_db;
 
-	return $g_db->get_insert_id( $p_table, $p_field );
+	return $g_db->getInsertId( $table, $field );
 }
 
 /**
  * Check if the specified table exists.
- * @param string $p_table_name a valid database table name
+ * @param string $tableName a valid database table name
  * @return bool indicating whether the table exists
  */
-function db_table_exists( $p_table_name ) {
-	if( is_blank( $p_table_name ) ) {
+function db_table_exists( $tableName ) {
+	if( is_blank( $tableName ) ) {
 		return false;
 	}
 
-	$t_tables = db_get_table_list();
+	$tables = db_get_table_list();
 
 	# Can't use in_array() since it is case sensitive
-	$t_table_name = utf8_strtolower( $p_table_name );
-	foreach( $t_tables as $t_current_table ) {
-		if( utf8_strtolower( $t_current_table ) == $t_table_name ) {
+	$tableName = utf8_strtolower( $tableName );
+	foreach( $tables as $currentTable ) {
+		if( utf8_strtolower( $currentTable ) == $tableName ) {
 			return true;
 		}
 	}
@@ -285,25 +286,25 @@ function db_table_exists( $p_table_name ) {
 
 /**
  * Check if the specified table index exists.
- * @param string $p_table_name a valid database table name
- * @param string $p_index_name a valid database index name
+ * @param string $tableName a valid database table name
+ * @param string $indexName a valid database index name
  * @return bool indicating whether the index exists
  */
-function db_index_exists( $p_table_name, $p_index_name ) {
+function db_index_exists( $tableName, $indexName ) {
 	global $g_db, $g_db_schema;
 
-	if( is_blank( $p_index_name ) || is_blank( $p_table_name ) ) {
+	if( is_blank( $indexName ) || is_blank( $tableName ) ) {
 		return false;
 
 		// no index found
 	}
 
-	$t_indexes = $g_db->get_indexes( $p_table_name );
+	$indexes = $g_db->getIndexes( $tableName );
 
 	# Can't use in_array() since it is case sensitive
-	$t_index_name = utf8_strtolower( $p_index_name );
-	foreach( $t_indexes as $t_current_index_name => $t_current_index_obj ) {
-		if( utf8_strtolower( $t_current_index_name ) == $t_index_name ) {
+	$indexName = utf8_strtolower( $indexName );
+	foreach( $indexes as $currentIndexName => $currentIndexObj ) {
+		if( utf8_strtolower( $currentIndexName ) == $indexName ) {
 			return true;
 		}
 	}
@@ -312,24 +313,24 @@ function db_index_exists( $p_table_name, $p_index_name ) {
 
 /**
  * Check if the specified field exists in a given table
- * @param string $p_field_name a database field name
- * @param string $p_table_name a valid database table name
+ * @param string $fieldName a database field name
+ * @param string $tableName a valid database table name
  * @return bool indicating whether the field exists
  */
-function db_field_exists( $p_field_name, $p_table_name ) {
+function db_field_exists( $fieldName, $tableName ) {
 	global $g_db;
-	$columns = db_field_names( $p_table_name );
-	return in_array( $p_field_name, $columns );
+	$columns = db_field_names( $tableName );
+	return in_array( $fieldName, $columns );
 }
 
 /**
  * Retrieve list of fields for a given table
- * @param string $p_table_name a valid database table name
+ * @param string $tableName a valid database table name
  * @return array array of fields on table
  */
-function db_field_names( $p_table_name ) {
+function db_field_names( $tableName ) {
 	global $g_db;
-	$columns = $g_db->get_columns( $p_table_name );
+	$columns = $g_db->getColumns( $tableName );
 	return is_array( $columns ) ? $columns : array();
 }
 
@@ -337,12 +338,12 @@ function db_field_names( $p_table_name ) {
  * send both the error number and error message and query (optional) as paramaters for a triggered error
  * @todo Use/Behaviour of this function should be reviewed before 1.2.0 final
  */
-function db_error( $p_query = null ) {
+function db_error( $query = null ) {
 	global $g_db;
-	if( null !== $p_query ) {
-		error_parameters( /* $g_db->ErrorNo(), */ $g_db->get_last_error(), $p_query );
+	if( null !== $query ) {
+		error_parameters( /* $g_db->ErrorNo(), */ $g_db->getLastError(), $query );
 	} else {
-		error_parameters( /* $g_db->ErrorNo(), */ $g_db->get_last_error() );
+		error_parameters( /* $g_db->ErrorNo(), */ $g_db->getLastError() );
 	}
 }
 
@@ -353,57 +354,57 @@ function db_error( $p_query = null ) {
 function db_close() {
 	global $g_db;
 
-	$t_result = $g_db->Close();
+	$result = $g_db->close();
 }
 
 /**
  * prepare a string before DB insertion
- * @param string $p_string unprepared string
+ * @param string $string unprepared string
  * @return string prepared database query string
  * @deprecated db_query_bound should be used in preference to this function. This function may be removed in 1.2.0 final
  */
-function db_prepare_string( $p_string ) {
-	return $p_string;
+function db_prepare_string( $string ) {
+	return $string;
 }
 
 /**
  * prepare a binary string before DB insertion
- * @param string $p_string unprepared binary data
+ * @param string $string unprepared binary data
  * @return string prepared database query string
  * @todo Use/Behaviour of this function should be reviewed before 1.2.0 final
  */
-function db_prepare_binary_string( $p_string ) {
+function db_prepare_binary_string( $string ) {
 	global $g_db;
-	$t_db_type = config_get_global( 'db_type' );
+	$dbType = config_get_global( 'db_type' );
 
-	switch( $t_db_type ) {
+	switch( $dbType ) {
 		case 'mssql':
 		case 'odbc_mssql':
 		case 'ado_mssql':
-			$content = unpack( "H*hex", $p_string );
+			$content = unpack( "H*hex", $string );
 			return '0x' . $content['hex'];
 			break;
 		case 'postgres':
 		case 'postgres64':
 		case 'postgres7':
 		case 'pgsql':
-			return '\'' . pg_escape_bytea( $p_string ) . '\'';
+			return '\'' . pg_escape_bytea( $string ) . '\'';
 			break;
 		default:
-			return '\'' . db_prepare_string( $p_string ) . '\'';
+			return '\'' . db_prepare_string( $string ) . '\'';
 			break;
 	}
 }
 
 /**
  * prepare a int for database insertion.
- * @param int $p_int integer
+ * @param int $int integer
  * @return int integer
  * @deprecated db_query_bound should be used in preference to this function. This function may be removed in 1.2.0 final
  * @todo Use/Behaviour of this function should be reviewed before 1.2.0 final
  */
-function db_prepare_int( $p_int ) {
-	return (int) $p_int;
+function db_prepare_int( $int ) {
+	return (int) $int;
 }
 
 /**
@@ -413,13 +414,13 @@ function db_prepare_int( $p_int ) {
  * @deprecated db_query_bound should be used in preference to this function. This function may be removed in 1.2.0 final
  * @todo Use/Behaviour of this function should be reviewed before 1.2.0 final
  */
-function db_prepare_bool( $p_bool ) {
-	return (int) (bool) $p_bool;
+function db_prepare_bool( $bool ) {
+	return (int) (bool) $bool;
 }
 
 /**
  * return current timestamp for DB
- * @todo add param bool $p_gmt whether to use GMT or current timezone (default false)
+ * @todo add param bool $gmt whether to use GMT or current timezone (default false)
  * @return string Formatted Date for DB insertion e.g. 1970-01-01 00:00:00 ready for database insertion
  */
 function db_now() {
@@ -430,53 +431,53 @@ function db_now() {
 
 /**
  * convert minutes to a time format [h]h:mm
- * @param int $p_min integer representing number of minutes
+ * @param int $min integer representing number of minutes
  * @return string representing formatted duration string in hh:mm format.
  */
-function db_minutes_to_hhmm( $p_min = 0 ) {
-	return sprintf( '%02d:%02d', $p_min / 60, $p_min % 60 );
+function db_minutes_to_hhmm( $min = 0 ) {
+	return sprintf( '%02d:%02d', $min / 60, $min % 60 );
 }
 
 /**
  * A helper function that generates a case-sensitive or case-insensitive like phrase based on the current db type.
  * The field name and value are assumed to be safe to insert in a query (i.e. already cleaned).
- * @param string $p_field_name The name of the field to filter on.
- * @param bool $p_case_sensitive true: case sensitive, false: case insensitive
+ * @param string $fieldName The name of the field to filter on.
+ * @param bool $caseSensitive true: case sensitive, false: case insensitive
  * @return string returns (field LIKE 'value') OR (field ILIKE 'value')
  */
-function db_helper_like( $p_field_name, $p_case_sensitive = false ) {
-	$t_like_keyword = 'LIKE';
+function db_helper_like( $fieldName, $caseSensitive = false ) {
+	$likeKeyword = 'LIKE';
 
-	if( $p_case_sensitive === false ) {
+	if( $caseSensitive === false ) {
 		if( db_is_pgsql() ) {
-			$t_like_keyword = 'ILIKE';
+			$likeKeyword = 'ILIKE';
 		}
 	}
 
-	return "($p_field_name $t_like_keyword " . db_param() . ')';
+	return "($fieldName $likeKeyword " . db_param() . ')';
 }
 
 /**
  * A helper function to compare two dates against a certain number of days
- * @param $p_date1_id_or_column
- * @param $p_date2_id_or_column
- * @param $p_limitstring
+ * @param $date1IdOrColumn
+ * @param $date2IdOrColumn
+ * @param $limitString
  * @return string returns database query component to compare dates
  * @todo Check if there is a way to do that using ADODB rather than implementing it here.
  */
-function db_helper_compare_days( $p_date1_id_or_column, $p_date2_id_or_column, $p_limitstring ) {
-	$t_db_type = config_get_global( 'db_type' );
+function db_helper_compare_days( $date1IdOrColumn, $date2IdOrColumn, $limitString ) {
+	$dbType = config_get_global( 'db_type' );
 
-	$p_date1 = $p_date1_id_or_column;
-	$p_date2 = $p_date2_id_or_column;
-	if( is_int( $p_date1_id_or_column ) ) {
-		$p_date1 = db_param();
+	$date1 = $date1IdOrColumn;
+	$date2 = $date2IdOrColumn;
+	if( is_int( $date1IdOrColumn ) ) {
+		$date1 = db_param();
 	}
-	if( is_int( $p_date2_id_or_column ) ) {
-		$p_date2 = db_param();
+	if( is_int( $date2IdOrColumn ) ) {
+		$date2 = db_param();
 	}
 
-	return '((' . $p_date1 . ' - ' . $p_date2 .')' . $p_limitstring . ')';
+	return '((' . $date1 . ' - ' . $date2 .')' . $limitString . ')';
 }
 
 /**
@@ -496,15 +497,15 @@ function db_count_queries() {
 function db_count_unique_queries() {
 	global $g_queries_array;
 
-	$t_unique_queries = 0;
-	$t_shown_queries = array();
-	foreach( $g_queries_array as $t_val_array ) {
-		if( !in_array( $t_val_array[0], $t_shown_queries ) ) {
-			$t_unique_queries++;
-			array_push( $t_shown_queries, $t_val_array[0] );
+	$uniqueQueries = 0;
+	$shownQueries = array();
+	foreach( $g_queries_array as $valArray ) {
+		if( !in_array( $valArray[0], $shownQueries ) ) {
+			$uniqueQueries++;
+			array_push( $shownQueries, $valArray[0] );
 		}
 	}
-	return $t_unique_queries;
+	return $uniqueQueries;
 }
 
 /**
@@ -513,29 +514,29 @@ function db_count_unique_queries() {
  */
 function db_time_queries() {
 	global $g_queries_array;
-	$t_count = count( $g_queries_array );
-	$t_total = 0;
-	for( $i = 0;$i < $t_count;$i++ ) {
-		$t_total += $g_queries_array[$i][1];
+	$count = count( $g_queries_array );
+	$total = 0;
+	for( $i = 0;$i < $count;$i++ ) {
+		$total += $g_queries_array[$i][1];
 	}
-	return $t_total;
+	return $total;
 }
 
 /**
  * get database table name
  * @return string containing full database table name
  */
-function db_get_table( $p_option ) {
-	$t_table = $p_option;
-	$t_prefix = config_get_global( 'db_table_prefix' );
-	$t_suffix = config_get_global( 'db_table_suffix' );
-	if ( $t_prefix ) {
-		$t_table = $t_prefix . '_' . $t_table;
+function db_get_table( $option ) {
+	$table = $option;
+	$prefix = config_get_global( 'db_table_prefix' );
+	$suffix = config_get_global( 'db_table_suffix' );
+	if ( $prefix ) {
+		$table = $prefix . '_' . $table;
 	}
-	if ( $t_suffix ) {
-		$t_table .= $t_suffix;
+	if ( $suffix ) {
+		$table .= $suffix;
 	}
-	return $t_table;
+	return $table;
 }
 
 /**
@@ -544,5 +545,5 @@ function db_get_table( $p_option ) {
  */
 function db_get_table_list() {
 	global $g_db;
-	return $g_db->get_tables();
+	return $g_db->getTables();
 }

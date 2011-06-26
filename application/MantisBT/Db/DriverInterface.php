@@ -16,93 +16,27 @@
 # You should have received a copy of the GNU General Public License
 # along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
 
+namespace MantisBT\Db;
+
 /**
  * Abstract database driver class.
  * @package MantisBT
  * @subpackage classes
  */
-abstract class MantisDatabase {
-    /**
-	 * array - cache of column info 
-	 */
-    protected $columns = array(); 
-    /**
-	 * array - cache of table info 
-	 */
-    protected $tables  = null;
-
-    /** 
-	 * string - db host name 
-	 */
-    protected $dbhost;
-    /** 
-	 * string - db host user 
-	 */
-    protected $dbuser;
-    /** 
-	 * string - db host password 
-	 */
-    protected $dbpass;
-    /** 
-	 * string - db name 
-	 */
-    protected $dbname;
-    /** 
-	 * string - db dsn
-	 */
-    protected $dbdsn;
-	
-    /** @var array Database or driver specific options, such as sockets or TCPIP db connections */
-    protected $dboptions;
-
-    /** @var int Database query counter (performance counter).*/
-    protected $queries = 0;
-
-    /** @var bool Debug level */
-    protected $debug  = false;
-
-    /**
-     * Contructor
-     */
-    public function __construct() {
-    }
-
-    /**
-     * Destructor
-     */
-    public function __destruct() {
-        $this->dispose();
-    }
-
+interface DriverInterface {
     /**
      * Detects if all needed PHP stuff installed.
      * Note: can be used before connect()
      * @return mixed true if ok, string if something
      */
-    public abstract function driver_installed();
-
-    /**
-     * Loads and returns a database instance with the specified type and library.
-     * @param string $type database type of the driver (e.g. pdo_pgsql)
-     * @return MantisDatabase driver object or null if error
-     */
-    public static function get_driver_instance($type) {
-		$t_type = explode( '_', $type );
-		switch( strtolower( $t_type[0] ) ) {
-			case 'pdo':
-				$t_driver_type = 'PDO';
-		}
-        $classname = 'MantisDatabase_' . $t_driver_type . '_' . ucfirst($t_type[1]);
-        return new $classname();
-    }
+    public function driverInstalled();
 
     /**
      * Returns database driver type
      * Note: can be used before connect()
      * @return string db type mysql, pgsql, sqlsrv
      */
-    protected abstract function get_dbtype();
-
+    public function getDbType();
 
     /**
      * Diagnose database and tables, this function is used
@@ -110,9 +44,7 @@ abstract class MantisDatabase {
      *
      * @return string null means everything ok, string means problem found.
      */
-    public function diagnose() {
-        return null;
-    }
+    public function diagnose();
 
     /**
      * Connect to db
@@ -126,21 +58,18 @@ abstract class MantisDatabase {
      * @return bool true
      * @throws dml_connection_exception if error
      */
-    public abstract function connect($dsn, $dbhost, $dbuser, $dbpass, $dbname, array $dboptions=null);
-
+    public function connect( $dsn, $dbHost, $dbUser, $dbPass, $dbName, array $dbOptions=null );
 
     /**
      * Attempt to create the database
-     * @param string $dbhost
-     * @param string $dbuser
-     * @param string $dbpass
-     * @param string $dbname
+     * @param string $dbHost
+     * @param string $dbUser
+     * @param string $dbPass
+     * @param string $dbName
      *
      * @return bool success
      */
-    public function create_database($dbhost, $dbuser, $dbpass, $dbname, array $dboptions=null) {
-        return false;
-    }
+    public function createDatabase( $dbHost, $dbUser, $dbPass, $dbName, array $dbOptions=null );
 
     /**
      * Close database connection and release all resources
@@ -148,10 +77,7 @@ abstract class MantisDatabase {
      * Do NOT use connect() again, create a new instance if needed.
      * @return void
      */
-    public function dispose() {
-        $this->columns = array();
-        $this->tables  = null;
-    }
+    public function dispose();
 
     /**
      * Called before each db query.
@@ -161,56 +87,46 @@ abstract class MantisDatabase {
      * @param mixed $extrainfo driver specific extra information
      * @return void
      */
-    protected function query_start($sql, array $params=null ) {
-        $this->last_sql       = $sql;
-        $this->last_params    = $params;
-        $this->last_time      = microtime(true);
-
-		$this->queries++;
-    }
+    public function queryStart( $sql, array $params=null );
 
     /**
      * Called immediately after each db query.
      * @param mixed db specific result
      * @return void
      */
-    protected function query_end($result) {
-        if ($result !== false) {
-            return;
-        }
-    }
+    public function queryEnd( $result );
 
     /**
      * Returns database server info array
      * @return array
      */
-    public abstract function get_server_info();
+    public function getServerInfo();
 
     /**
      * Returns last error reported by database engine.
      * @return string error message
      */
-    public abstract function get_last_error();
+    public function getLastError();
 
     /**
      * Return tables in database WITHOUT current prefix
      * @return array of table names in lowercase and without prefix
      */
-    public abstract function get_tables($usecache=true);
+    public function getTables( $useCache=true );
 
     /**
      * Return table indexes - everything lowercased
      * @return array of arrays
      */
-    public abstract function get_indexes($table);
+    public function getIndexes( $table );
 
     /**
      * Returns detailed information about columns in table. This information is cached internally.
      * @param string $table name
-     * @param bool $usecache
+     * @param bool $useCache
      * @return array of database_column_info objects indexed with column names
      */
-    public abstract function get_columns($table, $usecache=true);
+    public function getColumns( $table, $useCache=true );
 
 
     /**
@@ -218,37 +134,28 @@ abstract class MantisDatabase {
      * @param string $table - empty means all, or one if name of table given
      * @return void
      */
-    public function reset_caches() {
-        $this->columns = array();
-        $this->tables  = null;
-    }
+    public function resetCaches();
 
     /**
      * Attempt to change db encoding toUTF-8 if possible
      * @return bool success
      */
-    public function change_db_encoding() {
-        return false;
-    }
+    public function changeDbEncoding();
 
-	abstract public function get_insert_id( $p_table );
+	public function getInsertId( $table );
 
     /**
      * Enable/disable debugging mode
      * @param bool $state
      * @return void
      */
-    public function set_debug($state) {
-        $this->debug = $state;
-    }
+    public function setDebug( $state );
 
     /**
      * Returns debug status
      * @return bool $state
      */
-    public function get_debug() {
-        return $this->debug;
-    }
+    public function getDebug();
 
     /**
      * Execute general sql query. Should be used only when no other method suitable.
@@ -256,9 +163,9 @@ abstract class MantisDatabase {
      * @param string $sql query
      * @param array $params query parameters
      * @return bool true
-     * @throws MantisDatabaseException if error
+     * @throws MantisBT\Exception\Db if error
      */
-    public abstract function execute($sql, array $params=null);
+    public function execute( $sql, array $params=null );
 
     /**
      * @param string $sql query
@@ -266,24 +173,21 @@ abstract class MantisDatabase {
 	 * @param int $p_offset offset query results for paging
      * @param array $params query parameters
      * @return bool true
-     * @throws MantisDatabaseException if error
+     * @throws MantisBT\Exception\Db if error
      */
-    public abstract function SelectLimit( $sql, $p_limit, $p_offset, array $arr_parms = null );
+    public function selectLimit( $sql, $limit, $offset, array $arrParms = null );
 	
     /**
      * Returns number of queries done by this database
      * @return int
      */
-    public function perf_get_queries() {
-        return $this->queries;
-    }
+    public function perfGetQueries();
 
     /**
      * Returns whether database is connected
      * @return bool
      */	
-    public abstract function IsConnected();
-	
+    public function isConnected();
 	
 	/**
      * Verify sql parameters
@@ -291,42 +195,9 @@ abstract class MantisDatabase {
      * @param array $params query parameters
      * @return array (sql, params, type of params)
      */
-    protected function check_sql_parameters($sql, array $params=null) {
-        $params = (array)$params; // make null array if needed
-
-        // cast booleans to 1/0 int
-        foreach ($params as $key => $value) {
-            $params[$key] = is_bool($value) ? (int)$value : $value;
-        }
-
-        $t_count = substr_count($sql, '?');
-
-        if (!$t_count) {
-			return array($sql, array() );
-        }
-
-		if ($t_count == count($params)) {
-			return array($sql, array_values($params));
-		}
-
-		$a = new stdClass;
-		$a->expected = $t_count;
-		$a->actual = count($params);
-		$a->sql = $sql;
-		$a->params = $params;
-		throw new MantisDatabaseException(ERROR_DB_QUERY_FAILED, $a);
-    }
+    public function checkSqlParameters( $sql, array $params=null );
 	
 	/* legacy functions */
-	public function legacy_null_date() {
-        return "1970-01-01 00:00:01";
-    }
-	
-	public function legacy_timestamp( $p_date ) {
-		$p_timestamp = strtotime( $p_date );
-		if ( $p_timestamp == false ) {
-			trigger_error( ERROR_GENERIC, ERROR );
-		}
-		return $p_timestamp;
-	}
+	public function legacyNullDate();
+	public function legacyTimestamp( $date );
 }

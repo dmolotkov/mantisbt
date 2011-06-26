@@ -15,27 +15,33 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
+namespace MantisBT\Db\PDO;
+use MantisBT\Db\DriverInterface;
+use MantisBT\Db\PDO\PDOAbstract;
+use MantisBT\Exception\Db AS DbException;
+use \PDO;
+use \PDOException;
 
 /**
  * MYSQL PDO driver class.
  * @package MantisBT
  * @subpackage classes
  */
-class MantisDatabase_PDO_Mysql extends MantisDatabase_PDO {
+class Mysql extends PDOAbstract implements DriverInterface {
     /**
      * Returns the driver-dependent DSN for PDO based on members stored by connect.
      * Must be called after connect (or after $dbname, $dbhost, etc. members have been set).
      * @return string driver-dependent DSN
      */
-    protected function get_dsn() {
-		return  'mysql:host=' . $this->dbhost . ';dbname=' . $this->dbname;
+    protected function getDsn() {
+		return  'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
 	}
 	
 	/**
 	 * Returns whether driver is installed
 	 * @return bool
 	 */
-    public function driver_installed() {
+    public function driverInstalled() {
 		return extension_loaded( 'pdo_mysql' );
 	}	
 
@@ -43,7 +49,7 @@ class MantisDatabase_PDO_Mysql extends MantisDatabase_PDO {
 	 * Returns db type string
 	 * @return string
 	 */
-	public function get_dbtype() {
+	public function getDbType() {
 		return 'mysql';
 	}
 	
@@ -51,42 +57,42 @@ class MantisDatabase_PDO_Mysql extends MantisDatabase_PDO {
 	 * Returns PDO options
 	 * @return array
 	 */
-    protected function get_pdooptions() {
-		$t_options = parent::get_pdooptions();
-		$t_options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES utf8';
-        return $t_options;
+    protected function getPdoOptions() {
+		$options = parent::getPdoOptions();
+		$options[PDO::MYSQL_ATTR_INIT_COMMAND] = 'SET NAMES utf8';
+        return $options;
     }
 	
 	/**
 	 * @param string $sql
-	 * @param int $p_limit
-	 * @param int $p_offset
-	 * @param array $arr_parms
+	 * @param int $limit
+	 * @param int $offset
+	 * @param array $arrParms
 	 * @return object
 	 */
-	public function SelectLimit( $sql, $p_limit, $p_offset, array $arr_parms = null) {
-		$t_stroffset = ($p_offset>=0) ? " OFFSET $p_offset" : '';
+	public function selectLimit( $sql, $limit, $offset, array $arrParms = null) {
+		$stroffset = ($offset>=0) ? " OFFSET $offset" : '';
 
-		if ($p_limit < 0) $p_limit = '18446744073709551615'; 
+		if ($limit < 0) $limit = '18446744073709551615'; 
 
-		return $this->execute($sql . ' LIMIT ' . (int)$p_limit . $t_stroffset , $arr_parms);
+		return $this->execute( $sql . ' LIMIT ' . (int)$limit . $stroffset , $arrParms );
 	}
 
 	/**
 	 * @param string $p_name
 	 * @return bool
 	 */	
-	public function database_exists( $p_name ) {
+	public function databaseExists( $name ) {
 		$sql = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?";
 		try {
-			$t_result = $this->execute( $sql, array( $p_name ) );
+			$result = $this->execute( $sql, array( $name ) );
 		} catch (PDOException $ex) {
-			throw new MantisDatabaseException(ERROR_DB_QUERY_FAILED, $ex->getMessage());
+			throw new DbException(ERROR_DB_QUERY_FAILED, $ex->getMessage());
 			return false;
 		}
-		if ($t_result) {
-			$t_value = $t_result->fetch();
-			if( $t_value !== false ) {
+		if ($result) {
+			$value = $result->fetch();
+			if( $value !== false ) {
 				return true;
 			}
 		}
@@ -94,19 +100,19 @@ class MantisDatabase_PDO_Mysql extends MantisDatabase_PDO {
 	}
 
 	/**
-	 * @param bool $usecache
+	 * @param bool $useCache
 	 * @return array
 	 */	
-	public function get_tables($usecache=true) {
-        if ($usecache and $this->tables !== null) {
+	public function getTables($useCache=true) {
+        if ($useCache and $this->tables !== null) {
             return $this->tables;
         }
         $this->tables = array();
         $sql = "SHOW TABLES";
 		
-		$t_result = $this->execute( $sql );
-        if ($t_result) {
-            while ($arr = $t_result->fetch()) {
+		$result = $this->execute( $sql );
+        if ( $result ) {
+            while( $arr = $result->fetch() ) {
                 $this->tables[] = $arr[0];
             }
         }
@@ -117,17 +123,17 @@ class MantisDatabase_PDO_Mysql extends MantisDatabase_PDO {
 	 * @param string $table
 	 * @return array
 	 */
-    public function get_indexes($table) {
-        $t_indexes = array();
+    public function getIndexes( $table ) {
+        $indexes = array();
 		$sql = "SHOW INDEXES FROM $table";
-		$t_result = $this->execute( $sql );
-		
-        if ($t_result) {
-            while ($arr = $t_result->fetch()) {
-                $t_indexes[strtolower( $arr['key_name'] )] = array( strtolower( $arr['column_name'] ), $arr['non_unique'] );
+		$result = $this->execute( $sql );
+
+        if ($result) {
+            while ($arr = $result->fetch()) {
+                $indexes[strtolower( $arr['key_name'] )] = array( strtolower( $arr['column_name'] ), $arr['non_unique'] );
             }
         }
-		return $t_indexes;	
+		return $indexes;
 	}
 
 	/**
@@ -135,21 +141,20 @@ class MantisDatabase_PDO_Mysql extends MantisDatabase_PDO {
 	 * @param bool $usecache
 	 * @return array
 	 */	
-	public function get_columns($table, $usecache=true) {
-		if ($usecache and isset($this->columns[$table])) {
+	public function getColumns( $table, $useCache=true ) {
+		if ( $useCache and isset( $this->columns[$table] ) ) {
             return $this->columns[$table];
         }
 
         $this->columns[$table] = array();
 
         $sql = "SHOW COLUMNS FROM $table";
-		$t_result = $this->execute( $sql );
-        if ($t_result) {
-            while ($arr = $t_result->fetch()) {
+		$result = $this->execute( $sql );
+        if ($result) {
+            while( $arr = $result->fetch() ) {
                 $this->columns[$table][] = strtolower( $arr[0] );
             }
         }
 		return $this->columns[$table];
 	}
 }
-

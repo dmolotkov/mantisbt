@@ -82,7 +82,7 @@ function check_get_database_extensions( $p_list = false ) {
 function db_null_date() {
 	global $g_db;
 
-	return $g_db->legacy_null_date();
+	return $g_db->legacyNullDate();
 }
 
 /**

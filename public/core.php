@@ -173,27 +173,7 @@ function __autoload( $p_class_name ) {
     # handle any namespaces
     $t_class_name = str_replace( '\\', '/', $p_class_name );
 
-	$t_require_path = APPLICATION_PATH . "/$t_class_name.class.php";
-
-	if ( file_exists( $t_require_path ) ) {
-		require( $t_require_path );
-		return;
-	}
-
-    # added for db changes @todo fix after rebase
-	$t_parts = explode( '_', $t_class_name );
-	$t_count = sizeof( $t_parts );
-	
-	$t_name = implode( DIRECTORY_SEPARATOR, $t_parts ) . DIRECTORY_SEPARATOR;
-	$t_require_path = APPLICATION_PATH . $t_name . $t_parts[$t_count-1] . '.class.php'; 
-
-	if ( file_exists( $t_require_path ) ) {
-		require_once( $t_require_path );
-		return;
-	}
-	
-	$t_require_path = APPLICATION_PATH . $t_class_name . '.class.php';
-
+	$t_require_path = APPLICATION_PATH . "/$t_class_name.php";
 	if ( file_exists( $t_require_path ) ) {
 		require( $t_require_path );
 		return;

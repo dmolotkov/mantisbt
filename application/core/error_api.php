@@ -14,6 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
 
+use MantisBT\Error;
+use MantisBT\Exception\Db;
+
 /**
  * Error API
  *
@@ -42,35 +45,33 @@ $g_error_parameters = array();
 $g_error_proceed_url = null;
 $g_error_send_page_header = true;
 
-set_exception_handler(array('MantisError', 'exception_handler'));
-set_error_handler(array('MantisError', 'error_handler'));
-register_shutdown_function(array('MantisError', 'shutdown_error_handler'));
-
+set_exception_handler(array('MantisBT\Error', 'exception_handler'));
+set_error_handler(array('MantisBT\Error', 'error_handler'));
+register_shutdown_function(array('MantisBT\Error', 'shutdown_error_handler'));
 
 function exception_handler($exception) {
 	global $g_error_parameters, $g_error_handled, $g_error_proceed_url;
 	global $g_lang_overrides;
 	global $g_error_send_page_header;
 
-	$t_lang_pushed = false;
+	$langPushed = false;
 
-	$t_db_connected = false;
-	if (!$exception instanceof MantisDatabaseException) {
-	if( function_exists( 'db_is_connected' ) ) {
-		if( db_is_connected() ) {
-			$t_db_connected = true;
-		}
+	$dbConnected = false;
+	if (!$exception instanceof Db ) {
+	    if( function_exists( 'db_is_connected' ) ) {
+		    if( db_is_connected() ) {
+			    $dbConnected = true;
+		    }
+	    }
 	}
-	}
-
 
 	# flush any language overrides to return to user's natural default
-	if( $t_db_connected ) {
+	if( $dbConnected ) {
 		lang_push( lang_get_default() );
-		$t_lang_pushed = true;
+		$langPushed = true;
 	}
 
-		if( $t_lang_pushed ) {
+		if( $langPushed ) {
 			lang_pop();
 	}
 
@@ -80,41 +81,33 @@ function exception_handler($exception) {
 	//??? return false;
 }
 
-
-function error_handler( $p_type, $p_error, $p_file, $p_line, $p_context ) {
+function error_handler( $type, $error, $file, $line, $context ) {
 	global $g_error_parameters, $g_error_handled, $g_error_proceed_url;
 	global $g_lang_overrides;
 	global $g_error_send_page_header;
 
+	$langPushed = false;
 
-
-	$t_lang_pushed = false;
-
-	$t_db_connected = false;
+	$dbConnected = false;
 	if( function_exists( 'db_is_connected' ) ) {
 		if( db_is_connected() ) {
-			$t_db_connected = true;
-	}
-}
+			$dbConnected = true;
+	    }
+    }
 
 	# flush any language overrides to return to user's natural default
-	if( $t_db_connected ) {
+	if( $dbConnected ) {
 		lang_push( lang_get_default() );
-		$t_lang_pushed = true;
+		$langPushed = true;
 	}
 
-
-
-
-
-
-		if( $t_lang_pushed ) {
-			lang_pop();
-}
+	if( $langPushed ) {
+	    lang_pop();
+    }
 
 	$g_error_parameters = array();
 	$g_error_proceed_url = null;
-	
+
 	return false;
 }
 
@@ -124,7 +117,7 @@ function error_handler( $p_type, $p_error, $p_file, $p_line, $p_context ) {
  * @return bool
  */
 function error_handled() {
-	return MantisError::error_handled();
+	return Error::error_handled();
 }
 
 /**
@@ -138,17 +131,15 @@ function error_handled() {
  * @return null
  */
 function error_parameters() {
-	MantisError::error_parameters( func_get_args() );
+	Error::error_parameters( func_get_args() );
 }
 
 /**
  * Set a url to give to the user to proceed after viewing the error
  * @access public
- * @param string p_url url given to user after viewing the error
+ * @param string url url given to user after viewing the error
  * @return null
  */
-function error_proceed_url( $p_url ) {
-	MantisError::error_proceed_url( $p_url );
+function error_proceed_url( $url ) {
+	Error::error_proceed_url( $url );
 }
-
-

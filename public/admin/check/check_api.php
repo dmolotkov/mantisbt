@@ -21,6 +21,8 @@
  * @link http://www.mantisbt.org
  */
 
+use MantisBT\Error;
+
 $g_show_all = false;
 $g_show_errors = false;
 
@@ -75,11 +77,11 @@ function check_print_error_rows() {
 				break;
 			case E_USER_ERROR:
 				$t_error_type = 'APPLICATION ERROR #' . $t_error['error'];
-				$t_error_description = htmlentities( error_string( $t_error['error'] ) );
+				$t_error_description = htmlentities( Error::error_string( $t_error['error'] ) );
 				break;
 			case E_USER_WARNING:
 				$t_error_type = 'APPLICATION WARNING #' . $t_error['error'];
-				$t_error_description = htmlentities( error_string( $t_error['error'] ) );
+				$t_error_description = htmlentities( Error::error_string( $t_error['error'] ) );
 				break;
 			case E_USER_NOTICE:
 				# used for debugging

@@ -6,6 +6,8 @@
 # change the license of future releases.
 # See docs/ folder for more details
 
+use MantisBT\Error;
+
 # set up error_handler() as the new default error handling function
 set_error_handler( 'mc_error_handler' );
 
@@ -391,11 +393,11 @@ function mc_error_handler( $p_type, $p_error, $p_file, $p_line, $p_context ) {
 			break;
 		case E_USER_ERROR:
 			$t_error_type = "APPLICATION ERROR #$p_error";
-			$t_error_description = error_string( $p_error );
+			$t_error_description = Error::error_string( $p_error );
 			break;
 		case E_USER_WARNING:
 			$t_error_type = "APPLICATION WARNING #$p_error";
-			$t_error_description = error_string( $p_error );
+			$t_error_description = Error::error_string( $p_error );
 			break;
 		case E_USER_NOTICE:
 

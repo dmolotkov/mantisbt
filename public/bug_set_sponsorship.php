@@ -37,9 +37,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -60,7 +59,7 @@ form_security_validate( 'bug_set_sponsorship' );
 
 # anonymous users are not allowed to sponsor issues
 if ( current_user_is_anonymous() ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 $f_bug_id	= gpc_get_int( 'bug_id' );

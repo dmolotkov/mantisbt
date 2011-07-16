@@ -35,9 +35,8 @@
  * @uses rssbuilder/class.RSSBuilder.inc.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'config_api.php' );
@@ -60,17 +59,17 @@ news_ensure_enabled();
 
 # make sure RSS syndication is enabled.
 if ( OFF == config_get( 'rss_enabled' ) ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 # authenticate the user
 if ( $f_username !== null ) {
 	if ( !rss_login( $f_username, $f_key ) ) {
-		access_denied();
+		throw new AccessDenied();
 	}
 } else {
 	if ( OFF == config_get( 'allow_anonymous_login' ) ) {
-		access_denied();
+		throw new AccessDenied();
 	}
 }
 

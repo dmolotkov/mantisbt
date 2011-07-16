@@ -24,7 +24,6 @@
  * @copyright Copyright (C) 2002 - 2011  MantisBT Team - mantisbt-dev@lists.sourceforge.net
  * @link http://www.mantisbt.org
  *
- * @uses access_api.php
  * @uses config_api.php
  * @uses constant_inc.php
  * @uses current_user_api.php
@@ -36,7 +35,8 @@
  * @uses utility_api.php
  */
 
-require_api( 'access_api.php' );
+use MantisBT\Exception\Access\AccessDenied;
+
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'current_user_api.php' );
@@ -332,6 +332,6 @@ function news_is_enabled() {
 # Ensures that the news feature is enabled, otherwise generates an access denied error.
 function news_ensure_enabled() {
 	if ( !news_is_enabled() ) {
-		access_denied();
+		throw new AccessDenied();
 	}
 }

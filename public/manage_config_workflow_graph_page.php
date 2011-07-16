@@ -35,11 +35,9 @@
  * @uses workflow_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
-require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
@@ -53,7 +51,7 @@ require_api( 'string_api.php' );
 auth_reauthenticate();
 
 if ( !config_get( 'relationship_graph_enable' ) ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 html_page_top( lang_get( 'manage_workflow_graph' ) );

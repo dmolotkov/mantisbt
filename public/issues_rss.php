@@ -45,9 +45,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'bug_api.php' );
@@ -71,17 +70,17 @@ $f_key = gpc_get_string( 'key', null );
 
 # make sure RSS syndication is enabled.
 if ( OFF == config_get( 'rss_enabled' ) ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 # authenticate the user
 if ( $f_username !== null ) {
 	if ( !rss_login( $f_username, $f_key ) ) {
-		access_denied();
+		throw new AccessDenied();
 	}
 } else {
 	if ( OFF == config_get( 'allow_anonymous_login' ) ) {
-		access_denied();
+		throw new AccessDenied();
 	}
 }
 
@@ -181,7 +180,7 @@ if ( $f_filter_id == 0 ) {
 	# null will be returned if the user doesn't have access right to access the filter.
 	$t_custom_filter = filter_db_get_filter( $f_filter_id, $t_user_id );
 	if ( null === $t_custom_filter ) {
-		access_denied();
+		throw new AccessDenied();
 	}
 
 	$t_custom_filter = filter_deserialize( $t_custom_filter );

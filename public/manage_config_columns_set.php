@@ -35,9 +35,8 @@
  * @uses project_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -68,7 +67,7 @@ $f_form_page = gpc_get_string( 'form_page' );
 
 # only admins can set global defaults.for ALL_PROJECT
 if ( $f_update_columns_as_global_default && $f_project_id == ALL_PROJECTS && !current_user_is_administrator() ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 # only MANAGERS can set global defaults.for a project

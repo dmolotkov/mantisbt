@@ -35,12 +35,11 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Access\AccessDenied;
+
 $g_bypass_headers = true; # suppress headers as we will send our own later
 define( 'COMPRESSION_DISABLED', true );
 
-/**
- * MantisBT Core API's
- */
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -96,7 +95,7 @@ switch ( $f_type ) {
 			WHERE id=" . db_param();
 		break;
 	default:
-		access_denied();
+		throw new AccessDenied();
 }
 $result = db_query_bound( $query, array( $c_file_id ) );
 $row = db_fetch_array( $result );
@@ -112,13 +111,13 @@ if ( $f_type == 'bug' ) {
 switch ( $f_type ) {
 	case 'bug':
 		if ( !file_can_download_bug_attachments( $v_bug_id, (int)$v_user_id ) ) {
-			access_denied();
+			throw new AccessDenied();
 		}
 		break;
 	case 'doc':
 		# Check if project documentation feature is enabled.
 		if ( OFF == config_get( 'enable_project_documentation' ) ) {
-			access_denied();
+			throw new AccessDenied();
 		}
 
 		access_ensure_project_level( config_get( 'view_proj_doc_threshold' ), $v_project_id );

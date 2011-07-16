@@ -34,9 +34,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'config_api.php' );
@@ -54,7 +53,7 @@ form_security_validate( 'proj_doc_add' );
 
 # Check if project documentation feature is enabled.
 if ( OFF == config_get( 'enable_project_documentation' ) ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 access_ensure_project_level( config_get( 'upload_project_file_threshold' ) );

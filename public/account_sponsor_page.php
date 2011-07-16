@@ -38,7 +38,6 @@
  * @link http://www.mantisbt.org
  *
  * @uses core.php
- * @uses access_api.php
  * @uses authentication_api.php
  * @uses bug_api.php
  * @uses config_api.php
@@ -57,11 +56,9 @@
  * @uses version_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
-require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
 require_api( 'bug_api.php' );
 require_api( 'config_api.php' );
@@ -87,7 +84,7 @@ if ( !config_get( 'enable_sponsorship' ) ) {
 
 # anonymous users are not allowed to sponsor issues
 if ( current_user_is_anonymous() ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 $t_show_all = gpc_get_bool( 'show_all', false );

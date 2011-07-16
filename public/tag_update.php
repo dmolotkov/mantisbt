@@ -31,9 +31,8 @@
  * @uses user_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -56,7 +55,7 @@ if ( !( access_has_global_level( config_get( 'tag_edit_threshold' ) )
 	|| ( auth_get_current_user_id() == $t_tag_row['user_id'] )
 		&& access_has_global_level( config_get( 'tag_edit_own_threshold' ) ) ) )
 {
-	access_denied();
+	throw new AccessDenied();
 }
 
 if ( access_has_global_level( config_get( 'tag_edit_threshold' ) ) ) {

@@ -37,9 +37,8 @@
  * @uses string_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'bug_api.php' );
@@ -72,7 +71,7 @@ if( $t_bug->project_id != helper_get_current_project() ) {
 }
 
 if ( !file_allow_bug_upload( $f_bug_id ) ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 access_ensure_bug_level( config_get( 'upload_bug_file_threshold' ), $f_bug_id );

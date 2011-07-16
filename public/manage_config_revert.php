@@ -35,9 +35,8 @@
  * @uses string_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -68,7 +67,7 @@ foreach ( $t_revert_vars as $t_revert ) {
 }
 
 if ( !$t_access ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 if ( '' != $f_revert ) {

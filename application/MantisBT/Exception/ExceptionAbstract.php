@@ -11,7 +11,7 @@ abstract class ExceptionAbstract extends Exception {
     private   $trace;                             // Unknown
 
 	private $context = null;		// Mantis Context
-    public function __construct($code = 0, $parameters, Exception $previous = null) {
+    public function __construct($code = 0, $parameters = null, Exception $previous = null) {
 		$message = var_export( $parameters, true);
 
 		$this->context = $parameters;

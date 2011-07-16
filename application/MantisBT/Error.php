@@ -2,6 +2,8 @@
 namespace MantisBT;
 use \stdClass;
 
+require_api('lang_api.php');
+
 class Error {
 	/**
 	 * Indicates previous errors
@@ -45,21 +47,29 @@ class Error {
 		}
 	}
 
-	public static function exception_handler( Exception $ex) {
+	public static function exception_handler($exception) {
+		$errorInfo = new stdClass();
+		$errorInfo->time = time();
+		$errorInfo->type = 'EXCEPTION';
+		$errorInfo->name = 'InvalidException';
+		$errorInfo->code = 0;
+		$errorInfo->message = 'An invalid exception type was caught by the exception handler. Unfortuantly no further information can be obtained.';
+
+		if (is_object($exception)) {
+			$reflectionClass = new \ReflectionClass($exception);
+			if ($reflectionClass->isSubclassOf('Exception')) {
+				$errorInfo->name = $reflectionClass->getName();
+				$errorInfo->code = $exception->getCode();
+				$errorInfo->message = $exception->getMessage();
+				$errorInfo->file = $exception->getFile();
+				$errorInfo->line = $exception->getLine();
+				$errorInfo->trace = $exception->getTrace();
+				$errorInfo->context = $exception->getContext();
+			}
+		}
+
 		self::init();
-
-        $errorInfo = new stdClass();
-        $errorInfo->time = time();
-        $errorInfo->type = 'EXCEPTION';
-        $errorInfo->name = get_class($ex);
-        $errorInfo->code = $ex->getCode();
-        $errorInfo->message = $ex->getMessage();
-        $errorInfo->file = $ex->getFile();
-        $errorInfo->line = $ex->getLine();
-        $errorInfo->trace = $ex->getTrace();
-		$errorInfo->context = $ex->getContext();
-
-        self::$allErrors[] = $errorInfo;
+		self::$allErrors[] = $errorInfo;
 	}
 
 	public static function error_handler( $type, $error, $file, $line, $context ) {

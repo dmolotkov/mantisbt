@@ -34,9 +34,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'config_api.php' );
@@ -54,7 +53,7 @@ require_api( 'utility_api.php' );
 if ( OFF == config_get( 'enable_project_documentation' ) ||
 	!file_is_uploading_enabled() ||
 	!file_allow_project_upload() ) {
-	access_denied();
+	throw new AccessDenied();
 }
 
 $f_file_id = gpc_get_int( 'file_id' );

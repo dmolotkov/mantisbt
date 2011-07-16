@@ -23,7 +23,6 @@
  * @copyright Copyright (C) 2002 - 2011  MantisBT Team - mantisbt-dev@lists.sourceforge.net
  * @link http://www.mantisbt.org
  *
- * @uses access_api.php
  * @uses config_api.php
  * @uses constant_inc.php
  * @uses crypto_api.php
@@ -43,7 +42,9 @@
  * @uses utility_api.php
  */
 
-require_api( 'access_api.php' );
+use MantisBT\Error;
+use MantisBT\Exception\Access\AccessDenied;
+
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'crypto_api.php' );
@@ -807,8 +808,7 @@ function auth_get_current_user_id() {
 	# and give them an Access Denied message.
 	if( !$t_user_id ) {
 		auth_clear_cookies();
-		access_denied();
-		exit();
+		throw new AccessDenied();
 	}
 
 	$g_cache_current_user_id = $t_user_id;
@@ -826,7 +826,7 @@ function auth_http_prompt() {
 	header( 'WWW-Authenticate: Basic realm="' . lang_get( 'http_auth_realm' ) . '"' );
 	header( 'status: 401 Unauthorized' );
 
-	echo '<p class="center error-msg">' . error_string( ERROR_ACCESS_DENIED ) . '</p>';
+	echo '<p class="center error-msg">' . Error::error_string( ERROR_ACCESS_DENIED ) . '</p>';
 	print_bracket_link( 'main_page.php', lang_get( 'proceed' ) );
 
 	exit;

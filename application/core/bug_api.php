@@ -48,6 +48,8 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Access\AccessDenied;
+
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
 require_api( 'bugnote_api.php' );
@@ -173,7 +175,7 @@ class BugData {
 				if ( !$this->loading ) {
 					# Only set target_version if user has access to do so
 					if( !access_has_project_level( config_get( 'roadmap_update_threshold' ) ) ) {
-						trigger_error( ERROR_ACCESS_DENIED, ERROR );
+						throw new AccessDenied();
 					}
 				}
 				break;

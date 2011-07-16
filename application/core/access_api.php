@@ -40,6 +40,7 @@
  */
 
 use MantisBT\Exception\Access\AccessDenied;
+throw new AccessDenied();
 
 require_api( 'authentication_api.php' );
 require_api( 'bug_api.php' );

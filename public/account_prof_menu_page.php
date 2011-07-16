@@ -38,9 +38,8 @@
  * @uses profile_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -54,7 +53,7 @@ require_api( 'print_api.php' );
 require_api( 'profile_api.php' );
 
 if ( !config_get( 'enable_profiles' ) ) {
-	trigger_error( ERROR_ACCESS_DENIED, ERROR );
+	throw new AccessDenied();
 }
 
 if ( isset( $g_global_profiles ) ) {

@@ -43,9 +43,8 @@
  * @uses twitter_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Access\AccessDenied;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -174,7 +173,7 @@ if ( $t_existing_bug->status !== $t_updated_bug->status ) {
 			$t_can_bypass_status_access_thresholds = true;
 		}
 		if ( !$t_can_bypass_status_access_thresholds ) {
-			trigger_error( ERROR_ACCESS_DENIED, ERROR );
+			throw new AccessDenied();
 		}
 	}
 	if( $t_reopen_issue ) {
@@ -259,7 +258,7 @@ foreach ( $t_related_custom_field_ids as $t_cf_id ) {
 	}
 
 	if( !custom_field_has_write_access( $t_cf_id, $f_bug_id ) ) {
-		trigger_error( ERROR_ACCESS_DENIED, ERROR );
+		throw new AccessDenied();
 	}
 
 	$t_new_custom_field_value = gpc_get_custom_field( "custom_field_$t_cf_id", $t_cf_def['type'], null );

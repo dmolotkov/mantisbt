@@ -35,9 +35,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Error;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -87,7 +86,7 @@ html_page_top();
 		<span class="display-value"><span>
 			<?php
 				if ( ! ( $t_can_manage || $t_can_see_email ) ) {
-					print error_string(ERROR_ACCESS_DENIED);
+					echo Error::error_string(ERROR_ACCESS_DENIED);
 				} else {
 					if ( !is_blank( $u_email ) ) {
 						print_email_link( $u_email, $u_email );
@@ -102,7 +101,7 @@ html_page_top();
 		<span class="display-label"><span><?php echo lang_get( 'realname' ) ?></span></span>
 		<span class="display-value"><span><?php
 			if ( ! ( $t_can_manage || $t_can_see_realname ) ) {
-				print error_string(ERROR_ACCESS_DENIED);
+				echo Error::error_string(ERROR_ACCESS_DENIED);
 			} else {
 				echo string_display_line( $u_realname );
 			} ?>

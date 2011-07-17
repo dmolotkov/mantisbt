@@ -1091,7 +1091,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ogiltigt fältvärde för "1$
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Felaktig definition av egendefinierat fält';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-autentisering misslyckades,';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Anslutningen till LDAP-servern misslyckades';
-$MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Uppdatering av LDAP-posten misslyckades.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Användarens LDAP-post kunde inte hittas.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'LDAP har inte laddats.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Kan inte ansluta till databasen. Felmeddelandet som erhölls från databasen var #%1$d: %2$s.';

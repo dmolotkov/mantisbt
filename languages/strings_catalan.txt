@@ -1172,7 +1172,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor incorrecte pel camp %1$
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definició de camp personalitzat no vàlida';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Ha fallat la validació LDAP';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Ha Fallat la connexió al servidor LDAP';
-$MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Ha fallat l\'actualització del registre LDAP.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'No s\'ha trobat el registre LDAP de l\'usuari.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'No està carregada l\'extensió LDAP.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Ha fallat la connexió a la base de dades. L\'error rebut de la base de dades és: #%1$d: %2$s.';

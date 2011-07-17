@@ -990,7 +990,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Грешна стойност
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Некоректна дефиниция на потребителското поле.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP оторизацията неуспешна';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Връзката с LDAP сървъра неуспешна';
-$MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Обновяването на LDAP записа неуспешно.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Неоткрит LDAP запис за потребителя.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Връзката с базата данни неуспешна. Върната грешка #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Търсенето в базата неуспешно. Върната грешка #%1$d: %2$s за заявката: %3$s';

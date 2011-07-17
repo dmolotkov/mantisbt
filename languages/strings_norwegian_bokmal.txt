@@ -1178,7 +1178,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ugyldig verdi for feltet "%1$
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Ugyldig definisjon på skreddersydd felt.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-autentisering feilet';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'LDAP-tjenertilkobling feilet';
-$MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Oppdatering av LDAP-posten feilet.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'LDAP-bruker ikke funnet.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Finner ikke LDAP-utvidelse';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Feil ved tilkobling til database. Feilmelding mottatt fra database var #%1$d: %2$s.';

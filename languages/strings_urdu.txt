@@ -936,7 +936,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'اس چیز کے لیے قی�
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'اس قسٹم والی چیز کا نام ٹھیک نہی ھے';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = ' کی اجازت فیل ھو گی ھےLDAP';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = ' کے سرور سے رابطہ فیل ھو گیا ھے LDAP';
-$MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = ' LDAP       کے ریکارڈ نہے نہیں  ھوے      .';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = ' کے استہمال کرنے والوں کے نام نہیں ملے LDAP      .';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'ڈیٹا بیس سے رابطہ فیل ھو گیا ھے. خرابی ڈیٹا بیس سے حاصل ھوی ھے #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = ' ڈیٹا بیس کی کیوری فیل ھو گی ھے  کیوری کیلیے %s #%1$d: %s خرابی جو ڈیٹا بیس سے حاصل ھوی ھے';

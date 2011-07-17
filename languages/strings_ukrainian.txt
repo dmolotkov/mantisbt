@@ -723,7 +723,6 @@ $MANTIS_ERROR[ERROR_FTP_CONNECT_ERROR] = 'Не можу з\'єднатись з 
 $MANTIS_ERROR[ERROR_HANDLER_ACCESS_TOO_LOW] = 'Обробник проблем не має достатніх привілеїв на обробку проблеми з цим статусом.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Такий проект вже існує.  Поверніться назад і введіть іншу назву проекта.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Хибна назва проекта.  Назва проекта не може бути порожнью.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Інформація для входу, що зберігається у вашому браузері, неправильна.  Може ваш запис був видалений?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Не можу знайти параметри цього користувача.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Не вдалось знайти новину.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Пароль і перевірка не співпадають.';

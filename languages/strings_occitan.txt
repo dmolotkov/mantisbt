@@ -1090,7 +1090,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Un projècte amb aqueste nom exi
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Nom de projècte especificat invalid.  Los noms de projècte pòdon pas èsser voids.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Utilizaire amb lo nom "%1$s" pas trobat.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Cap d\'utilizaire amb l\'ID « %1$d » es pas estat trobat.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Las entresenhas de connexion enregistradas per vòstre navigador son pas validas.  Benlèu vòstre compte es estat suprimit ?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Las preferéncias poirián èsser introbablas per aqueste utilizaire.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Novèlas introbabla.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Lo senhal correspond pas a la verificacion.';

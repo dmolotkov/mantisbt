@@ -1053,7 +1053,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Umiiral na isang proyektong may 
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Hindi tanggap ang tinukoy na pangalan ng proyekto.  Hindi maaaring walang laman ang mga pangalan ng proyekto.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Hindi natagpuan ang tagagamit na may pangalang "%1$s".';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Hindi natagpuan ang tagagamit na may ID na "%1$d".';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Hindi tanggap ang kabatirang panglagda na itinago ng iyong pantingin-tingin (\'\'browser\'\').  Marahil ay nabura ang iyong kuwenta/akawnt?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Hindi matagpuan ang mga kagustuhan para sa tagagamit na ito.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Hindi natagumpay ang bagay na pambalita.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Hindi tumutugma sa pagpapatunay/paniniyak ang hudyat.';

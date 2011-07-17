@@ -912,7 +912,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = '專案名稱已經存在. 請返
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = '這專案名稱不合規定. 專案名稱不可為空白字串.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = '找不到使用者 \"%1$s\"';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = '使用者找不到 \"%1$d\"';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = '無法將登入資訊存入你的瀏覽器中. 可能你的帳號已經被刪除或是沒有開啟瀏覽器的 Cookie 功能?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = '無法找到這使用者的設定值.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = '新的項目找不到.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = '輸入的密碼與圖形中的英數字不符.';

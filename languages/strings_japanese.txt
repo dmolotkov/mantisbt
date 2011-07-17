@@ -1144,7 +1144,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'そのプロジェクト名は�
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = '指定したプロジェクト名は無効です。プロジェクト名は空欄ではいけません。';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = '名前が「%1$s」の利用者は見つかりませんでした。';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'IDが「%1$d」の利用者は見つかりませんでした。';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'ブラウザから送信されたログイン情報は無効です。おそらく、あなたのアカウントは削除されています。';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = '利用者の選択情報がありません。';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'ニュースがありません。';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'パスワードが一致しません。';

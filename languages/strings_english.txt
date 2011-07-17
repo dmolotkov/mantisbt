@@ -1512,7 +1512,6 @@ If you requested this verification, visit the following URL to change your passw
 	ERROR_PROJECT_NAME_INVALID => 'Invalid project name specified. Project names cannot be blank.',
 	ERROR_USER_BY_NAME_NOT_FOUND => 'User with name "%1$s" not found.',
 	ERROR_USER_BY_ID_NOT_FOUND => 'User with id "%1$d" not found.',
-	ERROR_AUTH_INVALID_COOKIE => 'The login information stored by your browser is invalid. Perhaps your account was deleted?',
 	ERROR_USER_PREFS_NOT_FOUND => 'Preferences could not be found for this user.',
 	ERROR_NEWS_NOT_FOUND => 'News item not found.',
 	ERROR_USER_CREATE_PASSWORD_MISMATCH => 'Password does not match verification.',

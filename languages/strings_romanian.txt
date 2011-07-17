@@ -893,7 +893,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'EROARE: Există deja un proiect 
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Nume de proiect invalid. Numele de proiect nu poate fi nul.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Utilizatorul cu numele "%1$s" nu este găsit.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Utilizatorul cu ID-ul "%1$s" nu este găsit.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Informaţiile de conectare salvate de browser sunt invalide. Probabil contul dumneavoastră a fost şters?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Nu pot fi găsite preferinţele pentru acest utilizator.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'EROARE: Ştirea nu este găsită.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Parola nu se potriveşte cu verificarea.';

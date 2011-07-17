@@ -1101,7 +1101,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Már létezik ilyen nevű projek
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Hibásan megadott projektnév: a projektnév nem lehet üres.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = '„%1$s” nevű felhasználó nem található.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = '„%1$s” azonosítójú felhasználó nem található.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'A böngészője által tárolt belépési információk hibásak. Talán törölték a felhasználóját?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Ezen felhasználó beállításai nem találhatóak.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Nincs ilyen hír.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'A jelszavak nem egyeznek.';

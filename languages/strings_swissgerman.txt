@@ -1157,7 +1157,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'S git scho ne Projäkt mit däm 
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Nit giltige Projäktname. Projäktnäme chenne nit läär syy.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Benutzer mit em Name „%1$s“ nit gfunde.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Benutzer mit dr ID „%1$d“ nit gfunde.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Die vu Dyynem Browser gspychereti Aamäldinformation isch nit giltig. Villicht isch Dyy Konto glescht wore.';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Fir dää Benutzer hän kei Yystellige chenne gfunde wäre.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Nochricht nit gfunde.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Passwort stimmt nit.';

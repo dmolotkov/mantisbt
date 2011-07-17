@@ -1125,7 +1125,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'يوجد مشروع بهذا ا�
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'اسم مشروع غير صحيح تم تحديده. أسماء المشاريع لا يمكن أن تكون فارغه.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'المستخدم بالاسم "%1$s" لم يتم العثور عليه.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'المستخدم بالرقم "%1$d" لم يتم العثور عليه.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'معلومات الدخول المخزنه بواسطه متصفحك غير صحيحه.  ربما تم حذف حسابك؟';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'التفضيلات لم يمكن العثور عليها لهذا المستخدم.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'مدخله الأخبار لم يتم العثور عليها.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'كلمه السر لا تطابق التأكيد.';

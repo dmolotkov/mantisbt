@@ -617,7 +617,6 @@ $MANTIS_ERROR[ERROR_DB_FIELD_NOT_FOUND] = 'Nisem našel polja \'%1$s\' v podatko
 $MANTIS_ERROR[ERROR_FTP_CONNECT_ERROR] = 'Dostop do FTP serverja je onemogočen.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Ime projekta je že v uporabi. Vrnite se nazaj in izberite drugega.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Ime projekta je neveljavno. Ime projekta ne sme biti prazno.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Prijavna informacija shranjena v vašem brskalniku je neveljavna. Mogoče je vaš račun izbrisan?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Preferenc za uporabnika ni bilo mogoče najti.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Predmet novice ni bil najden.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Gesli se ne ujemata.';

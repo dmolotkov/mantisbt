@@ -818,7 +818,6 @@ $MANTIS_ERROR[ERROR_DB_FIELD_NOT_FOUND] = 'Database-felt ikke fundet.';
 $MANTIS_ERROR[ERROR_FTP_CONNECT_ERROR] = 'Kunne ikke opnå forbindelse til fTP server.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Der findes allerede et projekt med dette navn. Gå venligst tilbage og vælg et andet navn.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Ugyldigt projektnavn. Navnet på et projekt må ikke være tomt.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Log ind informationer gemt i din browser er ugyldige. Måske er din konto blevet slettet?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Præferencer for denne bruger kunne ikke findes.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Nye elementer ikke fundet.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Adgangskode passer ikke til verificeringen.';

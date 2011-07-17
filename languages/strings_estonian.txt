@@ -1142,7 +1142,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Sellise nimega projekt on juba o
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Lubamatu kujuga projekti nimi.  Projekti nimed ei tohi sisaldada tühikuid.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Kasutajat nimega "%1$s" ei leitud.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Kasutajat id-ga "%1$d" ei leitud.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Sinu veebilehitsaja Logini informatsioon on vigane.  Võib-olla on Su kasutajakonto kustutatud?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Selle kasutaja eelistusi ei leitud.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Uudiseid ei leitud.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Parool ei klapi kontrollparooliga.';

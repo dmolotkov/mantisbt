@@ -1050,7 +1050,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'פרויקט בשם זה כבר 
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'שם הפרויקט אינו תקין. השם אינו יכול להיות ריק.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'משתמש בשם "%1$s" לא נמצא.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'משתמש עם זיהוי "%1$d" לא נמצא.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'השם והססמה שנשמרו בדפדפן שלך (ב-Cookie) אינם תקינים. אולי חשבונך נמחק?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'לא נמצאו העדפות לחשבון זה.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'לא נמצאו פריטי חדשות.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'הססמה אינה תואמת לשדה בדיקת הססמה.';

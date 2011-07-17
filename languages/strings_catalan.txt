@@ -1147,7 +1147,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Ja existeix un projecte amb aque
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Nom de projecte no vàlid. Els noms de projecte no poden estar en blanc.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'L\'Usuari amb el nom "%1$s" no s\'ha trobat.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'L\'Usuari amb id "%1$d" no s\'ha trobat.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'La informació emmagatzemada pel seu navegador és incorrecta. Potser el seu compte ha estat esborrat.';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'No s\'han trobat preferències par a aquest usuari.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'No s\'ha trobat la notícia.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'La contrasenya no ha superat la verificació.';

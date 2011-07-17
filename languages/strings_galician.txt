@@ -1157,7 +1157,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Xa existe un proxecto con ese no
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Especificou o nome dun proxecto inválido. Os nomes de proxectos non poden estar en branco.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Non se atopou ningún usuario chamado "%1$s".';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Non se atopou ningún usuario co id "%1$d".';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'A información de rexistro almacenada polo seu navegador é inválida. Se cadra a súa conta foi borrada?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'As preferencias deste usuario non puideron ser atopadas.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Non se atopou o elemento das novas.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'O contrasinal non coincide coa verificación.';

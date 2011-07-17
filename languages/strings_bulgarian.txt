@@ -967,7 +967,6 @@ $MANTIS_ERROR[ERROR_FTP_CONNECT_ERROR] = 'Проблем при връзката
 $MANTIS_ERROR[ERROR_HANDLER_ACCESS_TOO_LOW] = 'Служителят, който е избран за закриване на проблема няма необходимите права, за да работи по проблем с такъв статус.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Проект с такова име вече съществува. Моля, изберете ново име.';
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Невалидно име на проекта. Името на проекта не може да бъде празно.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Информацията за достъп, съхранявана от браузъра ви (чрез cookies)е некоректна. Моля, обърнете се към системния администратор.';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Потребителските настройки не са открити.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Новината не е открита.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Паролата не съвпада.';

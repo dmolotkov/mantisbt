@@ -578,7 +578,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'E Projäk met däm Name jit et a
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Dat es ene onjöltijje Name för e Projäk. Dä Name kann nit fottjelohße wääde.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Ene Metmaacher met däm Name „%1$s“ kunnt mer nit fenge.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Ene Metmaacher met dä Kännong „%1$d“ kunnt mer nit fenge.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'De Login-Daate, di Dinge Brauser faßjehallde hät, sin verkeeht. Müjjelesch, dat Dinge Zohjang un Dinge Name als ene Metmaacher fott sin?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Enshtällunge för hee dä Metmaacher kunnte mer nit fenge.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Di Neujeschkeijt kunnt mer nit fenge.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'De aanjejovve Paßwööter sin nit ejaal.';

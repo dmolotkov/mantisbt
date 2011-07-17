@@ -1074,7 +1074,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Projekt tohoto jména již exist
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Zadáno neplatné jméno projektu. Jméno projektu nesmí být prázdné.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Uživatel se jménem "%1$s" nebyl nalezen.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Uživatel s id "%1$s" nebyl nalezen.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Přihlašovací informace uložené vaším prohlížečem nejsou platné. Nebyl váš účet smazán?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Pro tohoto uživatele nelze najít nastavení.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Novinka nenalezena.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Hesla nejsou shodná.';

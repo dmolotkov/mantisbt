@@ -1153,7 +1153,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Et prosjekt med det samme navnet
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Det ble oppgitt et ugyldig prosjektnavn. Prosjektnavnet kan ikke være blankt.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Finner ikke bruker "%1$s"';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Finner ikke bruker med id "%1$d"';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Innloggingsinformasjonen som er lagret i nettleseren din er feil. Kanskje kontoen din har blitt slettet?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Finner ikke innstillingene til denne brukeren.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Finner ikke nyhetssak.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Passordet kan ikke verifiseres.';

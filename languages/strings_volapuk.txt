@@ -451,7 +451,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Proyeg labü nem at ya dabinon. 
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Proyeganem no lonöföl pepenon. Proyeganems no kanons vagön.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Geban labü nem: „%1$s“ no petuvon.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Geban labü dientifanüm: „%1$d“ no petuvon.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Nunädamanüns in bevüresodanaföm olik pekipedöls no lonöfons. Kal olik ba pemoükon-li?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Buükams no petuvons demü geban at.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Letavöd no veräton.';
 $MANTIS_ERROR[ERROR_EMAIL_INVALID] = 'Ladet leäktronik no lonöföl.';

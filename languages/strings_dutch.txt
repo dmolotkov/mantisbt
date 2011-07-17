@@ -1160,7 +1160,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Er bestaat al een project met di
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Ongeldige projectnaam. De naam kan niet leeg zijn.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'De gebruiker met naam "%1$s" is niet gevonden.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'De gebruikers met nummer "%1$d" is niet gevonden.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'De aanmeldinformatie in uw browser is ongeldig. Wellicht is uw gebruiker verwijderd?';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'De instellingen voor deze gebruiker kunnen niet gevonden worden.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Nieuwsbericht niet gevonden.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Het wachtwoord komt niet overeen met het opgeslagen wachtwoord.';

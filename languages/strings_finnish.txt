@@ -1120,7 +1120,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Samanniminen projekti on jo olem
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Virheellinen projektinimi. Projektilla on oltava nimi, se ei voi olla tyhjä.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Käyttäjää ei löytynyt nimellä "%1$s"';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Käyttäjätunnusta "%1$d" ei löytynyt.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Selaimesi välittämä kirjautumistietosi on virheellinen.  Käyttäjätilisi on ehkä poistettu.';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Käyttäjän asetustietoja ei löytynyt.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Uutisartikkelia ei löydy.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Salasanavirhe.';

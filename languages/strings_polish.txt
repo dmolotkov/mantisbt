@@ -1085,7 +1085,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Projekt o tej nazwie już istnie
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Podano nieprawidłową nazwę projektu. Nazwa projektu nie może być pusta.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Brak użytkownika o nazwie „%1$s”.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Brak użytkownika o id „%1$d”.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'Informacja o logowaniu przechowywana przez Twoją przeglądarkę jest nieprawidłowa.  Być może Twoje konto zostało usunięte.';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'Nie można znaleźć ustawień tego użytkownika.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Nie znaleziono wiadomości.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'Hasło nie zgadza się.';

@@ -1154,7 +1154,6 @@ $MANTIS_ERROR[ERROR_PROJECT_NAME_NOT_UNIQUE] = 'Ya existe un proyecto con ese no
 $MANTIS_ERROR[ERROR_PROJECT_NAME_INVALID] = 'Nombre de proyecto no válido. Los nombres de proyecto no pueden estar en blanco.';
 $MANTIS_ERROR[ERROR_USER_BY_NAME_NOT_FOUND] = 'Usuario con nombre "%1$s" no encontrado.';
 $MANTIS_ERROR[ERROR_USER_BY_ID_NOT_FOUND] = 'Usuario con id "%1$d" no encontrado.';
-$MANTIS_ERROR[ERROR_AUTH_INVALID_COOKIE] = 'La información de ingreso almacenada por su navegador es incorrecta. Quizá su cuenta ha sido borrada.';
 $MANTIS_ERROR[ERROR_USER_PREFS_NOT_FOUND] = 'No se encontraron preferencias para este usuario.';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = 'Nnoticia no encontrada.';
 $MANTIS_ERROR[ERROR_USER_CREATE_PASSWORD_MISMATCH] = 'La contraseña no pasó la verificación.';

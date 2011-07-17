@@ -1173,7 +1173,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Gestionari de sesilha invalid.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'La variabla de sesilha « %1$s » es pas estada trobada.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Vòstra sesilha es estada invalidada.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Geton de seguretat del formulari invalid. Avètz somes dos còps lo formulari per accident ?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Impossible d\'afichar aquesta pagina amb aquesta foncion.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Camp de triada invalid.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Format de data invalid.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Impossible de metre a jorn la zòna orària.';

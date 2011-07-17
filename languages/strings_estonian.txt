@@ -1225,7 +1225,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Vigane sessiooni järgija.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Sessiooni muutujat "%1$s" ei leitud.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Sinu sessioon on loetud vigaseks.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Vigane vormi turvalisuse märk. Kas saatsid vormi ekslikult korduvalt?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Leheküljele ei saa pöörduda kasutades seda meetodit.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Vigane sorteerimise väli.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Vigane kuupäeva vorming.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Ei saa uuendada ajatsooni.';

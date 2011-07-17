@@ -895,4 +895,3 @@ $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Laukas "%1$s" turi dubliuotą stulpel�
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Laukas "%1$s" turi neleidžiamą lauką "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Neteisinga sesija.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Sesijos kintamasis "%1$s" nerastas.';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Šis puslapis negali būti pasiekiamas naudojantis šiuo metodu.';

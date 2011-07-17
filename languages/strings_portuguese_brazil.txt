@@ -1227,7 +1227,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Manipulador de sessão inválido
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'A variável de sessão "%1$s" não foi encontrada.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Sua sessão foi invalidada.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Token de segurança do formulário inválido. Você enviou o formulário duas vezes por acidente?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Esta página não pode ser acessada através do uso deste método.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Campo para ordenação inválido.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Formato de data inválido.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Não foi possível atualizar o fuso-horário.';

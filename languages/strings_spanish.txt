@@ -1237,7 +1237,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Gestor de sesión no válido.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Un parámetro de sesión esperado (%1$s) no se encontró.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Su sesión ya no es válida.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Token de seguridad del formulario no válido. ¿Envió el formulario dos veces accidentalmente?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Esta página no puede ser accedida utilizando este método.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Campo no válido para ordenamiento.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Formato de fecha no válido';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Imposible actualizar zona horaria.';

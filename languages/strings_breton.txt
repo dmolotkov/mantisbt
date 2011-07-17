@@ -1225,7 +1225,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Merour dalc\'h direizh.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'An argemmenn dalc\'h « %1$s » n\'eo ket bet kavet.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Nullet eo bet ho talc\'h.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Direizh eo jedouer surentez ar furmskrid. Daoust ha kaset hoc\'h eus ar frumskrid div wech dre zarvoud ?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Ne c\'haller ket mont d\'ar bajenn-mañ oc\'h implijout an hentenn-mañ.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Maezienn urzhiañ direizh.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Direizh eo furmad an deiziad.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Ne c\'haller ket hizivaat ar werzhid-eur.';

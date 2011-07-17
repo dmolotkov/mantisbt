@@ -952,6 +952,5 @@ $MANTIS_ERROR[ERROR_LOST_PASSWORD_MAX_IN_PROGRESS_ATTEMPTS_REACHED] = 'Numărul 
 $MANTIS_ERROR[ERROR_PROJECT_RECURSIVE_HIERARCHY] = 'Acea operaţie ar crea o buclă în ierarhia subproiectelor.';
 $MANTIS_ERROR[ERROR_USER_CHANGE_LAST_ADMIN] = 'Nu puteţi schimba nivelul de acces al unicului ADMINISTRATOR din sistem.';
 $MANTIS_ERROR[ERROR_PAGE_REDIRECTION] = 'Eroare de redirectare a paginii, asiguraţi-vă că nu sunt spaţii în afara blocului PHP (&lt;?php ?&gt;) în fişierele config_inc.php sau custom_*.php.';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Această pagină nu poate fi accesată folosind această metodă.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Format de dată incorect.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Imposibil de reactualizat fusul orar.';

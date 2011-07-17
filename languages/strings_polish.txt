@@ -1168,7 +1168,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Nieprawidłowy handler sesji.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Zmienna sesyjna „%1$s” nie została znaleziona.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Twoja sesja została unieważniona.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Nieprawidłowy znacznik bezpieczeństwa formularza. Czy przez przypadek nie złożyłeś formularza dwa razy?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Tej strony nie moża uzyskać za pomocą tej metody.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Nieprawidłowe pole sortowania.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Nieprawidłowy format daty.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Nie można zaktualizować strefy czasowej.';

@@ -1157,7 +1157,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Neplatný řadič sezení.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Proměnná sezení "%1$s" nebyla nalezena.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Sezení je neplatné.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Neplatný zabezpečující token formuláře. Neodeslali jste nechtě formulář dvakrát?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Tato stránka není touto metodou přístupná.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Neplatné řadicí pole.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Neplatný formát data.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Nelze aktualizovat časové pásmo.';

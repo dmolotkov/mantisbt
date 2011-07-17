@@ -1184,7 +1184,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Érvénytelen munkamenet-kezelő
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'A(z) „%1$s” munkamenet változó nem található.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'A munkameneted érvénytelenítetté vált.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Érvénytelen biztonsági token. Nem küldted el véletlenül kétszer az űrlapot?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Ez a lap nem elérhető ezzel a módszerrel.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Érvénytelen rendezési mező.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Érvénytelen dátumformátum.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Nem sikerült frissíteni az időzónát.';

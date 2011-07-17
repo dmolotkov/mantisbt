@@ -1149,7 +1149,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Ogiltig sessionshanterare.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Sessionsvariabel "%1$s" hittades inte.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Din session är inte längre giltig.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Ogiltigt säkerhetselement.  Sände du in formuläret två gånger av misstag?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Denna sida kan inte besökas med den här metoden.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Ogiltigt sorteringsfält.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Ogiltigt datumformat.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Klarar inte att uppdatera tidszon.';

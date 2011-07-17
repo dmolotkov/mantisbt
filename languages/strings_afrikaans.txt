@@ -569,6 +569,5 @@ $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Opgradering van die uitbreiding se
 $MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = '\'n Onbekende fout ("%1$s") het voorgekom tydens die uitvoering van die "%2$s" uitbreiding.';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Die veld "%1$s" bevat \'n duplikaat kolom "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Die veld "%1$s" bevat \'n ongeldige veld "%2$s".';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Hierdie bladsy kan nie met die metode geopen word nie.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Ongeldige veld vir sortering.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Ongeldige datumformaat.';

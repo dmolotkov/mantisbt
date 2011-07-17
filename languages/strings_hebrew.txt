@@ -1132,5 +1132,4 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'מזהה שיח לא תקין.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'משנתה שיח "%1$s" לא נמצא.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'השיח שלך איבד את תקינותו.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'אסימון שליחת טופס לא תקין. האם שלחת את הטופס פעמיים בטעות?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'לא ניתן לגשת לדף הזה בשיטה הזאת.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'שדה מיון לא תקין.';

@@ -622,5 +622,4 @@ $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Campo "%1$s" contém campo inválido "%2
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Manipulador de sessão inválido.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Variável de sessão "%1$s" não encontrada.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'A sua sessão tornou-se inválida.';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Esta página não pode ser acedida por este método.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Campo de ordenação inválido.';

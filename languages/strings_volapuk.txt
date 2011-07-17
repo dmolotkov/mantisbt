@@ -487,5 +487,4 @@ $MANTIS_ERROR[ERROR_LOST_PASSWORD_CONFIRM_HASH_INVALID] = 'El URL fümedama no l
 $MANTIS_ERROR[ERROR_USER_CHANGE_LAST_ADMIN] = 'No kanol votükön dälanivodi GUVANA teik sita.';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Fel: „%1$s“ keninükon padüli petelüköl: „%2$s“.';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Fel: „%1$s“ keninükon feli no lonöföli: „%2$s“.';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Pad at no binon lügolovik me metod at.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Leodükamafel no lonöföl.';

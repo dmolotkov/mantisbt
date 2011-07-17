@@ -1203,7 +1203,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Virheellinen istunnon käsitteli
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Istuntomuuttujaa "%1$s" ei löytynyt.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Istuntosi on vanhentunut.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Virheellinen lomaketurvallisuuselementti. Lähetitkö lomakkeen vahingossa useamman kerran?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Sivua ei voi ladata käyttämällä tätä metodia.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Virheellinen lajittelukenttä.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Virheellinen päivämäärämuoto.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Aikavyöhykettä ei voida päivittää.';

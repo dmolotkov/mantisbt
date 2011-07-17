@@ -1136,5 +1136,4 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Hindi tanggap na tagahawak ng in
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Hindi natagpuan ang pabagu-bagong halagang "%1$s" ng pinaglaanang panahon.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Naging hindi katanggap-tanggap ang inilaang panahon para sa iyo.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Hindi tanggap na pormularyo ng panandang pangseguridad.  Hindi mo ba sinasadyang ipadala ng dalawang ulit ang pormularyo?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Hindi mapupuntahan ang pahinang ito na ginagamitan ng ganitong paraan.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Hindi tanggap na hanay ng pagsasaayos.';

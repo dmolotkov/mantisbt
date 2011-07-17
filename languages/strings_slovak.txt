@@ -1167,7 +1167,6 @@ $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Neplatný radič sedení.';
 $MANTIS_ERROR[ERROR_SESSION_VAR_NOT_FOUND] = 'Premenná sedenia "%1$s" nebola nájdená.';
 $MANTIS_ERROR[ERROR_SESSION_NOT_VALID] = 'Sedenie je neplatné.';
 $MANTIS_ERROR[ERROR_FORM_TOKEN_INVALID] = 'Neplatný zabezpečujúci token formulára. Neodoslali ste neúmyselne formulár dvakrát?';
-$MANTIS_ERROR[ERROR_INVALID_REQUEST_METHOD] = 'Táto stránka nie je touto metódou prístupná.';
 $MANTIS_ERROR[ERROR_INVALID_SORT_FIELD] = 'Neplatné radiace pole.';
 $MANTIS_ERROR[ERROR_INVALID_DATE_FORMAT] = 'Neplatný formát dátumu.';
 $MANTIS_ERROR[ERROR_UPDATING_TIMEZONE] = 'Časová zóna sa nedá aktualizovať.';

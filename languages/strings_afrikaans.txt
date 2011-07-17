@@ -551,7 +551,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Die kategorie "%1$s" is n
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = '\'n Weergawe met die naam bestaan reeds.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Weergawe "%1$s" is nie gevind nie.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Die gebruikersnaam is ongeldig. Gebruikersname mag slegs Latynse letters, syfers, spasies, koppeltekens, punte, plus-tekens, onderstreep-karakters bevat.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Die volledige naam van die gebruiker is ongeldig.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Gebruiker het nie die nodig toegangsvlak nie.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Ondersteuning vir borgskap is nie geaktiveer nie.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_FOUND] = 'Borgskap %1$d nie gevind nie.';

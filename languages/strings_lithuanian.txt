@@ -855,7 +855,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Kategorija "%1$s" nerasta
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Versija tokiu pavadinimu jau egzistuoja.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Versija nerasta.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Vartotojo vardas neteisingas. Vartotojo varde gali būti tik raidės, skaičiai, tarpai, brūkšneliai ir pabraukimai.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Tikras vardas neteisingas.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Vartotojas neturi reikalingo priėjimo lygio';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Pasirinktas "Tikras vardas" sutampa su kito vartotojo prisijungimo vardu. Pasirinkite kitą.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Rėmimai išjungti.';

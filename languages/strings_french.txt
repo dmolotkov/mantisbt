@@ -1199,7 +1199,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Catégorie « %1$s » int
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Version dupliquée.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Version « %1$s » introuvable.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Nom d\'utilisateur non valide. Le nom d\'utilisateur ne peut contenir que les lettres latines, nombres, espaces, traits d\'union, points, signes plus et traits de soulignement.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Nom réel non valide.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'L\'utilisateur n\'a pas le niveau d\'accès requis';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Le nom réel saisi correspond au code d\'un autre utilisateur. Veuillez en choisir un autre.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Support de commanditaire non activé.';

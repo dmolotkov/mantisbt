@@ -948,7 +948,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = ' جماعت نہی ملی .';
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'ایک نیا ایژیشن اسی نام کا موجود ھے.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = '  ایژیشن نہی ملا\'%1$s\'.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'استہمال کرنے والے کا نام ٹھیک نہی ھے۔ استہمال کرنے والے کا نام صرف لاطینی لفظ،نمبرز،سپیس،^،اور _ پر مشتمل ھو سکتا ھے.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'استہمال کرنے والے کا نام ٹھیک نھی ھے.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'استہمال کرنے والے کا اصلی نام ٹھیک نہی ھے';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'آپ نے جو نام منتخب کیا ھےوہ کسی اور کے نام سے مل رھا ھے مہربانی کر کے کوی دوسرا نام استہمال کریں.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'سپانسرشپ کی سپورٹ ٹھیک نہیں ھے.';

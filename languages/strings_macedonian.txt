@@ -1195,7 +1195,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Во проектот „
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Веќе постои верзија со тоа име.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Верзијата „%1$s“ не е пронајдена.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Корисничкото име е неважечко. Корисничките имиња можат да содржат само латинични букви, бројки, празни места, цртички, точки, плусови и долни црти.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Вистинското име на корисникот е неважечко.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Корисникот го нема потребното ниво на пристап.';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Одбраното „Вистинско име“ се совпаѓа со корисничкото име на друг корисник. Одберете друго име.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Поддршката за спонзорство не е овозможена.';

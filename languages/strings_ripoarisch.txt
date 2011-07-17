@@ -602,7 +602,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'En onjöltijje Faßlää
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'De Zohjangspröövung per <i lang="en">LDAP</i> es donevve jejange.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'De Verbendung zom <i lang="en">LDAP</i> ßööver hät nit jeklapp.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Dä Metmaacher-Name es nit jöltesch. Zohjelohße sen bloß lateinesche Bochstabe, de Zeffere, Zweschreräum, dä Bendeshtresh, der Pungk, et „plus“-Zeijsche, un dä Ungershtresh.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Dä „reschtejje Name“ es onjöltesch udder Kappes.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Dä Metmaacher hät nit et nüüdeje Zohjangsrääsch.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'De Öngershtözung för Schponsore es nit ennjeschalldt.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_FOUND] = 'Schponsorschaff %1$d nit jefonge.';

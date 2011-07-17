@@ -1159,7 +1159,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Kategoriaa "%1$s" ei löy
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Samanniminen versio on jo olemassa.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Versiota %1$s ei löydy.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Virheellinen käyttäjätunnus. Käyttäjätunnus voi sisältää latinalaisia aakkosia, numeroita, välilyöntejä, väliviivoja, pisteitä, plusmerkkejä ja alaviivoja.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Käyttäjän nimi on epäkelpo.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Käyttäjätaso liian alhainen';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Syöttämäsi nimi on jo käytössä toisella käyttäjällä käyttäjänimenä. Ole hyvä, ja syötä uusi nimi.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Sponsorointitukea ei ole aktivoitu.';

@@ -1193,7 +1193,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Categoría \'%1$s\' no en
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Ya existe una versión con ese nombre.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Versión \'%1$s\' no encontrada.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'El nombre de usuario no es válido. Los nombres de usuario sólo pueden contener caracteres latinos, números, espacios, guiones medios, puntos, signos más y guiones bajos.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'El nombre real del usuario no es válido.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'El usuario no tiene el nivel de acceso requerido';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'El "Nombre Real" coincide con el nombre de otro usuario. Por favor elija otro.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Soporte para patrocinios no habilitado.';

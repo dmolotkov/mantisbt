@@ -1196,7 +1196,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'D Kategorii „%1$s“ is
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'E Version mit däm Name git s scho.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Version „%1$s“ nit gfunde.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Dr Benutzername isch nit giltig. Erlaubt sin nume Buechstabe, Zahle, Läärzeiche, Pluszeiche, Pinkt, Binde- un Unterstrich.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Dr „Vollständig Name“ isch nit giltig.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Benutzer het nit d Zuegriffsberächtigung, wu s brucht.';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Dr „Vollständig Name“, wu yygee woren sich, isch dr Benutzername vun eme andere Benutzer. Bitte wehl e andere.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Sponsor-Unterstitzig nit aktiviert.';

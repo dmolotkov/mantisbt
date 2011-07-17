@@ -1197,7 +1197,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'В проекте "%2$s" 
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Версия с таким названием уже существует.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Версия \'%1$s\' не найдена.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Недопустимое регистрационное имя пользователя. В именах могут содержаться только латинские буквы, цифры, пробелы, дефисы, точки, знаки плюса и подчеркивания.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Настоящее имя пользователя недопустимо.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'У пользователя нет нужного уровня доступа.';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Выбранное ФИО совпадает с регистрационным именем другого пользователя. Выберите другое ФИО пользователя.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Поддержка оплаты не включена.';

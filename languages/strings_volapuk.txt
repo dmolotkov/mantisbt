@@ -475,7 +475,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Klad: „%1$s“ no petuv
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Fomam labü nem at ya dabinon.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Fomam: „%1$s“ no petuvon.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Gebananem no lonöfon. Gebananems dalons binädon teiko me tonats latinik, numats, spads, e malats: „-“ e „_“.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Nem jenöfik gebana no lonöfon.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Geban no labon dälanivodi zesüdik.';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = '„Nem jenöfik“ pevälöl leigon ko nunädamanem gebana votik. Valolös votiki.';
 $MANTIS_ERROR[ERROR_SIGNUP_NOT_MATCHING_CAPTCHA] = 'Fümedasaedot no leigon. Steifülolös dönu.';

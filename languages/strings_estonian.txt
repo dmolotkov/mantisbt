@@ -1181,7 +1181,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Kategooriat "%1$s" ei lei
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Selle nimega versioon juba eksisteerib.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Versiooni "%1$s" ei leitud.';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Kasutajanimi on vigane. Kasutajanimi võib sisaldada ainult ladina tähti, numbreid, tühikuid, sidekriipsu, punkte, plussmärke ja allkriipse.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Kasutaja tegelik nimi on vigane.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Kasutaja ei oma vajalikku kasutajaõiguste taset';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Valitud "Tegelik Nimi" langeb kokku teise kasutaja LOGIN nimega. Palun vali mõni teine.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Sponsorluse tugi pole lubatud.';

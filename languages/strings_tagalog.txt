@@ -1092,7 +1092,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'Hindi natagpuan ang kauri
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'Umiiral na ang isang bersyong may ganyang pangalan.';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'Hindi natagpuan ang bersyong "%1$s".';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = 'Hindi tanggap ang pangalan ng tagagamit.  Maaaring maglaman lamang ang mga pangalan ng tagagamit ng mga titik na pang-Latin, mga bilang, mga patlang, mga gitling, at mga salungguhit.';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = 'Hindi tanggap ang tunay na pangalan ng tagagamit.';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = 'Hindi nagkaroon ng kinakailangang kaantasan ng pagpasok ang tagagamit.';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = 'Ang napiling "Tunay na Pangalan" ay tumutugma sa pangalang panlagda ng ibang tagagamit. Pumili lamang po ng iba pa.';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = 'Hindi pinapagana ang suporta para sa Pagtataguyod.';

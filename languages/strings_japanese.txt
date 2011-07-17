@@ -1183,7 +1183,6 @@ $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND_FOR_PROJECT] = 'プロジェクト「%1$s
 $MANTIS_ERROR[ERROR_VERSION_DUPLICATE] = 'バージョンが重複しています。';
 $MANTIS_ERROR[ERROR_VERSION_NOT_FOUND] = 'バージョン「%1$s」がありません。';
 $MANTIS_ERROR[ERROR_USER_NAME_INVALID] = '利用者名が不正です。利用者名はラテン文字、数字、スペース、ハイフン、ドット、プラス符号よびアンダースコアのみを含むことができます。';
-$MANTIS_ERROR[ERROR_USER_REAL_NAME_INVALID] = '利用者の本名が不正です。';
 $MANTIS_ERROR[ERROR_USER_DOES_NOT_HAVE_REQ_ACCESS] = '利用者が必要なアクセスレベルを持っていません。';
 $MANTIS_ERROR[ERROR_USER_REAL_MATCH_USER] = '選んだ「本名」は別の利用者のログイン名と一致します。別のものを選んでください。';
 $MANTIS_ERROR[ERROR_SPONSORSHIP_NOT_ENABLED] = '投票機能が有効ではありません。';

@@ -1067,7 +1067,6 @@ Jeśli prosiłeś o to, odwiedź poniższy adres aby zmienić hasło:',
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Wystąpił błąd podczas wykonywanej operacji. Możesz zgłosić błąd administratorowi.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Plik o podanej nazwie już istnieje. Usuń najpierw istniejący plik.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Istnieje już projekt o takiej nazwie.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Wymagane pole „%1$s” nie zostało wypełnione. Sprawdź wprowadzone dane.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Konto jest zabezpieczone. Nie masz uprawnień dostępu do tego konta dopóki zabezpieczenie jest aktywne.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Brak dostępu.';

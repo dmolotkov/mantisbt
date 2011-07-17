@@ -602,7 +602,6 @@ $s_messages = array(
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Med potekom operacije je prišlo do napake. Napako lahko prijavite vašemu lokalnemu operaterju.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Datoteka je dvojnik.  Najprej izbrišite datoteko.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Projekt s tem imenom že obstaja.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Polje \'%1$s\' je  bilo prazno.  Ponovno preverite vnose.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Uporabniški račun je zaščiten. Dostop je onemogočen, dokler se zaščita računa ne odpravi.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Dostop zavrnjen.';

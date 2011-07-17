@@ -1072,7 +1072,6 @@ S\'avètz demandat aquesta verificacion, visitatz l\'URL seguenta per cambiar v�
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Una error s\'es producha.  Mercés de contactar vòstre administrator.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Fichièr duplicat.  Suprimir d\'en primièr lo primièr.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Un projècte amb aqueste nom existís ja.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Un camp obligatòri "%1$s" es pas entresenhat.  Mercés de verificar vòstra picada.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Aqueste compte es protegit.  Sètz pas autorizat(ada) a i accedir tant que la proteccion existís.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Accès interdich.';

@@ -1066,7 +1066,6 @@ Pokud jste si skutečnš přáli tuto změnu, navštivte Nasledujúci stránku a
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Počas tejto operácie sa vyskytla chyba. Túto chybu môžete oznámiť svojmu lokálnemu správcovi.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Toto je duplikátny súbor. Prosím, najprv súbor zmažte.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Projekt s takým názvom už existuje.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Potrebné pole „%1$s“ nebolo vyplnené. Prosím, znova skontrolujte údaje, ktoré ste zadali.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Toto konto je chránené. Nemáte povolený vstup dokiaľ nebude ochrana odstránená.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Prístup zakázaný.';

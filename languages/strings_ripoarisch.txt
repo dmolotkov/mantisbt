@@ -561,7 +561,6 @@ Doh kanns De repareeere, wat jraadt verkeht woor, udder en annder Akßjuhn nämm
 $MANTIS_ERROR[ERROR_GENERIC] = 'Bei dä Akßjuhn es ene Fähler opjetrodde.
 Dä künnß De aan Dinge Administrator heh wigger jävve.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Dat es en dubbelte Datei. Donn eets de eezte dovun fottschmiiße.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'E Projäk met däm Name jidd_et ald.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'De nüüdejje Aanjab „%1$s“ es nit jemaat. Donn ens Ding Enjaabe nohloore.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Heh dä Zohjang es extra jeschöz. Do kanns De nix met maache, bes dat dä Schoz wider opjehovve es.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Zohjreff afjeleehnt.';

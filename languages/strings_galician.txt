@@ -1139,7 +1139,6 @@ Ao visitar a ligazón que lle foi enviada activarase a súa conta.',
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ocorreu un erro durante o transcurso desta acción. Quizais queira informar deste erro ao seu administrador local.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Este é o duplicado dun ficheiro. Por favor, borre primeiro o ficheiro.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Xa existe un proxecto con ese nome.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'O campo necesario "%1$s" estaba baleiro. Por favor, comprobe o texto de entrada.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Esta conta está protexida. Non ten permiso para acceder a ela ata que a protección da conta sexa retirada.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Acceso rexeitado.';

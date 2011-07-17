@@ -645,7 +645,6 @@ Ukoliko ste vi zatrazili proveru, molim posetite sledecu adresu radi promene loz
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Došlo je do greške tokom izvrsavanja akcije. Verovatno zelite da prijavite gresku vasem lokalnom administratoru.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Dupliran fajl. Molim izbrisite fajl prvo.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Projekat pod tim imenom vec postoji.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Obavezno polje je ostavljeno prazno. Molim proverite podatke.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Ovaj nalog je zasticen. Niste ovlasceni da mu pristupite dok se zastita ne ukloni .';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Pristup zabranjen.';

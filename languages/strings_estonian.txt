@@ -1124,7 +1124,6 @@ Kui sa soovisid seda uuendust, siis külasta järgmist URL-i, et vahetada oma pa
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Tegevuse käigus toimus viga.  Võiksid sellest veast teatada oma süsteemihaldurile.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'See on korduv fail.  Palun kustuta kõigepealt varasem fail.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Sellise nimega projekt on juba olemas.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Vajalik väli "%1$s" oli tühi.  Palun kontrolli oma sisestust.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'See kasutajakonto on kaitstud.  Saad selle poole pöörduda alles peale kaitse eemaldamist.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Pöördumine keelatud.';

@@ -974,7 +974,6 @@ Se invece hai effettivamente richiesto tu la modifica, visita l\'indirizzo di se
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Si è verificato un errore nell\'esecuzione dell\'azione.  Potresti ritenere opportuno avvisare dell\'errore l\'amministratore locale.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Il file è un duplicato.  Cancella prima il file presente.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Esiste già un progetto con quel nome.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Il campo obbligatorio "%1$s" era vuoto.  Ricontrolla le informazioni che hai inserito.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Questo account è protetto.  Non ti è consentito accedere finché non verrà tolta la protezione.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Accesso negato.';

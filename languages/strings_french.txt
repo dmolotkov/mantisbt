@@ -1142,7 +1142,6 @@ Si vous avez demandé cette vérification, visitez l\'URL suivante pour changer 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Une erreur s\'est produite.  Merci de contacter votre administrateur.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Fichier dupliqué.  Supprimer d\'abord le premier.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Un projet ayant ce nom existe déjà.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Le champ obligatoire « %1$s » n\'est pas renseigné.  Merci de vérifier votre saisie.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Ce compte est protégé.  Vous n\'êtes pas autorisés à y accéder tant que la protection existe.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Accès interdit.';

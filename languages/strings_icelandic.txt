@@ -826,7 +826,6 @@ Ef þú óskaðir eftir þessari staðfestingu, heimsóttu eftirfarandi veffang 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Villa hefur orðið við þessa aðgerð. Þú ættir að tilkynna það til verkefnisstjóra.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Þetta er afrit. Eyddu skránni fyrst.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Verkefni með sama nafni er til.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Nauðsynlegt svæði \'%1$s\' var autt. Athugaðu betur ílagsgögnin.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Þessi aðgangur er lokaður. Þú hefur ekki aðgang þar til læsingu hefur verið aflétt.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Aðgangur óheimill.';

@@ -1032,7 +1032,6 @@ $s_messages = array(
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'אירעה תקלה בפעולה זו. מומלץ להודיע למנהל המערכת.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'קובץ זה כבר קיים. יש למחוק את הקובץ הקודם.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'קיים פרויקט בשם זה.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'שדה חובה \'%1$s\' הושאר ריק.  עליך לבדוק את הנתונים שקלטת.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'חשבון זה מוגן. אין אפשרות לגשת לחשבון זה אלא לאחר הסרת ההגנה.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'גישה חסומה.';

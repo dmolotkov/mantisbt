@@ -1048,7 +1048,6 @@ Om du begärde denna verifikation, gå till följande webbadress för att ändra
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ett fel uppstod.  Du kan rapportera detta fel till din lokala administratör.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Filen finns redan.  Var god ta bort den andra filen först.';
-$MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Ett projekt med det namnet finns redan.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Det obligatoriska fältet "%1$s" var tomt. Var god kontrollera din inmatning.';
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Detta konto är skyddat.  Du har inte tillgång till det innan skyddet är borttaget.';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Åtkomst nekas.';

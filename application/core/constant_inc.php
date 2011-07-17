@@ -208,7 +208,6 @@ define( 'BUG_HAS_DUPLICATE', 4 );
 # error messages
 define( 'ERROR_GENERIC', 0 );
 define( 'ERROR_DUPLICATE_FILE', 9 );
-define( 'ERROR_DUPLICATE_PROJECT', 10 );
 define( 'ERROR_EMPTY_FIELD', 11 );
 define( 'ERROR_PROTECTED_ACCOUNT', 12 );
 define( 'ERROR_ACCESS_DENIED', 13 );

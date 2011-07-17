@@ -1193,7 +1193,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'الإضافه غير مسجله �
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'الإضافه منصبه بالفعل.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'صفحه الإضافه لم يتم العثور عليها.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'ترقيه سكيما الإضافه فشلت فى القطعه #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'كان هناك خطأ غير معروف "%1$s" خلال تنفيذ الإضافه "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'الحقل "%1$s" يحتوى على العامود المكرر "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'الحقل "%1$s" يحتوى على الحقل غير الصحيح "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'معالج جلسه غير صحيح.';

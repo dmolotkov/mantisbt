@@ -1215,7 +1215,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'El plugin no està registrat en el
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'El plugin ja està instal·lat.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'No s\'ha trobat la pàgina del plugin.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'L\'actualització de l\'esquema del plugin ha fallat en el bloc #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Hi ha hagut un error desconegut "%1$s" en l\'execució del plugin "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'El camp "%1$s" conté duplicats a la columna "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'El camp "%1$s" conté un camp "%2$s" invàlid.';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Gestor de sessió invàlid.';

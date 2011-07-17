@@ -1169,7 +1169,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'A bővítmény nincs regisztrálva
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'A bővítmény már telepítve van.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'A bővítmény lap nem található.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'A bővítmény séma frissítése nem sikerült a következő blokknál: #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Ismeretlen hiba („%1$s”) történt a(z) „%2$s” bővítmény futtatásakor.';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'A(z) „%1$s” mező duplikált oszlopot tartalmaz: „%2$s”.';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'A(z) „%1$s” mező érvénytelen mezőt tartalmaz: „%2$s”.';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Érvénytelen munkamenet-kezelő.';

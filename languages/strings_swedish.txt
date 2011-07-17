@@ -1134,7 +1134,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Insticksprogrammet är inte regist
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'Insticksprogrammet är redan installerat.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Sidan för insticksprogrammet kunde inte hittas.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Uppgraderingen av insticksprogrammets schema misslyckades i block #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Okänt fel "%1$s" vid exekvering av insticksprogrammet "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Fält "%1$s" innehåller duplicerade kolumner "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Fält "%1$s" innehåller ogiltigt fält "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Ogiltig sessionshanterare.';

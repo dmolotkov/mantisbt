@@ -1121,7 +1121,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Hindi nakatala/nakarehistro sa Man
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'Nakaluklok na ang pampasak.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Hindi natagpuan ang pahina ng pampasak';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Nabigo ang pagtataas ng uri/kalidad ng plano ng pampasak sa loob ng blokeng #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Mayroon isang hindi napag-aalamang kamaliang "%1$s" habang isinasakatuparan ang pampasak na "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Naglalaman ang kahanayang "%1$s" ng katulad na pahalang na hanay na "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Naglalaman ang kahanayang "%1$s" ng hindi tanggap na kahanayang "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Hindi tanggap na tagahawak ng inilaang panahon.';

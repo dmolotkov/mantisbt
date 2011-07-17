@@ -1152,7 +1152,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Plugin nie je v MantisBT registrov
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'Plugin je už nainštalovaný.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Stránka pluginu nebola nájdená.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Aktualizácia schémy pluginu zlyhalo v bloku #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Pri prevádzke pluginu "%2$s" sa vyskytla neznáma chyba "%1$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Pole \'%1$s\' obsahuje duplicitný stĺpec \'%2$s\'.';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Pole "%1$s" obsahuje neplatné pole "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Neplatný radič sedení.';

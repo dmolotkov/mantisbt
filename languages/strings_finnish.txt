@@ -1188,7 +1188,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Laajennusta ei ole rekisteröity M
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'Laajennus on jo asennettu.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Laajennuksen sivua ei löytynyt.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Laajennuksen scheman päivitys epäonnistui lohkossa #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Laajennuksen "%2$s" ajossa tapahtui tuntematon virhe "%1$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Kentässä "%1$s" on duplikaattisarake "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Kentässä "%1$s" on virheellinen kenttä "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Virheellinen istunnon käsittelijä.';

@@ -1225,7 +1225,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'S Plugin isch nit in MantisBT regi
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'S Plugin isch scho inschtalliert.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'D Plugin-Syte isch nit gfunde wopre.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Aktualisierig vum Plugin-Schema isch in Block #%1$s fählgschlaa.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'E nit bekannte Fähler „%1$s“ isch ufträte, derwylscht s „%2$s“-Plugin uusgfiert woren sich.';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Im Fäld „%1$s“ het s e doppleti Spalte „%2$s“.';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Im Fäld „%1$s“ het s e nit giltig Fäld „%2$s“.';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Nit giltige Session-Handler.';

@@ -1212,7 +1212,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'MantisBT にプラグインが登�
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'プラグインはインストール済みです。';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'プラグインのページがありません。';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'ブロック #%1$s でプラグインのスキーマのアップグレードに失敗しました。';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = '「%2$s」プラグインの実行中に不明なエラー「%1$s」が発生しました。';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = '項目「%1$s」の列「%2$s」が重複しています。';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = '項目「%1$s」に不正な項目「%2$s」があります。';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'セッションハンドラーが不正です。';

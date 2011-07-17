@@ -882,7 +882,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Įskiepis nėra užregistruotas Ma
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'Įskiepis jau įdiegtas.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Įskiepio puslapis nerastas.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Įskiepio schemos atnaujinimas nepavyko bloke #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Įvyko nežinoma klaida "%1$s" vykdant "%2$s" įskiepį.';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Laukas "%1$s" turi dubliuotą stulpelį "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Laukas "%1$s" turi neleidžiamą lauką "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Neteisinga sesija.';

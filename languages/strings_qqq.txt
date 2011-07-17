@@ -66,4 +66,3 @@ Color codes are described in the s_plugin_key* messages',
 );
 
 
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'If we need to specify the number of expected parameter in string, we just need to write something like "Lalal %2$s bububu %1$d", where 1 and 2 - the index number in argument list (actually, expected in original message)';

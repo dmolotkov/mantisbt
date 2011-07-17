@@ -1210,7 +1210,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Laiendus ei ole registreeritud Man
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'Laiendus on juba varem paigaldatud.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Laienduse lehekülge ei leitud.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Laienduse skeemi uuendamine ebaõnnstus plokis #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Tekkis tundmatu viga "%1$s" laienduse "%2$s" täitmisel.';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'Andmeväli "%1$s" sisaldab korduvat veergu "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'Andmeväli "%1$s" sisaldab vigast välja "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Vigane sessiooni järgija.';

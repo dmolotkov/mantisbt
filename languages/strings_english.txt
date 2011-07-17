@@ -1583,7 +1583,6 @@ If you requested this verification, visit the following URL to change your passw
 	ERROR_PLUGIN_PAGE_NOT_FOUND => 'Plugin page not found.',
 	ERROR_PLUGIN_INSTALL_FAILED => 'Plugin installation failed: %1$s.',
 	ERROR_PLUGIN_UPGRADE_FAILED => 'Upgrading the plugin schema failed in block #%1$s.',
-	ERROR_PLUGIN_GENERIC => 'There was an unknown error "%1$s" during execution of the "%2$s" plugin.',
 	ERROR_COLUMNS_DUPLICATE => 'Field "%1$s" contains duplicate column "%2$s".',
 	ERROR_COLUMNS_INVALID => 'Field "%1$s" contains invalid field "%2$s".',
 	ERROR_SESSION_HANDLER_INVALID => 'Invalid session handler.',

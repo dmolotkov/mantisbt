@@ -1225,7 +1225,6 @@ $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'O complemento non está rexistrado
 $MANTIS_ERROR[ERROR_PLUGIN_ALREADY_INSTALLED] = 'O complemento xa está instalado.';
 $MANTIS_ERROR[ERROR_PLUGIN_PAGE_NOT_FOUND] = 'Non se atopou a páxina do complemento.';
 $MANTIS_ERROR[ERROR_PLUGIN_UPGRADE_FAILED] = 'Fallou a actualización do esquema do complemento no bloque #%1$s.';
-$MANTIS_ERROR[ERROR_PLUGIN_GENERIC] = 'Houbo un erro descoñecido "%1$s" durante a execución do complemento "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_DUPLICATE] = 'O campo "%1$s" contén a columna duplicada "%2$s".';
 $MANTIS_ERROR[ERROR_COLUMNS_INVALID] = 'O campo "%1$s" contén o campo inválido "%2$s".';
 $MANTIS_ERROR[ERROR_SESSION_HANDLER_INVALID] = 'Xestor de sesión inválido.';

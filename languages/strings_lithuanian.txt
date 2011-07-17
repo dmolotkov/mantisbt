@@ -802,7 +802,6 @@ Priešingu atveju aplankykite puslapį šiuo adresu:',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Klaida atliekant šį veiksmą. Susisiekite su administratoriumi.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Šis katalogas neegzistuoja. Prašome patikrinti projekto nustatymus.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Toks failas jau yra.  Prašome pirmiau ištrinti seną failą.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Projektas tokiu pavadinimu jau yra.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Privalomas laukas \'%1$s\' tuščias.  Prašome užpildyti iki galo.';

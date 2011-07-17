@@ -1141,7 +1141,6 @@ Als u deze wijziging wilt voortzetten, bezoek dan de volgende URL om uw wachtwoo
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Deze actie had een fout tot gevolg. Meld dit aan uw systeembeheerder.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'De map bestaat niet. Controleer alstublieft de projectinstellingen.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Dit bestand bestaat al.  Verwijder het bestaande bestand eerst.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Dit project bestaat al.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Een verplicht veld ("%1$s") is niet ingevuld. Controleer alstublieft uw invoer.';

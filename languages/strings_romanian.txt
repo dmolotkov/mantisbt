@@ -874,7 +874,6 @@ Dacă aţi fost dumneavoastră vizitaţi adresa următoare pentru a vă modifica
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'EROARE: A apărut o eroare în timpul aceste acţiuni. Semnalaţi acest lucru administratorului.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'EROARE: Calea specificată nu există. Verificaţi configuraţia proiectului.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'ERROR: Acest fişier există deja. Ştergeţi vechiul fişier.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'ERROR: Există deja un proiect cu acest nume.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Un câmp necesar "%1$s" a fost vid. Reverificaţi datele de intrare.';

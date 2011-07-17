@@ -1128,7 +1128,6 @@ Si va sol·licitar aquest canvi, visiti aquesta URL per a canviar la contrasenya
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Hi ha hagut un error durant aquesta acció. Informi d\'aquest error al seu administrador local.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'El directori no existeix. Si us plau revisi la configuració del projecte.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Aquest és un arxiu duplicat. Si us plau esborri l\'arxiu primer.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Ja existeix un projecte amb aquest nom.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'El camp requerit "%1$s" està buit. Si us plau, comprovi les dades.';

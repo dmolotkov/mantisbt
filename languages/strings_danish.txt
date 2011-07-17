@@ -802,7 +802,6 @@ Hvis du bad om denne verifikation, så besøg denne URL for at ændre din adgang
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Der opstod en uventet fejl. Du bedes kontakte din lokale administrator.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Denne mappe findes ikke. Undersøg venligst projektets indstillinger.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Denne fil findes allerede. Slet den gamle fil først.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Der findes allerede et projekt med dette navn.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Et påkrævet felt er ikke udfyldt. Ret venligst dette.';

@@ -895,7 +895,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'یہ کام کرتے ھوے ایک خرابی آ گی ھے.  آپ اپنی انتضامیہ کو اس کے بارے میں آگاہ کر سکتے ہیں۔ .';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'لسٹ دستیاب نہی ھے.
 Please check the project settings.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'یہ نقل والی فاہل ھےمہربانی کر کے پہلے اسے خارج کریں.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'اس نام کا منصو بہ پہلے ہی موجود ھے.';

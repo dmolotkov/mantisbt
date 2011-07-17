@@ -1071,7 +1071,6 @@ S\'avètz demandat aquesta verificacion, visitatz l\'URL seguenta per cambiar v�
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Una error s\'es producha.  Mercés de contactar vòstre administrator.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Lo repertòri existís pas. Mercés de verificar los paramètres del projècte.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Fichièr duplicat.  Suprimir d\'en primièr lo primièr.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Un projècte amb aqueste nom existís ja.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Un camp obligatòri "%1$s" es pas entresenhat.  Mercés de verificar vòstra picada.';

@@ -1134,7 +1134,6 @@ Hvis du ba om denne bekreftelsen, gå til følgende URL for å forandre passorde
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Det oppstod en en feil. Du kan rapportere feilen til din administrator.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Mappen eksisterer ikke. Vennligst sjekk prosjektinnstillingene.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Filen eksisterer fra før. Vennligst slett filen først.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Det eksisterer et prosjekt med et likt navn.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Det påkrevde feltet «%1$s» var tomt. Vennligst kontroller feltene.';

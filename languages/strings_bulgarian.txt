@@ -950,7 +950,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Поява на неидентифициран проблем. Моля обърнете се към системния администратор.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Няма такава директория. Моля  проверете проектните настройки.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Зареденият файл вече съществува.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Вече съществува проект с такова име.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Задължителното поле \'%1$s\' е празно. Моля допълнете формата.';

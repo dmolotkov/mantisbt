@@ -1034,7 +1034,6 @@ Kung hiniling ang pagpapatotoong ito, dalawin ang sumusunod na URL upang mabago 
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Naganap ang isang kamalian habang isinasagawa ang galaw na ito. Maaaring naisin mong iulat ang kamaliang ito sa iyong pampook na tagapangasiwa.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Hindi umiiral ang direktoryo. Pakisuri lamang ang mga pagtatakdang pamproyekto.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Isa itong sipi/kopya (kakambal) ng talaksan. Pakibura muna ang talaksan.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Umiiral na ang proyektong may ganyang pangalan.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Walang laman ang isang kinakailangang kahanayang "%1$s". Pakisuri lamang muli ang mga ipinasok mo.';

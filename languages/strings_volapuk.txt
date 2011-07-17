@@ -438,7 +438,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Pöl ejenon dü dun at. Nunolös, begö! pöli at guvane topik ola.';
-$MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Ragiviär no dabinon. Kontrololös parametemi proyega.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Atos binon ragiv petelüköl. Büo moükolös ragivi.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Proyeg labü nem at ya dabinon.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Fel zesüdik: „$1$s“ ävagon. Kontrololös utosi, kelosi epenol.';

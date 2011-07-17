@@ -44,6 +44,7 @@
  */
 
 use MantisBT\Exception\Access\AccessDenied;
+use MantisBT\Exception\Field\EmptyField;
 
 require_once( 'core.php' );
 require_api( 'access_api.php' );
@@ -203,8 +204,7 @@ if ( $t_existing_bug->handler_id !== $t_updated_bug->handler_id ) {
 if ( $t_existing_bug->category_id !== $t_updated_bug->category_id ) {
 	if ( $t_updated_bug->category_id === 0 &&
 	     !config_get( 'allow_no_category' ) ) {
-		error_parameters( lang_get( 'category' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'category' );
 	}
 }
 
@@ -246,8 +246,7 @@ foreach ( $t_related_custom_field_ids as $t_cf_id ) {
 		if ( $t_cf_def[$t_cf_require_check] ) {
 			# A value for the custom field was expected however
 			# no value was given by the user.
-			error_parameters( lang_get_defaulted( custom_field_get_field( $t_cf_id, 'name' ) ) );
-			trigger_error( ERROR_EMPTY_FIELD, ERROR );
+			throw new EmptyField( lang_get_defaulted( custom_field_get_field( $t_cf_id, 'name' ) ) );
 		} else {
 			# The custom field isn't compulsory and the user did
 			# not supply a value. Therefore we can just ignore this
@@ -300,8 +299,7 @@ if ( $t_bug_note->note ||
 	access_ensure_bug_level( config_get( 'add_bugnote_threshold' ), $f_bug_id );
 	if ( !$t_bug_note->note &&
 	     !config_get( 'time_tracking_without_note' ) ) {
-		error_parameters( lang_get( 'bugnote' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'bugnote' );
 	}
 	if ( $t_bug_note->view_state !== config_get( 'default_bugnote_view_status' ) ) {
 		access_ensure_bug_level( config_get( 'set_view_status_threshold' ), $f_bug_id );

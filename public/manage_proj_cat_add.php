@@ -34,9 +34,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Field\EmptyField;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -60,8 +59,7 @@ $f_name			= gpc_get_string( 'name' );
 access_ensure_project_level( config_get( 'manage_project_threshold' ), $f_project_id );
 
 if ( is_blank( $f_name ) ) {
-	error_parameters( lang_get( 'category' ) );
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'category' );
 }
 
 $t_names = explode( '|', $f_name );

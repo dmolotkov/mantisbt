@@ -36,6 +36,8 @@ if ( !defined( 'BUG_ACTIONGROUP_ADD_NOTE_INC_ALLOW' ) ) {
 	return;
 }
 
+use MantisBT\Exception\Field\EmptyField;
+
 require_api( 'access_api.php' );
 require_api( 'bug_api.php' );
 require_api( 'config_api.php' );
@@ -99,8 +101,7 @@ function action_add_note_validate( $p_bug_id ) {
 	$f_bugnote_text = gpc_get_string( 'bugnote_text' );
 
 	if ( is_blank( $f_bugnote_text ) ) {
-		error_parameters( lang_get( 'bugnote' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'bugnote' );
 	}
 
 	$t_add_bugnote_threshold = config_get( 'add_bugnote_threshold' );

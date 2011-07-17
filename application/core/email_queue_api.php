@@ -30,6 +30,8 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Field\EmptyField;
+
 require_api( 'constant_inc.php' );
 require_api( 'database_api.php' );
 require_api( 'error_api.php' );
@@ -76,20 +78,17 @@ function email_queue_add( $p_email_data ) {
 
 	# email cannot be blank
 	if( is_blank( $t_email_data->email ) ) {
-		error_parameters( lang_get( 'email' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'email' );
 	}
 
 	# subject cannot be blank
 	if( is_blank( $t_email_data->subject ) ) {
-		error_parameters( lang_get( 'subject' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'subject' );
 	}
 
 	# body cannot be blank
 	if( is_blank( $t_email_data->body ) ) {
-		error_parameters( lang_get( 'body' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'body' );
 	}
 
 	$t_email_table = db_get_table( 'email' );

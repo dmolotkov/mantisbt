@@ -35,9 +35,8 @@
  * @uses version_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Field\EmptyField;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -63,7 +62,7 @@ $f_add_and_edit = gpc_get_bool( 'add_and_edit_version' );
 access_ensure_project_level( config_get( 'manage_project_threshold' ), $f_project_id );
 
 if ( is_blank( $f_version ) ) {
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'version' );
 }
 
 # We reverse the array so that if the user enters multiple versions

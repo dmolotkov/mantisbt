@@ -35,6 +35,8 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Field\EmptyField;
+
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'database_api.php' );
@@ -136,8 +138,7 @@ function category_exists( $p_category_id ) {
 	$c_project_id = db_prepare_int( $p_project_id );
 
 	if( is_blank( $p_name ) ) {
-		error_parameters( lang_get( 'category' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'category' );
 	}
 
 	category_ensure_unique( $p_project_id, $p_name );
@@ -164,8 +165,7 @@ function category_exists( $p_category_id ) {
  */
  function category_update( $p_category_id, $p_name, $p_assigned_to ) {
 	if( is_blank( $p_name ) ) {
-		error_parameters( lang_get( 'category' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'category' );
 	}
 
 	$t_old_category = category_get_row( $p_category_id );

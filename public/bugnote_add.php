@@ -36,9 +36,8 @@
  * @uses print_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Field\EmptyField;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'bug_api.php' );
@@ -81,8 +80,7 @@ if ( $f_private ) {
 // if $f_time_tracking is not 0 and the time tracking feature is enabled.
 $t_bugnote_id = bugnote_add( $t_bug->id, $f_bugnote_text, $f_time_tracking, $f_private, BUGNOTE );
 if ( !$t_bugnote_id ) {
-	error_parameters( lang_get( 'bugnote' ) );
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'bugnote' );
 }
 
 # Handle the reassign on feedback feature. Note that this feature generally

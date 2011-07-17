@@ -1,10 +1,12 @@
 <?php
 namespace MantisBT\Exception\Access;
 use MantisBT\Exception\ExceptionAbstract;
-use MantisBT\Error;
+
+require_api('lang_api.php');
 
 class AccessDenied extends ExceptionAbstract {
 	public function __construct() {
-		parent::__construct( ERROR_ACCESS_DENIED, Error::error_string(ERROR_ACCESS_DENIED), null );
+		$errorMessage = lang_get(ERROR_ACCESS_DENIED, null, false);
+		parent::__construct( ERROR_ACCESS_DENIED, $errorMessage, null );
 	}
 }

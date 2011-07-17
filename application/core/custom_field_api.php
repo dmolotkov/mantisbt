@@ -38,6 +38,8 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Field\EmptyField;
+
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
 require_api( 'bug_api.php' );
@@ -410,8 +412,7 @@ function custom_field_create( $p_name ) {
 	$c_name = trim( $p_name );
 
 	if( is_blank( $c_name ) ) {
-		error_parameters( 'name' );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'name' );
 	}
 
 	custom_field_ensure_name_unique( $c_name );
@@ -457,8 +458,7 @@ function custom_field_update( $p_field_id, $p_def_array ) {
 	$c_require_closed = db_prepare_bool( $p_def_array['require_closed'] );
 
 	if( is_blank( $c_name ) ) {
-		error_parameters( 'name' );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'name' );
 	}
 
 	if(( $c_access_level_rw < $c_access_level_r ) || ( $c_length_min < 0 ) || (( $c_length_max != 0 ) && ( $c_length_min > $c_length_max ) ) ) {

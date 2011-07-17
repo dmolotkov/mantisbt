@@ -36,6 +36,7 @@
  */
 
 use MantisBT\Exception\Access\AccessDenied;
+use MantisBT\Exception\Field\EmptyField;
 
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
@@ -56,13 +57,11 @@ function news_create( $p_project_id, $p_poster_id, $p_view_state, $p_announcemen
 	$c_announcement = db_prepare_bool( $p_announcement );
 
 	if( is_blank( $p_headline ) ) {
-		error_parameters( lang_get( 'headline' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'headline' );
 	}
 
 	if( is_blank( $p_body ) ) {
-		error_parameters( lang_get( 'body' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'body' );
 	}
 
 	$t_news_table = db_get_table( 'news' );
@@ -133,13 +132,11 @@ function news_update( $p_news_id, $p_project_id, $p_view_state, $p_announcement,
 	$c_announcement = db_prepare_bool( $p_announcement );
 
 	if( is_blank( $p_headline ) ) {
-		error_parameters( lang_get( 'headline' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'headline' );
 	}
 
 	if( is_blank( $p_body ) ) {
-		error_parameters( lang_get( 'body' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'body' );
 	}
 
 	$t_news_table = db_get_table( 'news' );

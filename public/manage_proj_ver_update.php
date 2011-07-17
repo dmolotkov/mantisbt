@@ -35,9 +35,8 @@
  * @uses version_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Field\EmptyField;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -69,7 +68,7 @@ $f_obsolete	= gpc_get_bool( 'obsolete' );
 access_ensure_project_level( config_get( 'manage_project_threshold' ), $t_version->project_id );
 
 if ( is_blank( $f_new_version ) ) {
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'new_version' );
 }
 
 $f_new_version	= trim( $f_new_version );

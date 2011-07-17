@@ -34,9 +34,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Field\EmptyField;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'config_api.php' );
@@ -57,8 +56,7 @@ $f_type = gpc_get_string( 'type' );
 $f_value = gpc_get_string( 'value' );
 
 if ( is_blank( $f_config_option ) ) {
-	error_parameters( 'config_option' );
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'config_option' );
 }
 
 access_ensure_global_level( config_get( 'set_configuration_threshold' ) );

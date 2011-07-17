@@ -37,9 +37,8 @@
  * @uses utility_api.php
  */
 
-/**
- * MantisBT Core API's
- */
+use MantisBT\Exception\Field\EmptyField;
+
 require_once( 'core.php' );
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -73,7 +72,7 @@ $f_enabled         = gpc_get_bool( 'enabled' );
 # check for empty username
 $f_username = trim( $f_username );
 if ( is_blank( $f_username ) ) {
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'username' );
 }
 
 # Check the name for validity here so we do it before promting to use a

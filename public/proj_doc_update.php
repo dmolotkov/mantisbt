@@ -36,6 +36,7 @@
  */
 
 use MantisBT\Exception\Access\AccessDenied;
+use MantisBT\Exception\Field\EmptyField;
 
 require_once( 'core.php' );
 require_api( 'access_api.php' );
@@ -70,7 +71,7 @@ $t_project_id = file_get_field( $f_file_id, 'project_id', 'project' );
 access_ensure_project_level( config_get( 'upload_project_file_threshold' ), $t_project_id );
 
 if ( is_blank( $f_title ) ) {
-	trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	throw new EmptyField( 'title' );
 }
 
 $c_file_id = db_prepare_int( $f_file_id );

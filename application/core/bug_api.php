@@ -49,6 +49,7 @@
  */
 
 use MantisBT\Exception\Access\AccessDenied;
+use MantisBT\Exception\Field\EmptyField;
 
 require_api( 'access_api.php' );
 require_api( 'authentication_api.php' );
@@ -276,22 +277,19 @@ class BugData {
 	function validate( $p_update_extended =  true) {
 		# Summary cannot be blank
 		if( is_blank( $this->summary ) ) {
-			error_parameters( lang_get( 'summary' ) );
-			trigger_error( ERROR_EMPTY_FIELD, ERROR );
+			throw new EmptyField( 'summary' );
 		}
 
 		if( $p_update_extended ) {
 			# Description field cannot be empty
 			if( is_blank( $this->description ) ) {
-				error_parameters( lang_get( 'description' ) );
-				trigger_error( ERROR_EMPTY_FIELD, ERROR );
+				throw new EmptyField( 'description' );
 			}
 		}
 
 		# Make sure a category is set
 		if( 0 == $this->category_id && !config_get( 'allow_no_category' ) ) {
-			error_parameters( lang_get( 'category' ) );
-			trigger_error( ERROR_EMPTY_FIELD, ERROR );
+			throw new EmptyField( 'category' );
 		}
 
 		if( !is_blank( $this->duplicate_id ) && ( $this->duplicate_id != 0 ) && ( $this->id == $this->duplicate_id ) ) {

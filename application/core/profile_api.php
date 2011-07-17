@@ -33,6 +33,8 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Field\EmptyField;
+
 require_api( 'authentication_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'database_api.php' );
@@ -60,20 +62,17 @@ function profile_create( $p_user_id, $p_platform, $p_os, $p_os_build, $p_descrip
 
 	# platform cannot be blank
 	if( is_blank( $p_platform ) ) {
-		error_parameters( lang_get( 'platform' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'platform' );
 	}
 
 	# os cannot be blank
 	if( is_blank( $p_os ) ) {
-		error_parameters( lang_get( 'operating_system' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'operating_system' );
 	}
 
 	# os_build cannot be blank
 	if( is_blank( $p_os_build ) ) {
-		error_parameters( lang_get( 'version' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'version' );
 	}
 
 	$t_user_profile_table = db_get_table( 'user_profile' );
@@ -137,20 +136,17 @@ function profile_update( $p_user_id, $p_profile_id, $p_platform, $p_os, $p_os_bu
 
 	# platform cannot be blank
 	if( is_blank( $p_platform ) ) {
-		error_parameters( lang_get( 'platform' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'platform' );
 	}
 
 	# os cannot be blank
 	if( is_blank( $p_os ) ) {
-		error_parameters( lang_get( 'operating_system' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'operating_system' );
 	}
 
 	# os_build cannot be blank
 	if( is_blank( $p_os_build ) ) {
-		error_parameters( lang_get( 'version' ) );
-		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+		throw new EmptyField( 'version' );
 	}
 
 	$t_user_profile_table = db_get_table( 'user_profile' );

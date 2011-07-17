@@ -1179,7 +1179,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor no válido para el camp
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definición de campo personalizado no válida';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Ha fallado la autenticación LDAP';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Falló la conexión al servidor LDAP';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'No se encontró el registro LDAP del usuario.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Extensión LDAP No Cargada.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Ha fallado la conexión a la base de datos. El error devuelto por la base de datos fue #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Ha fallado la consulta a la base de datos. El error devuelto por la base de datos fue #%1$d: %2$s para la consulta: %3$s';

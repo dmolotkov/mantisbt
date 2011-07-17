@@ -1185,7 +1185,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valeur non valide pour le cha
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Définition de champs personnalisé non valide';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Échec d\'indentification par LDAP.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Échec de connexion au serveur LDAP';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Enregistrement d\'utilisateur LDAP introuvable.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'L\'extension LDAP n\'est pas chargé.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Échec de connexion à la base de données. L\'erreur renvoyée était #%1$d : %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Échec de la requête de base de données. L\'erreur renvoyée par la base de données était #%1$d : %2$s pour la requête : %3$s.';

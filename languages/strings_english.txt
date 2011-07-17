@@ -1538,7 +1538,6 @@ If you requested this verification, visit the following URL to change your passw
 	ERROR_CUSTOM_FIELD_NOT_LINKED_TO_PROJECT => 'Custom field "%1$s" (id %2$s) not linked to currently active project.',
 	ERROR_LDAP_AUTH_FAILED => 'LDAP Authentication Failed.',
 	ERROR_LDAP_SERVER_CONNECT_FAILED => 'LDAP Server Connection Failed.',
-	ERROR_LDAP_USER_NOT_FOUND => 'LDAP User Record Not Found.',
 	ERROR_LDAP_EXTENSION_NOT_LOADED => 'LDAP Extension Not Loaded.',
 	ERROR_DB_CONNECT_FAILED => 'Database connection failed. Error received from database was #%1$d: %2$s.',
 	ERROR_DB_QUERY_FAILED => 'Database query failed. Error received from database was #%1$d: %2$s for the query: %3$s.',

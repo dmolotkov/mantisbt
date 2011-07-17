@@ -837,7 +837,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ugyldig værdi for dette felt
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Ugyldig feltbeskrivelse';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-godkendelse mislykkedes';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'forbindelse til LDAP-server mislykkedes';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'LDAP User Record ikke fundet.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Database-forbindelse mislykkedes.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Database-forespørgsel mislykkedes.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Denne kategori findes allerede.';

@@ -1115,7 +1115,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor invalida pel camp « %1
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definicion de camp personalizat invalida';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Fracàs d\'indentificacion per LDAP.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Fracàs de connexion al servidor LDAP';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Enregistrament d\'utilizaire LDAP introbable.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'L\'extension LDAP es pas cargada.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Fracàs de connexion a la banca de donadas. L\'error renviada èra #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Fracàs de la requèsta de banca de donadas. L\'error renviada per la banca de donadas èra #%1$d: %2$s per la requèsta : %3$s.';

@@ -632,7 +632,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'To je ime dvojnika.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Neveljavna vrednost za polje';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Neuspešna LDAP avtentikacija';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Neuspešna povezava na LDAP server.';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Zapis uporabnika LDAP ni bil najden.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Povezava s podatkovno bazo je spodletela. Napaka iz podatkovne baze #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Poizvedba v podatkovni bazi je spodletela. Napaka iz podatkovne baze #%1$d: %2$s za poizvedbo: %3$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Kategorija s tem imenom že obstaja.';

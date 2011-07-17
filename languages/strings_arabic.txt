@@ -1150,7 +1150,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'قيمة غير صحيحة ل
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'تعريف حقل مخصص غير صحيح.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'تحقق LDAP فشل.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'الاتصال بخادم LDAP فشل.';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'سجل مستخدم LDAP لم يتم العثور عليه.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'امتداد LDAP لم يتم تحميله.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'الاتصال بقاعدة البيانات فشل. الخطأ الذي تم استرجاعه من قاعدة البيانات كان #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'استعلام قاعدة البيانات فشل. الخطأ الذي تم استرجاعه من قاعدة البيانات كان #%1$d: %2$s للاستعلام: %3$s.';

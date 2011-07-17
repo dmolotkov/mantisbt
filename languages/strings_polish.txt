@@ -1110,7 +1110,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Błędna wartość pola „%1
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Błędna definicja pola dodatkowego.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Autentykacja LDAP nie powiodła się.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Komunikacja z serwerem LDAP nie powiodła się.';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Rekord użytkownika LDAP nie znaleziony.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Rozszerzenie LDAP nie zostało załadowane';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Błąd połączenia z bazą danych %1$d – %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Błąd wykonania zapytania w bazie danych %1$d – %2$s dla zapytania %3$s.';

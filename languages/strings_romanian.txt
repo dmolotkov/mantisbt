@@ -916,7 +916,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'EROARE: Valoare invalidă pen
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definiţie invalidă pentru un câmp personalizat';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'EROARE: Autentificarea LDAP eşuată';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Conexiunea cu serverul LDAP eşuată';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Înregistrarea utilizatorului LDAP nu este găsită.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'EROARE: Conexiunea la baza de date a eşuat.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'EROARE: Interogarea bazei de date a eşuat.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'EROARE: Această categorie există deja.';

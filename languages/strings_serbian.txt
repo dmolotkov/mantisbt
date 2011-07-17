@@ -677,7 +677,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Ovo je duplo ime.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Pogresna vrednost polja';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP Authentifikacija neuspela';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'LDAP konekcija sa serverom neuspešna';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'LDAP korisnicki slog nije pronadjen.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Veza sa bazom podataka nije uspostavljena. Greška primljena od baze je #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Упит бази није успешан. Грешка примљена од базе је #%1$d: %2$s за упит: %3$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Kategorija pod tim imenom vec postoji';

@@ -741,7 +741,6 @@ $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Неприпустиме зн
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Хибне означення власного поля';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Помилка LDAP-авторизації';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Не вдалось зв\'язатись з LDAP-сервером';
-$MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Не вдалось знайти користувача в LDAP-базі.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Помилка з\'єднання з базою даних. Отримана відповідь #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Помилка в запиті до бази даних. Відповідь містила #%1$d: %2$s на запит: %3$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Така категорія вже існує.';

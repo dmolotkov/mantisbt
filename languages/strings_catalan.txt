@@ -1209,7 +1209,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'La integració de Twitter requereix 
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'No es pot trobar l\'etiqueta amb aquest nom.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Ja existeix una etiqueta amb aquest nom.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'El nom de l\'etiqueta no és vàlid.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'L\'etiqueta ja està adjuntada a la incidència.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Token no trobat.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'L\'event "%1$s" encara no s\'ha declarat.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'El plugin no està registrat en el MantisBT.';

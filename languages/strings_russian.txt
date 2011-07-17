@@ -1220,7 +1220,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Интеграция с Twitter тр
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Метка с таким именем отсутствует.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Метка с таким именем уже существует.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Недопустимое имя метки.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Эта метка уже прикреплена к этому инциденту.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Признак не может быть найден.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Событие "%1$s" ещё не было объявлено.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Плагин не зарегистрирован в MantisBT.';

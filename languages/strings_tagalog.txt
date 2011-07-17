@@ -1115,7 +1115,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Nangangailangan ang pagsasama ng pan
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Hindi matagpuan ang isang tatak na may ganyang pangalan.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Umiiral na ang isang tatak na may ganyang pangalan.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Hindi tanggap ang pangalan ng ganyang tatak.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Nakakabit na sa depektong iyan ang ganyang tatak.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Hindi matagpuan ang tanda.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Hindi pa ipinapahayag ang kaganapang "%1$s".';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Hindi nakatala/nakarehistro sa MantisBT ang pampasak (\'\'plug-in\'\').';

@@ -1215,7 +1215,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Twitter-integrasjon krever PHP cURL-
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Kunne ikke finne en tagg med det navnet.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Det eksisterer allerede et nøkkelord med samme navn';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Taggnavnet er ugyldig.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Nøkkelordet er allerede koblet til saken';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Finner ikke elementet';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Hendelsen "%1$s" har ikke blitt deklarert';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Tillegget er ikke registert i MantisBT';

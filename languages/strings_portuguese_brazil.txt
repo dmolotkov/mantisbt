@@ -1206,7 +1206,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Integração com Twitter requer a ex
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Não foi possível encontrar um marcador com esse name.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Um marcador com esse nome já existe.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Nome de marcador não é válido.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Esse marcador já está aplicado a esse caso.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Símbolo nõ foi encontrado.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Evento "%1$s" ainda não foi declarado.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'O Plugin não está registrado com o MantisBT.';

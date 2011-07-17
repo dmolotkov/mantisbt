@@ -1147,7 +1147,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Integracja z Twitter-em wymaga bibli
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Nie można znaleźć taga o podanej nazwie.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Tag o podanej nazwie już istnieje.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Nazwa tagu jest nieprawidłowa.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Ten tag już jest powiązany z tym błędem.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Token could not be found.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Zdarzenie „%1$s” nie zostało jeszcze zadeklarowane.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Wtyczka nie została zarejestrowana w MantisBT.';

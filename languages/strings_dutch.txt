@@ -1222,7 +1222,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Voor de Twitter-integratie is de PHP
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Er is geen tag met die naam.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Er bestaat al een tag met die naam.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Die tagnaam is ongeldig.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Die tag heeft al een relatie met die melding.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Het token is niet aangetroffen.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'De gebeurtenis "%1$s" is nog niet aangemaakt.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'De uitbreiding is niet geregistreerd bij MantisBT.';

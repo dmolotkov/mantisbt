@@ -1146,7 +1146,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Integrácia Twitteru vyžaduje rozš
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Štítok s týmto menom nebol nájdený.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Štítok s týmto menom už existuje.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Chybné meno štítku.';
-$MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Tento štítok je už k tomuto problému priradený.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Token nebol nájdený.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Udalosť \'%1$s\' doteraz nebola deklarovaná.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Plugin nie je v MantisBT registrovaný.';

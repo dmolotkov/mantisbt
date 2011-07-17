@@ -1576,7 +1576,6 @@ If you requested this verification, visit the following URL to change your passw
 	ERROR_TAG_NOT_FOUND => 'Could not find a tag with that name.',
 	ERROR_TAG_DUPLICATE => 'A tag already exists with that name.',
 	ERROR_TAG_NAME_INVALID => 'That tag name is invalid.',
-	ERROR_TAG_NOT_ATTACHED => 'That tag is not attached to that issue.',
 	ERROR_TAG_ALREADY_ATTACHED => 'That tag already attached to that issue.',
 	ERROR_TOKEN_NOT_FOUND => 'Token could not be found.',
 	ERROR_EVENT_UNDECLARED => 'Event "%1$s" has not yet been declared.',

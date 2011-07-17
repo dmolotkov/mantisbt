@@ -1128,7 +1128,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Twitterintegration kräver PHP CURL 
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Kunde inte hitta en tagg med det namnet.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'En tagg med det namnet existerar redan.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Benämningen på taggen är ogiltig.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Den taggen är inte tilldelad det ärendet.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Den taggen är redan tilldelad det ärendet.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Element kunde inte hittas.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Händelse "%1$s" har ännu inte blivit deklarerad.';

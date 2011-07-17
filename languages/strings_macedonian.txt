@@ -1218,7 +1218,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Интеграцијата со Twit
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Не можев да пронајдам ознака со тоа име.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Веќе постои ознака со тоа име.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Тоа име на ознаката е неважечко.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Таа ознака не е приложена кон тој проблем.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Таа ознака е веќе приложена кон тој проблем.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Жетонот не е пронајден.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Настанот „%1$s“ сè уште не е објавен.';

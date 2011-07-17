@@ -1204,7 +1204,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'An enframmadur gant Twitter en deus 
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Ne c\'haller ket kavout ur valizenn en anv-se.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Ur valizenn en anv-se zo anezhi dija.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Direizh eo anv ar valizenn.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'N\'eo ket stag ar valizenn-se ouzh an draen-se.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Stag eo ar valizenn-se ouzh an draen-se dija.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'N\'eus ket bet gallet kavout ar jedouer.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'An darvoud « %1$s » n\'eo ket bet disklêriet c\'hoazh.';

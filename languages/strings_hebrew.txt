@@ -1111,7 +1111,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'לשם אינטגרציה עם טו�
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'לא נמצא תג בשם הזה.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'כבר קיים תג בשם הזה.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'שם התג הזה לא תקין.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'התג הזה לא משויך לבאג הזה.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'התג הזה כבר משויך לבאג הזה.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'לא נמצא אסימון.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'אירוע "%1$s" עוד לא הוגדר.';

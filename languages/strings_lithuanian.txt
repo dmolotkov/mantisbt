@@ -876,7 +876,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Twitter integracijai reikalingas PHP
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Nepavyko rasti gairės tokiu pavadinimu.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Gairė tokiu pavadinimu jau egzistuoja.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Šis gairės pavadinimas yra neteisingas.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Gairė nėra prikabinta prie šios klaidos.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Ši gairė jau prikabinta prio šios klaidos.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Token negali būti rastas.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Įvykis "%1$s" dar nebuvo apibrėžtas.';

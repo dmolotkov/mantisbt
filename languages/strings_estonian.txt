@@ -1204,7 +1204,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Twitteriga integratsioon vajab PHP c
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Ei leidnud sellise nimega silti.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Sellise nimega silt juba esineb varasemalt.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Sildi nimi on vigane.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Silt pole haagitud selle kande külge.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Silt on juba varasemalt haagitud selle kande külge.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Märki ei õnnestunud leida.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Sündmus "%1$s" pole veel deklareeritud.';

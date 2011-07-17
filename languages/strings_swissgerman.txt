@@ -1219,7 +1219,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'D Twitter-Integration verlangt d PHP
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'S isch kei Markierig mit däm Name gfunde wore.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'S git scho ne Tag mit däm Name.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Dr Tag-Name isch nit giltig.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Dr Tag isch nit zue däm Yytrag zuegwise.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Dää Tag isch scho zue däm Yytrag zuegwise.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'S Token het nit chenne gfunde wäre..';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'S Event „%1$s“ isch nonig deklariert.';

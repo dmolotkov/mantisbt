@@ -1152,7 +1152,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'L\'integracion amb Twitter necessita
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'La balisa amb aqueste nom es introbabla.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Una balisa amb aqueste nom existís ja.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Aqueste nom de balisa es invalid.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Aquesta balisa es pas associada a aqueste bòg.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Aquesta balisa ja es associada a aqueste bòg.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Geton introbable.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'L\'eveniment « %1$s » es indefinit.';

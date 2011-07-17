@@ -1206,7 +1206,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Twitter との統合は PHP の cURL
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = '該当のタグを見つけられませんでした。';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'そのタグ名は既に登録済みです。';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'そのタグ名は不正です。';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'そのタグはチケットに登録されていません。';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'そのタグは既にチケットに登録済です。';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'トークンがみつかりません。';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'イベント「%1$s」はまだ定義されていません。';

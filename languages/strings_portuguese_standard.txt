@@ -604,7 +604,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Integraçáo Twitter requer a extens
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Não foi possível encontrar uma etiqueta com esse nome.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Já existe uma etiqueta com esse nome.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Esse nome de etiqueta é inválido.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Essa etiqueta não está associada a esse bug.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Essa etiqueta já está associada a esse bug.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Evento "%1$s" ainda não foi declarado.';
 $MANTIS_ERROR[ERROR_PLUGIN_NOT_REGISTERED] = 'Plugin não está registado no MantisBT.';

@@ -1182,7 +1182,6 @@ $MANTIS_ERROR[ERROR_TWITTER_NO_CURL_EXT] = 'Twitter-liittymä vaatii PHP cURL -l
 $MANTIS_ERROR[ERROR_TAG_NOT_FOUND] = 'Tägiä ei löytynyt tällä nimellä.';
 $MANTIS_ERROR[ERROR_TAG_DUPLICATE] = 'Tällä nimellä on jo olemassa tägi.';
 $MANTIS_ERROR[ERROR_TAG_NAME_INVALID] = 'Tägin nimi on epäkelpo.';
-$MANTIS_ERROR[ERROR_TAG_NOT_ATTACHED] = 'Tätä tägiä ei ole liitetty tähän tapahtumaan.';
 $MANTIS_ERROR[ERROR_TAG_ALREADY_ATTACHED] = 'Tämä tägi on jo liitetty tähän tapahtumaan.';
 $MANTIS_ERROR[ERROR_TOKEN_NOT_FOUND] = 'Merkkiä ei löytynyt.';
 $MANTIS_ERROR[ERROR_EVENT_UNDECLARED] = 'Tapahtumaa "%1$s" ei ole vielä alustettu.';

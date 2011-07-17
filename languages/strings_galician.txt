@@ -1138,7 +1138,6 @@ Ao visitar a ligazón que lle foi enviada activarase a súa conta.',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ocorreu un erro durante o transcurso desta acción. Quizais queira informar deste erro ao seu administrador local.';
-$MANTIS_ERROR[ERROR_SQL] = 'Detectouse un erro SQL.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Houbo un erro no informe.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Non se especificou ningún ficheiro.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'O tipo de ficheiro non está permitido.';

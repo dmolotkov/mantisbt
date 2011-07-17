@@ -1034,7 +1034,6 @@ Kung hiniling ang pagpapatotoong ito, dalawin ang sumusunod na URL upang mabago 
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Naganap ang isang kamalian habang isinasagawa ang galaw na ito. Maaaring naisin mong iulat ang kamaliang ito sa iyong pampook na tagapangasiwa.';
-$MANTIS_ERROR[ERROR_SQL] = 'Napansin ang kamaliang pang-SQL.';
 $MANTIS_ERROR[ERROR_REPORT] = 'May isang kamalian sa loob ng iyong ulat.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Walang tinukoy na talaksan.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Hindi pinapahintulutan ang uri ng talaksan.';

@@ -1065,7 +1065,6 @@ Pokud jste si skutečnš přáli tuto změnu, navštivte Nasledujúci stránku a
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Počas tejto operácie sa vyskytla chyba. Túto chybu môžete oznámiť svojmu lokálnemu správcovi.';
-$MANTIS_ERROR[ERROR_SQL] = 'Zistená chyba SQL.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Vo vašej správe bola chyba.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Žiadny súbor nebol určený.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tento typ súboru nie je povolený.';

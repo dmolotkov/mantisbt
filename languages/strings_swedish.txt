@@ -1047,7 +1047,6 @@ Om du begärde denna verifikation, gå till följande webbadress för att ändra
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ett fel uppstod.  Du kan rapportera detta fel till din lokala administratör.';
-$MANTIS_ERROR[ERROR_SQL] = 'Ett SQL-fel uppstod.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Det fanns ett fel i din rapport.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Ingen fil angiven';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Filtypen är inte tillåten';

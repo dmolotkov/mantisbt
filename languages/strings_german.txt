@@ -1140,7 +1140,6 @@ Wenn Sie die Bestätigung angefordert haben, besuchen Sie die folgende URL, um i
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ein Fehler ist während dieser Aktion aufgetreten. Sie können dies dem Ihnen zugeordneten Administrator mitteilen.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL-Fehler entdeckt.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Während des Reports trat ein Fehler auf.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Keine Datei angegeben.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Dieser Dateityp ist nicht erlaubt.';

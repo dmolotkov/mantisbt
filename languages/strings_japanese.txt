@@ -1125,7 +1125,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'エラーが発生しました。システム管理者までお知らせください。';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL のエラーを検知しました。';
 $MANTIS_ERROR[ERROR_REPORT] = '報告に間違いがあります。';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'ファイルが選択されていません。';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'そのファイル形式は許可されていません。';

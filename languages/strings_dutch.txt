@@ -1141,7 +1141,6 @@ Als u deze wijziging wilt voortzetten, bezoek dan de volgende URL om uw wachtwoo
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Deze actie had een fout tot gevolg. Meld dit aan uw systeembeheerder.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL-fout ontdekt.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Er is een fout in uw rapport gevonden.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Geen bestand opgegeven.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Het bestandstype is niet toegestaan.';

@@ -825,7 +825,6 @@ Ef þú óskaðir eftir þessari staðfestingu, heimsóttu eftirfarandi veffang 
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Villa hefur orðið við þessa aðgerð. Þú ættir að tilkynna það til verkefnisstjóra.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL villa hefur orðið.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Það var villa í tilkynningunni.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Engin skrá valin';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Þessi tegund skráar er ekki leyfð';

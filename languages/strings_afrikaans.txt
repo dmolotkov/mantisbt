@@ -525,7 +525,6 @@ $s_messages = array(
 );
 
 
-$MANTIS_ERROR[ERROR_SQL] = 'SQL-fout is ontdek.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Daar was \'n fout in u verslag.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Geen lêer is verskaf nie.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Die lêertipe word nie toegelaat nie.';

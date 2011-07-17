@@ -950,7 +950,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Поява на неидентифициран проблем. Моля обърнете се към системния администратор.';
-$MANTIS_ERROR[ERROR_SQL] = 'Грешка при изпълнение на SQL заявка.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Грешка в отчета.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Не е зададен файл';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Този файлов тип е забранен за зареждане';

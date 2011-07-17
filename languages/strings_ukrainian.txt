@@ -706,7 +706,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'В процесі виконання виникла помилка.  Повідомте про неї локального адміністратора.';
-$MANTIS_ERROR[ERROR_SQL] = 'Виникла помилка SQL.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Десь у вашому звіті є помилка.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Не вказаний файл';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Недозволений тип файлів';

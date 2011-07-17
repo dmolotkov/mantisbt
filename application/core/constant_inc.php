@@ -207,7 +207,6 @@ define( 'BUG_HAS_DUPLICATE', 4 );
 
 # error messages
 define( 'ERROR_GENERIC', 0 );
-define( 'ERROR_SQL', 1 );
 define( 'ERROR_REPORT', 3 );
 define( 'ERROR_NO_FILE_SPECIFIED', 4 );
 define( 'ERROR_FILE_DISALLOWED', 5 );

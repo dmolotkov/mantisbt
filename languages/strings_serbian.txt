@@ -644,7 +644,6 @@ Ukoliko ste vi zatrazili proveru, molim posetite sledecu adresu radi promene loz
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Došlo je do greške tokom izvrsavanja akcije. Verovatno zelite da prijavite gresku vasem lokalnom administratoru.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL greska detektovana.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Postoji greska u vasem izvestaju.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Fajl nije izabran';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Ovaj tip fajla nije dozvoljen';

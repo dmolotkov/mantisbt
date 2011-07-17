@@ -438,7 +438,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Pöl ejenon dü dun at. Nunolös, begö! pöli at guvane topik ola.';
-$MANTIS_ERROR[ERROR_SQL] = 'Pöl-SQL petuvon.';
 $MANTIS_ERROR[ERROR_REPORT] = 'In nunod oli ädabinon pöl.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Ragiv nonik pegivon.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Ragivatip no pedälon.';

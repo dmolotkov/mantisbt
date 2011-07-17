@@ -1101,7 +1101,6 @@ Luokassa %1$s on %2$d virheilmoitusta.',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Virhe suoritettaessa tätä komentoa. Saatat haluta ilmoittaa tästä virheestä paikallisen järjestelmäsi ylläpitäjälle.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL-virhe havaittu.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Raportissasi oli virhe.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Tiedostoa ei ole määritelty';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tämä tiedostotyyppi ei ole sallittu';

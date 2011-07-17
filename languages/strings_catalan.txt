@@ -1128,7 +1128,6 @@ Si va sol·licitar aquest canvi, visiti aquesta URL per a canviar la contrasenya
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Hi ha hagut un error durant aquesta acció. Informi d\'aquest error al seu administrador local.';
-$MANTIS_ERROR[ERROR_SQL] = 'Error SQL detectat.';
 $MANTIS_ERROR[ERROR_REPORT] = 'S\'ha trobat un error en la seva incidència.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Arxiu no especificat';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Aquest tipus d\'arxiu no està permès';

@@ -802,7 +802,6 @@ Priešingu atveju aplankykite puslapį šiuo adresu:',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Klaida atliekant šį veiksmą. Susisiekite su administratoriumi.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL klaida.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Jūsų pranešime yra klaida.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Nenurodėte failo';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Neleistinas failo tipas';

@@ -532,7 +532,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'darbības izpildes rezultātā notikusi kļūda.  Iespējams, Jūs vēlaties par to ziņot savam lokālajam administrātoram.';
-$MANTIS_ERROR[ERROR_SQL] = 'Notikusi SQL kļūda.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Jūsu ziņojumā konstatētas kļūdas.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Fails neeksistē';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Šādi faili ir aizliegti';

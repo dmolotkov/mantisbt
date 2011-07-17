@@ -749,7 +749,6 @@ $s_messages = array(
 );
 
 
-$MANTIS_ERROR[ERROR_SQL] = 'Εντοπίστηκε σφάλμα SQL.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'A necessary field \'%1$s\' was empty.  Please recheck your inputs.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Το όνομα χρήστη είναι ήδη δεσμευμένο. Παρακαλώ επιστρέψτε στην προηγούμενη σελίδα και επιλέξτε κάποιο άλλο.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Configuration option \'%1$s\' not found.';

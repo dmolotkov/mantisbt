@@ -895,7 +895,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'یہ کام کرتے ھوے ایک خرابی آ گی ھے.  آپ اپنی انتضامیہ کو اس کے بارے میں آگاہ کر سکتے ہیں۔ .';
-$MANTIS_ERROR[ERROR_SQL] = ' کی خرابی آ گی ھے اس کے بارے میں اگ ہ کر یںSQL';
 $MANTIS_ERROR[ERROR_REPORT] = 'آپ کی معلومات مین خرابی تھی.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'کوی فاہل بتای نہی گی';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'اس قسم کی فاہل کی اجازت نہی';

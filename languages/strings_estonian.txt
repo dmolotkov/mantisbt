@@ -1123,7 +1123,6 @@ Kui sa soovisid seda uuendust, siis külasta järgmist URL-i, et vahetada oma pa
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Tegevuse käigus toimus viga.  Võiksid sellest veast teatada oma süsteemihaldurile.';
-$MANTIS_ERROR[ERROR_SQL] = 'SQL viga avastatud.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Teate loomisel esines viga.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Fail pole määratletud';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Failitüüp pole lubatud';

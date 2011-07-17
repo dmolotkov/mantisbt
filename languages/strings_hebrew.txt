@@ -1031,7 +1031,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'אירעה תקלה בפעולה זו. מומלץ להודיע למנהל המערכת.';
-$MANTIS_ERROR[ERROR_SQL] = 'התגלתה שגיאה בשאילתת ה־SQL.';
 $MANTIS_ERROR[ERROR_REPORT] = 'נמצאה שגיאה בדו"ח שלך.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'לא צוין קובץ';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'סוג הקובץ אסור';

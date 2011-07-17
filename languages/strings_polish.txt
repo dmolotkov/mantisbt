@@ -1066,7 +1066,6 @@ Jeśli prosiłeś o to, odwiedź poniższy adres aby zmienić hasło:',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Wystąpił błąd podczas wykonywanej operacji. Możesz zgłosić błąd administratorowi.';
-$MANTIS_ERROR[ERROR_SQL] = 'Wykryto błąd SQL.';
 $MANTIS_ERROR[ERROR_REPORT] = 'Wystąpił błąd w zgłoszeniu.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Żaden plik nie został wybrany.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Typ przesyłanego pliku nie jest dozwolony.';

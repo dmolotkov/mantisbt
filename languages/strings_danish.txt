@@ -814,7 +814,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Denne konto er beskyttet. Du har ikke 
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Adgang nægtet.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Overførslen af filen mislykkedes. Bed din administrator om at afvikle scriptet admin_check for at løse dette problem.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Overførslen af filen mislykkedes. Dette skyldes sandsynligvis at filstørrelsen oversteg, hvad der i øjeblikket er tillad i denne PHP installation.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Et krævet paramter til denne side blev ikke fundet.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Dette brugernavn er allerede i brug. Gå venligst tilbage og vælg et andet brugernavn.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfigurationsmulighed ikke fundet.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Configuration option \'%1$s\' can not be set in the database.  It must be set in config_inc.php.';

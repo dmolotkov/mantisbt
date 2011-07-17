@@ -1140,7 +1140,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Aquest compte està protegit. No hi t�
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Accés Denegat.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Ha fallat la càrrega de l\'arxiu. MantisBT no el pot llegir. Si us plau comprovi els ajustaments del projecte.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Ha fallat la càrrega de l\'arxiu. Possiblement la mida  de l\'arxiu és més gran del que actualment esta permès en aquesta instal·lació de PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'No s\'ha trobat un paràmetre requerit (%1$s) a la pàgina.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Aquest nom de usuari està en ús. Si us plau, torni enrera i seleccioni\'n un altre.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'No es troba l\'opció de configuració \'%1$s\'.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'La opció de configuració \'%1$s\' no es pot definir a la base de dades. Ha de ser definida a config_inc.php.';

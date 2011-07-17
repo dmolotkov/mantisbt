@@ -814,7 +814,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Šis vartotojas apsaugotas.  Jūs netu
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Priėjimas uždraustas.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Failo įkėlimas nepavyko.  Greičiausiai išjungta PHP failų įkėlimas.  Paprašykite savo administratoriaus paleisti admin_check skriptą šios problemos sprendimui.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Failo įkėlimas nepavyko.  Greičiausiai failo dydis viršija PHP konfigūracijoje nustatytą dydį.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Reikalingas parametras nerastas.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Toks vartotojo vardas jau egzistuoja.  Grįžkite atgal ir pasirinkite kitą.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfigūracijos parametras \'%1$s\' nerastas.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Konfigūracijos parametras \'%1$s\' negali būti nustatytas duomenų bazėje. Jis privalo būti nustatyas config_inc.php faile.';

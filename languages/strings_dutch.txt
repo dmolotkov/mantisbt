@@ -1153,7 +1153,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Deze gebruiker is beschermd. U hebt hi
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Toegang geweigerd.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Toevoegen bestand mislukt omdat het niet door MantisBT gelezen kon worden. Controleer de projectinstellingen.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Toevoegen bestand mislukt.  Dit komt waarschijnlijk doordat het bestand groter is dan toegestaan door deze PHP-installatie.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Een verplichte parameter van deze pagina (%1$s) kon niet gevonden worden.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Deze gebruikersnaam bestaat al. Ga terug en kies een andere naam.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Instelling "%1$s" niet gevonden.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Instelling "%1$s" kan niet in de database gezet worden. Dit moet gedaan worden in config_inc.php.';

@@ -1059,7 +1059,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Detta konto är skyddat.  Du har inte 
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Åtkomst nekas.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Skickning av filen misslyckades. Filen kan inte läsas av MantisBT, Kontrollera projektinställningarna.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Skickning av filen misslyckades.  Det beror troligen på att filen var större än vad denna PHP-installation tillåter.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Ett obligatoriskt värde (%1$s) för den här sidan saknas.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Användarnamnet finns redan. Gå tillbaka och välj ett annat användarnamn.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfigurationsvalet \'%1$s\' kunde inte hittas.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Konfigurationsvalet \'%1$s\' kan inte användas i databasen.  Det måste skrivas i config_inc.php.';

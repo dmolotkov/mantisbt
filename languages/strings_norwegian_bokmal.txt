@@ -1146,7 +1146,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Denne kontoen er beskyttet. Du kan ikk
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Du har ikke tilgang.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Feil ved opplasting av fil. Be din administrator om å kjøre admin_check scriptet for å feilsøke problemet.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Mislykket filopplasting. Dette er sannsynligvis forårsaket av at filstørrelsen var større enn det din PHP-installasjon tillater.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'En påkrevd parameter for denne siden (%1$s) ble ikke funnet.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Det brukernavnet er allerede i bruk. Vennligst gå tilbake og velg et annet.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfigurasjonsopsjon \'%1$s\' ikke funnet.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Configuration option \'%1$s\' can not be set in the database.  It must be set in config_inc.php.';

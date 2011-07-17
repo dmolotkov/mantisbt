@@ -449,7 +449,6 @@ $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Fel zesüdik: „$1$s“ ävagon. Kontrolol�
 $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Kal at pejelon. No dalol gebön ani jüs kalijel ponosükon.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Ragivilöpükam no eplöpon. Ragiv at no binon reidovik ele MantisBT. Kontrololös parametemi proyega.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Ragivilöpükam no eplöpon. Atos ba ejenon bi ragivagretot pluon tefü maxum anu padälöl fa fomam-PHP at.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Paramet peflagöl pada at (%1$s) no petuvon.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Gebananem at ya pagebon. Geikolös e välolös votiki.';
 $MANTIS_ERROR[ERROR_BUGNOTE_NOT_FOUND] = 'Noet no petuvon.';
 $MANTIS_ERROR[ERROR_PROJECT_NOT_FOUND] = 'Proyeg: „%1$d“ no petuvon.';

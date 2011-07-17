@@ -1137,7 +1137,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = '権限がありません。権限を�
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'アクセスが拒否されました。';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'ファイルのアップロードに失敗しました。MantisBT がファイルを読めません。プロジェクト管理を確認してください。';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'ファイルのアップロードに失敗しました。PHP で設定されているファイルサイズより大きいことが問題です。設定を確認してください。';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'このページで必須のパラメーター「%1$s」がありません。';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'ユーザー名は既に使用されています。戻って別のユーザー名を選択してください。';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = '設定項目「%1$s」がありません。';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = '設定項目「%1$s」をデータベースに設定することはできません。config_inc.php に設定してください。';

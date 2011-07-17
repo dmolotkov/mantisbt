@@ -1083,7 +1083,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Aqueste compte es protegit.  Sètz pas
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Accès interdich.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Fracàs del depaus de fichièr. Lo fichièr es pas lisible per MantisBT. Verificatz la configuracion del projècte.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Fracàs del depaus de fichièr.  La talha del fichièr èra visiblament tròp granda per vòstra configuracion de PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Un paramètre requerit per aquesta pagina (%1$s) es pas estat trobat.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Aqueste nom d\'utilizaire ja es utilizat.  Mercés de tornar començar e causir un autre nom.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'L\'opcion de configuracion « %1$s » es pas estada trobada.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'L\'opcion de configuracion « %1$s » pòt pas èsser definida dins la banca de donadas. Deu èsser definida dins config_inc.php.';

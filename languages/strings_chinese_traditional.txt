@@ -905,7 +905,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = '這個帳戶目前為保護狀態. 你
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = '無法執行這個作業.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = '檔案上傳失敗，無法讀取檔案，請檢查系統的設定';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = '檔案上傳失敗. 這很有可能是因為檔案大小已經超過目前 PHP 所設定允許的最大值.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = '缺少這個頁面 \"%1$s\" 所必要的參數.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = '這個使用者帳號已經存在. 請返回上ㄧ頁選擇其他的帳號.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = '缺少 \'%1$s\' 這個參數設定選項.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Configuration option \'%1$s\' can not be set in the database.  It must be set in config_inc.php.';

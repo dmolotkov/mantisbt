@@ -1046,7 +1046,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Nakasanggalang ang kuwentang ito.  Hin
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Ipinagkait/Tinanggihan ang Pagpasok (akseso).';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Nabigo ang pagkarga ng talaksan. Hindi mabasa ng MantisBT ang talaksan. Pakisuri ang mga katakdaang pamproyekto.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Nabigo ang pagkarga ng talaksan.  Maaaring dahil ito sa mas malak ang sukat ng talaksan kaysa sa pinapahintulutan ng niluklok/ininstalang PHP na ito.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Hindi natagpuan ang isang kinakailangang parametro sa pahinang (%1$s) ito.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Ginagamit na ang ganyang pangalan ng tagaamit. Bumalik po lamang at pumili ng isa/iba pa.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Hindi natagpuan ang pagpipiliang "%1$s" na pangpagkakaayos.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Hindi maitatakda sa kalipunan ng dato ang pipiliing pagkakaayos na "%1$s".  Dapat na itakda ito sa config_inc.php.';

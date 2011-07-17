@@ -1150,7 +1150,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Des Konto isch gschitzt. Du chasch nit
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Zuegang verweigeret.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Dateiibertragig fählgschlaa. Datei het nit chenne gläse wäre vu MantisBT. Bitte prief d Projäktyystellige.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Dateiibertragig fählgschlaa. Wahrschyns isch d Datei greßer wie fir die PHP-Installation erlaubt.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'E Parameter, wu s brucht fir die Syte (%1$s), isch nit gfunde wore.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Dää Benutzername wird scho brucht. Gang zruck un wehl e andere.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfigurationsoption „%1$s“ nit gfunde.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'D Konfigurationsoption „%1$s“ isch nit in dr Datebank gfunde wore. Si muess in config_inc.php definiert wäre.';

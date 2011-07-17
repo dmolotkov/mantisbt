@@ -1137,7 +1137,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Esta conta está protegida.  Você nã
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Acesso Negado.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'O carregamento do arquivo falhou. O arquivo não pôde ser lido pelo MantisBT. Por favor, verifique as configurações do projeto.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'O carregamento do arquivo falhou.  Provavelmente é devido ao tamanho do arquivo ser maior do que o permitido atualmente por esta instalação PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Um parâmetro necessário para esta página (%1$s) não foi encontrado.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Este nome de usuário já está sendo usado.  Por favor, volte e selecione um outro.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Opção de configuração \'%1$s\' não encontrada.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'A opção de configuração \'%1$s\' não pode ser ajustada no banco-de-dados.  Ela deve ser ajustada em config_inc.php.';

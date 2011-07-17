@@ -656,7 +656,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Ovaj nalog je zasticen. Niste ovlascen
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Pristup zabranjen.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Neuspelo slanje fajla.  PHP slanje fajlova je verofatno iskljuceno.  Molim obavestite administratora radi izvrsenja admin_check skript procedure radi ispravljanja problema.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Neuspelo slanje fajla.  Najverovatnije je velicina fajla veca od maksimalne velicine fajla dozvoljene u ovoj instalaciji PHP-a.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Obavezan parametar na stranici nije pronadjen.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Korisnicko ime je vec zauzeto. Molim vratite se i izaberite drugo.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Opcija konfiguracije \'%1$s\' nije pronadjena.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Configuration option \'%1$s\' can not be set in the database.  It must be set in config_inc.php.';

@@ -1067,7 +1067,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Tento účet je chráněn. Nesmíte se
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Přístup odepřen.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Chyba uploadu souboru, MantisBT jej nemůže přečíst. Zkontrolujte prosím nastavení projektu.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Chyba uploadu souboru.  Soubor byl zřejmě větší, zež je povoleno instalací PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Nutný parametr pro tuto stránku (%1$s) nebyl nalezen.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Toto uživatelské jméno je již použito.  Prosíme, vraťte se zpět a zvolte jiné.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfigurační volba \'%1$s\' nenalezena.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Konfigurační volbu \'%1$s\' nelze uložit do databáze.  Musí být uvedena v souboru config_inc.php.';

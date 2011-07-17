@@ -1043,7 +1043,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'חשבון זה מוגן. אין אפ�
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'גישה חסומה.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'העברת הקובץ נכשלה. המערכת אינה מצליחה לקרוא את הקובץ. נא לבדוק את הגדרות הפרויקט.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'העלאת הקובץ נכשלה. ייתכן שהקובץ גדול מכפי שמוגדר ב-PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'פרמטר חובה לעמוד זה (%1$s) לא נמצא.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'שם המשתמש כבר תפוס. נא לחזור ולבחור בשם אחר.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'הגדרת תצורה \'%1$s\' לא נמצאה.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'הגדרת תצורה \'%1$s\' לא ניתנת לעדכון בקובץ ה-Database. יש להגדירה בקובץ config_inc.php.';

@@ -613,7 +613,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Uporabniški račun je zaščiten. Dos
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Dostop zavrnjen.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Naložitev datoteke je bila neuspešna. Naložitev PHP datotek je mogoče onemogočeno. Prosite vašega administratorja, da zažene skripto admin_check in odpravi težavo.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Naložitev datoteke je bila neuspešna. Vzrok je najverjetneje velikost datoteke, ki jo dovoljuje ta PHP namestitev.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Zahtevan parameter za to stran ni bil najden.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Uporabniško ime je že v uporabi. Vrnite se nazaj in izberite drugega.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Nisem našel konfiguracijske opcije \'%1$s\'.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Configuration option \'%1$s\' can not be set in the database.  It must be set in config_inc.php.';

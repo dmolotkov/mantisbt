@@ -572,7 +572,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Heh dä Zohjang es extra jeschöz. Do 
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Zohjreff afjeleehnt.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Et Datei_Huhlaade es donävve jejange. <i lang="en">MantisBT</i> kann dat Denge nit lässe. Donn de Enshtällunge för dat Projäk nohloore.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Et Datei_Huhlaade es donävve jejange. Wascheinlesch wohr di Dattei jrüüßer wi de Enshtellunge vum <i lang="en">PHP</i> dat em Momang zohlohße.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Ene nüüdejje Parrameeter för di Sigg hee wohdt nit jefonge: <code>%1$s</code>';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Dä Metmaacher_Naame es ald belääsch. Jangk zerök un söhk Der ene annder uß.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'De Ennshtällung „%1$s“ wohdt nit jefonge.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'De Ennshtällung „%1$s“ kam_mer nit en de Daatebangk säze. Dat moß en dä Dattei <code>config_inc.php</code> dren jemaat wääde.';

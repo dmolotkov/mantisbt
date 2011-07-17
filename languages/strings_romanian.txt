@@ -886,7 +886,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'ERROR: Acest cont este protejat şi nu
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'ERROR: Acces interzis.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'ERROR: Fişierul nu a fost încărcat. Rugaţi-l pe administrator să verifice şi să corecteze această problemă.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'ERROR: Fişierul nu a fost încărcat. Se pare că fişierul are o dimensiune mai mare decât cea permisă.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Un parametru obligatoriu pentru pagina aceasta (%1$s) nu a fost găsit.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Acest nume de utilizator este deja folosit de altcineva. Întoarceţi-vă şi alegeţi alt nume.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Opţiunea de configurare \'%1$s\' nu e găsită.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Opţiunea de configurare \'%1$s\' nu poate fi can not be setată în baza de date. Trebuie să fie configurată în config_inc.php.';

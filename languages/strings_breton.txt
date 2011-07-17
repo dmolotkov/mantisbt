@@ -1135,7 +1135,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Gwarezet eo ar gont-mañ. N\'oc\'h ket
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Moned nac\'het.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'C\'hwitet eo kargadenn ar restr. Ne c\'hall ket ar restr bezañ lennet gant MantisBT. Gwiriit arventennoù ar raktres, mar plij.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'C\'hwitet eo kargadenn ar restr. Moarvat e oa re vras ment ar restr evit ho kefluniadur PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Un arventenn rekis evit ar bajenn-mañ (%1$s) n\'eo ket bet kavet.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'En implij emañ an anv implijer-se dija. Distroit, mar plij, ha diuzit unan all.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'An dibarzh kefluniañ « %1$s » n\'eo ket bet kavet';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'An dibarzh kefluniañ « %1$s » ne c\'hall ket bezañ lakaet an diaz roadennoù. Ret eo e dermenañ e-barzh config_inc.php.';

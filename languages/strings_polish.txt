@@ -1078,7 +1078,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Konto jest zabezpieczone. Nie masz upr
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Brak dostępu.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Przesyłanie nie powiodło się. Plik nie mógł zostać odczytany przez MantisBT. Sprawdź konfigurację serwera.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Przesyłanie pliku nie powiodło się. Prawdopodobnie jest to spowodowane rozmiarem pliku przekraczającym maksymalny dozwolony dla PHP na tym serwerze.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Nie znaleziono parametru (%1$s) wymaganego na tej stronie.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Ta nazwa użytkownika jest już używana.  Proszę wrócić i podać inną nazwę.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Opcja konfiguracji „%1$s” nie została znaleziona.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Opcja konfiguracyjna „%1$s” nie może zostać ustawiona w bazie danych. Musi zostać ustawiona w pliku „config_inc.php”.';

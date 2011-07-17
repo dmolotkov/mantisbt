@@ -31,6 +31,8 @@
  * @uses error_api.php
  */
 
+use MantisBT\Exception\Field\EmptyField;
+
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'error_api.php' );
@@ -75,8 +77,7 @@ function gpc_get( $p_var_name, $p_default = null ) {
 		# check for a default passed in (allowing null)
 		$t_result = $p_default;
 	} else {
-		error_parameters( $p_var_name );
-		trigger_error( ERROR_GPC_VAR_NOT_FOUND, ERROR );
+		throw new EmptyField( $p_var_name );
 		$t_result = null;
 	}
 
@@ -338,8 +339,7 @@ function gpc_get_cookie( $p_var_name, $p_default = null ) {
 		# check for a default passed in (allowing null)
 		$t_result = $p_default;
 	} else {
-		error_parameters( $p_var_name );
-		trigger_error( ERROR_GPC_VAR_NOT_FOUND, ERROR );
+		throw new EmptyField( $p_var_name );
 	}
 
 	return $t_result;
@@ -435,8 +435,7 @@ function gpc_get_file( $p_var_name, $p_default = null ) {
 		# check for a default passed in (allowing null)
 		$t_result = $p_default;
 	} else {
-		error_parameters( $p_var_name );
-		trigger_error( ERROR_GPC_VAR_NOT_FOUND, ERROR );
+		throw new EmptyField( $p_var_name );
 	}
 
 	return $t_result;

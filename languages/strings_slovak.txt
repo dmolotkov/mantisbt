@@ -1077,7 +1077,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'Toto konto je chránené. Nemáte povo
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Prístup zakázaný.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Nahranie súboru sa nepodarilo. MantisBT nedokáže prečítať súbor. Prosím, skontrolujte nastavenia projektu.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Zlyhalo nahrávanie súboru. Toto je pravdepodobne kvôli tomu, že veľkosť súboru bola väčšia ako je maximálna povolená veľkosť v konfigurácii PHP.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Chýba potrebný parameter pre túto stránku (%1$s).';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Toto užívateľské meno je už použité.  Prosím, vráťte sa naspäť a zvoľte iné.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfiguračná voľba „%1$s“ nebola nájdená.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Konfiguračnú voľbu „%1$s“ nemožno nastaviť v databáze. Musíte ju nastaviť v config_inc.php.';

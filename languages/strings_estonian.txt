@@ -1135,7 +1135,6 @@ $MANTIS_ERROR[ERROR_PROTECTED_ACCOUNT] = 'See kasutajakonto on kaitstud.  Saad s
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'Pöördumine keelatud.';
 $MANTIS_ERROR[ERROR_UPLOAD_FAILURE] = 'Faili üleslaadimine ebaõnnestus. Fail pole loetav MantisBT poolt.  Palun kontrolli projekti sätteid.';
 $MANTIS_ERROR[ERROR_FILE_TOO_BIG] = 'Faili üleslaadimine ebaõnnestus.  Põhjus on arvatavasti selles, et fail on suurem, kui lubab PHP installatsioon.';
-$MANTIS_ERROR[ERROR_GPC_VAR_NOT_FOUND] = 'Selle lehekülje jaoks kohustuslik parameeter (%1$s) on määramata.';
 $MANTIS_ERROR[ERROR_USER_NAME_NOT_UNIQUE] = 'Valitud kasutajanimi on juba kasutusel.  Palun mine tagasi ja vali mõni muu.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_NOT_FOUND] = 'Konfiguratsiooni seadet \'%1$s\' ei leitud.';
 $MANTIS_ERROR[ERROR_CONFIG_OPT_CANT_BE_SET_IN_DB] = 'Konfiguratsiooni seadet \'%1$s\' ei saa andmebaasis määrata.  See tuleb määrata failis config_inc.php.';

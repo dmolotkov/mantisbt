@@ -8,5 +8,6 @@ class AccessDenied extends ExceptionAbstract {
 	public function __construct() {
 		$errorMessage = lang_get(ERROR_ACCESS_DENIED, null, false);
 		parent::__construct( ERROR_ACCESS_DENIED, $errorMessage, null );
+		$this->responseCode = 403;
 	}
 }

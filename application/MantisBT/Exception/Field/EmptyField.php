@@ -9,5 +9,6 @@ class EmptyField extends ExceptionAbstract {
 		$errorMessage = lang_get(ERROR_EMPTY_FIELD, null, false);
 		$errorMessage = sprintf($errorMessage, $fieldName);
 		parent::__construct(ERROR_EMPTY_FIELD, $errorMessage, null);
+		$this->responseCode = 400;
 	}
 }

@@ -543,7 +543,6 @@ Caso você tenha solicitado esta verificação, visite o seguinte URL para alter
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ocorreu um erro durante a execução desta ação. Você pode querer comunicar este erro ao seu administrador local';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'O tipo de ficheiro está bloqueado.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'A pasta não existe. Por favor verifique as definições do projeto.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Este ficheiro é um duplicado. Por favor apague o ficheiro antes.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Já existe um projeto com esse nome.';

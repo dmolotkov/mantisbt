@@ -1101,7 +1101,6 @@ Luokassa %1$s on %2$d virheilmoitusta.',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Virhe suoritettaessa tätä komentoa. Saatat haluta ilmoittaa tästä virheestä paikallisen järjestelmäsi ylläpitäjälle.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tämä tiedostotyyppi ei ole sallittu';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Hakemistoa ei ole olemassa. Ole hyvä ja tarkista projektin asetukset.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Tämä tiedosto on kaksoiskappale.  Ole hyvä ja poista alkuperäinen tiedosto ensin.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Samanniminen projekti on jo olemassa.';

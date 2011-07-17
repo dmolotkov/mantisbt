@@ -911,7 +911,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = '执行该操作时发生错误，你可能需要将此问题报告给你的系统管理员。';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = '此类型的文件不允许上传';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = '目录不存在；请检查项目设置。';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = '已经有一个同名文件存在；请先删除该文件。';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = '已经存在一个同名的项目。';

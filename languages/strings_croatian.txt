@@ -388,7 +388,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'U toku ove akcije pojavila se greška. Možete prijaviti grešku administratoru.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tip datoteke nije dozvoljen';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Mapa ne postoji. Molimo Vas da provjerite postavke projekta.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Ovo je duplicirana datoteka. Molimo Vas da najprije obrišete datoteku.';
 $MANTIS_ERROR[ERROR_EMPTY_FIELD] = 'Potrebno polje je prazno. Molimo Vas da ponovno provjerite ulazne podatke.';

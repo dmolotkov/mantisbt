@@ -1055,7 +1055,6 @@ Pokud jste si skutečně přáli tuto změnu, navštivte následující stránku
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Při této akci se vyskytla chyba. Oznamte to svému lokálnímu správci.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Nepovolený typ souboru';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Adresář neexistuje, zkontrolujte nastavení projektu.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Duplicitní soubor. Prosím, napřed soubor smažte.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Projekt s tímto jménem už existuje.';

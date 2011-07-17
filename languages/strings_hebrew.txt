@@ -1031,7 +1031,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'אירעה תקלה בפעולה זו. מומלץ להודיע למנהל המערכת.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'סוג הקובץ אסור';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'המחיצה אינה קיימת - יש לבדוק את הגדרות הפרויקט.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'קובץ זה כבר קיים. יש למחוק את הקובץ הקודם.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'קיים פרויקט בשם זה.';

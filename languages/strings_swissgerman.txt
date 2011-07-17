@@ -1138,7 +1138,6 @@ Wänn Du die Bstetigung aagforderet hesch, no gang uf die URL go Dyy Passwort ä
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'S het e Fähler gee, derwylscht die Aktion uusgfiert woren isch. Du chasch des im zueständige Amman schrybe.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Dää Dateityp isch nit erlaubt.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'S Verzeichnis git s nit. Iberprief d Yystellige.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Des isch e doppleti Datei. Lesch zerscht säli Datei.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'S het scho ne Projäkt mit däm Name.';

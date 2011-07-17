@@ -532,7 +532,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'darbības izpildes rezultātā notikusi kļūda.  Iespējams, Jūs vēlaties par to ziņot savam lokālajam administrātoram.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Šādi faili ir aizliegti';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Katalogs neeksistē. Pārbaudiet projekta opcijas.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Faila dublikāts. Vispirms izdzēsiet veco failu.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Projekts ar šādu nosaukumu jau eksistē.';

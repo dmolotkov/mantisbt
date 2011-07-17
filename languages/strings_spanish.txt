@@ -1135,7 +1135,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ha ocurrido un error durante esta acción. Informe de este error a su administrador local.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Este tipo de archivo no está permitido';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'El directorio no existe. Por favor revise la configuración del proyecto.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Este es un archivo duplicado. Por favor borre el archivo primero.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Ya existe un proyecto con este nombre.';

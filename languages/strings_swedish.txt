@@ -1047,7 +1047,6 @@ Om du begärde denna verifikation, gå till följande webbadress för att ändra
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ett fel uppstod.  Du kan rapportera detta fel till din lokala administratör.';
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Filtypen är inte tillåten';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Katalogen finns inte. Var god kontrollera projektinställningarna.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Filen finns redan.  Var god ta bort den andra filen först.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Ett projekt med det namnet finns redan.';

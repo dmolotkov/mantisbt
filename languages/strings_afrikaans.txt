@@ -525,7 +525,6 @@ $s_messages = array(
 );
 
 
-$MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Die lêertipe word nie toegelaat nie.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Die gids bestaan nie. Kontroleer asseblief die projek se instellings.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Die lêer bestaan reeds. Verwyder eers die bestaande lêer.';
 $MANTIS_ERROR[ERROR_DUPLICATE_PROJECT] = 'Die projek bestaan reeds.';

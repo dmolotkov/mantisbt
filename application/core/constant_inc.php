@@ -207,7 +207,6 @@ define( 'BUG_HAS_DUPLICATE', 4 );
 
 # error messages
 define( 'ERROR_GENERIC', 0 );
-define( 'ERROR_FILE_DISALLOWED', 5 );
 define( 'ERROR_NO_DIRECTORY', 6 );
 define( 'ERROR_DUPLICATE_FILE', 9 );
 define( 'ERROR_DUPLICATE_PROJECT', 10 );

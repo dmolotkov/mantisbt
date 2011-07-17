@@ -560,7 +560,6 @@ Doh kanns De repareeere, wat jraadt verkeht woor, udder en annder Akßjuhn nämm
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Bei dä Akßjuhn es ene Fähler opjetrodde.
 Dä künnß De aan Dinge Administrator heh wigger jävve.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Kein Dattei aanjejovve.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Di Zoot Dattei es nit zohjelohße.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Dat Verzeijshneß jidd_et nit. Loor donoh en de Enshtellunge för et Projäk.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Dat es en dubbelte Datei. Donn eets de eezte dovun fottschmiiße.';

@@ -535,7 +535,6 @@ $s_messages = array(
 );
 
 
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'ምንም ፋይል አልተገለጸም';
 $MANTIS_ERROR[ERROR_ACCESS_DENIED] = 'መግባት የተከለከለ';
 $MANTIS_ERROR[ERROR_BUGNOTE_NOT_FOUND] = ' ማስታወሻው አልተገኘም';
 $MANTIS_ERROR[ERROR_NEWS_NOT_FOUND] = ' አዲስ አይነት ነገር  አልተገኘም';

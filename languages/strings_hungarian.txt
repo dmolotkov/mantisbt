@@ -1082,7 +1082,6 @@ Ha Ön kérte ezt a megerősítést, látogassa meg a következő címet a jelsz
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Hiba lépett fel a művelet végrehajtása közben. Értesítse a helyi rendszergazdát.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Nincs fájl megadva';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'A fájltípus nem megengedett';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'A könyvtár nem létezik. Ellenőrizze a projekt beállításait.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Ez a fájl már létezik, először törölnie kell.';

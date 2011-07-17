@@ -817,7 +817,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = '이 동작을 수행하는 도중 오류가 발생했습니다.  시스템 관리자에게 이 오류를 보고하세요.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = '파일이 없습니다.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = '허용되지 않는 파일 종류입니다.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = '디렉토리가 존재하지 않습니다.. 프로젝트 환경을 확인하세요.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = '파일 중복. 먼저 파일을 삭제하세요.';

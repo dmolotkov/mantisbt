@@ -1138,7 +1138,6 @@ Ao visitar a ligazón que lle foi enviada activarase a súa conta.',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ocorreu un erro durante o transcurso desta acción. Quizais queira informar deste erro ao seu administrador local.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Non se especificou ningún ficheiro.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'O tipo de ficheiro non está permitido.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'O directorio non existe. Por favor, comprobe as características do proxecto.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Este é o duplicado dun ficheiro. Por favor, borre primeiro o ficheiro.';

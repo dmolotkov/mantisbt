@@ -895,7 +895,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'یہ کام کرتے ھوے ایک خرابی آ گی ھے.  آپ اپنی انتضامیہ کو اس کے بارے میں آگاہ کر سکتے ہیں۔ .';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'کوی فاہل بتای نہی گی';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'اس قسم کی فاہل کی اجازت نہی';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'لسٹ دستیاب نہی ھے.
 Please check the project settings.';

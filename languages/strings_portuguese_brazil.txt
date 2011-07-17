@@ -1125,7 +1125,6 @@ Se você solicitou esta verificação, visite o seguinte endereço para alterar 
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Um erro ocorreu durante esta ação.  Você pode querer relatar este erro ao seu administrador local.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Arquivo não especificado';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'O tipo de arquivo não é permitido';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'O diretório não existe. Por favor, verifique as configurações do projeto.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Este é um arquivo duplicado.  Por favor, apague o arquivo antes.';

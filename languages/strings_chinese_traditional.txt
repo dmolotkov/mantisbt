@@ -893,7 +893,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = '執行這個動作時發生異常錯誤. 請將這錯誤訊息回報給你的系統管理員.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = '沒有指定檔案';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = '檔案類型不被接受';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = '檔案路徑不存在. 請檢查專案設定值或洽系統管理員建立檔案路徑.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = '這是重複的檔案.  請先刪除原本檔案.';

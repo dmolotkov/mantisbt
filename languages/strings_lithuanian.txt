@@ -802,7 +802,6 @@ Priešingu atveju aplankykite puslapį šiuo adresu:',
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Klaida atliekant šį veiksmą. Susisiekite su administratoriumi.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Nenurodėte failo';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Neleistinas failo tipas';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Šis katalogas neegzistuoja. Prašome patikrinti projekto nustatymus.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Toks failas jau yra.  Prašome pirmiau ištrinti seną failą.';

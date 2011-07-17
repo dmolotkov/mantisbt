@@ -1065,7 +1065,6 @@ Pokud jste si skutečnš přáli tuto změnu, navštivte Nasledujúci stránku a
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Počas tejto operácie sa vyskytla chyba. Túto chybu môžete oznámiť svojmu lokálnemu správcovi.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Žiadny súbor nebol určený.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tento typ súboru nie je povolený.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Adresár neexistuje. Prosím skontrolujte nastavenia projektu.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Toto je duplikátny súbor. Prosím, najprv súbor zmažte.';

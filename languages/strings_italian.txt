@@ -973,7 +973,6 @@ Se invece hai effettivamente richiesto tu la modifica, visita l\'indirizzo di se
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Si è verificato un errore nell\'esecuzione dell\'azione.  Potresti ritenere opportuno avvisare dell\'errore l\'amministratore locale.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Non è stato specificato nessun file';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tipo di file non consentito';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'La directory non esiste.  Controlla le impostazioni del progetto.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Il file è un duplicato.  Cancella prima il file presente.';

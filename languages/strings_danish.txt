@@ -802,7 +802,6 @@ Hvis du bad om denne verifikation, så besøg denne URL for at ændre din adgang
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Der opstod en uventet fejl. Du bedes kontakte din lokale administrator.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Der er ikke valgt en fil';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Denne filtype er ikke tilladt';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Denne mappe findes ikke. Undersøg venligst projektets indstillinger.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Denne fil findes allerede. Slet den gamle fil først.';

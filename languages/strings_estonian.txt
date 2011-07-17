@@ -1123,7 +1123,6 @@ Kui sa soovisid seda uuendust, siis külasta järgmist URL-i, et vahetada oma pa
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Tegevuse käigus toimus viga.  Võiksid sellest veast teatada oma süsteemihaldurile.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Fail pole määratletud';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Failitüüp pole lubatud';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Kataloogi pole olemas. Palun kontrolli projekti seadeid.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'See on korduv fail.  Palun kustuta kõigepealt varasem fail.';

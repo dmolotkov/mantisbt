@@ -1139,7 +1139,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'При выполнения действия произошла ошибка. Возможно, об этом стоит сообщить вашему местному администратору.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Не указан файл.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Этот тип файлов запрещен.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Каталог не существует. Проверьте настройки проекта.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Дубликат файла. Сначала удалите старый файл.';

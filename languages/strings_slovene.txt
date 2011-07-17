@@ -601,7 +601,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Med potekom operacije je prišlo do napake. Napako lahko prijavite vašemu lokalnemu operaterju.';
-$MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Nobena datoteka ni bila določena';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Vrsta datoteke ni odobrena';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Direktorij ne obstaja. Preverite nastavitve projekta.';
 $MANTIS_ERROR[ERROR_DUPLICATE_FILE] = 'Datoteka je dvojnik.  Najprej izbrišite datoteko.';

@@ -1163,7 +1163,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Ne c\'hallit ket ober eus un draen un
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'N\'eo ket bet kavet adweladenn an draen';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Ar vaezienn personelaet n\'eo ket bet kavet.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Un anv doublet eo.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Ur raktres da nebeutañ a ra gant ar vaezienn-mañ c\'hoazh.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Talvoud direizh evit ar vaezienn « %1$s ».';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Direizh eo termenadur ar vaezienn personelaet.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Gwiriekadur LDAP c\'hwitet.';

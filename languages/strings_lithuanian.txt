@@ -837,7 +837,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'Nusiųstas failas negali būti perkelta
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Jūs negalite nurodyti klaidos kaip atkartojančios save pačią.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Šis laukas nerastas';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Toks pavadinimas jau egzistuoja.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Bent vienas projektas vis dar naudoja šį lauką.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Neteisinga reikšmė';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Neteisingas lauko apibrėžimas';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP autentifikavimo klaida';

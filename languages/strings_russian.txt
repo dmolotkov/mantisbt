@@ -1179,7 +1179,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Нельзя cделать инцид
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Ревизия инцидента не найдена.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Настраиваемое поле не найдено.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Это дублирующееся имя.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Это поле еще используется как минимум в одном проекте.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Недопустимое значение поля "%1$s".';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Недопустимое определение настраиваемого поля.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP авторизация не удалась.';

@@ -1178,7 +1178,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Du chasch e Probläm nit as Duplikat 
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Bug-Version nit gfunde.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Benutzerdefiniert Fäld nit gfunde.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Name dopplet vorhande.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Zmindesch ei Projäkt brucht des Fäld no.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Nit giltige Wärt fir Fäld „%1$s“.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Nit giltigi Definition fir benutzerdefiniert Fäld';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-Authentifizierig fähl gschlaa.';

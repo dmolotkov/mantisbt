@@ -595,7 +595,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'De huhjelaade Dattei kunnt nit en et Ve
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Do kanns en Aanjelääjeheit nit als e Dubbel vun sesh sellver enndraare';
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Dä Shtand vun dä Aanjelääjeheit ham_mer nit jefonge.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Dat es ene dubbelte Name.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Winnishßdens ei Projäk bruch dat Daate_Feld heh noch.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ene onjöltije Wäät för dat Daate_Feld „%1$s“.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'En onjöltijje Faßlääjung för e selfsjemaat Daate_Feld.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'De Zohjangspröövung per <i lang="en">LDAP</i> es donevve jejange.';

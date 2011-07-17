@@ -1111,7 +1111,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Impossible de marcar aqueste bòg com
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Revision del bòg introbable.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Camps personalizats introbables';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Aquò\'s un nom duplicat.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Al mens un projècte utiliza encara aqueste camp.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor invalida pel camp « %1$s ».';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definicion de camp personalizat invalida';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Fracàs d\'indentificacion per LDAP.';

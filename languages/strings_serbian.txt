@@ -674,7 +674,6 @@ $MANTIS_ERROR[ERROR_FILE_INVALID_UPLOAD_PATH] = 'Pogrešna putanja slanja fajla.
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Grešku ne možete definisati kao duplikat same sebe.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Koricnicko polje nije pronadjeno';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Ovo je duplo ime.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Najmanje još jedan projekat koristi ovo polje.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Pogresna vrednost polja';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP Authentifikacija neuspela';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'LDAP konekcija sa serverom neuspešna';

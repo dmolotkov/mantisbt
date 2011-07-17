@@ -1181,7 +1181,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Een melding kan geen duplicaat van zi
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Deze versie van de melding is niet aangetroffen.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Gebruikersveld niet gevonden.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Deze naam komt al voor.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Tenminste één project gebruikt dit veld nog.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ongeldige waarde voor veld %1$s.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Ongeldige definitie gebruikersveld.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP authenticatie mislukt.';

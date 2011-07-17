@@ -833,7 +833,6 @@ $MANTIS_ERROR[ERROR_FILE_INVALID_UPLOAD_PATH] = 'Ugyldig overførselssti. Enten 
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Du kan ikke gøre en fejl til en dublet af sig selv.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Brugerdefineret felt ikke fundet';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Dette er et duplikat-navn.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Mindst et projekt anvender dette felt.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ugyldig værdi for dette felt';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Ugyldig feltbeskrivelse';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-godkendelse mislykkedes';

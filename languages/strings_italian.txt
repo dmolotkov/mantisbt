@@ -1012,7 +1012,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'Non è stato possibile spostare il file
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Non puoi rendere un\'anomalia duplicata di sè stessa.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Campo personalizzato non trovato.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Questo nome è duplicato.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Almeno un progetto fa ancora uso di questo campo.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valore di "%1$s" non valido.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definizione di campo personalizzato non valida.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Autenticazione LDAP fallita.';

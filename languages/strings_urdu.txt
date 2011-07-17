@@ -932,7 +932,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'اپ لوڈ فاہل سٹوریج فہ�
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'آپ ایک مسہلے جیسا دوسرا مسلہ نہں بنا سکتے.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'کسٹم کی جگہ نہی ملی';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = ' یہ فاہل نقل ھے.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = ' یہ منصوبہ صرف ایک جیز کو ایک وقت میں استہمال کر سکتا ھے .';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'اس چیز کے لیے قیمت ٹھیک نہیں ھے';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'اس قسٹم والی چیز کا نام ٹھیک نہی ھے';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = ' کی اجازت فیل ھو گی ھےLDAP';

@@ -1163,7 +1163,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Pole võimalik määrata kannet iseen
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Kande redaktsiooni ei leitud.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Kasutaja välja ei leitud';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'See on duplikeeriv kasutaja väli.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Vähemalt üks projekt kasutab seda välja.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Lubamatu väärtus väljale "%1$s".';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Vigane kasutaja välja definitsioon';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP autentimine ebaõnnestus';

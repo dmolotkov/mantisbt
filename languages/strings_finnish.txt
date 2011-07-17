@@ -1141,7 +1141,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Et voi määritellä tapahtumaa itsen
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Tapahtuman revisiota ei löytynyt.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Räätälöityä kenttää ei löytynyt.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Nimiduplikaatti.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Kenttä on käytössä ainakin yhdessä projektissa.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Kentällä %1$s on virheellinen arvo.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Virheellinen mukautetun kentän määrite.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-autentikaatio epäonnistui';

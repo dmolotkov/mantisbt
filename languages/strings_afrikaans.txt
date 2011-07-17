@@ -539,7 +539,6 @@ $MANTIS_ERROR[ERROR_FILTER_NOT_FOUND] = 'Filter %1$s is nie gevind nie.';
 $MANTIS_ERROR[ERROR_EMAIL_INVALID] = 'Ongeldige e-posadres.';
 $MANTIS_ERROR[ERROR_USER_PROFILE_NOT_FOUND] = 'Profiel is nie gevind nie.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Hierdie naam kom al reeds voor.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Ten minste één projek gebruik nog die veld.';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Verbinding met LDAP-bediener het gefaal.';
 $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Die bywerking van die LDAP-rekord het gefaal.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'LDAP-gebruikersgegewens nie gevind nie.';

@@ -986,7 +986,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'Зареденият файл не мо
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Не можете да посочите като дубликат същия проблем.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Потребителското поле не е открито';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Потребителско поле с такова име вече съществува.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Поне един от проектите все още използва това потребителско поле.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Грешна стойност за поле „%1$s“.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Некоректна дефиниция на потребителското поле.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP оторизацията неуспешна';

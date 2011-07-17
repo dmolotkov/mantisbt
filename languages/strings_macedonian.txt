@@ -1177,7 +1177,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Не можете да наведет
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Ревизијата на проблемот не е пронајдена.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Прилагодливото поле не е пронајдено.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Ова е дуплирано име.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Барем еден проект сè уште го користи ова поле.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Неважечка вредност за во полето „%1$s“.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Неважечка дефиниција за прилагодливото поле.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP заверувањето не успеа.';

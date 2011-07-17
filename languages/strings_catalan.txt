@@ -1168,7 +1168,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'No es pot establir una incidència co
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'No s\'ha trobat la revisió de l\'error.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Camp personalitzat no trobat';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Aquest nom està duplicat.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Al menys un projecte té aquest camp en ús.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor incorrecte pel camp %1$s.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definició de camp personalitzat no vàlida';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Ha fallat la validació LDAP';

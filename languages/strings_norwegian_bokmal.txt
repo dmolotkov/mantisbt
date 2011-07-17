@@ -1174,7 +1174,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'En sak kan ikke være et duplikat av 
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Saksrevisjon ikke funnet.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Brukerdefinert felt ble ikke funnet.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Det brukerdefinerte navnet finnes fra før.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Minst ett prosjekt bruker dette feltet.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Ugyldig verdi for feltet "%1$s"';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Ugyldig definisjon på skreddersydd felt.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP-autentisering feilet';

@@ -737,7 +737,6 @@ $MANTIS_ERROR[ERROR_FILE_INVALID_UPLOAD_PATH] = 'Неправильний шля
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Ви не можете зробити проблему дублікатом неї ж.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Не можу знайти таке власне поле';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Таке ім\'я вже існує.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Принаймні один проект використовує це поле.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Неприпустиме значення поля "%1$s".';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Хибне означення власного поля';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Помилка LDAP-авторизації';

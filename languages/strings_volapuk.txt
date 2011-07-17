@@ -462,7 +462,6 @@ $MANTIS_ERROR[ERROR_FILE_NO_UPLOAD_FAILURE] = 'Ragiv nonik pelöpükon. Geikolö
 $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'No eplöpos ad pladön ragivi pelöpüköl ini ragiviär pro dakip ragivas. Ragiviär no dabinon u no binon penovik dünanünöme.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Fel pelönedüköl no petuvon.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Atos binon nem petelüköl.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Proyeg pu bal gebon feli at.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Völad no lonöföl pro %1$s.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Miedet fela pelönedüköl no lonöfon.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Yümam ad nünodem no eplöpon. Pöl se nünodem pedagetöl äbinon: #%1$d: %2$s.';

@@ -629,7 +629,6 @@ $MANTIS_ERROR[ERROR_FILE_NOT_ALLOWED] = 'Vrsta datoteke ni dovoljena za naložit
 $MANTIS_ERROR[ERROR_FILE_DUPLICATE] = 'Datoteka je dvojnik. Najprej izbrišite datoteko.';
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Ne morete določiti zadeve kot dvojnik same sebe.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'To je ime dvojnika.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Še vsaj en projekt uporablja to polje.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Neveljavna vrednost za polje';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Neuspešna LDAP avtentikacija';
 $MANTIS_ERROR[ERROR_LDAP_SERVER_CONNECT_FAILED] = 'Neuspešna povezava na LDAP server.';

@@ -861,7 +861,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'Upphlaðna skrá er ekki hægt að fær
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Þú getur ekki sett inn beiðni sem afrit af sjálfu sér.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Sérsniðið svæði finnst ekki';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Þetta er nafn afrits.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Að minnsta kosti eitt verkefni notar þetta svæði.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Óleyfileg gildi fyrir þetta svæði';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Sérsniðin svæðisskilgreining er ógilt';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'LDAP staðfesting mistókst.';

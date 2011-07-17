@@ -1070,7 +1070,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'קובץ שהועלה לא יכול ל�
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'לא ניתן להגדיר באג ככפיל של עצמו.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'שדה מותאם אישית לא נמצא.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'השם הזה תפוס.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'לפחות עוד פרויקט אחד משתמש בשדה הזה.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'ערך בלתי תקין של %1$s.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'הגדרה שדה מותאם אישית לא תקינה.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'הזדהות LDAP נכשלה.';

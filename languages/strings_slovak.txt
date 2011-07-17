@@ -1105,7 +1105,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Nie je možné označiť problém ako
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Revízia problému nebola nájdená.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Užívateľom definované pole sa nenašlo';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Duplicitné meno.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'toto pole používa aspoň jeden projekt.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Neplatná hodnota pre pole "%1$s".';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Neprípustná hodnota užívateľkého poľa';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Zlyhalo overenie totožnosti cez LDAP';

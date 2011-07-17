@@ -573,7 +573,6 @@ $MANTIS_ERROR[ERROR_FILE_DUPLICATE] = 'Este é um ficheiro duplicado. Por favor,
 $MANTIS_ERROR[ERROR_FILE_NO_UPLOAD_FAILURE] = 'Nenhum ficheiro foi carregado. Por favor, volte atrás e escolha um ficheiro antes de premir o botão Carregar.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Campo personalizado não encontrado.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Este é um nome duplicado.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Pelo menos um projeto ainda utiliza este campo.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'Valor inválido para o campo "%1$s".';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definição de campo personalizado inválida.';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Falha na Autenticação LDAP.';

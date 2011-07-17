@@ -912,7 +912,6 @@ $MANTIS_ERROR[ERROR_FILE_MOVE_FAILED] = 'Fişierul încărcat nu poate fi mutat 
 $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'EROARE: Nu puteţi creea o problemă ca un duplicat la ea însăşi.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Câmpul personalizat nu este găsit';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Acesta este un nume duplicat.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Cel puţin un proiect încă mai utilizează acest câmp.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'EROARE: Valoare invalidă pentru câmp';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Definiţie invalidă pentru un câmp personalizat';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'EROARE: Autentificarea LDAP eşuată';

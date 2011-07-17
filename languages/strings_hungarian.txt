@@ -1122,7 +1122,6 @@ $MANTIS_ERROR[ERROR_BUG_DUPLICATE_SELF] = 'Ügy másolatának nem állíthatja b
 $MANTIS_ERROR[ERROR_BUG_REVISION_NOT_FOUND] = 'Ügy revízió nem található.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NOT_FOUND] = 'Nincs ilyen egyedi mező';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE] = 'Ez a név már létezik.';
-$MANTIS_ERROR[ERROR_CUSTOM_FIELD_IN_USE] = 'Ezt a mezőt még legalább egy projekt használja.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_VALUE] = 'A(z) „%1$s” mező hibás értéket tartalmaz.';
 $MANTIS_ERROR[ERROR_CUSTOM_FIELD_INVALID_DEFINITION] = 'Hibás egyedi mező definíció';
 $MANTIS_ERROR[ERROR_LDAP_AUTH_FAILED] = 'Sikertelen LDAP azonosítás';

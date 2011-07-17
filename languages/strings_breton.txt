@@ -1123,7 +1123,6 @@ M\'hoc\'h eus goulennet ar gwiriadur-mañ, kit d\'an URL-mañ evit cheñch ho ke
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'C\'hoarvezet ez eus ur fazi. Marteze hoc\'h eus c\'hoant d\'e ditourañ d\'ho merour lec\'hel.';
-$MANTIS_ERROR[ERROR_REPORT] = 'Ur fazi a oa en ho tanevell.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'N\'eus bet diferet restr ebet';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Ar seurt restr n\'eo ket aotreet.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'N\'eus ket eus ar c\'havlec\'h. Gwiriit arventennoù ar raktres, mar plij.';

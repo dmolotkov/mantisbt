@@ -1137,7 +1137,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Се појави грешка за време на ова дејство. Ви препорачуваме да ја пријавите кај вашиот локален администратор.';
-$MANTIS_ERROR[ERROR_REPORT] = 'Најдена е грешка во вашата пријава.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Нема назначено податотека.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Тој тип на податотеки е забранет.';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Директориумот не постои. Проверете ги проектните нагодувања.';

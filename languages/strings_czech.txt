@@ -1055,7 +1055,6 @@ Pokud jste si skutečně přáli tuto změnu, navštivte následující stránku
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Při této akci se vyskytla chyba. Oznamte to svému lokálnímu správci.';
-$MANTIS_ERROR[ERROR_REPORT] = 'Chybná data ve vašem reportu.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Soubor nebyl zadán.';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Nepovolený typ souboru';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Adresář neexistuje, zkontrolujte nastavení projektu.';

@@ -1106,7 +1106,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'حدث خطأ خلال هذا الفعل. ربما ترغب في إبلاغ هذا الخطأ إلى إداريك المحلي.';
-$MANTIS_ERROR[ERROR_REPORT] = 'كان هناك خطأ في تقريرك.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'لا ملف تم تحديده';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'نوع الملف غير مسموح به';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'المجلد غير موجود. من فضلك تحقق من إعدادات المشروع.';

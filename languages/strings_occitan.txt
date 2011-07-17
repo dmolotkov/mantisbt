@@ -1071,7 +1071,6 @@ S\'avètz demandat aquesta verificacion, visitatz l\'URL seguenta per cambiar v�
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Una error s\'es producha.  Mercés de contactar vòstre administrator.';
-$MANTIS_ERROR[ERROR_REPORT] = 'I aviá una error dins vòstre rapòrt.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Pas cap de fichièr especificat';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Tipe de fichièr interdich';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'Lo repertòri existís pas. Mercés de verificar los paramètres del projècte.';

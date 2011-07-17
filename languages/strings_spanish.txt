@@ -1135,7 +1135,6 @@ $s_messages = array(
 
 
 $MANTIS_ERROR[ERROR_GENERIC] = 'Ha ocurrido un error durante esta acción. Informe de este error a su administrador local.';
-$MANTIS_ERROR[ERROR_REPORT] = 'Se encontró un error en su informe.';
 $MANTIS_ERROR[ERROR_NO_FILE_SPECIFIED] = 'Archivo no especificado';
 $MANTIS_ERROR[ERROR_FILE_DISALLOWED] = 'Este tipo de archivo no está permitido';
 $MANTIS_ERROR[ERROR_NO_DIRECTORY] = 'El directorio no existe. Por favor revise la configuración del proyecto.';

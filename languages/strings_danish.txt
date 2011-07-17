@@ -843,7 +843,6 @@ $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'LDAP Record Update mislykkedes.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'LDAP User Record ikke fundet.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Database-forbindelse mislykkedes.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Database-forespørgsel mislykkedes.';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Database-valg mislykkedes.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Denne kategori findes allerede.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Ingen kopi-handling specificeret.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Kategori ikke fundet.';

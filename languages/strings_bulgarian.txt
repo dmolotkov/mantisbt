@@ -996,7 +996,6 @@ $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Обновяването на LDAP з
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Неоткрит LDAP запис за потребителя.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Връзката с базата данни неуспешна. Върната грешка #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Търсенето в базата неуспешно. Върната грешка #%1$d: %2$s за заявката: %3$s';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Изборът на базата данни неуспешен. Върната грешка #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Категория с това име вече съществува.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Липсва зададено действие при копиране на категорията.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Категорията не е открита.';

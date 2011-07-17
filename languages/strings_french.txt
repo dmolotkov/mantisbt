@@ -1192,7 +1192,6 @@ $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Enregistrement d\'utilisateur LDAP i
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'L\'extension LDAP n\'est pas chargé.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Échec de connexion à la base de données. L\'erreur renvoyée était #%1$d : %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Échec de la requête de base de données. L\'erreur renvoyée par la base de données était #%1$d : %2$s pour la requête : %3$s.';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Échec de la sélection de la base de données. L\'erreur renvoyée par la base de données était #%1$d : %2$s.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Catégorie dupliquée.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Aucune copie spécifiée.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Catégorie introuvable.';

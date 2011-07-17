@@ -1023,7 +1023,6 @@ $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Record utente LDAP non trovato.';
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Estensione LDAP non caricata.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Connessione al database fallita.  L\'errore ricevuto dal database è #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Interrogazione database fallita.  L\'errore ricevuto dal database è #%1$d: %2$s per la query: %3$s';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Selezione del database fallita.  L\'errore ricevuto dal database è #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Una categoria con quel nome esiste già.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Non è stata specificata nessuna azione di copia.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Categoria non trovata.';

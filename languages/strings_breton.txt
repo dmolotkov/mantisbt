@@ -1174,7 +1174,6 @@ $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'An enrolladenn implijer LDAP n\'eo k
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'An astenn LDAP n\'eo ket karget.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'C\'hwitet eo ar gevreadenn ouzh an diaz roadennoù. Ar fazi resevet digant an diaz roadennoù a oa #%1$d : %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'C\'hwitet eo ar reked diaz roadennoù. Ar fazi kaset gant an diaz roadennoù a oa #%1$d : %2$s evit ar reked : %3$s.';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'C\'hwitet eo diuzadenn an diaz roadennoù. Ar fazi resevet digant an diaz roadennoù a oa #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Ur rummad en anv-se zo anezhañ dija.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'N\'eus bet diferet ober eilañ ebet.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Ar rummad n\'eo ket bet kavet.';

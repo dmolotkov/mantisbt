@@ -683,7 +683,6 @@ $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'LDAP ažuriranje sloga nije uspelo.';
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'LDAP korisnicki slog nije pronadjen.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Veza sa bazom podataka nije uspostavljena. Greška primljena od baze je #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Упит бази није успешан. Грешка примљена од базе је #%1$d: %2$s за упит: %3$s';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Izbor baze neuspešan.  Greška primljena od baze je #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Kategorija pod tim imenom vec postoji';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Nije odredjena akcija za kopiranje.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Kategorija nije pronadjena.';

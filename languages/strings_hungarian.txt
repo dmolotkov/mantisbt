@@ -1133,7 +1133,6 @@ $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Az LDAP felhasználói mező nem tal
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Az LDAP kiterjesztés nincs betöltve.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Sikertelen adatbázis-kapcsolódás. Az adatbázis hibaüzenete: #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Sikertelen adatbázis-lekérdezés. Az adatbázis hibaüzenete: #%1$d: %2$s a következő lekérdezéshez: %3$s';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Sikertelen adatbázis-kiválasztás. Az adatbázis hibaüzenete: #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Már létezik ilyen nevű kategória.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Nem adott meg másolási műveletet.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Nincs ilyen kategória.';

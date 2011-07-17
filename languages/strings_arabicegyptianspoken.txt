@@ -1157,7 +1157,6 @@ $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'سجل مستخدم LDAP لم يتم
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'امتداد LDAP لم يتم تحميله.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'الاتصال بقاعده البيانات فشل. الخطأ الذى تم استرجاعه من قاعده البيانات كان #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'استعلام قاعده البيانات فشل. الخطأ الذى تم استرجاعه من قاعده البيانات كان #%1$d: %2$s للاستعلام: %3$s.';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'اختيار قاعده البيانات فشل. الخطأ الذى تم استرجاعه من قاعده البيانات كان #%1$d: %2$s.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'يوجد تصنيف بهذا الاسم بالفعل.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'لا فعل نسخ تم تحديده.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'التصنيف لم يتم العثور عليه.';

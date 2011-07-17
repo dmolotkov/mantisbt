@@ -1117,7 +1117,6 @@ $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Rekord użytkownika LDAP nie znalezi
 $MANTIS_ERROR[ERROR_LDAP_EXTENSION_NOT_LOADED] = 'Rozszerzenie LDAP nie zostało załadowane';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Błąd połączenia z bazą danych %1$d – %2$s.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Błąd wykonania zapytania w bazie danych %1$d – %2$s dla zapytania %3$s.';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Błąd bazy danych %1$d – %2$s.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Podana kategoria już istnieje.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Nie zdefiniowano możliwości kopiowania.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Nie znaleziono kategorii.';

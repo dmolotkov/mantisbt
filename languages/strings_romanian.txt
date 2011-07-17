@@ -922,7 +922,6 @@ $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'EROARE: Actualizarea înregistrării 
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Înregistrarea utilizatorului LDAP nu este găsită.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'EROARE: Conexiunea la baza de date a eşuat.';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'EROARE: Interogarea bazei de date a eşuat.';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'EROARE: Selectarea bazei de date a eşuat.';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'EROARE: Această categorie există deja.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'EROARE: Nu a fost specificată o acţiune de copiere.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'EROARE: Categoria nu este găsită.';

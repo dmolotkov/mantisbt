@@ -747,7 +747,6 @@ $MANTIS_ERROR[ERROR_LDAP_UPDATE_FAILED] = 'Не вдалось оновити р
 $MANTIS_ERROR[ERROR_LDAP_USER_NOT_FOUND] = 'Не вдалось знайти користувача в LDAP-базі.';
 $MANTIS_ERROR[ERROR_DB_CONNECT_FAILED] = 'Помилка з\'єднання з базою даних. Отримана відповідь #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_DB_QUERY_FAILED] = 'Помилка в запиті до бази даних. Відповідь містила #%1$d: %2$s на запит: %3$s';
-$MANTIS_ERROR[ERROR_DB_SELECT_FAILED] = 'Помилка виборки з бази даних.  Отримана відповідь #%1$d: %2$s';
 $MANTIS_ERROR[ERROR_CATEGORY_DUPLICATE] = 'Така категорія вже існує.';
 $MANTIS_ERROR[ERROR_CATEGORY_NO_ACTION] = 'Не ваказана операція копіювання.';
 $MANTIS_ERROR[ERROR_CATEGORY_NOT_FOUND] = 'Не вдалось знайти таку категорію.';

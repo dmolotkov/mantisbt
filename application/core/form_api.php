@@ -35,6 +35,8 @@
  * @uses session_api.php
  */
 
+use MantisBT\Exception\Security\CSRFTokenInvalid;
+
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'crypto_api.php' );
@@ -135,9 +137,7 @@ function form_security_validate( $p_form_name ) {
 
 	# Short-circuit if we don't have any tokens for the given form name
 	if( !isset( $t_tokens[$p_form_name] ) || !is_array( $t_tokens[$p_form_name] ) || count( $t_tokens[$p_form_name] ) < 1 ) {
-
-		trigger_error( ERROR_FORM_TOKEN_INVALID, ERROR );
-		return false;
+		throw new CSRFTokenInvalid();
 	}
 
 	# Get the form input
@@ -146,8 +146,7 @@ function form_security_validate( $p_form_name ) {
 
 	# No form input
 	if( '' == $t_input ) {
-		trigger_error( ERROR_FORM_TOKEN_INVALID, ERROR );
-		return false;
+		throw new CSRFTokenInvalid();
 	}
 
 	# Get the date claimed by the token
@@ -159,8 +158,7 @@ function form_security_validate( $p_form_name ) {
 	}
 
 	# Token does not exist
-	trigger_error( ERROR_FORM_TOKEN_INVALID, ERROR );
-	return false;
+	throw new CSRFTokenInvalid();
 }
 
 /**

@@ -44,6 +44,7 @@
  */
 
 use MantisBT\Exception\Access\AccessDenied;
+use MantisBT\Exception\CustomField\CustomFieldInvalidValue;
 use MantisBT\Exception\Field\EmptyField;
 
 require_once( 'core.php' );
@@ -156,8 +157,7 @@ if ( ( $t_resolve_issue || $t_close_issue ) &&
 if ( $t_existing_bug->status !== $t_updated_bug->status ) {
 	access_ensure_bug_level( config_get( 'update_bug_status_threshold' ), $f_bug_id );
 	if ( !bug_check_workflow( $t_existing_bug->status, $t_updated_bug->status ) ) {
-		error_parameters( lang_get( 'status' ) );
-		trigger_error( ERROR_CUSTOM_FIELD_INVALID_VALUE, ERROR );
+		throw new CustomFieldInvalidValue( 'status' );
 	}
 	if ( !access_has_bug_level( access_get_status_threshold( $t_updated_bug->status, $t_updated_bug->project_id ), $f_bug_id ) ) {
 		# The reporter may be allowed to close or reopen the issue regardless.
@@ -213,8 +213,7 @@ if ( $t_existing_bug->category_id !== $t_updated_bug->category_id ) {
 if ( $t_existing_bug->resolution !== $t_updated_bug->resolution &&
      $t_updated_bug->resolution >= config_get( 'bug_resolution_fixed_threshold' ) &&
      $t_updated_bug->status < $t_resolved_status ) {
-	error_parameters( lang_get( 'resolution' ) );
-	trigger_error( ERROR_CUSTOM_FIELD_INVALID_VALUE, ERROR );
+     	throw new CustomFieldInvalidValue( 'resolution' );
 }
 
 # Ensure that the user has permission to change the target version of the issue.
@@ -268,8 +267,7 @@ foreach ( $t_related_custom_field_ids as $t_cf_id ) {
 	# modified such that old values that were once OK are now considered
 	# invalid.
 	if ( !custom_field_validate( $t_cf_id, $t_new_custom_field_value ) ) {
-		error_parameters( lang_get_defaulted( custom_field_get_field( $t_cf_id, 'name' ) ) );
-		trigger_error( ERROR_CUSTOM_FIELD_INVALID_VALUE, ERROR );
+		throw new CustomFieldInvalidValue( lang_get_defaulted( custom_field_get_field( $t_cf_id, 'name' ) ) );
 	}
 
 	# Remember the new custom field values so we can set them when updating

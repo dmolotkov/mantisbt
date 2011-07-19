@@ -29,6 +29,8 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\Security\CSPRNGNotAvailable;
+
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
 require_api( 'error_api.php' );
@@ -149,7 +151,7 @@ function crypto_generate_random_string( $p_bytes, $p_require_strong_generator = 
 function crypto_generate_strong_random_string( $p_bytes ) {
 	$t_random_string = crypto_generate_random_string( $p_bytes, true );
 	if ( $t_random_string === null ) {
-		trigger_error( ERROR_CRYPTO_CAN_NOT_GENERATE_STRONG_RANDOMNESS, ERROR );
+		throw new CSPRNGNotAvailable();
 	}
 	return $t_random_string;
 }

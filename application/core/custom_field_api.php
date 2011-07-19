@@ -38,6 +38,7 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\CustomField\CustomFieldNameNotUnique;
 use MantisBT\Exception\CustomField\CustomFieldNotFound;
 use MantisBT\Exception\Field\EmptyField;
 
@@ -315,7 +316,7 @@ function custom_field_ensure_name_unique( $p_name ) {
 	if( custom_field_is_name_unique( $p_name ) ) {
 		return true;
 	} else {
-		trigger_error( ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE, ERROR );
+		throw new CustomFieldNameNotUnique( $p_name );
 	}
 }
 
@@ -465,7 +466,7 @@ function custom_field_update( $p_field_id, $p_def_array ) {
 	}
 
 	if( !custom_field_is_name_unique( $c_name, $c_field_id ) ) {
-		trigger_error( ERROR_CUSTOM_FIELD_NAME_NOT_UNIQUE, ERROR );
+		throw new CustomFieldNameNotUnique( $c_name );
 	}
 
 	$t_update_something = false;

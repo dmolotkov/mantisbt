@@ -78,11 +78,11 @@ function profile_create( $p_user_id, $p_platform, $p_os, $p_os_build, $p_descrip
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
 	# Add profile
-	$query = "INSERT INTO $t_user_profile_table
+	$t_query = "INSERT INTO $t_user_profile_table
 				    ( user_id, platform, os, os_build, description )
 				  VALUES
 				    ( " . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ' )';
-	db_query_bound( $query, array( $p_user_id, $p_platform, $p_os, $p_os_build, $p_description ) );
+	db_query_bound( $t_query, array( $p_user_id, $p_platform, $p_os, $p_os_build, $p_description ) );
 
 	return db_insert_id( $t_user_profile_table );
 }
@@ -108,9 +108,9 @@ function profile_delete( $p_user_id, $p_profile_id ) {
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
 	# Delete the profile
-	$query = "DELETE FROM $t_user_profile_table
+	$t_query = "DELETE FROM $t_user_profile_table
 				  WHERE id=" . db_param() . " AND user_id=" . db_param();
-	db_query_bound( $query, array( $c_profile_id, $c_user_id ) );
+	db_query_bound( $t_query, array( $c_profile_id, $c_user_id ) );
 
 	# db_query errors on failure so:
 	return true;
@@ -152,13 +152,13 @@ function profile_update( $p_user_id, $p_profile_id, $p_platform, $p_os, $p_os_bu
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
 	# Add item
-	$query = "UPDATE $t_user_profile_table
+	$t_query = "UPDATE $t_user_profile_table
 				  SET platform=" . db_param() . ",
 				  	  os=" . db_param() . ",
 					  os_build=" . db_param() . ",
 					  description=" . db_param() . "
 				  WHERE id=" . db_param() . " AND user_id=" . db_param();
-	$result = db_query_bound( $query, array( $p_platform, $p_os, $p_os_build, $p_description, $c_profile_id, $c_user_id ) );
+	$t_result = db_query_bound( $t_query, array( $p_platform, $p_os, $p_os_build, $p_description, $c_profile_id, $c_user_id ) );
 
 	# db_query errors on failure so:
 	return true;
@@ -176,10 +176,10 @@ function profile_get_row( $p_user_id, $p_profile_id ) {
 
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
-	$query = "SELECT *
+	$t_query = "SELECT *
 				  FROM $t_user_profile_table
 				  WHERE id=" . db_param() . " AND user_id=" . db_param();
-	$result = db_query_bound( $query, array( $c_profile_id, $c_user_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_profile_id, $c_user_id ) );
 
 	return db_fetch_array( $result );
 }
@@ -195,12 +195,12 @@ function profile_get_row_direct( $p_profile_id ) {
 
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
-	$query = "SELECT *
+	$t_query = "SELECT *
 				  FROM $t_user_profile_table
 				  WHERE id=" . db_param();
-	$result = db_query_bound( $query, array( $c_profile_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_profile_id ) );
 
-	return db_fetch_array( $result );
+	return db_fetch_array( $t_result );
 }
 
 /**
@@ -213,11 +213,11 @@ function profile_get_all_rows( $p_user_id ) {
 
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
-	$query = "SELECT *
+	$t_query = "SELECT *
 				  FROM $t_user_profile_table
 				  WHERE user_id=" . db_param() . "
 				  ORDER BY platform, os, os_build";
-	$t_result = db_query_bound( $query, array( $c_user_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_user_id ) );
 
 	$t_rows = array();
 
@@ -269,11 +269,11 @@ function profile_get_field_all_for_user( $p_field, $p_user_id = null ) {
 
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
-	$query = "SELECT DISTINCT $c_field
+	$t_query = "SELECT DISTINCT $c_field
 				  FROM $t_user_profile_table
 				  WHERE ( user_id=" . db_param() . " ) OR ( user_id = 0 )
 				  ORDER BY $c_field";
-	$result = db_query_bound( $query, array( $c_user_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_user_id ) );
 
 	$t_rows = array();
 
@@ -296,12 +296,12 @@ function profile_get_all_for_project( $p_project_id ) {
 	$t_user_profile_table = db_get_table( 'user_profile' );
 
 	# using up.* causes an SQL error on MS SQL since up.description is of type text
-	$query = "SELECT DISTINCT(up.id), up.user_id, up.platform, up.os, up.os_build
+	$t_query = "SELECT DISTINCT(up.id), up.user_id, up.platform, up.os, up.os_build
 				  FROM $t_user_profile_table up, $t_bug_table b
 				  WHERE $t_project_where
 				  AND up.id = b.profile_id
 				  ORDER BY platform, os, os_build";
-	$result = db_query_bound( $query );
+	$t_result = db_query_bound( $t_query );
 
 	$t_rows = array();
 
@@ -321,12 +321,12 @@ function profile_get_default( $p_user_id ) {
 	$c_user_id = db_prepare_int( $p_user_id );
 	$t_mantis_user_pref_table = db_get_table( 'user_pref' );
 
-	$query = "SELECT default_profile
+	$t_query = "SELECT default_profile
 			FROM $t_mantis_user_pref_table
 			WHERE user_id=" . db_param();
-	$result = db_query_bound( $query, array( $c_user_id ) );
+	$t_result = db_query_bound( $t_query, array( $c_user_id ) );
 
-	$t_default_profile = db_result( $result );
+	$t_default_profile = db_result( $t_result );
 
 	return $t_default_profile;
 }

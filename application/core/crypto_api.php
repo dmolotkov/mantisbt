@@ -25,15 +25,14 @@
  *
  * @uses config_api.php
  * @uses constant_inc.php
- * @uses error_api.php
  * @uses utility_api.php
  */
 
 use MantisBT\Exception\Security\CSPRNGNotAvailable;
+use MantisBT\Exception\Security\MasterSaltInvalid;
 
 require_api( 'config_api.php' );
 require_api( 'constant_inc.php' );
-require_api( 'error_api.php' );
 require_api( 'utility_api.php' );
 
 /**
@@ -46,7 +45,7 @@ require_api( 'utility_api.php' );
 function crypto_init() {
 	if ( !defined( 'MANTIS_MAINTENANCE_MODE' ) ) {
 		if ( strlen( config_get_global( 'crypto_master_salt' ) ) < 16 ) {
-			trigger_error( ERROR_CRYPTO_MASTER_SALT_INVALID, ERROR );
+			throw new MasterSaltInvalid();
 		}
 	}
 	return;

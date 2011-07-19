@@ -38,6 +38,7 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\CustomField\CustomFieldInvalidDefinition;
 use MantisBT\Exception\CustomField\CustomFieldNameNotUnique;
 use MantisBT\Exception\CustomField\CustomFieldNotFound;
 use MantisBT\Exception\Field\EmptyField;
@@ -462,7 +463,7 @@ function custom_field_update( $p_field_id, $p_def_array ) {
 	}
 
 	if(( $c_access_level_rw < $c_access_level_r ) || ( $c_length_min < 0 ) || (( $c_length_max != 0 ) && ( $c_length_min > $c_length_max ) ) ) {
-		trigger_error( ERROR_CUSTOM_FIELD_INVALID_DEFINITION, ERROR );
+		throw new CustomFieldInvalidDefinition();
 	}
 
 	if( !custom_field_is_name_unique( $c_name, $c_field_id ) ) {
@@ -1450,7 +1451,7 @@ function print_custom_field_input( $p_field_def, $p_bug_id = null ) {
 	if( isset( $g_custom_field_type_definition[$p_field_def['type']]['#function_print_input'] ) ) {
 		call_user_func( $g_custom_field_type_definition[$p_field_def['type']]['#function_print_input'], $p_field_def, $t_custom_field_value );
 	} else {
-		trigger_error( ERROR_CUSTOM_FIELD_INVALID_DEFINITION, ERROR );
+		throw new CustomFieldInvalidDefinition();
 	}
 }
 

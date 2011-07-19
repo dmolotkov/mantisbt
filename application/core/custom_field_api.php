@@ -38,6 +38,7 @@
  * @uses utility_api.php
  */
 
+use MantisBT\Exception\CustomField\CustomFieldNotFound;
 use MantisBT\Exception\Field\EmptyField;
 
 require_api( 'access_api.php' );
@@ -126,8 +127,7 @@ function custom_field_cache_row( $p_field_id, $p_trigger_errors = true ) {
 
 	if( !$row ) {
 		if( $p_trigger_errors ) {
-			error_parameters( 'Custom ' . $p_field_id );
-			trigger_error( ERROR_CUSTOM_FIELD_NOT_FOUND, ERROR );
+			throw new CustomFieldNotFound( $p_field_id );
 		} else {
 			return false;
 		}
@@ -271,8 +271,7 @@ function custom_field_ensure_exists( $p_field_id ) {
 	if( custom_field_exists( $p_field_id ) ) {
 		return true;
 	} else {
-		error_parameters( 'Custom ' . $p_field_id );
-		trigger_error( ERROR_CUSTOM_FIELD_NOT_FOUND, ERROR );
+		throw new CustomFieldNotFound( $p_field_id );
 	}
 }
 

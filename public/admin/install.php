@@ -408,7 +408,16 @@ if( 1 == $t_install_state ) {
 		<select name="db_type">
 		<?php
 			$t_db_types = explode(',',check_get_database_extensions(true));
+
+			# These are the extensions that have corresponding PDO drivers
+			# at /application/MantisBT/Db/PDO
+			$t_db_supported_types = array( 'pdo_mysql' );
+
 			foreach( $t_db_types as $t_type ) {
+				if ( !in_array( $t_type, $t_db_supported_types ) ) {
+					continue;
+				}
+
 				if( $f_db_type == $t_type ) {
 					echo '<option value="' . $t_type . '" selected="selected">' . $t_type . '</option>';
 		} else {
